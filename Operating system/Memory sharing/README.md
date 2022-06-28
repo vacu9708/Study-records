@@ -1,3 +1,5 @@
+***Shared memory*** is memory that may be simultaneously accessed by multiple processes. Only threads are on the same memory space. External shared memory is needed so that different processes can share memory.
+
 # 📷[Video](https://youtu.be/OYb4Le92EiI)
 
 # Explanation of the code of the first process. The other 2 processes have the same algorithm.
