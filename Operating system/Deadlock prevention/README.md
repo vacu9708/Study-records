@@ -36,5 +36,5 @@ A deadlock avoidance algorithm that avoids a deadlock by only allocating availab
 ![image](https://user-images.githubusercontent.com/67142421/176335355-321373a4-e7db-429f-9728-f2e3bdd1c302.png)<br>
 P0 has been allocated A:0, B:1, C:0 and needs A:7, B:4, C:3 to finish the task. But the available resources are only A:3, B:3, C:2, so the task cannot be completed
 for the moment.<br>
-P1 can complete its take if it obtains A:1, B:2, C:2 and return Max(A:3, B:2, C:2). The available resources satisfies the completion condition of P1, so the task
+P1 can complete its take if it obtains A:1, B:2, C:2 and return Max(A:3, B:2, C:2). The available resources satisfy the completion condition of P1, so the task
 of P1 is completed and the available resources become A:5, B:3, C:2 (because A:2 is given from A:3, B:2, C:2)
