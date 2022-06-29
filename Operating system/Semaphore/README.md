@@ -1,4 +1,5 @@
 Methods to prevent accessing shared memory at the same time are needed.<br>
+
 **Busy waiting** method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.<br>
 
 
