@@ -11,7 +11,7 @@ If an object no longer has any reference to it, it means the object is a waste o
 ![image](https://user-images.githubusercontent.com/67142421/177013720-0823a1b9-811d-4bc5-96c2-9f1b4fc7d072.png)
 
 ## Optimization of garbage collection
-**Generational collection** : Objects are divided into "young objects" and "old objects(or permanent)".<br>
+**Generational collection** : Objects are divided into "young objects" and "old objects(or permanent objects)".<br>
 Garbage collection can be optimized based on the fact that the majority of objects created newly become unreachable.<br>
 
 * The garbage collection monitors and deletes young objects actively. This is called Minor Gabarge Collection.
