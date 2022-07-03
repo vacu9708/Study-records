@@ -69,3 +69,19 @@ It is a trade-off between direct-mapped cache and fully associative cache. A hyb
 A set-associative cache can be imagined as a (n by m)matrix.<br>
 The cache is divided into 'n' rows and each row contains 'm' columns. A memory block in RAM is first mapped onto a row and then placed into any column of a row.
 
+# ✨Fixed point and Floating point
+* ## Fixed point
+The location for the point to be placed is fixed in advance.
+* Advantage : Simple and precise.
+* Disadvantage : Too small a range of digits available
+
+* ## Floating point
+The floating point a trade-off between range and precision, which is used the most.<br>
+A floating-point number is represented approximately with a fixed number of significant digits (the significand) and exponent digits.
+
+![image](https://user-images.githubusercontent.com/67142421/177052503-2f8fff7b-28ca-486a-8a13-e2cbf473930a.png)
+
+![image](https://user-images.githubusercontent.com/67142421/177052506-bb3fb3dd-9ddc-4043-9ef8-13158f628f29.png)
+
+* Advantage : A wide range of digits are available.
+* Disadvantage : There may be an error on decimal.
