@@ -18,6 +18,8 @@ But the data segment that has global variables should not be separated and needs
 ## Context switching
 A CPU can only execute one process at a time.<br>
 A **context switch** is to store the state of a process or a thread so that it can be resumed at a later point, and then jump to another task<br>
+A context switch has an overhead, so it needs to be minimized.
 
+## Multi threading VS Multi process
 * **Multi threading** : when a process executes multiple threads .
 * **Multi process** : when two or more processors cooperate and process one or more tasks.<br>
