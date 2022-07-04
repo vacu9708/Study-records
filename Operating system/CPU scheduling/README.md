@@ -1,5 +1,3 @@
-A **context switch** is storing the state of a process or thread so that it can be resumed at a later point and jumping to another task.
-
 ![image](https://user-images.githubusercontent.com/67142421/176330810-9567f787-7692-48ff-9d96-0de47d37f664.png)
 
 **preemtive** : A process can take CPU that is being used.
