@@ -16,6 +16,8 @@ Each thread needs a stack segment to manage local allocation.<br>
 But the data segment that has global variables should not be separated and needs to be shared to save memory.<br>
 
 ## Context switching
+![image](https://user-images.githubusercontent.com/67142421/177234829-9c080823-63e8-450f-b758-74b1e8b9ee29.png)
+
 A CPU can only execute one process at a time.<br>
 A **context switch** is to store the state of a process or a thread so that it can be resumed at a later point, and then jump to another task<br>
 A context switch has an overhead, so it needs to be minimized.
