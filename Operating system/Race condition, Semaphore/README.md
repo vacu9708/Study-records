@@ -35,7 +35,7 @@ void release(semaphore *S) { // When stopping the process that has taken the res
 ~~~
 
 # Example with multi processing
-## Without a semaphore
+## Without a semaphore where the critical section is not protected, so the output is unstable.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
@@ -57,7 +57,7 @@ if __name__ == "__main__":
 ### Output
 ![image](https://user-images.githubusercontent.com/67142421/177394795-d4fc8ac8-d465-4f08-b00b-40202a48e261.png)
 
-## With a semaphore
+## With a semaphore where the critical section is protected, so the output is always the same.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
