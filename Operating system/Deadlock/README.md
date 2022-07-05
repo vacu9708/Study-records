@@ -7,6 +7,9 @@
 4. circular wait : Waiting for a resource that is held by another process “together”
 
 ## Dining philosopher problem
+![image](https://user-images.githubusercontent.com/67142421/176333583-a1ffafd2-a73b-4a73-bbe4-706c0e076d25.png)
+
+It can be described with either forks or chopsticks.
 The problem was designed to illustrate the challenges of avoiding deadlock.<br>
 
 >The dining philosophers problem states that there are 5 philosophers sharing a circular table and they eat and think alternatively.<br>
@@ -19,11 +22,6 @@ The problem was designed to illustrate the challenges of avoiding deadlock.<br>
 3. Resources can be obtained only when they are not taken. (though ineffective)
 4. Release all resources that are being used,
 5. Resources request are allowed only in a fixed order.
-
-# Dining Philosophers problem
-![image](https://user-images.githubusercontent.com/67142421/176333583-a1ffafd2-a73b-4a73-bbe4-706c0e076d25.png)
-
-It can be described with either forks or chopsticks.
 
 ## How philosophers behave
 1. think until the left chopstick is available; when it is, pick it up;
