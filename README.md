@@ -1,4 +1,5 @@
 # Fundamental knowledge
+* [Data structures](https://github.com/vacu9708/Data-structure)
 * [Operating system](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system)
 * [Computer archetecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Computer%20architecture)
 * [Web development](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development)
