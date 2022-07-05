@@ -1,13 +1,29 @@
 **Deadlock** is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.<br>
 
+## 4 conditions of deadlock
+1. mutual exclusion : Only one process for a resource
+2. hold and wait : Holding a resource while waiting
+3. no preemption : A picked process cannot be taken
+4. circular wait : Waiting for a resource that is held by another process “together”
+
 ## Dining philosopher problem
 The problem was designed to illustrate the challenges of avoiding deadlock.<br>
-
-![image](https://user-images.githubusercontent.com/67142421/176333583-a1ffafd2-a73b-4a73-bbe4-706c0e076d25.png)
 
 >The dining philosophers problem states that there are 5 philosophers sharing a circular table and they eat and think alternatively.<br>
 >A hungry philosopher may only eat if there are both chopsticks available. Otherwise a philosopher puts down their chopstick and begins thinking again.<br>
 >The dining philosophers is a classic synchronization problem as it demonstrates a large class of concurrency control problems.<br>
+
+## Deadlock prevention: 
+1. Mutual exclusion banned (almost impossible because mutual exclusion is usually essential)
+2. Obtaining all resources needed before beginning to perform a process.
+3. Resources can be obtained only when they are not taken. (though ineffective)
+4. Release all resources that are being used,
+5. Resources request are allowed only in a fixed order.
+
+# Dining Philosophers problem
+![image](https://user-images.githubusercontent.com/67142421/176333583-a1ffafd2-a73b-4a73-bbe4-706c0e076d25.png)
+
+It can be described with either forks or chopsticks.
 
 ## How philosophers behave
 1. think until the left chopstick is available; when it is, pick it up;
@@ -18,18 +34,12 @@ The problem was designed to illustrate the challenges of avoiding deadlock.<br>
 6. put the right fork down;
 7. repeat from the beginning.
 
-## This satisfies all of the 4 conditions of deadlock
-1. mutual exclusion : Only one process for a resource
-2. hold and wait : Holding a resource while waiting
-3. no preemption : A picked process cannot be taken
-4. circular wait : Waiting for a resource that is held by another process “together”
+**This satisfies all of the 4 conditions of deadlock**
 
-## Deadlock prevention: 
-1. Mutual exclusion banned (almost impossible because mutual exclusion is usually essential)
-2. Obtaining all resources needed before beginning to perform a process.
-3. Resources can be obtained only when they are not taken. (though ineffective)
-4. Release all resources that are being used,
-5. Resources request are allowed only in a fixed order.
+## Solution of Dining Philosophers Problem
+1. Don't allow all philosophers to eat/think at once so that there are always remaining chopsticks
+2. Pick up both chopsticks (in a critical section)
+3. Alternate choice of first chopstick (Either left or right chopstick can be picked up)
 
 ## Banker's algorithm 
 A deadlock avoidance algorithm that avoids a deadlock by only allocating available resources that can finish a task.<br>
