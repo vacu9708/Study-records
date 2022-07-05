@@ -1,10 +1,12 @@
-Methods to prevent accessing shared memory at the same time are needed.<br>
+A **race condition** occurs when two processes or threads access a shared variable at the same time and it affects the result.<br>
 
-**Busy waiting** method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.<br>
+The **critical section** is needed to solve the race condition.<br>
+It is a code segment where the shared variables can be accessed where only one process can execute in its critical section at a time.<br>
 
-
-**semaphore** : a method to solve the busy waiting problem where whether shared resource is in use is checked before a process gets into the critical section.<br>
-**mutex(mutual exclusion)** : it is a kind of semaphore. Unlike the normal semaphore where multiple processes can share resource, mutex is binary semaphore.
+## Methods to prevent accessing shared memory at the same time
+* **Busy waiting** method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.<br>
+* **semaphore** : a method to solve the busy waiting problem where whether shared resource is in use is checked before a process gets into the critical section.<br>
+* **mutex(mutual exclusion)** : it is a kind of semaphore. Unlike the normal semaphore where multiple processes can share resource, mutex is binary semaphore.
 In other words, only lock and unlock exist.<br>
 
 ~~~c++
