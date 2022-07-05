@@ -8,8 +8,8 @@
 
 A process has at least a thread(including the main thread).<br>
 ## The difference between process and thread
-* A **process** is a task in memory that has resources allocated for itself.
-* On the other hand, a **thread** is a flow within a process that shares resources with other threads.<br>
+* A **process** is a flow of code that has resources allocated for itself.
+* A **thread** is a flow of code that shares resources with other threads.<br>
 
 ### Why data and stack segments are separated?
 Each thread needs a stack segment to manage local allocation.<br>
