@@ -34,6 +34,56 @@ void release(semaphore *S) { // When stopping the process that has taken the res
 }
 ~~~
 
+# Example with multi processing
+## Without a semaphore
+~~~python
+from multiprocessing import Process, Value, Lock
+
+def add_100(number):
+    for i in range(100):
+        number.value += 1
+
+if __name__ == "__main__":
+    shared_number = Value('i', 0) # i = integer
+    print("Start from", shared_number.value)
+    p1 = Process(target=add_100, args=(shared_number,))
+    p2 = Process(target=add_100, args=(shared_number,))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
+    print("End with ", shared_number.value)
+~~~
+### Output
+![image](https://user-images.githubusercontent.com/67142421/177394795-d4fc8ac8-d465-4f08-b00b-40202a48e261.png)
+
+## With a semaphore
+~~~python
+from multiprocessing import Process, Value, Lock
+
+def add_100(number, lock):
+    for i in range(100):
+        lock.acquire() # Acquire semaphore
+        number.value += 1
+        lock.release() # Release semaphore
+
+
+if __name__ == "__main__":
+
+    semaphore = Lock() # Semaphore
+    shared_number = Value('i', 0) # i = integer
+    print("Start from", shared_number.value)
+    p1 = Process(target=add_100, args=(shared_number, semaphore))
+    p2 = Process(target=add_100, args=(shared_number, semaphore))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
+    print("End with ", shared_number.value)
+~~~
+### Output
+![image](https://user-images.githubusercontent.com/67142421/177388487-051bd0f0-e5ea-4242-9278-a97af7899ca5.png)
+
 ## Bounded buffer problem
 producer : data putter / consumer : data taker<br>
 * Producer determines empty elements using semaphore called empty.
