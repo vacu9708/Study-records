@@ -1,6 +1,15 @@
-***Shared memory*** is memory that may be simultaneously accessed by multiple processes. Only threads are on the same memory space. External shared memory is needed so that different processes can share memory.
+![image](https://user-images.githubusercontent.com/67142421/177234169-0dad21de-f3c8-42f2-b750-b011ae0decbf.png)
+
+Processes are generally not permitted to access memory space that is allocated for use by another process. (A program's attempt to do so causes invalid page faults or segmentation violations.) There may be a need for communication between processes. That's why Inter-Process-Communication is needed.
+
+## Types of IPC
+* **Socket communication** : Processes share data via socket communication.
+* **Memory mapped file : A file that works like a segment of virtual memory that can be used by multiple processes.
+* **Shared memory** : Allowing processes to share memory like threads do. This works without a bridge, so is the fastest.
+* **(named) Pipe
 
 # 📷[Video](https://youtu.be/OYb4Le92EiI)
+![image](https://user-images.githubusercontent.com/67142421/177230621-fea1407e-3464-49eb-b177-ff80a497d07a.png)
 
 # Explanation of the code of the first process. The other 2 processes have the same algorithm.
 
