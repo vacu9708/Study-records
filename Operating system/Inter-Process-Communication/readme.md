@@ -4,9 +4,9 @@ Processes are generally not permitted to access memory space that is allocated f
 
 ## Types of IPC
 * **Socket communication** : Processes share data via socket communication.
-* **Memory mapped file : A file that works like a segment of virtual memory that can be used by multiple processes.
+* **Memory mapped file** : A file that works like a segment of virtual memory that can be used by multiple processes.
 * **Shared memory** : Allowing processes to share memory like threads do. This works without a bridge, so is the fastest.
-* **(named) Pipe
+* **(named) Pipe**
 
 # 📷[Video](https://youtu.be/OYb4Le92EiI)
 ![image](https://user-images.githubusercontent.com/67142421/177230621-fea1407e-3464-49eb-b177-ff80a497d07a.png)
