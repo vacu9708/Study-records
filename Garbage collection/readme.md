@@ -19,4 +19,4 @@ Garbage collection can be optimized based on the fact that the majority of objec
 * Objects created early that survive minor collection are moved to "old objects", Old objects are monitored less frequently than young objects, which is called
  Major Garbage Collection.
 
-**Idle-time collection** : A CPU idle time can be exploited. Garbage colelction is performed only when the CPU is idle to minimize the latency
+**Idle-time collection** : Garbage collection is performed only when the CPU is idle to minimize the latency and exploit CPU idle times.
