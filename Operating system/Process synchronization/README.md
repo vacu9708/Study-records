@@ -1,3 +1,5 @@
+**Process Synchronization** is the task of coordinating the execution of processes in a way that shared resources can be accessed by only one process.
+
 A **race condition** occurs when two processes or threads access shared memory at the same time and it affects the result.<br>
 
 The **critical section** is needed to solve the race condition.<br>
