@@ -1,7 +1,7 @@
-A **race condition** occurs when two processes or threads access a shared variable at the same time and it affects the result.<br>
+A **race condition** occurs when two processes or threads access shared memory at the same time and it affects the result.<br>
 
 The **critical section** is needed to solve the race condition.<br>
-It is a code segment where the shared variables can be accessed where only one process can execute in its critical section at a time.<br>
+It is a code segment where shared memory can be accessed by only one process  at a time.<br>
 
 ## Methods to prevent accessing shared memory at the same time
 * **Busy waiting** method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.<br>
