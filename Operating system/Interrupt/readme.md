@@ -27,4 +27,4 @@ while True:
 * **(vectored)interrupt** : A hardware device notifies that an interrupt has occured. (more effective)
 This method has a limit that a hardware support is needed. But it is much faster than polling, so it is essential for real-time response.
 
-
+A **system call** is an interface for a program to access a service from the OS. (it's not an interrupt)
