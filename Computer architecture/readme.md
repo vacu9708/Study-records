@@ -38,9 +38,10 @@ L1 cache is in the CPU and searched first. L2 is between the CPU and RAM. L3 is 
 * **Temporal locality** : Data that has been referenced is likely to be referenced shortly again.
 * **Space locality** : Data next to data that has been referenced is likely to be referenced shortly.
 
-## Cache miss
-A cache miss is an event in which an attempt to retrieve data from a cache. It is an antonym of Cache hit.<br>
-If cache misses happen too much, having cache memory is worse than not having it because the time taken to find data in cache memory was wasted.<br>
+## Cache hit and Cache miss
+* On a cache hit : the CPU can quickly retrieve data from the cache.
+* A cache miss is an event in which an attempt to retrieve data from a cache, where the CPU has to fetch the data from the main memory to the cache.<br>
+* **If cache misses happen too much**, having cache memory is worse than not having it because the time taken to find data in cache memory was wasted.<br>
 
 ## Cache placement policies
 * **Direct Mapped Cache**
