@@ -20,13 +20,12 @@ A **context switch** is to store the state(Process Control Block) of a process o
 A context switch has an overhead, which needs to be minimized.<br>
 >Process Control Block is data structure of OS that stores information on a process for context switching.
 
-* **Premtive scheduling** : A process can take CPU that is being used. ((Processing time is hard to estimate)
-* **Non-preemtive scheduling** : A process cannot take CPU that is being used. (Processing time can be estimated easily)
+* **Premtive scheduling** : a process can take CPU that is being used. ((Processing time is hard to estimate)
+* **Non-preemtive scheduling** : a process cannot take CPU that is being used. (Processing time can be estimated easily)
 
-**Short-term scheduler** : Decides which process in the ready queue(main memory) is to be executed.<br>
-**Medium-term scheduler** : Remove process from memory, store on disk, bring back in from disk to continue execution. (Storing temporarily in case main memory runs out)
-	This is called Swap-in and Swap-out. (swapping)<br>
-**Long-term scheduler** : Decides which process is to be put in the ready queue. In other words, Long-term scheduler controls Short-term scheduler.<br>
+**Short-term scheduler** : decides which process in the ready queue(main memory) is to be executed.<br>
+**Medium-term scheduler** : removes processes from memory, stores on disk, brings back in from disk to continue execution. (Storing temporarily in case main memory runs out), that is, to do Swap-in and Swap-out. (swapping)<br>
+**Long-term scheduler** : decides which process is to be put in the ready queue. In other words, Long-term scheduler controls Short-term scheduler.<br>
 
 * **First-Come, First-Served Scheduling** : The oldest entry is processed first. it has little overhead but can be ineffective due to the waiting time.
 * **Short-Job-First** : Only the execution time that was predicted at the beginning is considered without remaining time updated.
