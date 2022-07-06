@@ -26,3 +26,9 @@ Even if only required pages are moved onto main memory, main memory becomes full
 but it is the problem that such a page is hard to predict.
 * **Least-Recently-Used** : exploits the fact that pages that were not used recently have a high probability not to be used constantly.
 It reduces page-faults less than the optimal page replacement but is one of the practically best algorithms.
+
+## Memory Management Unit
+A memory management unit is hardware that manages all operations in the memory system such address.<br>
+Some of its role are :
+* Converting a virtual memory address to a physical address.
+* Memory protection in which each process can only access its own memory section.
