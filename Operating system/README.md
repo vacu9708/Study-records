@@ -6,3 +6,4 @@
 * [Interrupt](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system/Interrupt)
 * [Process synchoronization](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system/Process%20synchronization)
 * [Deadlock](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system/Deadlock)
+* [Memory management](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system/Memory%20management)
