@@ -1,4 +1,4 @@
-**Object Oriented Programming** : 
+**Object Oriented Programming** : a programming paradigm in which describing a program as interactions between objects.
 
 * What is an object? : An object is an abstract data type that has data and code.
 * What is a class? : a class is a blueprint for creating objects.
