@@ -28,9 +28,9 @@ SQL does not support the horizontal scaling because it requires predefined table
 ## When to use SQL and NoSQL?
 ### SQL
 * When data is changed often (because in NoSQL updating duplicate data has to be done in all collections)
-* When definite schemas are needed.
+* When definite schemas are needed
 
 ### NoSQL
 * When updating duplicate data in multiple collections does not happen often
 * When flexible schemas are needed.
-* 
+* When horizontal scaling is needed (tremendous amount of data)
