@@ -1,4 +1,6 @@
-* What is an object? : An object is an abstract data type that has variables and methods.
+**Object Oriented Programming** : 
+
+* What is an object? : An object is an abstract data type that has data and code.
 * What is a class? : a class is a blueprint for creating objects.
 
 * **Inheritance** : Inheritance is the procedure in which one class inherits the properties of another class.
