@@ -7,3 +7,4 @@
 * [Interpreter VS Compiler](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Interpreter%20VS%20Compiler)
 * [Garbage Colletion](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Garbage%20collection)
 * [Object Oriented Programming](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Object%20Oriented%20Programming)
+* [Deep copy, Shallow copy](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Shallow%20copy%2C%20Deep%20copy)
