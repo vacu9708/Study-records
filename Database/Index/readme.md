@@ -11,12 +11,12 @@ The indexed B+ tree makes it possible to avoid scanning all the table, which lea
 
 ![image](https://user-images.githubusercontent.com/67142421/177964732-7c42ca86-d32a-4639-9d26-ead095245e0f.png)
 
-### Without index
-![image](https://user-images.githubusercontent.com/67142421/177971457-03326384-4f83-4604-95b8-6d6ab697e521.png)
+### Animation
+### Without index (takes *O(n)*)
+<img src="https://dataschool.com/assets/images/sql-optimization/how_to_index/BasicSearchGif.gif">
 
-### With index
-![image](https://user-images.githubusercontent.com/67142421/177971339-d00e0dd6-787a-4ff2-b502-88fc660e9443.png)
-
+### With index (takes *O(logn)*)
+<img src="https://dataschool.com/assets/images/sql-optimization/how_to_index/BinarySearchGif.gif">
 
 1. Sort the table in the order of the location
 2. Sort the indexed B+ tree (in an alphabetical order)
