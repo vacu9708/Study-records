@@ -60,15 +60,15 @@ When A->B, B->C then it is called transitive dependency. The table needs to be s
 |Maria|Japan|japanese|
 
 ### 3rd normal form table
-|name|country|native language|
-|---|---|---|
+|name|country|
+|---|---|
 |John|USA|
 |Paul|UK|
 |Ana|Korea|
 |Maria|Japan|
 
-|name|country|native language|
-|---|---|---|
+|name|native language|
+|---|---|
 |USA|english|
 |UK|english|
 |Korea|korean|
