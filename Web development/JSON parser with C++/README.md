@@ -1,4 +1,4 @@
-### JavaScript Object Notation (JSON) is a standard text-based format for representing structured data.
+### JavaScript Object Notation (JSON) is a standard text-based format for representing structured data consisting of key-value pairs.
 
 ## Process
 1. Reading a txt file and put the text to document buffer.
