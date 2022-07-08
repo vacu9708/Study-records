@@ -1,5 +1,5 @@
 **collection** of NoSQL correspondes to **table** of SQL.<br>
-**document** of NoSQL correspondes to **row** of SQL.<br>
+**document** of NoSQL(here *MongoDB*) correspondes to **row** of SQL.<br>
 
 A table of an SQL database has a pre-defined **schema** on which data is stored.<br>
 On the other hand, a NoSQL database allows new data to be stored on a document because it does not have a schema.<br>
