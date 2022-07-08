@@ -25,7 +25,8 @@ Ex) Updating duplicate data in table1 and forgetting the duplicate data in table
 ### Horizontal VS Vertical scaling
 ![image](https://user-images.githubusercontent.com/67142421/177931196-ed491a87-8be9-4cf5-b9f4-a39e2a945974.png)
 
-SQL does not support the horizontal scaling because it requires predefined tables and schemas.
+In SQL the horizontal scaling is difficult because spliting related tables takes a big cost while in NoSQL all that needs to be done is just split collections
+because they do not have relations..
 
 ## When to use SQL and NoSQL?
 ### SQL
