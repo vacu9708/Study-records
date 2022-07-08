@@ -58,6 +58,9 @@ It is a trade-off between direct-mapped cache and fully associative cache. A hyb
 A set-associative cache can be imagined as a (n by m)matrix.<br>
 The cache is divided into 'n' rows and each row contains 'm' columns. A memory block in RAM is first mapped onto a row and then placed into any column of a row.
 
+## Cache replacement algorithms:
+(It is similar to page replacement algorithms)[https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system/Memory%20management]
+
 # ✨Fixed point and Floating point
 * ## Fixed point
 The location for the point to be placed is fixed in advance.
