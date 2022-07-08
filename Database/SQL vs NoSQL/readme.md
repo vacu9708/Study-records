@@ -13,16 +13,18 @@ On the other hand, a NoSQL database allows new data to be stored on a document b
 Ex) Updating duplicate data in table1 and forgetting the duplicate data in table2.
 2. Thoroughly pre-set schema, which leads to data integrity.
 3. The JOIN clause is slow.
+4. A definite schema has to be planned in advance and is hard to modify after.
 
 ### NoSQSL
 ![image](https://user-images.githubusercontent.com/67142421/177898003-73e84048-afd7-4979-91f3-798c07ab27fa.png)
-
-1. NoSQL, where the JOIN clause is not used, is faster than SQL.
-2. It does not have a schema and is flexible. 
+### Features of NoSQL
+1. NoSQL, where the complicated JOIN clause is not used, is faster than SQL.
+2. It does not have a schema, so different types of documents can be stored in a collection (flexible). 
 3. A NoSQL database does not have a JOIN clause. Instead, all needed data is stored on a document, which increases the risk of updating duplicate data.
 
 ### Horizontal VS Vertical scaling
 ![image](https://user-images.githubusercontent.com/67142421/177931196-ed491a87-8be9-4cf5-b9f4-a39e2a945974.png)
+
 SQL does not support the horizontal scaling because it requires predefined tables and schemas.
 
 ## When to use SQL and NoSQL?
