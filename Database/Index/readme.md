@@ -6,7 +6,7 @@ additional writes and storage space to maintain the index data structure.<br>
 **Summary** : a method to increase the reading speed by sacrificing the writing speed.<br>
 The indexed B+ tree makes it possible to avoid scanning all the table, which leads to faster lookups.
 
-## How it works (index here is an indexed B+ tree)
+## How it works (INDEX here is an indexed B+ tree)
 ![image](https://user-images.githubusercontent.com/67142421/177963648-acce3807-a7ab-49b9-979a-d282bb05c414.png)
 
 ![image](https://user-images.githubusercontent.com/67142421/177964732-7c42ca86-d32a-4639-9d26-ead095245e0f.png)
