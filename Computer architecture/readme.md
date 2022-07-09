@@ -68,7 +68,7 @@ The location for the point to be placed is fixed in advance.
 * Disadvantage : Too small a range of digits available
 
 * ## Floating point
-The floating point a trade-off between range and precision, which is used the most.<br>
+The floating point is a trade-off between range and precision, which is used the most.<br>
 A floating-point number is represented approximately with a fixed number of significant digits (the significand) and exponent digits.
 
 ![image](https://user-images.githubusercontent.com/67142421/177052503-2f8fff7b-28ca-486a-8a13-e2cbf473930a.png)
