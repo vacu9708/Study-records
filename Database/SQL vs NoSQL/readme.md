@@ -1,5 +1,5 @@
 **collection** of NoSQL correspondes to **table** of SQL.<br>
-**document** of NoSQL(here *MongoDB*) correspondes to **row** of SQL.<br>
+**document** of NoSQL(here **MongoDB**) correspondes to **row** of SQL.<br>
 
 A table of an SQL database has a pre-defined **schema** on which data is stored.<br>
 On the other hand, a NoSQL database allows new data to be stored on a document because it does not have a schema.<br>
@@ -37,3 +37,12 @@ because they do not have relations..
 * When updating duplicate data in multiple collections does not happen often
 * When flexible schemas are needed.
 * When horizontal scaling is needed (tremendous amount of data)
+
+## Redis(NoSQL)
+Normally database is stored in secondary memory. On the other hand,<br>
+Redis, which stands for Remote Dictionary Server, is a fast, open source, key-value database whose data is stored in main memory.<br>
+
+## For database persistence
+Main memory cannot maintain the data, so Redis has backup methods.<br>
+1. By default Redis regularly saves **snapshots**(Redis Backup file, RDB) of the dataset on disk. This has a problem that data between back points disappears.
+2. **AOF**(Append Only File) : a persistence mechanism that allows the Redis server to keep track and log every command executed on the server.
