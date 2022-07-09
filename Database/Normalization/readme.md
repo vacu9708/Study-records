@@ -5,7 +5,8 @@
 
 ## Data normalization
 Database normalization is the process of organizing tables to get rid of data redundancy and retain data integrity. It also makes it easier to add a new table
-because normalized tables are minimized.
+because normalized tables are minimized.<br>
+**drawbacks** : Spliting a table makes more tables to JOIN, which leads to a slower speed.
 
 ## Initial table
 |name|age|hobby|country|
