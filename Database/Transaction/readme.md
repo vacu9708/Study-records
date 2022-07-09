@@ -2,6 +2,7 @@ A **database transaction** is a sequence of multiple operations performed on a d
 taking place wholly or not at all. In other words, there’s never a case that only half of the operations are performed and the results saved.
 When a database transaction is in flight, the database state may be temporarily inconsistent, but when the transaction is committed(when a transaction has ended),
 the changes are applied.<br>
+A **database transaction** is used to guarantee **data consistency**.
 
 ## A unit of work example**
 >A customer is making a payment to a seller
@@ -23,13 +24,21 @@ Data is in a consistent state when a transaction starts and when it ends.<br>
 
 ### Isolation
 The intermediate state of a transaction is invisible to other transactions.<br>
-In other words, When two or more transactions are being executed, neither of them can intervene in each other
+In other words, when two or more transactions are being executed, none of them can intervene in each other<br>
 
 ### Durability
-After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
-For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made to each account will not be reversed.
+After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.<br>
+For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made to each account will not be reversed.<br>
+
+## Isolation levels
+Transaction isolation levels are used to ensure data consistency.<br>
+1. Read Uncommitted (level 0) : data can be accessed without any restriction.
+2. Read Committed (level 1) : a shared lock is issued to data where a SELECT is being executed. (Default of SQL)
+3. Repeatable Read (level 2) : a shared lock is issued to data where a transaction is being executed. (Default of MySQL)
+4. SERIALIZABLE (Level 3) : no SQL operation can be performed on the region where a transaction is being performed. the simplest, strictest and almost never used.
 
 ## Transaction deadlock
+Resources of a database are in a critical section(shared data is synchronous).<br>
 A deadlock may occur if multiple transactions need exclusive use of resources.<br>
 In other words, it occurs when two ore more transactions want to access resources locked by another one.<br>
 Transactions wait for the resource to become available forever if it is not solved by t SQL server intervention.
