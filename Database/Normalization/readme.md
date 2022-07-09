@@ -1,5 +1,5 @@
 ## Anomalies
-* **Insertion anomaly** : when the primary key is NULL so an unnecessary primary key has to be created
+* **Insertion anomaly** : when the primary key is NULL and an unnecessary primary key has to be created
 * **Update anomaly** : a data inconsistency that results from data redundancy and a partial update
 * **Deletion anomaly** : occurs when a tuple record is deleted where attributes that shouldn't be deleted are deleted.
 
