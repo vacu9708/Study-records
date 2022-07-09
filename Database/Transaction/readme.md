@@ -4,7 +4,7 @@ When a database transaction is in flight, the database state may be temporarily 
 the changes are applied.<br>
 A **database transaction** is used to guarantee **data consistency**.
 
-## A unit of work example**
+## A unit of work example
 >A customer is making a payment to a seller
 >Operations here consist of : 
 >1. $100 are taken away from the customer's account.(UPDATE)
