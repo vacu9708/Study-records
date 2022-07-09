@@ -3,7 +3,7 @@
 * [Operating system](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system)
 * [Network](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Network)
 * [Database](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database)
-* [Computer archetecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Computer%20architecture)
+* [Computer architecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Computer%20architecture)
 * [Web development](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development)
 * [Interpreter VS Compiler](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Interpreter%20VS%20Compiler)
 * [Garbage Colletion](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Garbage%20collection)
