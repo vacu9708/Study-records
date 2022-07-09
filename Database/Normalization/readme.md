@@ -32,7 +32,7 @@ A column should not be able to be decided by only one element of a tuple primary
 In the 1st normal form, the **hobby** can be found with the **name** and **age**(primary key)<br>
 But the **name**, which is a part of the primary key, can alone decide the **country**. (can also be called "the primary key does not satisfy functional dependency)<br>
 
-To solve this problem, the table should be split into 2 tables.<br>
+To solve this problem, the 1st normal form should be split into 2 tables.<br>
 
 |name|age|hobby
 |---|---|---|
