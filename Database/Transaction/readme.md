@@ -3,7 +3,7 @@ taking place wholly or not at all. In other words, there’s never a case that o
 When a database transaction is in flight, the database state may be temporarily inconsistent, but when the transaction is committed(when a transaction has ended),
 the changes are applied.<br>
 
-**An example of unit of work**
+## A unit of work example**
 >A customer is making a payment to a seller
 >Operations here consist of : 
 >1. $100 are taken away from the customer's account.(UPDATE)
@@ -14,7 +14,20 @@ All the 2 queries have to be finished so that the transaction can be finished, w
 If one of the queries fails, all data modifications made from the start of the transaction are erased, which is called **Rollback**<br>
 When a transaction is rolled back, it gets into the **aborted** state.<br>
 
-stored procedure : does the same thing as a function of normal programming languages
+## ACID properties of transactions
+### Atomicity
+All changes to data are performed as if they are a single operation. That is, all the changes are performed, or none of them are.<br>
+
+### Consistency
+Data is in a consistent state when a transaction starts and when it ends.<br>
+
+### Isolation
+The intermediate state of a transaction is invisible to other transactions.<br>
+In other words, When two or more transactions are being executed, neither of them can intervene in each other
+
+### Durability
+After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
+For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made to each account will not be reversed.
 
 ## Transaction deadlock
 A deadlock may occur if multiple transactions need exclusive use of resources.<br>
@@ -22,3 +35,5 @@ In other words, it occurs when two ore more transactions want to access resource
 Transactions wait for the resource to become available forever if it is not solved by t SQL server intervention.
 
 ![image](https://user-images.githubusercontent.com/67142421/178089624-c7a83d81-ee29-404f-94e4-1a4f2811a0c7.png)
+
+stored procedure : does the same thing as a function of normal programming languages
