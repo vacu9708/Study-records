@@ -17,6 +17,8 @@ When a transaction is rolled back, it gets into the **aborted** state.<br>
 stored procedure : does the same thing as a function of normal programming languages
 
 ## Transaction deadlock
-A deadlock may occur if multiple transactions need exclusive use of resources.
+A deadlock may occur if multiple transactions need exclusive use of resources.<br>
+In other words, it occurs when two ore more transactions want to access resources locked by another one.<br>
+Transactions wait for the resource to become available forever if it is not solved by t SQL server intervention.
 
 ![image](https://user-images.githubusercontent.com/67142421/178089624-c7a83d81-ee29-404f-94e4-1a4f2811a0c7.png)
