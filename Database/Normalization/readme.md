@@ -4,7 +4,8 @@
 * **Deletion anomaly** : occurs when a tuple record is deleted where attributes that shouldn't be deleted are deleted.
 
 ## Data normalization
-Database normalization is the process of organizing a table into the smallest units of table to retain data redundancy and data integrity.
+Database normalization is the process of organizing tables to get rid of data redundancy and retain data integrity. It also makes it easier to add a new table
+because normalized tables are minimized.
 
 ## Initial table
 |name|age|hobby|country|
@@ -28,9 +29,9 @@ An attribute of a table in each row can only have one value.
 ## 2nd normal form
 A column should not be able to be decided by only one element of a tuple primary key.<br>
 In the 1st normal form, the **hobby** can be found with the **name** and **age**(primary key)<br>
-But the **name**, which is part of the primary key, alone can decide the **country*. (can also be called "the primary key does not satisfy functional dependency)<br>
+But the **name**, which is a part of the primary key, can alone decide the **country**. (can also be called "the primary key does not satisfy functional dependency)<br>
 
-To solve this problem, the table should be split into 2 tables..<br>
+To solve this problem, the table should be split into 2 tables.<br>
 
 |name|age|hobby
 |---|---|---|
