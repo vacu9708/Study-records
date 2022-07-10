@@ -24,8 +24,7 @@ The indexed B+ tree makes it possible to avoid scanning all the table, which lea
 4. Once the data was found, get the pointer and move to the target data
 
 ## Trade off(overheads)
-Database index increases reading speed largely, but decreases the speed of all other operations(data manimulation) because the indexed B+ tree has to be updated
-and in Delete and Update operation, the table has to be sorted too.<br>
+Database index increases the reading speed largely, but decreases the speed of all other operations(data manimulation) after a data manipulation.
 * **Insert** : the index for new data has to be added and the table has to be sorted.
 * **Delete** : the index of deleted data has to be deleted.
 * **Update** : the index of previous data has to be deleted, the index of updated data has to be added and the table has to be sorted.
