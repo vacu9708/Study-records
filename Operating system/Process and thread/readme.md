@@ -21,3 +21,7 @@ But the data segment that has global variables should not be separated and needs
 ### Why can multi threading be better
 1. The system call to allocate resources for a process can be less executed, which allows effectively managing resources.
 2. Communication between threads takes less cost than Inter Process Communication.
+
+## fork() VS vfork()
+* fork() : The memory of the parent process is copied. (like deep copy)
+* vfork() : The memory is shared with the parent process. Memory is not copied, so it is created faster. But it can cause a race condition because the memory is shared.(like shallow copy)
