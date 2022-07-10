@@ -8,7 +8,7 @@ If an object no longer has any reference to it, it means the object is a waste o
 ![image](https://user-images.githubusercontent.com/67142421/177013694-8add3600-ae4d-47ad-899f-2611edaf7317.png)
 
 ### Unreachable object
-![image](https://user-images.githubusercontent.com/67142421/177013720-0823a1b9-811d-4bc5-96c2-9f1b4fc7d072.png)
+![image](https://user-images.githubusercontent.com/67142421/178157740-cd8b3828-ca89-4a37-a89c-20a26c80d12b.png)
 
 ## Optimization of garbage collection
 >A garbage collection operation is a CPU-demanding task. There is a need for optimization.
