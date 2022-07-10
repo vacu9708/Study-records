@@ -30,7 +30,8 @@ then the sequence number of the next packet will start with 101.
 
 ## 4-way handshake
 ![image](https://user-images.githubusercontent.com/67142421/178133057-8290aaef-1b2d-4c66-8c49-69b35f40e2b8.png)
-1.Client sends FIN and enters the FIN_WAIT_1 state. While in the FIN_WAIT_1 state, the client waits for **ACK**.
+
+1. Client sends FIN and enters the FIN_WAIT_1 state. While in the FIN_WAIT_1 state, the client waits for **ACK**.
 2. Server responds with **ACK** to the client.
 3. When the client receives **ACK**, it enters the FIN_WAIT_2 state. While in the FIN_WAIT_2 state, the client waits for **FIN**.
 4. The server sends the **FIN** to the client after some time when the server sends the **ACK** above. (because of some closing process in the server).
