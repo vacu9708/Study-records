@@ -1,6 +1,7 @@
 # Fundamental knowledge
 * [Data structures](https://github.com/vacu9708/Data-structure)
 * [Operating system](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system)
+* [Software engineering](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Software%20engineering)
 * [Database](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database)
 * [Computer architecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Computer%20architecture)
 * [Interpreter VS Compiler](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Interpreter%20VS%20Compiler)
