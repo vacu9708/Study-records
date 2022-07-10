@@ -22,4 +22,8 @@ def A():
   B()
 ~~~
 
+### Blocking, Non-blocking I/O
+**Blocking I/O** : When a thread calls an I/O request, the thread can do nothing else but wait, which leads to a big waste of CPU because I/O operation hardly uses CPU.
+**Non-blocking I/O : When a thread calls an I/O request, the thread does not have to wait while the I/O operation is being executed.
+
 Load balancing : refers to efficiently distributing network traffic across a group of servers.
