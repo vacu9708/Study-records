@@ -9,4 +9,4 @@
 * [Deep copy, Shallow copy](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Shallow%20copy%2C%20Deep%20copy)
 * [Blocking, non-blocking, sync, async](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Blocking%2C%20Non-blocking%2C%20Sync%2C%20Async)
 
-[Fundamental knowledge of web](https://github.com/vacu9708/Web-development/tree/main/Fuundamental%20knowledge)
+[Fundamental knowledge of web](https://github.com/vacu9708/Web-development/tree/main/Fundamental%20knowledge)
