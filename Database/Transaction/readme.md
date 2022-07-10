@@ -2,7 +2,7 @@ A **database transaction** is a sequence of multiple operations performed on a d
 taking place wholly or not at all. In other words, there’s never a case that only half of the operations are performed and the results saved.
 When a database transaction is in flight, the database state may be temporarily inconsistent, but when the transaction is committed(when a transaction has ended),
 the changes are applied.<br>
-The purpose of **database transaction** is to guarantee **data consistency**.
+The purpose of **database transaction** is to guarantee **data integrity**.
 
 ## A unit of work example
 >A customer is making a payment to a seller
