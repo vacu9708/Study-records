@@ -15,6 +15,9 @@ A process has at least a thread(including the main thread).<br>
 Each thread needs a stack segment to manage local allocation.<br>
 But the data segment that has global variables should not be separated and needs to be shared to save memory.<br>
 
-## Multi threading VS Multi process
-* **Multi threading** : when a process executes multiple threads .
-* **Multi process** : when two or more processors cooperate and process one or more tasks.<br>
+## Multi threading VS Multi processing
+* **Multi processing** : when two or more processors cooperate.
+* **Multi threading** : when a process executes multiple threads. The synchronization of shared resources should be taken good care of in multi threading.
+### Why can multi threading be better
+1. The system call to allocate resources for a process can be less executed, which allows effectively managing resources.
+2. Communication between threads takes less cost than Inter Process Communication.
