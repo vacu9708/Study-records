@@ -6,10 +6,29 @@ In **contiguous memory allocation**, the WHOLE process is allocated to a contigu
 * **Fixed(or static) partitioning** : This is the oldest and simplest. The size of a partition is fixed in RAM when allocated, which can cause big internal fragmentation.
 * **Variable(or dynamic) partitioning** : The partition size varies according to the need of the process, which can cause big external fragmentation.
 
+## Contiguous memory allocation techniques to handle external framentation
+### Initial memory state
+![image](https://user-images.githubusercontent.com/67142421/178162536-1a5042e4-9e23-489b-bd69-88ce7df6dbd3.png)
+
+### First fit
+![image](https://user-images.githubusercontent.com/67142421/178162569-8906b416-30f6-4fd2-a24b-36a424388021.png)<br>
+The partition is allocated which is first sufficient from the top of mmemory. The OS doesn’t search for the best partition but just the first partition available with a sufficient size.<br>
+* It is fast in processing but can waste a lot of memory.
+
+### Best fit
+![image](https://user-images.githubusercontent.com/67142421/178162618-28cc7cab-20f1-4731-b0da-625dfd91d433.png)<br>
+The entire list of free partitions is searched and the smallest adequate hole is allocated.
+* It is a process slower than First fit.
+* The minimum possible space in the memory is allocated, making memory management efficient. To save memory from getting wasted, it is the best method.
+
+### Worst fit
+![image](https://user-images.githubusercontent.com/67142421/178162994-d644b1ff-6a79-4b3c-a1eb-4b96f1020cf8.png)<br>
+The entire list of free partitions is searched and the biggest hole possible is allocated.
+
 ## Non-contiguous memory allocation
 In **Non-contiguous memory allocation**, parts of a process can be allocated to different locations.<br>
-* In **paging** : a process is broken into fixed sized blocks called pages, which can cause internal fragmentation.
-* In **segmentation** : a process is broken in varying sized blocks called sections, which can cause external fragmentation.
+* **Paging** : a process is broken into fixed sized blocks called pages, which can cause internal fragmentation.
+* **Segmentation** : a process is broken in varying sized blocks called sections, which can cause external fragmentation.
 
 ## Virtual memory
 Usually used with the non-contiguous memory allocation<br>
