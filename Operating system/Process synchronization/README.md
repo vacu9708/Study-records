@@ -1,9 +1,8 @@
-**Process Synchronization** is the task of coordinating the execution of processes in a way that shared resources can be accessed by only one process.
+A **race condition** occurs when two processes or threads access shared memory at the same time and it affects *data consistency*.<br>
 
-A **race condition** occurs when two processes or threads access shared memory at the same time and it affects the result.<br>
+**Process Synchronization** is the task of coordinating processes so that shared resources can be accessed by only one process to maintain *data consistency*.<br>
 
-The **critical section** is needed to solve the race condition.<br>
-It is a code segment that can be accessed by only one process at a time.<br>
+The **critical section** is a code segment that can be accessed by only one process at a time. Process Synchronization is to manage the critical section.<br>
 
 ## Methods to prevent accessing shared memory at the same time
 * **Busy waiting** method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.<br>
