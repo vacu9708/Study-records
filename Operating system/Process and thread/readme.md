@@ -25,3 +25,6 @@ But the data segment that has global variables should not be separated and needs
 ## fork() VS vfork()
 * fork() : The memory of the parent process is copied. (like deep copy)
 * vfork() : The memory is shared with the parent process. Memory is not copied, so it is created faster. But it can cause a race condition because the memory is shared.(like shallow copy)
+
+## Threading pool
+A group of threads that can be taken when needed and reused, which is used because creating and destroying threads causes a big overhead.
