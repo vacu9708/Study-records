@@ -13,12 +13,11 @@ for execution.<br>
 ![image](https://user-images.githubusercontent.com/67142421/177235984-3a7a2698-c758-4fef-93b2-da6b516b13bd.png)
 
 ## Context switching
-![image](https://user-images.githubusercontent.com/67142421/177234829-9c080823-63e8-450f-b758-74b1e8b9ee29.png)
-
+![image](https://user-images.githubusercontent.com/67142421/177234829-9c080823-63e8-450f-b758-74b1e8b9ee29.png)<br>
 A CPU can only execute one process at a time.<br>
-A **context switch** is to store the state(Process Control Block) of a process or a thread so that it can be resumed at a later point, and then jump to another task<br>
+**Context switching** is to store the state of a process(in Process Control Block) to jump to another task and resume the previous process at a later point.<br>
+>Process Control Block is data structure of OS that stores information on a process for context switching.<br>
 A context switch has an overhead, which needs to be minimized.<br>
->Process Control Block is data structure of OS that stores information on a process for context switching.
 
 * **Premtive scheduling** : a process can take CPU that is being used. ((Processing time is hard to estimate)
 * **Non-preemtive scheduling** : a process cannot take CPU that is being used. (Processing time can be estimated easily)
