@@ -9,3 +9,7 @@ Ex) SELECT, INSERT, UPDATE, DELETE
 
 * **DCL: Data Control Language** : is used to control access to data stored in a database (authorization).
 Ex) GRANT, REVOKE
+
+When designing a database, ***maintaining data integrity*** is the most important, which can be achieved through methods such as data backup, data validation, integrity constraints, etc.<br>
+
+Integrity constraints includes Domain constraints, Entity integrity constraints, Referential Integrity Constraints, Key constraints.
