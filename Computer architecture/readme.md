@@ -21,7 +21,8 @@ A 32-bit computer includes a 32-bit memory address register that can distinguish
 A 64-bit computer includes a 64-bit memory address register that can distinguish 2^64 addresses(almost infinite size).
 
 
-**CISC** : A computer in which individual instructions may perform many operations and take many cycles to execute, in contrast with reduced instruction set computer (**RISC**).
+### CISC (Complex Instruction Set Computer)
+A computer in which individual instructions may perform many operations and take many cycles to execute, in contrast with Reduced Instruction Set Computer (**RISC**).
 
 ### Fetching cycle
 1. The memory address of the instruction is transferred to MAR
