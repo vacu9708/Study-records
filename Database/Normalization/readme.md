@@ -78,3 +78,9 @@ When A->B, B->C then it is called transitive dependency. The table needs to be s
 
 ## Denormalization
 Denormalization is a database optimization technique in which we add redundant data to one or more tables. This can help us avoid costly JOINs in a relational database. Note that denormalization does not mean ‘reversing normalization’ or ‘not to normalize’. It is an optimization technique that is applied after normalization.
+
+### Advantage
+* Retrieving data is faster since fewer joins are done.
+
+### Disadvantave
+* Increased possibility of update anomaly.
