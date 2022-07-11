@@ -1,4 +1,10 @@
-**Object Oriented Programming** : a programming paradigm in which describing a program as interactions between objects.
+## Object Oriented Programming
+A programming paradigm in which describing a program as interactions between objects.
+### Advantages of OOP
+1. Modularity for easier troubleshooting
+2. Reuse of code through inheritance
+3. Flexibility through polymorphism
+4. Easier code Maintenance
 
 * What is an object? : An object is an abstract data type that has data and code.
 * What is a class? : a class is a blueprint for creating objects.
