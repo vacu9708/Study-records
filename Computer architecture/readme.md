@@ -10,12 +10,16 @@ A CPU consists of
 * **registers** that are the fastest memory of a computer, which supply operands to the ALU and store the results of ALU operations
 * a **control unit** that orchestrates the fetching of instructions (from memory) and execution of them
 
-### Special Purpose Register
-* **Memory Address Register** : stores the memory address where reading and writing operations will be performed
-* **Program Counter** : a register that stores the memory address of the instruction to be executed next.
-* **Instruction Register** : holds a machine instruction that is currently being executed.
-* **Memory Buffer Register** : stores data that will be used in the next clock
-* **Accumulator** : intermediate arithmetic logic unit results are stored
+## Special Purpose Registers
+* **Instruction Register** : holds the instruction that is currently being executed.
+* **Program Counter** : stores the memory address of the next instruction to be fetched.
+* **Memory Address Register** : stores the memory address to fetch some data that is required by the current instruction being executed (not an instruction).
+* **Memory Buffer Register** : stores a copy of the value in the memory location specified by the memory address register.
+* **Accumulator** : intermediate result of arithmetic logic unit is stored
+### 32bit VS 64bit computer
+A 32-bit computer includes a 32-bit memory address register that can distinguish 2^32 addresses(4GB).
+A 64-bit computer includes a 64-bit memory address register that can distinguish 2^64 addresses(almost infinite size).
+
 
 **CISC** : A computer in which individual instructions may perform many operations and take many cycles to execute, in contrast with reduced instruction set computer (**RISC**).
 
