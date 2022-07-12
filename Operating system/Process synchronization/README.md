@@ -1,4 +1,4 @@
-A **race condition** occurs when two processes or threads access shared memory at the same time and it affects *data consistency*.<br>
+A **race condition** occurs when two threads access shared memory at the same time and it affects *data consistency*.<br>
 
 **Process Synchronization** is the task of coordinating processes so that shared resources can be accessed by only one process to maintain *data consistency*.<br>
 
