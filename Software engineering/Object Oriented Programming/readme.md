@@ -26,8 +26,12 @@ Another way to think about encapsulation is, it is a protective shield that prev
 -----
 
 # Design principles in OOP
-1. Every component of code (in general a class, but also a function) should have only one responsibility.<br>
-A single function, generically named(like "main"), doing all the work is bad.<br>
+### 1. Single Responsibility Principle
+Every component of code (in general a class, but also a function) should have only one responsibility.<br>
+For example, a single function, generically named(like "main"), doing all the work is bad.<br>
 If a component of code has more than one responsibility, code maintenace becomes hard.<br>
-2. Software components should be open for extension but closed for modification.<br>
-Code should be written so that new functionality can be added without changing the existing code. That prevents situations in which a change to one of the classes also requires adapting all depending classes.
+
+### 2. Open, Closed Principle
+Software components should be open for extension but closed for modification.<br>
+Code should be written so that new functionality can be added without changing the existing code.<br>
+That prevents situations in which a change to one of the classes also requires adapting all depending classes.<br>
