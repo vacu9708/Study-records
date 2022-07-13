@@ -1,5 +1,7 @@
-A design pattern provides a solution for the common problems that occur in software design.<br>
+~~~
+A design pattern provides a solution for the common problems that occur in software design.
 It facilitates maintenance and communication between coworkers.
+~~~
 
 # Creational patterns
 >decide how an object has to be created.<br>
