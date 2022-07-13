@@ -17,5 +17,5 @@ Simple to develop and deploy
 
 ## Microservices
 It is an architectural style in which an application is made up of a colletction of autonomous services.<br>
-The advantages of adopting *Microservices* are the oppostie of the disadvantages of a monolithic service<br>.
+The advantages of adopting *Microservices* are the oppostie of the disadvantages of a monolithic service.
 * Each microservice must have a single responsibility to facilitate maintenance.
