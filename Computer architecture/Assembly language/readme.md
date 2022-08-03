@@ -2,10 +2,10 @@
 ![image](https://user-images.githubusercontent.com/67142421/179166501-5dd22127-b281-4b34-9e3b-89e1afd1808a.png)
 
 ### How to find min, middle, and max value in assembly language
-1.	Sort the array to find the min, mid, and max. Here I used the Selection sort.
-2.	Since the array is sorted in ascending order, the first element of the array is the minimum, array[length / 2] is the middle value, and the last element is the maximum.
+1. Sort the array to find the min, mid, and max. Here I used the Selection sort.
+2. Since the array is sorted in ascending order, the first element of the array is the minimum, array[length / 2] is the middle value, and the last element is the maximum.
 
-•	SHL 1 on pointer offsets, which means multiplying pointer offsets by 2, is necessary because the size of an element in the array is 2bytes, that is, shifting a pointer twice
+- SHL 1 on a pointer offset, which means multiplying a pointer offset by 2, is necessary because the size of an element in the array is 2bytes.
 ~~~assembly
 main 	segment
 	assume cs:main, ds:main
