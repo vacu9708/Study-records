@@ -2,7 +2,7 @@
 Procedural programming is a programming paradigm where tbe code is processed sequentially from the top to the bottom like water flows.
 
 # Object Oriented Programming
-A programming paradigm in which describing a program as interactions between objects, which facilitates collaboration.
+A programming paradigm in which a program is described as interactions between objects.
 
 * What is an object? : An object is an abstract data type that has data and code.
 * What is a class? : a class is a blueprint for creating objects.
