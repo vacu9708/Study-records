@@ -1,5 +1,5 @@
 * **Spinlock** is to make a thread trying to acquire a shared resource wait in a loop until it is available.(busy waiting)
-* **Deadlock** is a situation where threads are waiting for each thread to release a shared resource and none of them ever does.
+* **Deadlock** is a situation where threads are waiting for each thread to release the shared resource and none of them ever does.
 
 ## 4 conditions of deadlock
 1. mutual exclusion : Only one process for a resource
