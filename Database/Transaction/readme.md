@@ -23,8 +23,7 @@ All changes to data are performed as if they are a single operation. That is, al
 Data is in a consistent state when a transaction starts and when it ends.<br>
 
 ### Isolation
-The intermediate state of a transaction is invisible to other transactions.<br>
-In other words, when two or more transactions are being executed, none of them can intervene in each other<br>
+When two or more transactions are being executed, none of them can intervene in each other<br>
 
 ### Durability
 After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.<br>
