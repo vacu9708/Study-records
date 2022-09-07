@@ -1,5 +1,5 @@
 * **Synchronous** : When tasks are synchronous, one task has to end so that another task can start.
-* **Asynchronous** : When tasks are asynchronous. they can be executed at the same time.
+* **Asynchronous** : Asynchronous tasks are executed in parallel without waiting for other tasks tk finksh.
 
 ### Blocking
 When a function B was called in function A, A is stopped until B finishes.
