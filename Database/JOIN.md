@@ -42,11 +42,11 @@ INSERT INTO students2(student_name, email, grade) VALUES('Ana', 'ert@gmail.com',
 # JOIN
 A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
 ## INNER JOIN
+![image](https://user-images.githubusercontent.com/67142421/191418502-b67d9c97-f6c1-41a0-8866-65ef27344f9d.png)
+
 The INNER JOIN is the most common and default JOIN clause. It returns rows that have matching values in both tables
 
-![image](https://user-images.githubusercontent.com/67142421/177883594-b714df59-1b5b-4a9e-9e91-76fbfa5aaafe.png)
-
-**Both make the same result**
+### Both make the same result
 ~~~sql
 SELECT students1.student_name, students2.student_name, students1.grade
 FROM students1, students2 WHERE students1.grade = students2.grade;
@@ -56,12 +56,12 @@ SELECT students1.student_name, students2.student_name, students1.grade
 FROM students1 INNER JOIN students2 ON students1.grade = students2.grade;
 ~~~
 ### Output
-![image](https://user-images.githubusercontent.com/67142421/177880242-75572761-ee2c-4c4a-98d1-0970905ffeb5.png)
+![image](https://user-images.githubusercontent.com/67142421/177883594-b714df59-1b5b-4a9e-9e91-76fbfa5aaafe.png)
 
 ## LEFT JOIN
-The LEFT JOIN returns all rows from the left table and the matching rows from the right table. It returns NULL for no matching rows in the right table.
-
 ![image](https://user-images.githubusercontent.com/67142421/177880429-7f2cd5a9-a9ed-42ad-8049-50ea628dede2.png)
+
+The LEFT JOIN returns all rows from the left table and the matching rows from the right table. It returns NULL for no matching rows in the right table.
 
 ~~~sql
 SELECT students1.student_name, students2.student_name, students1.grade
