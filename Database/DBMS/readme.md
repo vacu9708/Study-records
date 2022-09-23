@@ -16,9 +16,12 @@ Ex) GRANT, REVOKE
 # Data integrity
 When designing a database, ***maintaining data integrity*** is the most important, which can be achieved through methods such as data backup, data validation, integrity constraints, etc.<br>
 
-Integrity constraints includes 
+## Data Integrity Constraints
+* ### Entity integrity constraints
+The Entity Integrity Constraint ensures that the primary key cannot be null because it is used to identify tuples in a table.
+* ### Referential Integrity Constraints
+
+## Other constraints
 * Domain constraints
 * Constraints on nulls
 * Key constraints
-* Entity integrity constraints
-* Referential Integrity Constraints
