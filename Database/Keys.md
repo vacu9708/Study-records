@@ -1,8 +1,13 @@
 The **database key** is an attribute or a group of attributes that can uniquely identify each record in a table.<br>
 
-* **Candidate key** : one or more keys that can uniquely identify rows in a table
-Ex) id, email. student_name cannot be a candidate key because there may be a duplication.
-* **Primary key** : a key selected among candidate keys
-* **Super key** : a subset of keys that can uniquely identify rows in a table and has one or more unnecessary attributes
-Ex) id + studnet_name
-* **Alternate key** : remaining keys after excluding the primary key
+* ## Super key
+A subset of keys that can uniquely identify rows in a table and can have one or more redundant attributes<br>
+Ex) id + student_number + studnet_name
+* ## Candidate key
+One or more keys that can uniquely identify rows in a table<br>
+A candidate key belongs to a super key<br>
+Ex) id + email + student_name cannot be a candidate key because excluding "id" attribute makes it impossible to distinguish duplications.
+* ## Primary key
+One key selected among candidate keys
+* ## Alternate key
+remaining keys after excluding the primary key
