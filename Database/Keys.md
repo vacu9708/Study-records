@@ -1,5 +1,5 @@
 # database key
-The **database key** is an attribute or a group of attributes that can uniquely identify each record in a table.<br>
+The **database key** is an attribute or a group of attributes that can uniquely identify each tuple in a table.<br>
 
 * ## Super key
 A subset of keys that can uniquely identify rows in a table and can have one or more redundant attributes<br>
