@@ -81,3 +81,4 @@ FROM students1 CROSS JOIN students2;
 SELECT *
 FROM students1, students2;
 ~~~
+![image](https://user-images.githubusercontent.com/67142421/194015392-b0b5b21d-696e-4749-bcda-ad29226d5e28.png)
