@@ -1,4 +1,4 @@
-Hash table, which takes O(1) time might seem the best for searching data, but hash table works only for equal sign operations and 
+Hash table, which takes O(1) time might seem the fastest for searching data, but hash table works only for equal sign operations and 
 DB operations include other operations too. We need another method.
 
 **Database index** : is a tree data structure to improve the speed of data retrieval operations on a database table at the cost of 
@@ -35,7 +35,7 @@ Database index increases the reading speed largely, but decreases the speed of a
 # Cardinality, Selectivity
 ## Cardinality
 - the number of elements of a set, that is, the number of unique elements.
-- The higher, the better for indexing because low cardinality means full or near full scans are performed in "WHERE" clauses in which indexing is meaningless.
+- The higher, the better for indexing because low cardinality means full or near full scans are performed in **WHERE** clauses in which indexing is meaningless.
 ### Calculation of cardinality
 - Ex) "phone number": number of rows
 - Ex) "SEX": 2
