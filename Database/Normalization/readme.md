@@ -8,6 +8,12 @@ Database normalization is the process of organizing tables to get rid of data re
 because normalized tables are minimized.<br>
 **drawbacks** : Spliting a table makes more tables to JOIN, which leads to a slower speed.
 
+## Why is normalization needed?
+![image](https://user-images.githubusercontent.com/67142421/203905904-0b691b1f-2798-4b12-85f0-45daf6e2d466.png)<br>
+This table above looks great because every piece of information is displayed in one table. But actually, there are problems in this big table.
+- First, the same data appear several times(data redundancy problem)
+- Second, when a piece of data is updated, other tables that have that data also have to be updated(data integrity problem)
+
 ## Initial table
 |name|age|hobby|country|
 |---|---|---|---|
