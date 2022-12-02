@@ -1,92 +1,95 @@
-## Anomalies
-* **Insertion anomaly** : when the primary key is NULL and an unnecessary primary key has to be created
-* **Update anomaly** : a data inconsistency that results from data redundancy and a partial update
-* **Deletion anomaly** : occurs when a tuple record is deleted where attributes that shouldn't be deleted are deleted.
+# Update anomalies
+### All the anomalies occur because of duplicates!(redundancy)
+* **Insertion anomalies** : entering information of an entity requires the information of other entities
+* **Modification anomalies** : partial modification
+* **Deletion anomalies** : deleting information of an entity causes other entities' information to be deleted
 
-## Data normalization
-Database normalization is the process of organizing tables to get rid of data redundancy and retain data integrity. It also makes it easier to add a new table
+# Data normalization
+the process of organizing tables to get rid of data redundancy and retain data integrity. It also makes it easier to add a new table
 because normalized tables are minimized.<br>
 **drawbacks** : Spliting a table makes more tables to JOIN, which leads to a slower speed.
 
-## Why is normalization needed?
+# Why is normalization needed?
 ![image](https://user-images.githubusercontent.com/67142421/203905904-0b691b1f-2798-4b12-85f0-45daf6e2d466.png)<br>
 This table above looks great because every piece of information is displayed in one table. But actually, there are problems in this big table.
 - First, the same data appear several times(data redundancy problem)
 - Second, when a piece of data is updated, other tables that have that data also have to be updated(data integrity problem)
 
+![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
+
 ## Initial table
-|name|age|hobby|country|
-|---|---|---|---|
-|John|25|soccer, basketball|USA|
-|Paul|26|swimming|UK|
-|John|25|reading|Korea|
-|Maria|25|reading|Japan|
+Primary key: [ID, college_name]
+|ID|name|hobby|highschool|school_size|college|accepted|
+|---|---|---|---|---|---|---|
+|1|John|soccer, basketball|A school|500|MIT|Y|
+|2|Paul|swimming|stanford|B school|500|Y|
+|3|John|reading|berkeley|C school|600|N|
 
 ## 1st normal form
-An attribute of a table in each row can only have one value.
+- An attribute can only have one value
+- It has the problem that there might be duplicate primary keys
+|ID|name|hobby|highschool|school_size|college|accepted|
+|---|---|---|---|---|---|---|
+|1|John|soccer|A school|500|MIT|Y|
+|1|John|basketball|A school|500|MIT|Y|
+|2|Paul|swimming|B school|500|stanford|Y|
+|3|John|reading|C school|600|berkeley|N|
 
-|name|age|hobby|country|
-|---|---|---|---|
-|John|25|soccer|USA|
-|John|25|basketball|USA|
-|Paul|26|swimming|UK|
-|John|26|reading|Korea|
-|Maria|25|reading|Japan|
+## Multi-valued attribute is mapped into a new table like this
+|name|hobby|
+|---|---|
+|John|soccer|
+|John|basketball|
+([name, hobby] is the primary key)
+
+### Table A
+|ID|name|highschool|school_size|college|accepted|
+|---|---|---|---|---|---
+|1|John|A school|500|MIT|Y|
+|2|Paul|B school|500|stanford|Y|
+|3|John|C school|600|berkeley|N|
 
 ## 2nd normal form
-A column should not be able to be decided by only one element of a tuple primary key.<br>
-In the 1st normal form, the **hobby** can be found with the **name** and **age**(primary key)<br>
-But the **name**, which is a part of the primary key, can alone decide the **country**. (can also be called "the primary key does not satisfy functional dependency)<br>
+In X->Y where X is a primary key, ALL the attributes of X have to be needed for Y<br>
+On the table A, only [ID] is needed to distinguish name, and [ID, college_name] is needed to distinguish accepted.<br>
+Table A is split into these.<br>
+### Table B
+|ID|name|highschool|school_size|
+|---|---|---|---|
+|1|John|A school|500|
+|2|Paul|B school|500|
+|3|John|C school|600|
 
-To solve this problem, the 1st normal form should be split into 2 tables.<br>
-
-|name|age|hobby
+|ID|college|accepted|
 |---|---|---|
-|John|25|soccer|
-|John|25|basketball|
-|Paul|26|swimming|
-|John|26|reading|
-|Maria|25|reading|
-
-|name|country|
-|---|---|
-|John|USA|
-|John|USA|
-|Paul|UK|
-|John|Korea|
-|Maria|Japan|
+|1|MIT|Y|
+|2|stanford|Y|
+|3|berkeley|N|
 
 ## 3rd normal form
-When A->B, B->C then it is called transitive dependency. The table needs to be split to get rid of the problem.
+When X->Y, Y->Z then it is called **transitive dependency*.<br>
+Set a foreign key [highschool] to solve this problem.<br>
+Table B is split into these.<br>
+|ID|name|highschool|
+|---|---|---|---|
+|1|John|A school|
+|2|Paul|B school|
+|3|John|C school|
 
-### Initial table
-|name|country|native language|
-|---|---|---|
-|John|USA|english|
-|Paul|UK|english|
-|Ana|Korea|korean|
-|Maria|Japan|japanese|
-
-### 3rd normal form table
-|name|country|
+|highschool|school_size|
 |---|---|
-|John|USA|
-|Paul|UK|
-|Ana|Korea|
-|Maria|Japan|
+|A school|500|
+|B school|500|
+|C school|600|
 
-|name|native language|
-|---|---|
-|USA|english|
-|UK|english|
-|Korea|korean|
-|Japan|japanese|
+## BCNF
 
-## Denormalization
+
+# Denormalization
 Denormalization is a database optimization technique in which we add redundant data to one or more tables. This can help us avoid costly JOINs in a relational database. Note that denormalization does not mean ‘reversing normalization’ or ‘not to normalize’. It is an optimization technique that is applied after normalization.
 
-### Advantage
+## Advantage
 * Retrieving data is faster since fewer joins are done.
 
-### Disadvantave
+## Disadvantave
 * Increased possibility of update anomaly.
