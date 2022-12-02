@@ -69,7 +69,7 @@ Table A is split into these.<br>
 |3|berkeley|N|
 
 ## 3rd normal form
-When X->Y, Y->Z then it is called **transitive dependency**.<br>
+When X->Y, Y->Z where X is the primary key then it is called **transitive dependency**.<br>
 Set a foreign key [highschool] to solve this problem.<br>
 Table B is split into these.<br>
 |*ID*|name|highschool|
