@@ -19,7 +19,7 @@ This table above looks great because every piece of information is displayed in 
 
 ## Initial table
 Primary key: [ID, college_name]
-|ID|name|hobby|highschool|school_size|college|accepted|
+|*ID*|name|hobby|highschool|school_size|*college*|accepted|
 |---|---|---|---|---|---|---|
 |1|John|soccer, basketball|A school|500|MIT|Y|
 |2|Paul|swimming|stanford|B school|500|Y|
@@ -29,7 +29,7 @@ Primary key: [ID, college_name]
 - An attribute can only have one value
 - It has the problem that there might be duplicate primary keys
 
-|ID|name|hobby|highschool|school_size|college|accepted|
+|*ID*|name|hobby|highschool|school_size|*college*|accepted|
 |---|---|---|---|---|---|---|
 |1|John|soccer|A school|500|MIT|Y|
 |1|John|basketball|A school|500|MIT|Y|
@@ -39,13 +39,13 @@ Primary key: [ID, college_name]
 ## Multi-valued attribute is mapped into a new table like this
 Primary key: [name, hobby]
 
-|name|hobby|
+|*name*|*hobby*|
 |---|---|
 |John|soccer|
 |John|basketball|
 
 ### Table A
-|ID|name|highschool|school_size|college|accepted|
+|*ID*|name|highschool|school_size|college|accepted|
 |---|---|---|---|---|---
 |1|John|A school|500|MIT|Y|
 |2|Paul|B school|500|stanford|Y|
@@ -56,13 +56,13 @@ In X->Y where X is a primary key, ALL the attributes of X have to be needed for 
 On the table A, only [ID] is needed to distinguish name, and [ID, college_name] is needed to distinguish accepted.<br>
 Table A is split into these.<br>
 ### Table B
-|ID|name|highschool|school_size|
+|*ID*|name|highschool|school_size|
 |---|---|---|---|
 |1|John|A school|500|
 |2|Paul|B school|500|
 |3|John|C school|600|
 
-|ID|college|accepted|
+|*ID*|college|accepted|
 |---|---|---|
 |1|MIT|Y|
 |2|stanford|Y|
@@ -72,13 +72,13 @@ Table A is split into these.<br>
 When X->Y, Y->Z then it is called **transitive dependency**.<br>
 Set a foreign key [highschool] to solve this problem.<br>
 Table B is split into these.<br>
-|ID|name|highschool|
+|*ID*|name|highschool|
 |---|---|---|
 |1|John|A school|
 |2|Paul|B school|
 |3|John|C school|
 
-|highschool|school_size|
+|*highschool*|school_size|
 |---|---|
 |A school|500|
 |B school|500|
