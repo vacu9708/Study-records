@@ -28,6 +28,7 @@ Primary key: [ID, college_name]
 ## 1st normal form
 - An attribute can only have one value
 - It has the problem that there might be duplicate primary keys
+
 |ID|name|hobby|highschool|school_size|college|accepted|
 |---|---|---|---|---|---|---|
 |1|John|soccer|A school|500|MIT|Y|
@@ -36,11 +37,12 @@ Primary key: [ID, college_name]
 |3|John|reading|C school|600|berkeley|N|
 
 ## Multi-valued attribute is mapped into a new table like this
+Primary key: [name, hobby]
+
 |name|hobby|
 |---|---|
 |John|soccer|
 |John|basketball|
-([name, hobby] is the primary key)
 
 ### Table A
 |ID|name|highschool|school_size|college|accepted|
@@ -71,7 +73,7 @@ When X->Y, Y->Z then it is called **transitive dependency*.<br>
 Set a foreign key [highschool] to solve this problem.<br>
 Table B is split into these.<br>
 |ID|name|highschool|
-|---|---|---|---|
+|---|---|---|
 |1|John|A school|
 |2|Paul|B school|
 |3|John|C school|
