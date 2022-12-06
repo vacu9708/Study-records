@@ -26,15 +26,17 @@ For example, when there are fish, lions, rabbits, they can be wrapped up as "lif
 
 * **Encalsulation** : the wrapping up of data and methods under a single unit. / The bundling of data and methods into one unit.
 Another way to think about encapsulation is, it is a protective shield that prevents the data from being accessed by the code outside this shield. (Information hiding)
------
+---
 
-# Design principles in OOP
-### 1. Single Responsibility Principle
+# [Dynamic binding for inehritance](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Software%20engineering/Object%20Oriented%20Programming/dynamic%20binding.md)
+
+# SOLID design principles in OOP
+## 1. Single Responsibility Principle
 Every component of code (in general a class, but also a function) should have only one responsibility.<br>
 For example, a single function, generically named(like "main"), doing all the work is bad.<br>
 If a component of code has more than one responsibility, code maintenace becomes hard.<br>
 
-### 2. Open, Closed Principle
+## 2. Open, Closed Principle
 Software components should be open for extension but closed for modification.<br>
 Code should be written so that new functionality can be added without changing the existing code.<br>
 That prevents situations in which a change to one of the classes also requires adapting all depending classes.<br>
