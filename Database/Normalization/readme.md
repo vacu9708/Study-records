@@ -52,7 +52,8 @@ Primary key: [name, hobby]
 |3|John|C school|600|berkeley|N|
 
 ## 2nd normal form
-In X->Y where X is a primary key, ALL the attributes of X have to be needed for Y<br>
+- The table must be in 1NF form
+- In X->Y where X is a primary key, ALL the attributes of X have to be needed for Y<br>
 On the table A, only [ID] is needed to distinguish name, and [ID, college_name] is needed to distinguish accepted.<br>
 Table A is split into these.<br>
 ### Table B
@@ -69,7 +70,8 @@ Table A is split into these.<br>
 |3|berkeley|N|
 
 ## 3rd normal form
-When X->Y, Y->Z where X is the primary key then it is called **transitive dependency**.<br>
+- The table must be in 2NF form
+- When X->Y, Y->Z where X is the primary key then it is called **transitive dependency**.<br>
 Set a foreign key [highschool] to solve this problem.<br>
 Table B is split into these.<br>
 |*ID*|name|highschool|
@@ -85,8 +87,9 @@ Table B is split into these.<br>
 |C school|600|
 
 ## BCNF
-
-
+- The table must be in 3NF form
+- For any dependency X → Y, X must be a candidate key or super key
+ 
 # Denormalization
 Denormalization is a database optimization technique in which we add redundant data to one or more tables. This can help us avoid costly JOINs in a relational database. Note that denormalization does not mean ‘reversing normalization’ or ‘not to normalize’. It is an optimization technique that is applied after normalization.
 
