@@ -79,6 +79,7 @@ Table A is split into these.<br>
 - When X->Y, Y->Z where X is the primary key then it is called **transitive dependency**.<br>
 Set a foreign key [highschool] to solve this problem.<br>
 Table B is split into these.<br>
+
 |*ID*|name|highschool|
 |---|---|---|
 |1|John|A school|
