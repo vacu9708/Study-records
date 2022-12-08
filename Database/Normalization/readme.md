@@ -1,8 +1,13 @@
 # Update anomalies
-### All the anomalies occur because of duplicates!(redundancy)
-* **Insertion anomalies** : entering information of an entity requires the information of other entities
-* **Modification anomalies** : partial modification
-* **Deletion anomalies** : deleting information of an entity causes other entities' information to be deleted
+## All the anomalies occur because of duplicates!(redundancy)
+- ### Modification anomalies
+Partial modification
+- ### Insertion anomalies
+Entering information of an entity requires the information of other entities<br>
+Ex) When inserting the information of an employee whose department hasn't been decided
+- ### Deletion anomalies
+Deleting information of an entity causes other entities' information to be deleted
+Ex) Firing an employee might cause their headquarter to be deleted
 
 # Data normalization
 the process of organizing tables to get rid of data redundancy and retain data integrity. It also makes it easier to add a new table
