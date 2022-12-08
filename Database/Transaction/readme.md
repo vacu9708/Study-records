@@ -23,7 +23,7 @@ All changes to data are performed as if they are a single operation. That is, ei
 
 ## Consistency
 Data is in a consistent state when a transaction starts and when it ends.<br>
-For example, in an application that transfers funds from one account to another, the durability property ensures that the total money doesn't change.
+For example, in an application that transfers funds from one account to another, the total money doesn't change.
 
 ## Isolation
 When two or more transactions are being executed, none of them can intervene in each other<br>
