@@ -6,7 +6,7 @@ Partial modification
 Entering information of an entity requires the information of other entities<br>
 Ex) When inserting the information of an employee whose department hasn't been decided
 - ### Deletion anomalies
-Deleting information of an entity causes other entities' information to be deleted
+Deleting information of an entity causes other entities' information to be deleted<br>
 Ex) Firing an employee might cause their headquarter to be deleted
 
 # Data normalization
