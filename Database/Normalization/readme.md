@@ -59,7 +59,7 @@ Primary key: [name, hobby]
 ## 2nd normal form
 - The table must be in 1NF form
 - In X->Y where X is a primary key, ALL the attributes of X have to be needed for Y<br>
-On table A, only [ID] is needed to distinguish name, and [ID, college] is needed to distinguish accepted.<br>
+On table A, [ID] is needed to distinguish students, and [ID, college] is needed to distinguish accepted.<br>
 Table A is split into these.<br>
 ### Table B
 |*ID*|name|highschool|school_size|
@@ -68,7 +68,7 @@ Table A is split into these.<br>
 |2|Paul|B school|500|
 |3|John|C school|600|
 
-|*ID*|college|accepted|
+|*ID*|*college*|accepted|
 |---|---|---|
 |1|MIT|Y|
 |2|stanford|Y|
