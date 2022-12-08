@@ -23,7 +23,7 @@ This table above looks great because every piece of information is displayed in 
 ![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
 
 ## Initial table
-Primary key: [ID, college_name]
+Primary key: [ID, college]
 |*ID*|name|hobby|highschool|school_size|*college*|accepted|
 |---|---|---|---|---|---|---|
 |1|John|soccer, basketball|A school|500|MIT|Y|
@@ -59,7 +59,7 @@ Primary key: [name, hobby]
 ## 2nd normal form
 - The table must be in 1NF form
 - In X->Y where X is a primary key, ALL the attributes of X have to be needed for Y<br>
-On the table A, only [ID] is needed to distinguish name, and [ID, college_name] is needed to distinguish accepted.<br>
+On table A, only [ID] is needed to distinguish name, and [ID, college] is needed to distinguish accepted.<br>
 Table A is split into these.<br>
 ### Table B
 |*ID*|name|highschool|school_size|
