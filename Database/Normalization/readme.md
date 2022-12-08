@@ -50,7 +50,7 @@ Primary key: [name, hobby]
 |John|basketball|
 
 ### Table A
-|*ID*|name|highschool|school_size|college|accepted|
+|*ID*|name|highschool|school_size|*college*|accepted|
 |---|---|---|---|---|---
 |1|John|A school|500|MIT|Y|
 |2|Paul|B school|500|stanford|Y|
