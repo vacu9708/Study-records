@@ -44,12 +44,12 @@ Primary key: [ID, college]
 ## Multi-valued attribute is mapped into a new table like this
 Primary key: [name, hobby]
 
+### Table A
 |*name*|*hobby*|
 |---|---|
 |John|soccer|
 |John|basketball|
-
-### Table A
+### Table B
 |*ID*|name|highschool|school_size|*college*|accepted|
 |---|---|---|---|---|---
 |1|John|A school|500|MIT|Y|
@@ -60,14 +60,14 @@ Primary key: [name, hobby]
 - The table must be in 1NF form
 - In X->Y where X is a primary key, ALL the attributes of X have to be needed for Y<br>
 On table A, [ID] is needed to distinguish students, and [ID, college] is needed to distinguish accepted.<br>
-Table A is split into these.<br>
-### Table B
+Table B is split into these.<br>
+### Table C
 |*ID*|name|highschool|school_size|
 |---|---|---|---|
 |1|John|A school|500|
 |2|Paul|B school|500|
 |3|John|C school|600|
-
+### table D
 |*ID*|*college*|accepted|
 |---|---|---|
 |1|MIT|Y|
@@ -78,14 +78,15 @@ Table A is split into these.<br>
 - The table must be in 2NF form
 - When X->Y, Y->Z where X is the primary key then it is called **transitive dependency**.<br>
 Set a foreign key [highschool] to solve this problem.<br>
-Table B is split into these.<br>
+Table C is split into these.<br>
 
+### table E
 |*ID*|name|highschool|
 |---|---|---|
 |1|John|A school|
 |2|Paul|B school|
 |3|John|C school|
-
+### table F
 |*highschool*|school_size|
 |---|---|
 |A school|500|
