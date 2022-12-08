@@ -10,6 +10,7 @@
 ## Dining philosopher problem
 ![image](https://user-images.githubusercontent.com/67142421/176333583-a1ffafd2-a73b-4a73-bbe4-706c0e076d25.png)
 
+[공부!!](https://m.blog.naver.com/hirit808/221788147057)
 It can be described with either forks or chopsticks.
 The problem was designed to illustrate the challenges of avoiding deadlock.<br>
 
