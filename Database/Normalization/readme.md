@@ -32,7 +32,7 @@ Primary key: [ID, college]
 
 ## 1st normal form
 - An attribute can only have one value
-- It has the problem that there might be duplicate primary keys
+- There might be duplicate primary keys
 
 |*ID*|name|hobby|highschool|school_size|*college*|accepted|
 |---|---|---|---|---|---|---|
@@ -41,10 +41,11 @@ Primary key: [ID, college]
 |2|Paul|swimming|B school|500|stanford|Y|
 |3|John|reading|C school|600|berkeley|N|
 
-## Multi-valued attribute is mapped into a new table like this
-Primary key: [name, hobby]
 
 ### Table A
+Multi-valued attribute is mapped into a new table like this<br>
+Primary key: [name, hobby]
+
 |*name*|*hobby*|
 |---|---|
 |John|soccer|
