@@ -4,9 +4,11 @@ Processes are generally not permitted to access memory space that is allocated f
 ### In summary, IPC is needed because processes do not share memory 
 
 ## Types of IPC
-- **Socket communication** : Processes share data via socket communication.
+- **Socket communication** : Processes share data via sockets.
 - **Memory mapped file** : A file that works like a segment of virtual memory that can be used by multiple processes.
-- **Pipe**
+- **Pipe**: one-way communication where one process writes to the pipe, and the other process reads from it<br>
+![image](https://user-images.githubusercontent.com/67142421/220620918-fcd90475-0530-42a9-8c2a-d6e6a08a0038.png)
+
 
 # 📷[Video](https://youtu.be/OYb4Le92EiI)
 ![image](https://user-images.githubusercontent.com/67142421/177230621-fea1407e-3464-49eb-b177-ff80a497d07a.png)
