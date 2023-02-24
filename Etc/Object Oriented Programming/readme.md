@@ -1,4 +1,4 @@
-## Procedural programming
+# Procedural programming
 Procedural programming is a programming paradigm where code is processed sequentially from the top to the bottom like water flows.
 
 # Object Oriented Programming
