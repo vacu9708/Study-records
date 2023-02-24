@@ -1,3 +1,4 @@
+~~~c++
 #include <iostream>
 using namespace std;
 
@@ -42,6 +43,6 @@ int main(void) {
     person = new Female();
     get_info(person);
 }
-
+~~~
 # Output
 ![image](https://user-images.githubusercontent.com/67142421/205872545-d0cf356c-5093-4ceb-8bf0-11fd312b63e8.png)
