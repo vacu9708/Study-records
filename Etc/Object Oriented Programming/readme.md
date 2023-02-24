@@ -40,3 +40,11 @@ If a component of code has more than one responsibility, code maintenace becomes
 Software components should be open for extension but closed for modification.<br>
 Code should be written so that new functionality can be added without changing the existing code.<br>
 That prevents situations in which a change to one of the classes also requires adapting all depending classes.<br>
+
+## 3. Liskov Substitution
+## 4. Interface Segregation
+## 5. Dependency Inversion
+
+# Coupling
+**coupling**: How much work is involved to changing something?<br>
+It is important to keep software in loose coupling in order to make changes with as less code as possible
