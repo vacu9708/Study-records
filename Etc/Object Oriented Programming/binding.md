@@ -1,13 +1,16 @@
+# Types of binding
+- Static binding: The address of the function is set upon compile
+- Dynamic binding: The address is going to be set later in case of inheritance
 ~~~c++
 #include <iostream>
 using namespace std;
 
 class Person {
 public:
-    void static_binding() { // The address is set to class A (static binding)
+    void static_binding() {
         printf("Neutral\n");
     }
-    virtual void dynamic_binding() { // The address is going to be set later in case of inheritance (dynamic binding)
+    virtual void dynamic_binding() {
         printf("Neutral\n");
     }
 };
