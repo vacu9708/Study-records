@@ -14,9 +14,9 @@ A programming paradigm in which a program is described as interactions between o
 4. Easier code maintenance
 
 # 4 characteristics of OOP
-* **Polymorphism** : allowing a single interface (such as a name and an operator) to be used for multiple purposes that have the same meaning.
-Ex) **Method overriding** : overriding the method of the parent class that has the same name as the child's method.
-Ex) **operater overloading
+* **Polymorphism** : allowing a single interface (such as a name and an operator) to be used for multiple purposes that have the same meaning.<br>
+Ex) **Method overriding**: overriding the method of the parent class that has the same name as the child's method.<br>
+Ex) **operater overloading**: allows the same operator symbol to be used for multiple operations<br>
 
 * **Inheritance** : the procedure in which one class inherits the properties of another class.
 To put it simply, inheritance is done for the use of code that is pre-written (for reuse of code).
