@@ -1,6 +1,6 @@
 # Types of binding
 - Static binding: The address of the function is set upon compile
-- Dynamic binding: The address is going to be set later in case of inheritance
+- Dynamic binding: The address is going to be set at run time in case the type of an object is not fixed
 ~~~c++
 #include <iostream>
 using namespace std;
@@ -8,28 +8,24 @@ using namespace std;
 class Person {
 public:
     void static_binding() {
-        printf("Neutral\n");
+        printf("static: Person\n");
     }
     virtual void dynamic_binding() {
-        printf("Neutral\n");
+        printf("dynamic: Person\n");
     }
 };
 
-class Male: public Person {
+class Male : public Person {
 public:
     void static_binding() {
-        printf("Male\n");
+        printf("static: Male\n");
     }
     void dynamic_binding() {
-        printf("Male\n");
+        printf("dynamic: Male\n");
     }
 };
 
-class Female: public Person {
-public:
-    void dynamic_binding() {
-        printf("Female\n");
-    }
+class Female : public Person {
 };
 
 void get_info(Person* person) {
@@ -39,7 +35,8 @@ void get_info(Person* person) {
 }
 
 int main(void) {
-    Person* person = new Person();
+    Person* person;
+    person = new Person();
     get_info(person);
     person = new Male();
     get_info(person);
@@ -48,4 +45,5 @@ int main(void) {
 }
 ~~~
 # Output
-![image](https://user-images.githubusercontent.com/67142421/205872545-d0cf356c-5093-4ceb-8bf0-11fd312b63e8.png)
+![image](https://user-images.githubusercontent.com/67142421/221264116-ce996b0f-d8b5-4356-aa01-4397eb64cdd7.png)
+
