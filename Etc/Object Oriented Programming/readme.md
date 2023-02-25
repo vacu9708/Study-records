@@ -141,7 +141,7 @@ The above example does not obey ISP because windows_game() is not supported in i
 windows_game() should be moved to a separated interface
 
 ## 5. Dependency Inversion Principle
-Parents should not depend on their children.
+High level modules should not depend on low level modules.
 ~~~java
 class Samsung_pay {
     void payment() {
@@ -158,7 +158,7 @@ class Pay_service {
 }
 ~~~
 The above example does not obey DIP because pay_type might be changed to Apple_pay.<br>
-The parent class Pay_service depends on its child class Samsung_pay
+Pay_service depends on its low level module Samsung_pay
 ~~~java
 interface Pay_type{
 	void payment();
@@ -183,5 +183,5 @@ class Pay_service {
     }
 }
 ~~~
-The parent Pay_service depends on its child Pay_type.<br>
+Pay_service depends on its low level module Pay_type.<br>
 Pay_type depends on the payment choice of its parent, which can either be Samsung_pay or Apple_pay.
