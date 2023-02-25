@@ -29,6 +29,11 @@ Another way to think about encapsulation is, it is a protective shield that prev
 ### [Dynamic binding for inheritance](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Etc/Object%20Oriented%20Programming/binding.md)
 
 # SOLID design principles in OOP
+## coupling
+**coupling**: How much work is involved to changing something?<br>
+It is important to keep software in loose coupling in order to make changes with as less code as possible<br>
+That's what SOLID principles are for.
+
 ## 1. Single Responsibility Principle
 Every component of code (in general a class, but also a function) should have only one responsibility.<br>
 For example, a single function, generically named(like "main"), doing all the work is bad.<br>
@@ -39,8 +44,35 @@ Software components should be open for extension but closed for modification.<br
 Code should be written so that new functionality can be added without changing the existing code.<br>
 That prevents situations in which a change to one of the classes also requires adapting all depending classes.<br>
 
-## 3. Liskov Substitution
+## 3. Liskov Substitution Principle
 Child classes must be substitutable for their parent classes.<br>
+### Example
+~~~java
+public class Computer{
+}
+public class Laptop extends Computer{
+	public void get_CPU(){
+		System.out.println("A laptop has CPU");
+	}
+}
+public class Desktop extends Computer{
+	public void get_CPU(){
+		System.out.println("A desktop has CPU");
+	}
+}
+public class Mouse extends Computer{
+	public void get_CPU(){
+		System.out.println("ERROR");
+	}
+}
+public static void main(String[] args) {
+	Computer computer = new Laptop(); // obeys LSP
+	Computer desptop = new Desptop(); // obeys LSP
+	Computer mouse = new Mouse(); // violates LSP because this child cannot be substituted with its parent
+}
+~~~
+
+### Another example
 ~~~java
 public class Rectangle{
 	int width;
@@ -62,7 +94,7 @@ public class Square extends Rectangle {
 	
 	public void set_width(int width) {
 		this.width = width;
-    this.height = width;
+    		this.height = width;
 	}
 }
 
@@ -71,12 +103,13 @@ public static void main(String[] args) {
 		rectangle.set_width(4);
 		rectangle = new Square(2); // the parent class is substituted with its child
 		rectangle.set_width(4); // unexpected behavior because height should not be changed
-	}
+}
 ~~~
 The above example does not obey LSP because get_area() may result in unexpected behavior, therefore Rectangle cannot be substituted with Square.<br>
-The problem can be solved if the Square class inherits Shape class instead.
+The problem can be solved if the child class inherits Shape class instead.
 ~~~java
 public class Shape{
+	string shape_type;
 	int width;
 	int height;
 	public Shape(int width, int height) {
@@ -86,9 +119,69 @@ public class Shape{
 }
 ~~~
 
-## 4. Interface Segregation
-## 5. Dependency Inversion
+## 4. Interface Segregation Principle
+No class should depend on code it does not use.
+~~~java
+class computer {
+	void chatting(){
+	}
+	void web_browser(){
+	}
+	void windows_game(){
+	}
+}
 
-# Coupling
-**coupling**: How much work is involved to changing something?<br>
-It is important to keep software in loose coupling in order to make changes with as less code as possible
+class iphone extends computer{
+	void windows_game(){
+		System.out.println("Error: not supported!");
+	}
+}
+~~~
+The above example does not obey ISP because windows_game() is not supported in iphone.
+windows_game() should be moved to a separated interface
+
+## 5. Dependency Inversion Principle
+Parents should not depend on their children.
+~~~java
+class Samsung_pay {
+    void payment() {
+        System.out.println("samsung");
+    }
+}
+
+class Pay_service {
+    Samsung_pay pay_type;
+    
+    void payment(Samsung_pay pay_type) {
+        pay_type.payment();
+    }
+}
+~~~
+The above example does not obey DIP because pay_type might be changed to Apple_pay.<br>
+The parent class Pay_service depends on its child class Samsung_pay
+~~~java
+interface Pay_type{
+	void payment();
+}
+
+class Samsung_pay implements Pay_type {
+    void payment() {
+        System.out.println("samsung");
+    }
+}
+class Apple_pay implements Pay_type {
+    void payment() {
+        System.out.println("apple");
+    }
+}
+
+class Pay_service {
+    Pay_type pay_type;
+    
+    void payment(Pay_type pay_type) {
+        pay_type.payment();
+    }
+}
+~~~
+The parent Pay_service depends on its child Pay_type.<br>
+Pay_type depends on the payment choice of its parent, which can either be Samsung_pay or Apple_pay.
