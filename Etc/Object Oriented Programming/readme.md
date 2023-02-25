@@ -154,7 +154,7 @@ class Pay_service {
     Samsung_pay pay_type;
     
     void payment(Samsung_pay pay_type) {
-        pay_type.payment();
+        this.pay_type.payment();
     }
 }
 ~~~
@@ -181,7 +181,7 @@ class Pay_service {
     Pay_type pay_type;
     
     void payment(Pay_type pay_type) {
-        pay_type.payment();
+        this.pay_type.payment();
     }
 }
 ~~~
