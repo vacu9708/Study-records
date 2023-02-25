@@ -184,4 +184,4 @@ class Pay_service {
 }
 ~~~
 Pay_service depends on its low level module Pay_type.<br>
-Pay_type depends on the payment choice of its parent, which can either be Samsung_pay or Apple_pay.
+Pay_type depends on the payment choice of its high level module, which can either be Samsung_pay or Apple_pay.
