@@ -40,6 +40,52 @@ Code should be written so that new functionality can be added without changing t
 That prevents situations in which a change to one of the classes also requires adapting all depending classes.<br>
 
 ## 3. Liskov Substitution
+Child classes must be substitutable for their parent classes.<br>
+~~~java
+public class Rectangle{
+	int width;
+	int height;
+	public Rectangle(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+	
+	public void set_width(int width) {
+		this.width = width;
+	}
+}
+
+public class Square extends Rectangle {
+	public Square(int width) {
+		super(width, width);
+	}
+	
+	public void set_width(int width) {
+		this.width = width;
+    this.height = width;
+	}
+}
+
+public static void main(String[] args) {
+		Rectangle rectangle = new Rectangle(2,3);
+		rectangle.set_width(4);
+		rectangle = new Square(2); // the parent class is substituted with its child
+		rectangle.set_width(4); // unexpected behavior because height should not be changed
+	}
+~~~
+The above example does not obey LSP because get_area() may result in unexpected behavior, therefore Rectangle cannot be substituted with Square.<br>
+The problem can be solved if the Square class inherits Shape class instead.
+~~~java
+public class Shape{
+	int width;
+	int height;
+	public Shape(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+}
+~~~
+
 ## 4. Interface Segregation
 ## 5. Dependency Inversion
 
