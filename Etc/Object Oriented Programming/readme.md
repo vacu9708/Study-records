@@ -158,8 +158,7 @@ class Pay_service {
     }
 }
 ~~~
-The above example does not obey DIP because pay_type might be changed to Apple_pay.<br>
-Pay_service depends on its low level module Samsung_pay.<br>
+The above example does not obey DIP because Pay_service depends on its low level module Samsung_pay.<br>
 That is to say, if the low level module Samsung_pay changes, the high level module Pay_service has to be changed accordingly, which is a waste.(tight coupling)
 ~~~java
 interface Pay_type{
@@ -186,4 +185,4 @@ class Pay_service {
 }
 ~~~
 Pay_service depends on its low level module Pay_type.<br>
-Even if Samsung_pay changes, Pay_service does not need to be changed.(loose coupling)
+Even if Samsung_pay changes, Pay_service does not need to be changed thanks to the **polymorphism** of Pay_type.(loose coupling)
