@@ -32,6 +32,7 @@ Another way to think about encapsulation is, it is a protective shield that prev
 ## coupling
 **coupling**: How much work is involved to changing something?<br>
 It is important to keep software in loose coupling in order to make changes with as less code as possible<br>
+Everything in business always changes!<br>
 That's what SOLID principles are for.
 
 ## 1. Single Responsibility Principle
@@ -141,7 +142,7 @@ The above example does not obey ISP because windows_game() is not supported in i
 windows_game() should be moved to a separated interface
 
 ## 5. Dependency Inversion Principle
-High level modules should not depend on low level modules.
+High level modules should not depend on low level modules to prevent tight coupling.
 ~~~java
 class Samsung_pay {
     void payment() {
