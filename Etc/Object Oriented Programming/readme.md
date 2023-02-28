@@ -184,5 +184,5 @@ class Pay_service {
     }
 }
 ~~~
-Pay_service depends on its low level module Pay_type.<br>
+Pay_service depends on its low level module Pay_type where changing the low level module does not matter.<br>
 Even if Samsung_pay changes, Pay_service does not need to be changed thanks to the **polymorphism** of Pay_type.(loose coupling)
