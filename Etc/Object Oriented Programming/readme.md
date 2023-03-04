@@ -142,7 +142,8 @@ The above example does not obey ISP because windows_game() is not supported in i
 windows_game() should be moved to a separated interface
 
 ## 5. Dependency Inversion Principle
-High level modules should not depend on low level modules to prevent tight coupling.
+High level modules should not depend on low level modules to prevent tight coupling.<br>
+In other words, a highlevel module should work regardless of changes to its low level module
 ~~~java
 class Samsung_pay {
     void payment() {
