@@ -187,3 +187,16 @@ class Pay_service {
 ~~~
 Pay_service depends on its low level module Pay_type where changing the low level module does not matter.<br>
 Even if Samsung_pay changes, Pay_service does not need to be changed thanks to the **polymorphism** of Pay_type.(loose coupling)
+
+### Dependency injection
+This process is automated in Spring framework.
+~~~java
+public class Kiosk {
+    public void init_pay_service() {
+        // Creation of bean
+        Pay_type samsung_pay = new Samsung_pay();
+        // Dependency injection
+        Pay_service pay_service = new Pay_service(samsung_pay);
+    }
+}
+~~~
