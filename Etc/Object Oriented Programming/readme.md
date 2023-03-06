@@ -143,7 +143,7 @@ windows_game() should be moved to a separated interface
 
 ## 5. Dependency Inversion Principle
 High level modules should not depend on low level modules to prevent tight coupling even though it is natural for a high level module to depend on a low level module.<br>
-In other words, a high level module should work regardless of changes to its low level module
+In other words, a high level module should work regardless of changes to its low level module.
 ~~~java
 class Samsung_pay {
     void payment() {
