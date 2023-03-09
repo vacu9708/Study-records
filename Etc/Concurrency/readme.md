@@ -1,4 +1,4 @@
-# concurrency
+# Concurrency
 Concurrency refers to performing multiple tasks at the same time by dividing as task into smaller sub-tasks and executing them concurrently. they ***appear*** to be executed simultaneously to the user.
 
 # Parallelism
