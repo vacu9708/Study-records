@@ -14,6 +14,58 @@ It is used to allow only one instance of a class.
 ## Prototype
 The pattern of javascript prototype
 
+## Builder
+~~~java
+public class Car {
+    private String make;
+    private String model;
+
+    Car(String make, String model) {
+        this.make = make;
+        this.model = model;
+    }
+
+    public static CarBuilder builder() {
+        return new CarBuilder();
+    }
+
+    public String getMake() {
+        return this.make;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
+    public static class CarBuilder {
+        private String make;
+        private String model;
+
+        CarBuilder() {
+        }
+
+        public CarBuilder make(String make) {
+            this.make = make;
+            return this;
+        }
+
+        public CarBuilder model(String model) {
+            this.model = model;
+            return this;
+        }
+
+        public Car build() {
+            return new Car(this.make, this.model);
+        }
+    }
+}
+
+Car car = Car.builder()
+                .make("Toyota")
+                .model("Camry")
+                .build();
+~~~
+
 ---
 # Structural patterns
 >manipulate a relationship between objects.<br>
