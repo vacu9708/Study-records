@@ -61,7 +61,7 @@ public class Desktop extends Computer{
 		System.out.println("A desktop has CPU");
 	}
 }
-public class Mouse extends Computer{
+public class Keyboard extends Computer{
 	public void get_CPU(){
 		System.out.println("ERROR");
 	}
@@ -69,7 +69,7 @@ public class Mouse extends Computer{
 public static void main(String[] args) {
 	Computer computer = new Laptop(); // obeys LSP
 	Computer desptop = new Desptop(); // obeys LSP
-	Computer mouse = new Mouse(); // violates LSP because this child cannot be substituted with its parent
+	Computer keyboard = new Keyboard(); // violates LSP because this child cannot be substituted with its parent
 }
 ~~~
 
