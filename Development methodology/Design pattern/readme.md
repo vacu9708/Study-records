@@ -10,7 +10,7 @@ List : Factory Method, Abstract Factory, Builder, Singleton, Object Pool, and Pr
 
 ## Singleton
 Singleton is used to ensure that a class has only one instance.<br>
-A singleton class consists of a **private** constructor to prevent the creation of multiple instances and a static method that returns the single instance of the class.<br>
+A singleton class consists of a ***private*** constructor to prevent the creation of multiple instances and a static method that returns the single instance of the class.<br>
 If an instance of the class has not yet been created, the static method creates one. If an instance already exists, the static method simply returns the existing instance.
 ~~~java
 public class Singleton {
@@ -26,7 +26,7 @@ public class Singleton {
     }
 }
 ~~~
-Python does not have **private**, so a different apporach is used.
+Python does not have ***private***, so a different apporach is used.
 ~~~python
 class Singleton:
     instance = None  # private class variable to hold the singleton instance
