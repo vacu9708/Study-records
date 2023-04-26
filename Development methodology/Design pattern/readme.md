@@ -29,7 +29,7 @@ public class Singleton {
 Python does not have ***private***, so a different apporach is used.
 ~~~python
 class Singleton:
-    instance = None  # private class variable to hold the singleton instance
+    instance = None
     def __init__(self):
         if Singleton.instance:
             raise Exception("This class is a singleton!")
