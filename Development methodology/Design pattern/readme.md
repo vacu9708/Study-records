@@ -9,10 +9,41 @@ It facilitates maintenance and communication between coworkers.
 List : Factory Method, Abstract Factory, Builder, Singleton, Object Pool, and Prototype. 
 
 ## Singleton
-It is used to allow only one instance of a class.
+Singleton is used to ensure that a class has only one instance.<br>
+A singleton class consists of a **private** constructor to prevent the creation of multiple instances and a static method that returns the single instance of the class.<br>
+If an instance of the class has not yet been created, the static method creates one. If an instance already exists, the static method simply returns the existing instance.
+~~~java
+public class Singleton {
+    private static Singleton instance;
+
+    private Singleton(){} // private constructor to prevent instantiation from outside the class
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+~~~
+Python does not have **private**, so a different apporach is used.
+~~~python
+class Singleton:
+    instance = None  # private class variable to hold the singleton instance
+    def __init__(self):
+        if Singleton.instance:
+            raise Exception("This class is a singleton!")
+        Singleton.instance = self
+        
+    @staticmethod
+    def get_instance():
+        if not Singleton.instance:
+            Singleton()
+        return Singleton.instance
+~~~
 
 ## Prototype
-The pattern of javascript prototype
+same as javascript prototype
 
 ## Builder
 ~~~java
