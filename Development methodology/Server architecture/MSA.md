@@ -25,3 +25,9 @@ Instead, it returns a pre-configured fallback response or exception.<br>
 Using the Sagas pattern, each local transaction is implemented as a separate step in a saga.<br>
 If a local transaction fails, the saga coordinator triggers a compensation for each already executed local transaction to undo their effects.<br>
 This helps to ensure that the transaction across microservices is completed successfully, even if there are failures.<br>
+
+# Distributed tracing
+Distributed tracing is a technique for monitoring and debugging microservices that allows for tracing a request as it travels through multiple services.
+Distributed tracing is used for two asepcts across microservices:
+- Performance monitoring
+- Troubleshooting
