@@ -14,8 +14,9 @@ If all the functionalities of a project exist in a single codebase, then that ap
 - Even a small change makes the whole application have to be redeployed.
 - It is very difficult to understand the logic of a large Monolithic application even if their responsibility is related to a single functionality, which leads to ***difficult to maintain***
 - Load balancing is difficult because the whole code is in one server.
-- Tech stacks and the application are tightly coupled, so it becomes deprecated code.
+- The application is ***tightly coupled*** and hard to modify, so it easily becomes deprecated code.
 
 ## Microservices
 Microservices are made up of a colletction of autonomous services.<br>
-The advantages and disadvantages are the opposite to those of Monolithic.
+- Advantages and disadvantages: the opposite to those of Monolithic.<br>
+- Messaging middlewares are used to communicate between microservices.<br>
