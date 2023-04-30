@@ -9,7 +9,7 @@ If all the functionalities of a project exist in a single codebase, then that ap
 - The application is ***tightly coupled*** and hard to modify, so it easily becomes deprecated code.
 
 # Microservices
-Microservices are made up of a colletction of autonomous services.<br>
+Microservices are made up of a colletction of autonomous services. Various tech stacks are needed to develop microservices.<br>
 - Advantages and disadvantages: the opposite to those of Monolithic.<br>
 - Messaging middlewares are used to communicate between microservices.<br>
 
