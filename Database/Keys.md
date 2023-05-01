@@ -11,6 +11,6 @@ Ex) id + email + student_name cannot be a candidate key because excluding "id" a
 * ## Primary key
 One key selected among candidate keys
 * ## Foreign key
-A foreign key is one or more attributes in a table that refers to the primary key of another table (or the same table).
+A foreign key is one or more attributes in a table that refers to the primary key of another table to ensure **Referential Integrity** on JOIN.
 * ## Alternate key
 remaining keys after excluding the primary key

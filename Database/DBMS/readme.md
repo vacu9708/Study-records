@@ -16,16 +16,18 @@ When designing a database, ***maintaining data integrity*** is the most importan
 It is one of the roles of DBMS to ensure that the data constraints are satisfied.
 
 # Constraints for Data Integrity
-- ### Entity integrity constraints
+## Entity integrity constraints
 The Entity Integrity Constraint ensures that the primary key cannot be null so that it can be used to identify tuples in a table.
-- ### Referential Integrity Constraints
-Referential integrity states that all references are valid.
-In other words, it requires that if a value of a relation references a value, then the referenced value must exist.
-- ### Domain constraint
+## Referential Integrity Constraints
+Referential integrity states that all references are valid by requiring that the referenced value exist.
+- Cascading deletion
+- Set null
+- Preventing the deletion
+## Domain constraint
 is a limit on the values that a certain variable can take
-- ### Key constraint
+## Key constraint
 Any tuple cannot be the same
-- ### Constraints on nulls
+## Constraints on nulls
 By default, a column can hold NULL values. The NOT NULL constraint enforces a column to NOT accept NULL values.
 
 # Connection pooling
