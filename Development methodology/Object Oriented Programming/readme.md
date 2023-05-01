@@ -26,7 +26,6 @@ For example, when there are fish, lions, rabbits, they can be wrapped up as "lif
 
 - **Encalsulation** : the wrapping up of data and methods under a single unit. / The bundling of data and methods into one unit.
 Another way to think about encapsulation is, it is a protective shield that prevents the data from being accessed by the code outside this shield. (Information hiding)
-### [Dynamic binding for inheritance](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Etc/Object%20Oriented%20Programming/binding.md)
 
 # SOLID design principles in OOP
 ## coupling
