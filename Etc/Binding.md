@@ -1,4 +1,4 @@
-# Types of binding
+## Types of binding
 - Static binding: The address is set upon compile.
 - Dynamic binding: The address is going to be set upon the allocation of the class in case the type of its objects is not fixed. Polymorphism is meaningful thanks to **dynamic binding**.
 ~~~c++
