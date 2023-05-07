@@ -1,0 +1,6 @@
+## Why is cloud computing necessary?
+- Scalability: Cloud systems allow businesses to scale their IT resources up or down easily and quickly, based on their changing needs. This flexibility can help businesses save money and resources, as they don't need to invest in and maintain their own hardware infrastructure.
+- Cost-effective: Cloud systems provide a cost-effective solution for businesses to manage their IT resources. With cloud computing, businesses pay only for what they use, and don't need to spend money on purchasing, maintaining, and upgrading their own hardware and software.
+- Acessibility: Cloud systems enable businesses to access their data and applications from anywhere and on any device with an internet connection. This improves collaboration and productivity, as employees can work remotely and access information quickly.
+- Security: Cloud systems provide robust security measures to protect data and applications from threats, such as cyberattacks, natural disasters, and hardware failures. Cloud providers have dedicated security teams that monitor and manage security risks 24/7.
+- Reliability: Cloud systems offer high availability and reliability, with built-in redundancy and backup mechanisms. This ensures that businesses can access their data and applications without interruption, even in the event of hardware failures or other disasters.
