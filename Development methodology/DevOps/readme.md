@@ -1,2 +1,2 @@
-[Test Driven Development](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Development%20methodology/DevOps/TDD.md)
-[Containerization](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Development%20methodology/DevOps/Containerization.md)
+- [Test Driven Development](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Development%20methodology/DevOps/TDD.md)
+- [Containerization](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Development%20methodology/DevOps/Containerization.md)
