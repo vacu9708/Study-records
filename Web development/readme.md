@@ -7,7 +7,6 @@
 - [Security](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Security.md)
 - [Socket (websocket)](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Socket%20(websocket))
 - [Server architecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Development%20methodology/Server%20architecture)
-- [WebRTC](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/WebRTC)
 
 ### Network
 - [OSI model](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/OSI%20model)
