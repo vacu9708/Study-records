@@ -20,11 +20,16 @@ If the JWT was tampered with, the signature recalculated using the received head
 ### Issuing
 1. Client logs in using their credentials (e.g. username and password).
 2. If the login information is valid, the server generates a JWT containing a header, a payload, and a signature. The signature is created using the server's private key.
-3. The server sends the JWT to the client, typically in the response body or as a cookie. The client verifies the signature using the public key.
+3. The server sends the JWT(access token and refresh token) to the client, typically in the response body or as a cookie. The client verifies the signature using the public key.
 ### Authentification
 1. The client sends the JWT in the HTTP header
 2. The server checks that the token has not expired and verifies the signature using the server's private key(by checking if the recalculated signature matches the signature in the JWT)
 3. The server sends the requested data to the client.
+
+## Refresh token
+A refresh token is needed for the trade-off between security and convenience.<br>
+A refresh token is needed as part of the OAuth 2.0 authentication flow to obtain a new access token when the existing access token has expired. Access tokens are short-lived and typically expire after a specific amount of time, typically in minutes or hours.
+When an access token expires, it can no longer be used to access protected resources on behalf of the user. In order to continue accessing those resources, a new access token must be obtained. However, asking the user to re-authenticate every time an access token expires can be inconvenient and disruptive to the user experience.
 
 ## Session-cookie VS JWT in authorization
 ### Session-cookie
