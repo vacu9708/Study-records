@@ -19,9 +19,12 @@ In real implementation, It is the hash value of the data that is encrypted.
 3. The recipient compares the received message with the decrypted original message.
 
 # CORS(Cross-Origin Resource sharing)
-Same-Origin Policy was introduced to prevent malicious requests(CSRF) from sites of different origins(pages).
-However, there are times when cross-origin resources are needed.<br>
-**CORS** is a mechanism that allows resources to be requested from different origins.
+**CORS** is a mechanism that allows resources to be requested from different origins.<br>
+Same-Origin Policy was introduced to prevent malicious requests(CSRF) from sites of different origins(pages).<br>
+However, web pages often need to make requests to different domains.<br>
+#### Without CORS
+Without CORS, a web page would only be able to make requests to resources on the same domain as the web page itself.<br>
+CORS works by allowing a server to specify which domains are allowed to access its resources.<br>
 
 ![image](https://user-images.githubusercontent.com/67142421/183492714-17a6d283-1c28-4377-9a5b-0b3de112ec1a.png)
 
