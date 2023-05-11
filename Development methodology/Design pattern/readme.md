@@ -46,6 +46,7 @@ class Singleton:
 same as javascript prototype
 
 ## Builder
+The main advantage of using the Builder pattern is that it allows for greater flexibility and maintainability of code. Instead of having one large constructor or a class with many parameters, the Builder pattern provides a way to build objects step-by-step, with each step encapsulated in a separate method.
 ~~~java
 public class Car {
     private String make;
