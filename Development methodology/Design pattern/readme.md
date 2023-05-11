@@ -16,7 +16,7 @@ If an instance of the class has not yet been created, the static method creates 
 public class Singleton {
     private static Singleton instance;
 
-    private Singleton(){} // private constructor to prevent instantiation from outside the class
+    private Singleton(){} // Private constructor to prevent access from outside the class
 
     public static Singleton getInstance() {
         if (instance == null) {
