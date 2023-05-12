@@ -166,7 +166,8 @@ If the low level module Samsung_pay changes, the high level module Pay_service h
 #### Example of obeying DIP
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6f7ab505-d273-48a3-a8a2-c6469661c375)
 
-Dependency injection and an interface(abstraction) enable dependency inversion.
+Dependency injection and an interface(abstraction) enable dependency inversion.<br>
+***Dependency injection*** means providing the dependencies of a class from outside of the class, rather than creating them within the class itself.
 ~~~java
 interface Pay_type{
 	String payment();
@@ -192,6 +193,3 @@ class Pay_service {
 }
 ~~~
 Whether pay_type is samsung or apple, Pay_service does not need to be changed thanks to the **polymorphism** of Pay_type.(loose coupling)
-
-### Dependency injection
-Dependency injection means providing the dependencies of a class from outside of the class, rather than creating them within the class itself.
