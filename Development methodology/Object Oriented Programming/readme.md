@@ -141,61 +141,57 @@ The above example does not obey ISP because windows_game() is not supported in i
 windows_game() should be moved to a separated interface
 
 ## 5. Dependency Inversion Principle
-High level modules should not depend on low level modules to prevent tight coupling even though it is natural for a high level module to depend on a low level module.<br>
-In other words, a high level module should work regardless of changes to its low level module.
+The name refers to the inversion of the traditional dependency direction, where high-level modules depend on low-level modules.<br>
+DIP states that high-level modules should not depend on low-level modules, but both should depend on their abstractions, so that high level modules can work regardless of changes to their low level modules.<br>
+#### Example of not obeying DIP
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/498b3955-7209-4879-90fa-cd860c5f5152)
+
 ~~~java
 class Samsung_pay {
-    void payment() {
-        System.out.println("samsung");
+    String payment() {
+        return "samsung";
     }
 }
 
 class Pay_service {
-    Samsung_pay pay_type;
-    
-    void payment(Samsung_pay pay_type) {
-        this.pay_type.payment();
+    Samsung_pay pay_type = new Samsung_pay();
+    String payment() {
+        return this.pay_type.payment();
     }
 }
 ~~~
 The above example does not obey DIP because Pay_service depends on its low level module Samsung_pay.<br>
-That is to say, if the low level module Samsung_pay changes, the high level module Pay_service has to be changed accordingly, which is a waste.(tight coupling)
+If the low level module Samsung_pay changes, the high level module Pay_service has to be changed too, which is inefficient.(tight coupling)
+
+#### Example of obeying DIP
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6f7ab505-d273-48a3-a8a2-c6469661c375)
+
+Dependency injection and an interface enable dependency inversion.
 ~~~java
 interface Pay_type{
-	void payment();
+	String payment();
 }
 
 class Samsung_pay implements Pay_type {
-    void payment() {
-        System.out.println("samsung");
+    	String payment() {
+		return "samsung";
     }
 }
 class Apple_pay implements Pay_type {
-    void payment() {
-        System.out.println("apple");
+ 	String payment() {
+        	return "apple";
     }
 }
 
 class Pay_service {
-    Pay_type pay_type;
-    
-    void payment(Pay_type pay_type) {
-        this.pay_type.payment();
-    }
+	Pay_type pay_type;
+	Pay_service(Pay_type pay_type) {
+		this.pay_type = pay_type;
+		this.pay_type.payment();
+ 	}	
 }
 ~~~
-Pay_service depends on its low level module Pay_type where changing the low level module does not matter.<br>
-Even if Samsung_pay changes, Pay_service does not need to be changed thanks to the **polymorphism** of Pay_type.(loose coupling)
+Whether pay_type is samsung or apple, Pay_service does not need to be changed thanks to the **polymorphism** of Pay_type.(loose coupling)
 
 ### Dependency injection
-This process is automated in Spring framework.
-~~~java
-public class Kiosk {
-    public void init_pay_service() {
-        // Creation of bean
-        Pay_type samsung_pay = new Samsung_pay();
-        // Dependency injection
-        Pay_service pay_service = new Pay_service(samsung_pay);
-    }
-}
-~~~
+Dependency injection means providing the dependencies of a class from outside of the class, rather than creating them within the class itself.
