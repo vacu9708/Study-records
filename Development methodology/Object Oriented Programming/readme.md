@@ -166,7 +166,7 @@ If the low level module Samsung_pay changes, the high level module Pay_service h
 #### Example of obeying DIP
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6f7ab505-d273-48a3-a8a2-c6469661c375)
 
-Dependency injection and an interface enable dependency inversion.
+Dependency injection and an interface(abstraction) enable dependency inversion.
 ~~~java
 interface Pay_type{
 	String payment();
