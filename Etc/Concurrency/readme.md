@@ -8,7 +8,7 @@ Parallelism refers to performing multiple tasks really at the same time by execu
 Each statement of code is executed one after the other.(blocking)
 
 # Asynchronous programming
-Asynchronous programming allows a single thread to manage multiple tasks.(non-blocking) It can be implemented with either concurrency and paralleism.
+Asynchronous programming allows a single thread to manage multiple tasks.(non-blocking) It can be implemented with either concurrency and parallelism.
 
 ### Example of Asynchronous programming
 ~~~javascript
