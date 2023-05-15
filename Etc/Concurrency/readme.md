@@ -1,8 +1,8 @@
 # Concurrency
-Concurrency refers to performing multiple tasks at the same time by dividing as task into smaller sub-tasks and executing them concurrently. they ***appear*** to be executed simultaneously to the user.
+Concurrency refers to performing multiple tasks at the same time by dividing tasks into smaller sub-tasks and executing them concurrently. Concurrency involves both actual simultaneous execution and appearing to be executed simultaneously.
 
 # Parallelism
-Parallelism refers to performing multiple tasks really at the same time by executing them simultaneously on multiple processing units.
+Parallelism refers to performing multiple tasks **actually** at the same time by executing them simultaneously on multiple processing units.
 
 # Blocking
 When a function B was called in function A, A is stopped until B finishes.
