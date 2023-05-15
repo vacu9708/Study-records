@@ -27,7 +27,7 @@ def A():
 ~~~
 
 # Synchronous programming
-Each statement of code is executed one after the other.(blocking)
+Each task is executed one after the other.(blocking)
 
 # Asynchronous programming
 Asynchronous programming allows a single thread to manage multiple tasks in a non-blocking manner. It can be implemented with either concurrency and parallelism.
