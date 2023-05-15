@@ -5,10 +5,9 @@ A **race condition** occurs when two threads access shared memory at the same ti
 The **critical section** is a code segment that can be accessed by only one process at a time. Process Synchronization is to manage the critical section.<br>
 
 ## Methods to prevent accessing shared memory at the same time
-* **Busy waiting** method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.<br>
-* **semaphore** : a method to solve the busy waiting problem where whether shared resource is in use is checked before a process gets into the critical section.<br>
-* **mutex(mutual exclusion)** : it is a kind of semaphore. Unlike the normal semaphore where multiple processes can share resource, mutex is binary semaphore.
-In other words, only lock and unlock exist.<br>
+- **Busy waiting** is a method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.
+- A semaphore is a method used to solve the busy waiting problem by checking whether a shared resource is in use before a process enters the critical section.
+- **mutex(mutual exclusion)**  is a kind of semaphore. Unlike the normal semaphore where multiple processes can share resource, mutex is binary semaphore. In other words, only lock and unlock exist.<br>
 
 ~~~c++
 class semaphore{
