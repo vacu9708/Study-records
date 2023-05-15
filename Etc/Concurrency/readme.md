@@ -10,6 +10,34 @@ Each statement of code is executed one after the other.(blocking)
 # Asynchronous programming
 Asynchronous programming allows a single thread to manage multiple tasks.(non-blocking) It can be implemented with either concurrency and paralleism.
 
+### Example of Asynchronous programming
+~~~javascript
+async function fetchMultipleData() {
+  try {
+    console.log('Fetching data from multiple APIs...');
+
+    const urls = [
+      'https://api.example.com/data1',
+      'https://api.example.com/data2',
+      'https://api.example.com/data3'
+    ];
+
+    const promises = urls.map(url => fetchData(url));
+    const results = [];
+    //const results = await Promise.all(promises); // can replace for (const promise of promises){
+
+    for (const promise of promises) {
+      const data = await promise;
+      results.push(data);
+    }
+
+    console.log('Data fetched:', results);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+~~~
+
 # Blocking
 When a function B was called in function A, A is stopped until B finishes.
 ~~~python
