@@ -51,3 +51,7 @@ When an access token expires, it can no longer be used to access protected resou
 Due to the security issue of OAuth 1.0, OAuth 2.0 was developed.
 OAuth 2.0 is standard framework for delegated authorization, It enables apps to obtain limited access to a user’s data, for example without giving away a user’s password.<br>
 OAuth is about authorization and not authentication. Authorization is asking for permission to do stuff. Authentication is about proving you are the correct person because you know things. OAuth doesn’t pass authentication data.
+
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/4dad63bb-fcec-4978-aa74-391120710786)
+[OAuth architecture.pptx](https://github.com/vacu9708/Fundamental-knowledge/files/11474187/OAuth.architecture.pptx)
+
