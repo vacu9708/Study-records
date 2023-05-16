@@ -1,6 +1,6 @@
 ## Types of binding
-- Static binding: The address is set upon compile.
-- Dynamic binding: The address is going to be set upon the allocation of the class because OOP can result in child objects that have their parent's type. 
+- Static binding: The address is set at compile time.
+- Dynamic binding: The address is going to be set upon the allocation of the class because OOP can result in child objects that have their parent's type.(polymorphism)
 ~~~c++
 #include <iostream>
 using namespace std;
