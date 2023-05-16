@@ -7,6 +7,7 @@
 - [Security](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Security.md)
 - [Socket (websocket)](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Socket%20(websocket))
 - [Server architecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Development%20methodology/Server%20architecture)
+- [How to handle a large number of users](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/How%20to%20handle%20a%20large%20number%20of%20users)
 
 ### Network
 - [OSI model](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/OSI%20model)
