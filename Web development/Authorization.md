@@ -14,7 +14,7 @@ contains token information and public information to identify the user. It is no
 ~~~
 ## Signature
 The header and payload are taken together and encoded into a signature when the token is issued.<br>
-If the JWT was tampered with, the signature recalculated using the received header and payload data will no longer match the signature in the JWT.
+If the JWT was tampered with, the signature recalculated using the received header and payload data will no longer match the signature in the JWT. (or the same way as the digital signature can also be used where the signature and decrypted)
 
 ## Workflow
 ### Issuing
