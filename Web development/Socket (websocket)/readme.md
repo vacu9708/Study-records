@@ -100,4 +100,10 @@ while True:
 ![image](https://user-images.githubusercontent.com/67142421/175810768-dec44ecb-9e1f-493c-9bea-583ac71639ce.png)
 
 # Websocket
-WebSocket is a higher-level protocol specifically designed for web over TCP, which uses HTTP in the initial handshake process to establish the connection between the client and the server, and then upgrades the connection to a two-way real-time communication channel.
+WebSocket is a higher-level protocol specifically designed for web over TCP, which uses HTTP in the initial handshake process to establish the connection, and then upgrades the connection to a two-way real-time communication channel.
+
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/320d32fc-6322-435c-b0d3-adda52e56a44)<br>
+1. Request: The client sends an HTTP request to the server to initiate the WebSocket connection
+2. Response: The server responds with an HTTP 101 status code (Switching Protocols) and includes an "Upgrade" header with a value of "websocket" in the response.
+3. WebSocket Connection Established and data exchange
+4. Connection Termination: Either the client or the server sends a message to close the WebSocket connection.
