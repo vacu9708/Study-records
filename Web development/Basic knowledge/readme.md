@@ -8,14 +8,15 @@ something you can click on to jump to another place of the web. (It creates a no
 # The HyperText Markup Language, or HTML
 the standard markup language that is used to define the structure of a webpage(, which can include hypermedia such as text, graphics, sound, video, and so on).
 
-# HTTP and HTTPS
+# HTTP and HTTPs
 - **HTTP**: a stateless, insecure protocol for a client and a server to communicate, comprised of a request and a response.
-- **HTTPS**: HTTP that is encrypted using SSL handshake. It is secure but delays the speed of the website.
+- **HTTPs**: HTTP that is encrypted using SSL handshake. It is secure but delays the speed of the website.
 
 # HTTP methods
-- **GET** is used to request data where the request parameter is appended to the URL and has a length restriction.
-- **POST** is used to send data to a server where the request parameter is appended into the HTTP body doesn't have a length restriction.
-- PUT, PATCH, DELETE, etc
+- **GET** for retrieving a resource
+- **POST** for creating a new resource
+- **PUT** for updating a resource
+- **DELETE** for deleting a resource
 
 # RESTful API
 APIs that obey the REST constraints are described as RESTful API.<br>
