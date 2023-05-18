@@ -30,8 +30,9 @@ Upgrading a single server's hardware.
 - There are physical limits to adding hardware to a single server.
 - Failure in one part of the system can result in the entire system dying.
 
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/f20345ca-ba70-4e49-915d-ef4ae77c978b)
 # Why use Redis database
-The main reason is because it is **super fast**
+The primary reason for using Redis is its **exceptional speed**.<br>
 - **In-Memory Data Storage**: Redis stores data in RAM instead of on disk. This allows Redis to deliver exceptionally fast performance.
 - **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances. This enables horizontal scaling to handle growing workloads and ensures high availability.
 - **Key-Value Data Model**: Redis follows a simple key-value data model.
