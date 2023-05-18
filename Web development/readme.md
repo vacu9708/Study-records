@@ -6,7 +6,7 @@
 - [Authorization](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Authorization.md)
 - [Security](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Security.md)
 - [Socket (websocket)](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Socket%20(websocket))
-- [Server development](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server%20development)
+- [Server development](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side)
 
 ### Network
 - [OSI model](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/OSI%20model)
