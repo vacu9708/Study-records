@@ -18,13 +18,17 @@ the standard markup language that is used to define the structure of a webpage(,
 - PUT, PATCH, DELETE, etc
 
 # RESTful API
-An API that obeys the REST constraints is described as RESTful API.<br>
+APIs that obey the REST constraints are described as RESTful API.<br>
 Server side framework can be just about anything thanks to RESTful API that abstracts the implementation.
-## A restful API
-- has uniform interface for communication between clients and servers, including an HTTP method(GET, POST, PUT, DELETE, etc) + URL. (e.g. GET https://myweb/users)
-- does not maintain any client state 
+## REST constraints
+- **Self-descriptive*: RESTful APIs has to contain enough information that represents what it does.
+- **Stateless**: Any client state is not maintain.
+- **Uniform interface**: RESTful APIs have a uniform interface that provides a standardized way for clients and servers to communicate.<br>
+The uniform interface constraint includes several aspects, such as:<br>
+Resource identification: APIs are identified by unique URIs.
+Resource manipulation: HTTP methods that have a specific meaning (GET, POST, etc.) are used.
+Representation of resources: Resources are represented in a standardized format (e.g., JSON, XML) that both the client and server understand.
 
-One of the REST constraints is *self-descriptive*, which means an API has to contain enough information that represents what it does.<br>
 ![image](https://user-images.githubusercontent.com/67142421/183272701-c6526ec7-79dd-4a9e-a72e-204dee53a978.png)<br>
 
 # API
