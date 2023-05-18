@@ -30,11 +30,12 @@ Upgrading a single server's hardware.
 - There are physical limits to adding hardware to a single server.
 - Failure in one part of the system can result in the entire system dying.
 
-# Redis
-Normal database stores data in secondary memory.<br>
-On the other hand, Redis, which stands for Remote Dictionary Server, is a fast, open source, key-value database whose data is stored in main memory.<br>
+# Why use Redis database
+- **In-Memory Data Storage**: Redis stores data in RAM instead of on disk. This allows Redis to deliver exceptionally fast performance.
+- **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances. This enables horizontal scaling to handle growing workloads and ensures high availability.
+- **Key-Value Data Model**: Redis follows a simple key-value data model.
 
-# How to maintain database persistence
+### How to achieve data persistence in Redis
 Main memory cannot maintain the data, so Redis has backup methods.<br>
 1. By default Redis regularly saves **snapshots**(Redis Backup file, RDB) of the dataset on disk. This has a problem that data between back points disappears.
 2. **AOF**(Append Only File) : a persistence mechanism that allows the Redis server to keep track and log every command executed on the server.
