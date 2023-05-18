@@ -1,25 +1,34 @@
 # SQL
 ![image](https://user-images.githubusercontent.com/67142421/177896991-3d9ef63a-30d7-4c7a-9695-cc48baa8b120.png)<br>
-- SQL databases require pre-defined schemas on which data is stored, which is hard to modify after.
-- Schemas are normalized and connected by JOIN clauses, which maintains data integrity when updating duplicate data.
-- Horizontal scaling is challenging or impossible.
+- Pre-defined schemas are required to store data, which is hard to modify after.
+- Data integrity is guaranteed as a result of ACID transactions, data constraints, etc.
+- Normalized tables are combined by JOIN clauses, which guarantees data integrity by eliminating the risk of updating duplicate data (e.g. updating data in table1 and forgetting the duplicate data in table2).
+- Horizontal scaling is challenging because guaranteeing data integrity on queries across multiple servers is difficult.
 ### When to use SQL
 When data integrity is crucial such as in banks
 
 # NoSQL
 ![image](https://user-images.githubusercontent.com/67142421/177898003-73e84048-afd7-4979-91f3-798c07ab27fa.png)<br>
-- **document** of NoSQL correspondes to **row** of SQL and **collection** of NoSQL correspondes to **table** of SQL
+NoSQL prioritizes flexibility, scalability, and performance over strict constraints.<br>
+**document** of NoSQL correspondes to **row** of SQL and **collection** of NoSQL correspondes to **table** of SQL.<br>
 - Data is stored in flexible documents that can have a different structure.
-- JOIN clauses are not used to combine normalized tables, so it is faster than SQL but data integrity is not guaranteed when updating duplicate data.
-- For horizontal scaling, all that needs to be done is just split collections.
-
+- Data integrity is not guaranteed. (Instead of relying solely on database consistency, application-level compensation can be used)
+- JOIN clauses are not used, so it is faster than SQL but data integrity is not guaranteed because of the risk when updating duplicate data.
+- Horizontal scaling just requires spliting collections.
 ### When to use NoSQL
-- When horizontal scaling is important
+- When horizontal scaling is in mind
 
 # Horizontal VS Vertical scaling
-![image](https://user-images.githubusercontent.com/67142421/177931196-ed491a87-8be9-4cf5-b9f4-a39e2a945974.png)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/72d184d4-a383-40ef-b036-0b7e9357cf51)<br>
+### Horizontal scaling
+Data is partitioned across multiple servers.<br>
 
-In SQL the horizontal scaling is difficult because spliting related tables takes a big cost
+### Vertical scaling
+Upgrading a single server's hardware.
+#### Disadvantages
+- Installing new hardware requires taking the server offline.
+- There are physical limits to adding hardware to a single server.
+- Failure in one part of the system can result in the entire system dying.
 
 # Redis
 Normal database stores data in secondary memory.<br>
