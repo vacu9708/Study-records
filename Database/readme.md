@@ -5,4 +5,4 @@
 - [Normalization](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Normalization)
 - [Indexing](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Indexing)
 - [Transaction](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Transaction)
-- [ORM](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Object%20Relational%20Mapping)
+- [Object Relational Mapping](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Object%20Relational%20Mapping)
