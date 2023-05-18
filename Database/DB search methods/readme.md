@@ -1,3 +1,4 @@
+# Indexing
 Hash table, which takes O(1) time might seem the fastest for searching data, but hash table works only for equal sign operations and 
 DB operations include other operations too. We need another method.
 
@@ -11,16 +12,17 @@ The indexed B+ tree makes it possible to avoid scanning all the table, which lea
 
 ![image](https://user-images.githubusercontent.com/67142421/177964732-7c42ca86-d32a-4639-9d26-ead095245e0f.png)
 
-### Animation
-### Without index (takes *O(n)*)
+## Animation
+### Without index (takes ***O(n)***)
 <img src="https://dataschool.com/assets/images/sql-optimization/how_to_index/BasicSearchGif.gif">
 
-### With index (takes *O(logn)*)
+### With index (takes ***O(logn)***)
 ~~~sql
 CREATE INDEX friends_name_asc ON friends(name ASC);
 ~~~
 
 <img src="https://dataschool.com/assets/images/sql-optimization/how_to_index/BinarySearchGif.gif">
+
 
 1. Look for the data on the indexed B+ tree
 2. Once the data was found, get the data that it points to
