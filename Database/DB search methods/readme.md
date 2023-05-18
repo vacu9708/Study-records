@@ -34,16 +34,4 @@ Database index increases the reading speed largely, but decreases the speed of a
 * **Delete** : the index of deleted data has to be deleted.
 * **Update** : the index of previous data has to be deleted, the index of updated data has to be added and the table has to be sorted.
 
-# Cardinality, Selectivity
-## Cardinality
-- the number of elements of a set, that is, the number of unique elements.
-- The higher, the better for indexing because low cardinality means full or near full scans are performed in **WHERE** clauses in which indexing is meaningless.
-### Calculation of cardinality
-- Ex) "phone number": number of rows
-- Ex) "SEX": 2
-## Selectivity
-- the number of rows with a specific value, divided by the total number of rows.
-- The lower, the better for indexing
-### Calculation of selectivity
-- Ex) "SEX" column = 0.5
-- Ex) "phone number = 0.1
+
