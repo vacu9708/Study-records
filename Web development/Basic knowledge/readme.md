@@ -31,9 +31,9 @@ Server side framework can be just about anything thanks to RESTful API that abst
 - **Stateless**: Any client state is not maintain.
 - **Uniform interface**: RESTful APIs have a uniform interface that provides a standardized way for clients and servers to communicate.<br>
 The uniform interface constraint includes several aspects, such as:<br>
-Resource identification: APIs are identified by unique URIs.
-Resource manipulation: HTTP methods that have a specific meaning (GET, POST, etc.) are used.
-Representation of resources: Resources are represented in a standardized format (e.g., JSON, XML) that both the client and server understand.
+- **Resource identification**: APIs are identified by unique URIs.
+- **Resource manipulation**: HTTP methods that have a specific meaning (GET, POST, etc.) are used.
+- **Representation of resources**: Resources are represented in a standardized format (e.g., JSON, XML) that both the client and server understand.
 
 ![image](https://user-images.githubusercontent.com/67142421/183272701-c6526ec7-79dd-4a9e-a72e-204dee53a978.png)<br>
 
