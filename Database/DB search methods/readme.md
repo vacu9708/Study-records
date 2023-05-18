@@ -14,14 +14,14 @@ The indexed B+ tree makes it possible to avoid scanning all the table, which lea
 
 ## Animation
 ### Without index (takes ***O(n)***)
-<img src="https://dataschool.com/assets/images/sql-optimization/how_to_index/BasicSearchGif.gif">
+<img src="https://github.com/vacu9708/Fundamental-knowledge/blob/main/Database/DB%20search%20methods/Without%20index.gif">
 
 ### With index (takes ***O(logn)***)
 ~~~sql
 CREATE INDEX friends_name_asc ON friends(name ASC);
 ~~~
 
-<img src="https://dataschool.com/assets/images/sql-optimization/how_to_index/BinarySearchGif.gif">
+<img src="https://github.com/vacu9708/Fundamental-knowledge/blob/main/Database/DB%20search%20methods/With%20index.gif">
 
 
 1. Look for the data on the indexed B+ tree
