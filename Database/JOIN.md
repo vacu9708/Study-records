@@ -72,7 +72,7 @@ FROM students1 LEFT JOIN students2 ON students1.grade = students2.grade;
 ![image](https://user-images.githubusercontent.com/67142421/177883665-33dc874d-0ca8-47eb-9c6e-83642080dc41.png)
 
 # CROSS JOIN
-Both make the same result.
+Both make the same result.(same as cross product)
 ~~~sql
 SELECT *
 FROM students1 CROSS JOIN students2;
