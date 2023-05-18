@@ -3,5 +3,5 @@
 * [JOIN](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Database/JOIN.md)
 * [SQL, NoSQL, etc](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/SQL%2C%20NoSQL%2C%20others)
 * [Normalization](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Normalization)
-* [DB search methods](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/DB%20search%20methods)
+* [Indexing](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Indexing)
 * [Transaction](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Transaction)
