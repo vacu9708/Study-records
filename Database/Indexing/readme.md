@@ -33,5 +33,3 @@ Database index increases the reading speed largely, but decreases the speed of a
 * **Insert** : the index for new data has to be added and the table has to be sorted.
 * **Delete** : the index of deleted data has to be deleted.
 * **Update** : the index of previous data has to be deleted, the index of updated data has to be added and the table has to be sorted.
-
-
