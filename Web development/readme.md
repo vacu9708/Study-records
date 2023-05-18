@@ -1,4 +1,4 @@
-- [Web basics](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Basic%20knowledge)
+- [Web basics](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Web%20basics)
 - [Cookie, Session, Web storage](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Cookie,%20Session,%20Web%20storage.md)
 - [JSON](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/JSON%20parser%20with%20C%2B%2B)
 - [How a browser works](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/How%20browsers%20work)
