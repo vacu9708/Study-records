@@ -1,4 +1,4 @@
-- [Load balancing](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Server-side/Load%20balancing.md)
-- [Microservices architecture](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Server-side/MSA.md)
-- [Cloud](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Server-side/Cloud.md)
-- [Handling large traffic](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Web%20development/Server-side/Handling%20large%20traffic.md)
+- [Load balancing](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Load%20balancing)
+- [Microservices architecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/MSA)
+- [Cloud](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Cloud)
+- [Handling large traffic](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Handling%20large%20traffic)
