@@ -1,7 +1,7 @@
 * [DBMS](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/DBMS)
 * [Keys](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Database/Keys.md)
 * [JOIN](https://github.com/vacu9708/Fundamental-knowledge/blob/main/Database/JOIN.md)
-* [SQL vs NoSQL](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/SQL%20vs%20NoSQL)
+* [SQL, NoSQL, etc](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/SQL%2C%20NoSQL%2C%20others)
 * [Normalization](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Normalization)
 * [Index](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Index)
 * [Transaction](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Transaction)
