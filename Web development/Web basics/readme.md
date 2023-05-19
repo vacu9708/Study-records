@@ -43,7 +43,7 @@ HATEOAS suggests that an API should include hyperlinks in its responses, allowin
 This abstraction layer promotes loose coupling between the client and server as the client only needs to know the abstraction interface.<br>
 
 ### Traditional REST API response:
-~~~
+~~~json
 GET /api/books/123
 {
   "id": 123,
@@ -53,7 +53,7 @@ GET /api/books/123
 }
 ~~~
 ### HATEOAS REST API response:
-~~~
+~~~json
 GET /api/books/123
 {
   "id": 123,
