@@ -34,7 +34,8 @@ if __name__ == '__main__':
 
 # Parallel programming
 Parallel programming refers to breaking a task into subtasks and processing them **actually** at the same time on separate CPU processors.<br>
-### Multi-processing requires:
+### Parallel programming requires:
+- Dividing the task into subtasks well
 - Synchronization mechanisms to prevent race conditions.
 - Inter-process communication because processes are designed not to commumicate by default.
 
