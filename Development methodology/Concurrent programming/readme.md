@@ -3,7 +3,7 @@ Concurrency refers to performing multiple tasks at the same time by dividing tas
 
 # Parallelism
 Parallelism refers to performing multiple tasks **actually** at the same time by executing them simultaneously on multiple processing units.
-
+---
 # Blocking
 When a function B was called in function A, A is stopped until B finishes.
 ~~~python
@@ -25,7 +25,7 @@ def A():
     print("B")
   B()
 ~~~
-
+---
 # Synchronous programming
 Each task is executed one after the other.(blocking)
 
