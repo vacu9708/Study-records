@@ -26,7 +26,7 @@ the standard markup language that is used to define the structure of a webpage(,
 # RESTful API
 APIs that obey the REST constraints are described as RESTful API.<br>
 Server side framework can be just about anything thanks to RESTful API that abstracts the implementation.
-## REST constraints
+### REST constraints
 - **Self-descriptive**: RESTful APIs has to contain enough information that represents what it does.
 - **Stateless**: Any client state is not maintain.
 - **Uniform interface**: RESTful APIs have a uniform interface that provides a standardized way for clients and servers to communicate.<br>
@@ -36,6 +36,43 @@ The uniform interface constraint includes several aspects, such as:<br>
   - **Representation of resources**: Resources are represented in a standardized format (e.g., JSON, XML) that both the client and server understand.
 
 ![image](https://user-images.githubusercontent.com/67142421/183272701-c6526ec7-79dd-4a9e-a72e-204dee53a978.png)<br>
+
+# Hateoas
+REST constraints are not enough to be a great API.<br>
+HATEOAS suggests that an API should include hyperlinks in its responses, allowing clients to dynamically traverse the API by following the provided links instead of relying on prior knowledge or hard-coded URLs.<br>
+This abstraction layer promotes loose coupling between the client and server as the client only needs to know the abstraction interface.<br>
+
+### Traditional REST API response:
+~~~
+GET /api/books/123
+{
+  "id": 123,
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "genre": "Fiction"
+}
+~~~
+### HATEOAS REST API response:
+~~~
+GET /api/books/123
+{
+  "id": 123,
+  "title": "The Catcher in the Rye",
+  "author": {
+    "name": "J.D. Salinger",
+    "links": {
+      "self": "/api/authors/456"
+    }
+  },
+  "genre": "Fiction",
+  "links": {
+    "self": "/api/books/123",
+    "similar": "/api/books?genre=Fiction"
+  }
+}
+
+~~~
+In this HATEOAS REST API, the client-side code does not require any changes even if the APIs of "links" change, thanks to the abstraction layer provided by the "links" object.
 
 # UI/UX
 UI refers to visual elements that users interact with. UX refers more generally to users' overall experience, including how they feel about the interaction.
