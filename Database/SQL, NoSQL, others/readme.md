@@ -3,7 +3,7 @@
 - Pre-defined schemas are required to store data, which is hard to modify after.
 - Data integrity is guaranteed as a result of ACID transactions, data constraints, etc.
 - Normalized tables are combined by JOIN clauses, which guarantees data integrity by eliminating the risk of updating duplicate data (e.g. updating data in table1 and forgetting the duplicate data in table2).
-- Horizontal scaling is challenging because guaranteeing data integrity on queries across multiple servers is difficult.
+- Horizontal scaling is challenging because guaranteeing data integrity on queries across multiple servers is difficult.(due to ACID, synchronization, etc)
 ### When to use SQL
 When data integrity is crucial such as in banks
 
@@ -17,18 +17,6 @@ NoSQL prioritizes flexibility, scalability, and performance over strict constrai
 - Horizontal scaling just requires spliting collections.
 ### When to use NoSQL
 - When horizontal scaling is in mind
-
-# Horizontal VS Vertical scaling
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/72d184d4-a383-40ef-b036-0b7e9357cf51)<br>
-### Horizontal scaling
-Data is partitioned across multiple servers.<br>
-
-### Vertical scaling
-Upgrading a single server's hardware.
-#### Disadvantages
-- Installing new hardware requires taking the server offline.
-- There are physical limits to adding hardware to a single server.
-- Failure in one part of the system can result in the entire system dying.
 
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/f20345ca-ba70-4e49-915d-ef4ae77c978b)
 # Why use Redis database
