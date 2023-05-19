@@ -1,8 +1,9 @@
-# Concurrency
-Concurrency refers to performing multiple tasks at the same time by dividing tasks into smaller sub-tasks and executing them concurrently. Concurrency involves both actual simultaneous execution and appearing to be executed simultaneously.
+# Concurrent programming
+Concurrenct programming refers to dividing a task into smaller subtasks and processing them at the same time. Concurrency involves both actual and apparent simultaneous execution of multiple tasks.<br>
 
-# Parallelism
-Parallelism refers to performing multiple tasks **actually** at the same time by executing them simultaneously on multiple processing units.
+# Parallel programming
+Parallel programming refers to breaking a task into subtasks and processing them **actually** at the same time on separate processing units.<br>
+
 ---
 # Blocking
 When a function B was called in function A, A is stopped until B finishes.
@@ -25,6 +26,7 @@ def A():
     print("B")
   B()
 ~~~
+
 ---
 # Synchronous programming
 Each task is executed one after the other.(blocking)
