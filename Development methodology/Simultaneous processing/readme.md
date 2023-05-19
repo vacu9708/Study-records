@@ -1,6 +1,6 @@
 # Concurrent programming
 Concurrenct programming refers to dividing a task into smaller subtasks and processing them at the same time. Concurrency involves both actual and apparent simultaneous execution of multiple tasks.<br>
-
+The example below does not improve the speed because the threads only appear to be executed simultaneously.
 ~~~python
 import time
 
