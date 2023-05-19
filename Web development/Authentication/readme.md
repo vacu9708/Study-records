@@ -48,7 +48,7 @@ When an access token expires, it can no longer be used to access protected resou
 - Server-side vulnerabilities: If an attacker gains access to the server or the database where access tokens or refresh tokens are stored, they may be able to steal them directly.
 
 # OAuth 2.0
-OAuth2 (Open Authorization 2.0) is an authorization framework where OAuth2 provider allows third-party applications to access user resources without sharing the user's credentials.<br>
+OAuth2 (Open Authorization 2.0) is a standardized framework that allows other servers to access user resources without sharing the user's credentials.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/20beccb9-7d40-4bf1-a2b7-fd5ec49909c2)
 [OAuth.architecture.pptx](https://github.com/vacu9708/Fundamental-knowledge/files/11513033/OAuth.architecture.pptx)
 
