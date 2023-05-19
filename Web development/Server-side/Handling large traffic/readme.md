@@ -1,29 +1,26 @@
-### Scalability
-Ensure that your server architecture is designed to scale horizontally or vertically as the user base grows. This involves distributing the workload across multiple servers, adding more resources (CPU, memory, storage) to handle increased demand, or utilizing cloud-based solutions that can automatically scale based on traffic.
+# How to handle large traffic
+### Non blocking I/O
+Instead of handling the email sending process synchronously within the request-response cycle, non-blocking I/O can be utilized to prevent busy waiting.
+1. When a customer places an order, the email sending task is added to a message queue.
+2. An asynchronous worker retrieves the task from the queue and handles the process.
+3. This decoupling allows the application to quickly respond to the customer's request without waiting for the email to be sent(without busy waiting).
 
-### Performance Optimization
-Identify potential performance bottlenecks early on and optimize your server code accordingly. This includes minimizing database queries, optimizing algorithms and data structures, and leveraging caching mechanisms to reduce the load on the server.
+### Algorithm optimization
+Optimize the time complexity of algorithms
+
+### DB Optimization
+This involves denormalizing data, indexing frequently accessed fields, query optimization, query caching, using in-memory DB cache(e.g. Redis).<br>
+Query caching refers to caching the results of frequently executed queries to retrieve the data from memory instead of executing the query.<br>
+
+### Content Delivery Network(CDNs)
+Instead of serving static content such as images, videos directly from the origin server,<br>
+utilize CDNs to store static content like images and videos in multiple regions and serve them from the fastest network.
+
+### Scaling
+Ensure that the server architecture is designed to scale as the number of users grows.
 
 ### Load Balancing
-Implement load balancing techniques to evenly distribute incoming requests across multiple server instances. This helps prevent any single server from becoming overwhelmed and ensures that the workload is effectively distributed.
+Implement load balancing techniques to evenly distribute incoming requests across multiple servers. This helps prevent any single server from becoming overwhelmed.
 
-### Redundancy and Failover
-Build a fault-tolerant server infrastructure with redundancy and failover mechanisms. This involves having backup servers, employing replication and synchronization techniques for data storage, and implementing failover mechanisms to handle server failures without significant service disruption.
-
-### Caching
-Utilize caching strategies to reduce the load on the server and improve response times. Caching can be applied at different levels, including application-level caching, database query caching, and content delivery network (CDN) caching for static assets.
-
-### Database Optimization
-Optimize your database design and queries to handle a large number of concurrent users efficiently. This may involve denormalizing data, indexing frequently accessed fields, and optimizing complex queries.
-
-### Security and Authentication
-Implement robust security measures to protect your server and user data. Use secure authentication mechanisms, implement encryption protocols, sanitize user input to prevent injection attacks, and regularly update and patch server software to address security vulnerabilities.
-
-### Monitoring and Performance Testing
-Set up monitoring tools to track server performance, resource utilization, and user experience. Conduct regular load and stress testing to identify potential bottlenecks, measure server response times, and ensure that the server can handle the anticipated user load.
-
-### Documentation and APIs
-Provide clear documentation and well-defined APIs to facilitate integration with your server. This makes it easier for developers and third-party services to interact with your server and build on top of it.
-
-### Regular Maintenance and Updates
-Regularly maintain and update your server infrastructure, including security patches, software updates, and hardware maintenance. Stay informed about the latest technologies and best practices in server development to ensure your system remains efficient and up to date.
+### Performance monitoring
+Set up monitoring tools to track server performance to know where to apply optimization.
