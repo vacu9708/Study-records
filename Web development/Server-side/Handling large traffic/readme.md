@@ -14,8 +14,8 @@ This involves denormalizing data, indexing frequently accessed fields, query opt
 Query caching refers to caching the results of frequently executed queries to retrieve the data from memory instead of executing the query.<br>
 
 # Content Delivery Network(CDNs)
-Instead of serving static content such as images, videos directly from the origin server,<br>
-utilize CDNs to store static content like images and videos in multiple regions and serve them from the fastest network.
+Instead of serving static content such as images and videos directly from the origin server,<br>
+utilize CDNs to cache them in multiple regions and serve them from the fastest network.
 
 # Scaling
 Ensure that the server architecture is designed to scale as the number of users grows.
