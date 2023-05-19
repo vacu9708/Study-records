@@ -1,6 +1,7 @@
 # How to handle large traffic
 # Non blocking I/O
-Instead of handling the email sending process synchronously within the request-response cycle, non-blocking I/O can be utilized to prevent busy waiting.
+Let's say the server wants to send a customer an order confirmation email.<br>
+Instead of handling the email sending process synchronously within the request-response cycle, non-blocking I/O can be utilized to prevent busy waiting.<br>
 1. When a customer places an order, the email sending task is added to a message queue.
 2. An asynchronous worker retrieves the task from the queue and handles the process.
 3. This decoupling allows the application to quickly respond to the customer's request without waiting for the email to be sent(without busy waiting).
