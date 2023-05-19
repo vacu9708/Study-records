@@ -1,4 +1,4 @@
-- A **race condition** occurs when two processes access shared memory at the same time and it affects *data consistency*.<br>
+- A **race condition** is a situation where multiple processes are accessing shared data simultaneously and it affects ***data consistency***.<br>
 - **Process Synchronization** refers to ensuring that shared resources are accessed by only one process at a time to maintain *data consistency*.<br>
 - The **critical section** is a code segment that can be accessed by only one process at a time. Process Synchronization is to manage the critical section.<br>
 
