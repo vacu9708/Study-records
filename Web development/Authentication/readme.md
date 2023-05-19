@@ -49,7 +49,8 @@ When an access token expires, it can no longer be used to access protected resou
 
 # OAuth 2.0
 OAuth2 (Open Authorization 2.0) is an authorization framework where OAuth2 provider allows third-party applications to access user resources without sharing the user's credentials.<br>
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/d3839134-4bc5-415c-b256-d215910c6a86)
-[OAuth architecture.pptx](https://github.com/vacu9708/Fundamental-knowledge/files/11474187/OAuth.architecture.pptx)<br>
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/20beccb9-7d40-4bf1-a2b7-fd5ec49909c2)
+[OAuth.architecture.pptx](https://github.com/vacu9708/Fundamental-knowledge/files/11513033/OAuth.architecture.pptx)
+
 
 
