@@ -28,24 +28,33 @@ For example, when there are fish, lions, rabbits, they can be wrapped up as "lif
 Another way to think about encapsulation is, it is a protective shield that prevents the data from being accessed by the code outside this shield. (Information hiding)
 
 # SOLID design principles in OOP
-## coupling
-**coupling**: How much work is involved to changing something?<br>
-It is important to keep software in loose coupling in order to make changes with as less code as possible<br>
-Everything in business always changes!<br>
-That's what SOLID principles are for.
+### Coupling
+Coupling measures how closely connected two components are to each other.<br>
+Loose coupling means that changes in one(child) component do not necessitate changes in aother(parent) component, leading to improved maintainability.<br>
+
+### Cohesion
+Cohesion refers to the degree to which the functionality is related and focused within a single component.<br>
+High cohesion indicates that the component is well-defined and performs a specific task effectively.
 
 ## 1. Single Responsibility Principle
 Every component of code (in general a class, but also a function) should have only one responsibility.<br>
 For example, a single function, generically named(like "main"), doing all the work is bad.<br>
 If a component of code has more than one responsibility, code maintenace becomes hard.<br>
+#### Result
+High cohesion
 
 ## 2. Open, Closed Principle
 Software components should be open for extension but closed for modification.<br>
 Code should be written so that new functionality can be added without changing the existing code.<br>
 That prevents situations in which a change to one of the classes also requires adapting all depending classes.<br>
+#### Result
+Loose coupling
 
 ## 3. Liskov Substitution Principle
 Child classes must be substitutable for their parent classes.<br>
+LSP ensures that subclasses can be used interchangeably with their superclass without causing errors. This allows for flexibility in software design.<br>
+#### Result
+Loose coupling, High cohesion
 ### Example
 ~~~java
 public class Computer{
@@ -72,78 +81,63 @@ public static void main(String[] args) {
 }
 ~~~
 
-### Another example
-~~~java
-public class Rectangle{
-	int width;
-	int height;
-	public Rectangle(int width, int height) {
-		this.width = width;
-		this.height = height;
-	}
-	
-	public void set_width(int width) {
-		this.width = width;
-	}
-}
-
-public class Square extends Rectangle {
-	public Square(int width) {
-		super(width, width);
-	}
-	
-	public void set_width(int width) {
-		this.width = width;
-    		this.height = width;
-	}
-}
-
-public static void main(String[] args) {
-		Rectangle rectangle = new Rectangle(2,3);
-		rectangle.set_width(4);
-		rectangle = new Square(2); // the parent class is substituted with its child
-		rectangle.set_width(4); // unexpected behavior because height should not be changed
-}
-~~~
-The above example does not obey LSP because get_area() may result in unexpected behavior, therefore Rectangle cannot be substituted with Square.<br>
-The problem can be solved if the child class inherits Shape class instead.
-~~~java
-public class Shape{
-	string shape_type;
-	int width;
-	int height;
-	public Shape(int width, int height) {
-		this.width = width;
-		this.height = height;
-	}
-}
-~~~
-
 ## 4. Interface Segregation Principle
-No class should depend on code it does not use.
+The ISP states that no code should depend on interfaces it does not use.
+#### Result
+Loose coupling, High cohesion
+### Example of not obeying ISP
 ~~~java
-class computer {
-	void chatting(){
-	}
-	void web_browser(){
-	}
-	void windows_game(){
-	}
+public interface Printer {
+    void print();
+    void scan();
 }
 
-class iphone extends computer{
-	void windows_game(){
-		System.out.println("Error: not supported!");
-	}
+public class Scanner implements Printer {
+    public void print() {
+        // Implementation for printing
+    }
+    
+    public void scan() {
+        // Implementation for scanning
+    }
 }
 ~~~
-The above example does not obey ISP because windows_game() is not supported in iphone.
-windows_game() should be moved to a separated interface
+The above example violates ISP because the child component Scanner depends on the unnecessary component Printer.<br>
+
+### Example of obeying ISP
+~~~java
+public interface Printer {
+    void print();
+}
+
+public interface Scanner {
+    void scan();
+}
+
+public class BasicScanner implements Scanner {
+    public void scan() {
+        // Implementation for scanning
+    }
+}
+
+public class AdvancedPrinter implements Printer, Scanner {
+    public void print() {
+        // Implementation for printing
+    }
+    
+    public void scan() {
+        // Implementation for scanning
+    }
+}
+~~~
+By following the Interface Segregation Principle, the code is more modular.<br>
 
 ## 5. Dependency Inversion Principle
 The name refers to the inversion of the traditional dependency direction, where high-level modules depend on low-level modules.<br>
 DIP states that high-level modules should not depend on low-level modules, but both should depend on their abstractions, so that high level modules can work regardless of changes to their low level modules.<br>
-#### Example of not obeying DIP
+#### Result
+Loose coupling, High cohesion
+### Example of not obeying DIP
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/498b3955-7209-4879-90fa-cd860c5f5152)
 
 ~~~java
@@ -163,7 +157,7 @@ class Pay_service {
 The above example does not obey DIP because Pay_service depends on its low level module Samsung_pay.<br>
 If the low level module Samsung_pay changes, the high level module Pay_service has to be changed too, which is inefficient.(tight coupling)
 
-#### Example of obeying DIP
+### Example of obeying DIP
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6f7ab505-d273-48a3-a8a2-c6469661c375)
 
 Dependency injection and an interface(abstraction) enable dependency inversion.<br>
