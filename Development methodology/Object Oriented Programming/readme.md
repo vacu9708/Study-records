@@ -44,11 +44,10 @@ If a component of code has more than one responsibility, code maintenace becomes
 High cohesion
 
 ## 2. Open, Closed Principle
-Software components should be open for extension but closed for modification.<br>
-Code should be written so that new functionality can be added without changing the existing code.<br>
-That prevents situations in which a change to one of the classes also requires adapting all depending classes.<br>
+Open extensibility, closed modification<br>
+The OCP helps to achieve loose coupling by promoting extensibility without modifying existing code.<br>
 #### Primary advantage:
-Loose coupling
+Loose coupling(The OCP often hand in hand with the Dependency Inversion Principle)
 
 ## 3. Liskov Substitution Principle
 Child classes must be substitutable for their parent classes.<br>
