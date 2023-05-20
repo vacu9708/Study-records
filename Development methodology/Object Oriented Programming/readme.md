@@ -40,21 +40,21 @@ High cohesion indicates that the component is well-defined and performs a specif
 Every component of code (in general a class, but also a function) should have only one responsibility.<br>
 For example, a single function, generically named(like "main"), doing all the work is bad.<br>
 If a component of code has more than one responsibility, code maintenace becomes hard.<br>
-#### Result:
+#### Primary advantage:
 High cohesion
 
 ## 2. Open, Closed Principle
 Software components should be open for extension but closed for modification.<br>
 Code should be written so that new functionality can be added without changing the existing code.<br>
 That prevents situations in which a change to one of the classes also requires adapting all depending classes.<br>
-#### Result:
+#### Primary advantage:
 Loose coupling
 
 ## 3. Liskov Substitution Principle
 Child classes must be substitutable for their parent classes.<br>
 LSP ensures that subclasses can be used interchangeably with their superclass without causing errors. This allows for flexibility in software design.<br>
-#### Result:
-Loose coupling, High cohesion
+#### Primary advantage:
+Loose coupling(abstract common interface)
 ### Example
 ~~~java
 public class Computer{
@@ -83,8 +83,8 @@ public static void main(String[] args) {
 
 ## 4. Interface Segregation Principle
 The ISP states that no code should depend on interfaces it does not use.
-#### Result:
-Loose coupling, High cohesion
+#### Primary advantage:
+Loose coupling(only necessary dependencies), High cohesion(once interface only has one functionality)
 ### Example of not obeying ISP
 ~~~java
 public interface Printer {
@@ -134,9 +134,9 @@ By following the Interface Segregation Principle, the code is more modular.<br>
 
 ## 5. Dependency Inversion Principle
 The name refers to the inversion of the traditional dependency direction, where high-level modules depend on low-level modules.<br>
-DIP states that high-level modules should not depend on low-level modules, but both should depend on their abstractions, so that high level modules can work regardless of changes to their low level modules.<br>
-#### Result:
-Loose coupling, High cohesion
+DIP states that high-level modules should not depend on low-level modules, but their abstraction, so that high level modules can work regardless of changes to their low level modules.<br>
+#### Primary advantage:
+Loose coupling(abstract common interface)
 ### Example of not obeying DIP
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/498b3955-7209-4879-90fa-cd860c5f5152)
 
