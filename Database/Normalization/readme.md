@@ -1,18 +1,17 @@
 # Update anomalies
-## All the anomalies occur because of duplicates!(redundancy)
+## All the anomalies occur because of duplicate data!(redundancy)
 - ### Modification anomalies
 Partial modification
 - ### Insertion anomalies
-Entering information of an entity requires the information of other entities<br>
+When entering information of an entity requires the information of other entities<br>
 Ex) When inserting the information of an employee whose department hasn't been decided
 - ### Deletion anomalies
-Deleting information of an entity causes other entities' information to be deleted<br>
-Ex) Firing an employee might cause their headquarter to be deleted
+When deleting information of an entity causes other entities' information to be deleted<br>
+Ex) When firing an employee might cause their department to be deleted
 
 # Data normalization
-the process of organizing tables to get rid of data redundancy and retain data integrity. It also makes it easier to add a new table
-because normalized tables are minimized.<br>
-**drawbacks** : Spliting a table makes more tables to JOIN, which leads to a slower speed.
+A process of minimizing tables to get rid of data redundancy and retain data integrity.
+**drawbacks** : Split tables require JOIN, which leads to a slower speed.
 
 # Why is normalization needed?
 ![image](https://user-images.githubusercontent.com/67142421/203905904-0b691b1f-2798-4b12-85f0-45daf6e2d466.png)<br>
