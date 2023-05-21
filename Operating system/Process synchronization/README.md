@@ -2,7 +2,7 @@
 - **Process Synchronization** refers to ensuring that shared resources are accessed by only one process at a time to maintain *data consistency*.<br>
 - The **critical section** is a code segment that can be accessed by only one process at a time. Process Synchronization is to manage the critical section.<br>
 
-## Methods to prevent accessing shared memory at the same time
+### Methods to prevent accessing shared memory at the same time
 - **Busy waiting** is a method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.
 - A **semaphore** is a method used to solve the busy waiting problem by checking whether a shared resource is in use before a process enters the critical section.
 - A **mutex(mutual exclusion)** is a type of semaphore. While a normal semaphore allows multiple processes to share a resource, a mutex is a binary semaphore. In other words, it has only two states: locked and unlocked.
@@ -32,8 +32,8 @@ void release(semaphore *S) { // When stopping the process that has taken the res
 }
 ~~~
 
-# Example with multi processing
-## Without a semaphore where the critical section is not protected, so the output is unstable.
+## Example with multi-processing
+There is no semaphore that protects the critical section, so the output is unstable.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 ### Output
 ![image](https://user-images.githubusercontent.com/67142421/177394795-d4fc8ac8-d465-4f08-b00b-40202a48e261.png)
 
-## With a semaphore where the critical section is protected, so the output is always the same.
+## There is a semaphore that protects the critical section, so the output is guaranteed.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
