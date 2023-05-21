@@ -31,12 +31,25 @@ A refresh token is needed for the trade-off between security and convenience.<br
 A refresh token is needed as part of the OAuth 2.0 authentication flow to obtain a new access token when the existing access token has expired. Access tokens are short-lived and typically expire after a specific amount of time, typically in minutes or hours.
 When an access token expires, it can no longer be used to access protected resources on behalf of the user. In order to continue accessing those resources, a new access token must be obtained. However, asking the user to re-authenticate every time an access token expires can be inconvenient and disruptive to the user experience.
 
-## Session-cookie VS JWT in authorization
+# Session-cookie VS JWT in authorization
 ### Session-cookie
-- All the information except session ID is stored in the server
+The fact that session objcets are managed on the server side results in the pros and cons.
+#### Pros:
+- **More control**: More control in managing user's login state.
+- **Smaller traffic**: The client only sends its session ID, which leads to less traffic than JWT.
+#### Cons:
+- **More server-side storage required**
+- **Bad scalability**: Session objects across multiple servers are difficult to manage.
+
+
 ### JWT
-- All the information is stored in the token(stateless), so no additional storage is required.
-- All the information is stored in the token, so the token is bigger than session ID, which might lead to big traffic.
+The fact that all the information is stored in the token(stateless) without server-side storage results in the pros and cons.
+#### Pros:
+- **Extra server-side storage not required**
+- **Good scalability**
+#### Cons:
+- **Less control**: The token that was already issued cannot be controlled.
+- **Larger traffic**
 
 ## Token stealing attacks
 - Cross-site scripting (XSS): An attacker injects malicious code into a website or application, which is then executed in a user's browser. This code can be used to steal the user's access token or refresh token from the client-side storage location.
