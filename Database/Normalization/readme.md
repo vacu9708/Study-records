@@ -24,75 +24,59 @@ This table above looks great because every piece of information is displayed in 
 
 ## Initial table
 Primary key: [ID, college]
-|*ID*|name|hobby|highschool|school_size|*college*|accepted|
-|---|---|---|---|---|---|---|
-|1|John|soccer, basketball|A school|500|MIT|Y|
-|2|Paul|swimming|stanford|B school|500|Y|
-|3|John|reading|berkeley|C school|600|N|
+|***ID***|name|highschool|school_size|***college***|accepted|
+|---|---|---|---|---|---|
+|1|John|A school|500|MIT, stanford|Y|
+|2|sheila|B school|600|harvard|Y|
+|3|maria|C school|700|prinston|N|
 
-## 1st normal form
+## 1st normal form (No multi value attributes)
 - An attribute can only have one value
 - There might be duplicate primary keys
-
-|*ID*|name|hobby|highschool|school_size|*college*|accepted|
+#### Table A:
+|***ID***|name|hobby|highschool|school_size|***college***|accepted|
 |---|---|---|---|---|---|---|
 |1|John|soccer|A school|500|MIT|Y|
-|1|John|basketball|A school|500|MIT|Y|
-|2|Paul|swimming|B school|500|stanford|Y|
-|3|John|reading|C school|600|berkeley|N|
+|1|John|basketball|A school|500|harvard|Y|
+|2|sheila|swimming|B school|600|stanford|Y|
+|3|maria|reading|C school|700|prinston|N|
 
-
-### Table A
-Multi-valued attribute is mapped into a new table like this<br>
-Primary key: [name, hobby]
-
-|*name*|*hobby*|
-|---|---|
-|John|soccer|
-|John|basketball|
-### Table B
-|*ID*|name|highschool|school_size|*college*|accepted|
-|---|---|---|---|---|---
-|1|John|A school|500|MIT|Y|
-|2|Paul|B school|500|stanford|Y|
-|3|John|C school|600|berkeley|N|
-
-## 2nd normal form
+## 2nd normal form (Only essential keys)
 - The table must be in 1NF form
-- In X->Y where X is a primary key, ALL the attributes of X have to be needed for Y<br>
-On table A, [ID] is needed to distinguish students, and [ID, college] is needed to distinguish accepted.<br>
-Table B is split into these.<br>
-### Table C
-|*ID*|name|highschool|school_size|
+- In X->Y where X is primary keys, EVERY key of X is essential to distinguish Y<br>
+On the 1NF table, ***college*** is not essential to distinguish student
+It is split into these.<br>
+#### Table B:
+|***ID***|name|highschool|school_size|
 |---|---|---|---|
 |1|John|A school|500|
-|2|Paul|B school|500|
-|3|John|C school|600|
-### table D
-|*ID*|*college*|accepted|
+|2|sheila|B school|600|
+|3|maria|C school|700|
+#### table C:
+|***ID***|***college***|accepted|
 |---|---|---|
-|1|MIT|Y|
-|2|stanford|Y|
-|3|berkeley|N|
+|1|MIT|Y||
+|1|stanford|Y|
+|2|harvard|Y|
+|3|princeton|N|
 
-## 3rd normal form
+## 3rd normal form (Set foreign key)
 - The table must be in 2NF form
-- When X->Y, Y->Z where X is the primary key then it is called **transitive dependency**.<br>
+- When X->Y, Y->Z, then it is called **transitive dependency**.<br>
 Set a foreign key [highschool] to solve this problem.<br>
-Table C is split into these.<br>
-
-### table E
-|*ID*|name|highschool|
+Table B is split into these.<br>
+### table D
+|***ID***|name|highschool|
 |---|---|---|
 |1|John|A school|
-|2|Paul|B school|
-|3|John|C school|
-### table F
-|*highschool*|school_size|
+|2|sheila|B school|
+|3|maria|C school|
+### table E
+|***highschool***|school_size|
 |---|---|
 |A school|500|
-|B school|500|
-|C school|600|
+|B school|600|
+|C school|700|
 
 ## BCNF
 - The table must be in 3NF form
@@ -101,8 +85,8 @@ Table C is split into these.<br>
 # Denormalization
 Denormalization is a database optimization technique in which we add redundant data to one or more tables. This can help us avoid costly JOINs in a relational database. Note that denormalization does not mean ‘reversing normalization’ or ‘not to normalize’. It is an optimization technique that is applied after normalization.
 
-## Advantage
-* Retrieving data is faster since fewer joins are done.
+### Advantage
+- Retrieving data is faster since fewer joins are done.
 
-## Disadvantave
-* Increased possibility of update anomaly.
+### Disadvantave
+- Increased possibility of update anomaly.
