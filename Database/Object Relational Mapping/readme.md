@@ -57,5 +57,5 @@ In this example, **authorRepository.findAll();** retrieves all authors(1 query).
 However, **author.getBooks()** within the loop triggers a separate query to fetch the books for each author individually(N queries).<br>
 ### How to mitigate 1+N problem
 #### Eager fetching:
-Eager fetching loads the associated entities (books) along with the main entity (authors) in a single query.<br>
+Eager fetching loads the associated entities (books) along with the main entity (authors) in a single query.(e.g. along with findAll();)<br>
 This can be achieved by specifying the fetch = FetchType.EAGER option in the annotation.<br>
