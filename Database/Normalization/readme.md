@@ -23,37 +23,39 @@ This table above looks great because every piece of information is displayed in 
 ![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
 
 ## Initial table
-Primary key: [ID, college]
-|***ID***|name|highschool|school_size|***college***|accepted|
+Primary key: [ID], [college]
+|[ID]|name|highschool|school_size|[college]|accepted|
 |---|---|---|---|---|---|
 |1|John|A school|500|MIT, stanford|Y|
-|2|sheila|B school|600|harvard|Y|
+|2|sheila|B school|600||Y|
 |3|maria|C school|700|prinston|N|
 
 ## 1st normal form (No multi value attributes)
 - An attribute can only have one value
-- There might be duplicate primary keys
 #### Table A:
-|***ID***|name|hobby|highschool|school_size|***college***|accepted|
+Primary key: [ID], [college]
+|[ID]|name|highschool|school_size|[college]|accepted|
 |---|---|---|---|---|---|---|
-|1|John|soccer|A school|500|MIT|Y|
-|1|John|basketball|A school|500|harvard|Y|
-|2|sheila|swimming|B school|600|stanford|Y|
-|3|maria|reading|C school|700|prinston|N|
+|1|John|A school|500|MIT|Y|
+|1|John|A school|500|stanford|Y|
+|2|sheila|B school|600|harvard|Y|
+|3|maria|C school|700|prinston|N|
 
 ## 2nd normal form (Only essential keys)
 - The table must be in 1NF form
 - In X->Y where X is primary keys, EVERY key of X is essential to distinguish Y<br>
-On the 1NF table, ***college*** is not essential to distinguish student
-It is split into these.<br>
+On table A, [college] is used only to distinguish [accepted]br>
+Table A is split into these.<br>
 #### Table B:
-|***ID***|name|highschool|school_size|
+Primary key: [ID]<br>
+|[ID]|name|highschool|school_size|
 |---|---|---|---|
 |1|John|A school|500|
 |2|sheila|B school|600|
 |3|maria|C school|700|
 #### table C:
-|***ID***|***college***|accepted|
+Primary key: [ID], [college]
+|[ID]|[college]|accepted|
 |---|---|---|
 |1|MIT|Y||
 |1|stanford|Y|
@@ -62,17 +64,20 @@ It is split into these.<br>
 
 ## 3rd normal form (Set foreign key)
 - The table must be in 2NF form
-- When X->Y, Y->Z, then it is called **transitive dependency**.<br>
+- When X->Y, Y->Z, then it is called **transitive dependency**.
+In table B, [ID] identifies [highschool] and [highschool] identifies [school_size], which makes a transitive dependency.<br>
 Set a foreign key [highschool] to solve this problem.<br>
-Table B is split into these.<br>
-### table D
-|***ID***|name|highschool|
+Table B is split into these.
+#### table D:
+Primary key: [ID]
+|[ID]|name|highschool|
 |---|---|---|
 |1|John|A school|
 |2|sheila|B school|
 |3|maria|C school|
-### table E
-|***highschool***|school_size|
+#### table E:
+Primary key: [highschool]
+|[highschool]|school_size|
 |---|---|
 |A school|500|
 |B school|600|
