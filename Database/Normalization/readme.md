@@ -1,7 +1,7 @@
 # Update anomalies
 All the anomalies occur due to duplicate data (redundancy) in the database:
 ### Modification anomalies
-Modifying a piece of data may require updating multiple occurrences of the same data, leading to inconsistencies.<br>
+Modifying a piece of data may require updating multiple occurrences of the same data, leading to data integrity problem.<br>
 For example, when updating the school name for one student, it may need to be updated for all other students with the same school name.
 ### Insertion anomalies
 Inserting information for an entity may become problematic if it depends on the presence of other related entities.<br>
@@ -20,7 +20,7 @@ Modern database systems are optimized to handle JOINs efficiently, and the benef
 ![image](https://user-images.githubusercontent.com/67142421/203905904-0b691b1f-2798-4b12-85f0-45daf6e2d466.png)<br>
 This table above looks great because every piece of information is displayed in one table. But actually, this big table has problems.
 - First, the same data appears multiple times(data redundancy problem)
-- Second, when a piece of data is updated, others that have that data also require update(data integrity problem)
+- Second, when a piece of data is updated, others that have that data also require update(Modification anomaly and data integrity problem)
 
 ![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
 
