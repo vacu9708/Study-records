@@ -10,6 +10,10 @@ List : Factory Method, Abstract Factory, Builder, Singleton, Object Pool, and Pr
 
 ## Singleton
 Singleton is used to ensure that a class has only one instance.<br>
+### When to use singletom
+The Singleton pattern allows a single global access point to the instance of the class.<br>
+For example, when there is a database connection object or a thread pool, only one instance needs to be shared across the application. Multiple instances of it are a waste.
+
 A singleton class consists of a ***private*** constructor to prevent the creation of multiple instances and a static method that returns the single instance of the class.<br>
 If an instance of the class has not yet been created, the static method creates one. If an instance already exists, the static method simply returns the existing instance.
 ~~~java
