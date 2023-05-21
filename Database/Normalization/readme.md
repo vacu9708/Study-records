@@ -34,6 +34,8 @@ Primary key: [ID], [college]
 
 ## 1st normal form (No multi value attributes)
 - An attribute can only have one value
+
+The initial table is converted into
 #### Table A:
 Primary key: [ID], [college]
 |[ID]|name|highschool|school_size|[college]|accepted|
@@ -45,9 +47,10 @@ Primary key: [ID], [college]
 
 ## 2nd normal form (Only essential keys)
 - The table must be in 1NF form
-- In X->Y where X is primary keys, EVERY key of X is essential to distinguish Y<br>
-On table A, [college] is used only to distinguish [accepted]br>
-Table A is split into these.<br>
+- In X->Y where X is primary keys, EVERY key of X is essential to distinguish Y
+
+On table A, [college] is used only to distinguish [accepted]<br>
+Table A is split into
 #### Table B:
 Primary key: [ID]<br>
 |[ID]|name|highschool|school_size|
@@ -67,9 +70,10 @@ Primary key: [ID], [college]
 ## 3rd normal form (Set foreign key)
 - The table must be in 2NF form
 - When X->Y, Y->Z, then it is called **transitive dependency**.
+
 In table B, [ID] identifies [highschool] and [highschool] identifies [school_size], which makes a transitive dependency.<br>
 Set a foreign key [highschool] to solve this problem.<br>
-Table B is split into these.
+Table B is split into
 #### table D:
 Primary key: [ID]
 |[ID]|name|highschool|
