@@ -16,4 +16,46 @@
 - **Bad productivity**: Writing complex queries directly requires a strong understanding of query optimization techniques and can be challenging.
 - **Database dependency**: SQL queries are often written with a specific database system in mind. Switching to a different database may require rewriting, potentially increasing maintenance efforts.
 
-# N+1 problem
+# 1+N problem
+The "N+1 problem" is a common performance issue that can occur in object-relational mapping (ORM) frameworks when retrieving data from a relational database.<br>
+It refers to a situation where an ORM framework, such as Spring JPA, ends up executing 1+N queries to retrieve N entities(1 query) and their associated entities(N queries).<br>
+
+Suppose there are two entities, Author and Book, with a one-to-many relationship where one author can have multiple books.
+### The entities could be defined as follows:
+~~~java
+@Entity
+public class Author {
+    @Id
+    private Long id;
+    private String name;
+}
+
+@Entity
+public class Book {
+    @Id
+    private Long id;
+    private String title;
+
+    @ManyToOne(fetch = FetchType.LAZY) // Lazy fetching results in the 1+N problem
+    @JoinColumn(name = "author_id")
+    private Author author;
+
+    // Getters and setters
+}
+~~~
+### A example of how the 1+N problem can occur:
+~~~java
+List<Author> authors = authorRepository.findAll();
+for (Author author : authors) {
+    System.out.println(author.getName());
+    for (Book book : author.getBooks()) {
+        System.out.println(book.getTitle());
+    }
+}
+~~~
+In this example, **authorRepository.findAll();** retrieves all authors(1 query).<br>
+However, **author.getBooks()** within the loop triggers a separate query to fetch the books for each author individually(N queries).<br>
+### How to mitigate 1+N problem
+#### Eager fetching:
+Eager fetching loads the associated entities (books) along with the main entity (authors) in a single query.<br>
+This can be achieved by specifying the fetch = FetchType.EAGER option in the annotation.<br>
