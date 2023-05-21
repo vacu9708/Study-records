@@ -27,7 +27,7 @@ If the session ID finds its way into the hands of a hacker, they can masquerade 
 | Storage location | Client | Server |
 | Form | Text | Object |
 | Expiration | Manually set | When the user closes the web browser |
-| Limit | 300 cookies per client, 20 cookies per domain, 4KB per cookie | not limit |
+| Limit | 300 cookies per client, 20 cookies per domain, 4KB per cookie | no limit |
 
 ## Web storage
 Web storage is similar to HTTP cookie but with a greatly enhanced capacity(5MB) and no information sent in the HTTP request header.<br>
