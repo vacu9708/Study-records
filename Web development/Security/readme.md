@@ -2,13 +2,13 @@
 Traditional encryption where only one key is used to both encrypt and decrypt data.
 
 # Asymmetric key encryption
-A type of encryption where a public key and a corresponding private key are used.
 ### Pros
 - Increased security because the private key does not need to be revealed to anyone
 - Easier management of keys because all that needs to be revealed is one public key while Symmetric key encryption requires that many private keys be sent.
 ### Cons
 - Complex mathematical computation
 ## How data is hidden
+**Preparation**: A receiver generates a key pair consisting of a public key and a private key and send the public key to the sender.<br>
 ![image](https://user-images.githubusercontent.com/67142421/222992037-5f45d95f-5a57-4a36-af02-6b1850d03899.png)
 
 ## Digital signature
