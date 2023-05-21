@@ -1,23 +1,26 @@
 # Update anomalies
-## All the anomalies occur because of duplicate data!(redundancy)
-- ### Modification anomalies
-Partial modification
-- ### Insertion anomalies
-When entering information of an entity requires the information of other entities<br>
-Ex) When inserting the information of an employee whose department hasn't been decided
-- ### Deletion anomalies
-When deleting information of an entity causes other entities' information to be deleted<br>
-Ex) When firing an employee might cause their department to be deleted
+All the anomalies occur due to duplicate data (redundancy) in the database:
+### Modification anomalies
+Modifying a piece of data may require updating multiple occurrences of the same data, leading to inconsistencies.<br>
+For example, when updating the school name for one student, it may need to be updated for all other students with the same school name.
+### Insertion anomalies
+Inserting information for an entity may become problematic if it depends on the presence of other related entities.<br>
+For example, when trying to insert a new student without a specified college, it may not be possible because the database requires the college information.<br>
+### Deletion anomalies
+Removing information for an entity may inadvertently delete data of other related entities.<br>
+For example, when deleting a student, it may unintentionally delete the college information for other students with the same college.
 
 # Data normalization
-A process of minimizing tables to get rid of data redundancy and retain data integrity.
-**drawbacks** : Split tables require JOIN, which leads to a slower speed.
+A process of organizing(minimizing) tables to get rid of data redundancy and retain data integrity.
+### Drawbacks
+It introduces the need for JOIN operations when retrieving data from multiple tables. JOINs have some overhead and potentially affect performance.<br>
 
-# Why is normalization needed?
+## Why is normalization needed?
+Modern database systems are optimized to handle JOINs efficiently, and the benefits of data integrity often outweigh the performance impact of JOIN operations.<br>
 ![image](https://user-images.githubusercontent.com/67142421/203905904-0b691b1f-2798-4b12-85f0-45daf6e2d466.png)<br>
-This table above looks great because every piece of information is displayed in one table. But actually, there are problems in this big table.
-- First, the same data appear several times(data redundancy problem)
-- Second, when a piece of data is updated, other tables that have that data also have to be updated(data integrity problem)
+This table above looks great because every piece of information is displayed in one table. But actually, this big table has problems.
+- First, the same data appears multiple times(data redundancy problem)
+- Second, when a piece of data is updated, others that have that data also require update(data integrity problem)
 
 ![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
 
@@ -26,7 +29,7 @@ Primary key: [ID], [college]
 |[ID]|name|highschool|school_size|[college]|accepted|
 |---|---|---|---|---|---|
 |1|John|A school|500|MIT, stanford|Y|
-|2|sheila|B school|600||Y|
+|2|sheila|B school|600|harvard|Y|
 |3|maria|C school|700|prinston|N|
 
 ## 1st normal form (No multi value attributes)
@@ -34,7 +37,7 @@ Primary key: [ID], [college]
 #### Table A:
 Primary key: [ID], [college]
 |[ID]|name|highschool|school_size|[college]|accepted|
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|
 |1|John|A school|500|MIT|Y|
 |1|John|A school|500|stanford|Y|
 |2|sheila|B school|600|harvard|Y|
@@ -90,7 +93,7 @@ Primary key: [highschool]
 Denormalization is a database optimization technique in which we add redundant data to one or more tables. This can help us avoid costly JOINs in a relational database. Note that denormalization does not mean ‘reversing normalization’ or ‘not to normalize’. It is an optimization technique that is applied after normalization.
 
 ### Advantage
-- Retrieving data is faster since fewer joins are done.
+- Retrieving data is faster due to fewer JOINs to be done.
 
 ### Disadvantave
-- Increased possibility of update anomaly.
+- Increased possibility of update anomalies.
