@@ -20,15 +20,15 @@ In real implementation, It is the hash value of the data that is encrypted.
 3. The receiver verifies the message by decrypting its signature with the public key and comparing the decrypted signature with the received message.
 4. The two messages do not match.
 
-# HTTPs
+# HTTPS
 While asymmetric key encryption ensures that intercepted messages cannot be read, it does not prevent a man-in-the-middle attacker from manipulating the communication channel itself by impersonating the server's domain.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2801946a-5c97-45ca-a9fd-d7d8d3219369)<br>
 #### 1. Handshake:
 The client (e.g., web browser) initiates a connection to the server and requests a secure connection. The server responds by sending its HTTPs certificate, which contains its public key.
 #### 2. Certificate verification:
-The client verifies the authenticity of the server's certificate(using digital signature, certificate chain pre-installed in the web browser).<br>
-And it checks if the certificate is signed by a trusted certificate authority (CA), if the domain name matches the server it is connecting to, and whether it has expired.<br>
-A trusted Certificate Authority requires proof of the server's domain ownership to gain the domain's certificate. In other words, the HTTPs connection certainly belongs to the server's domain, which makes it impossible to impersonate the server's domain.
+- The client verifies the authenticity of the server's certificate(using digital signature, certificate chain pre-installed in the web browser).
+- And it checks if the certificate is signed by a trusted certificate authority (CA), if the domain name matches the server it is connecting to, and whether it has expired.<br>
+A trusted Certificate Authority (CA) verifies the ownership of the server's domain before issuing a certificate. This process ensures that the HTTPS connection belongs to the server's domain, making it impossible to impersonate the server's domain."
 #### 3. Symmetric key exchange:
 If the certificate is valid, the client and server generates and shares a symmetric key.(using a specific key exchange algorithm)<br>
 Symmetric key encryption is faster than asymmetric key.
