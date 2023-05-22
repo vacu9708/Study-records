@@ -20,11 +20,11 @@ If the JWT was tampered with, the signature recalculated using the received head
 ### Issuing
 1. Client logs in using their credentials (e.g. username and password).
 2. If the login information is valid, the server generates a JWT containing a header, a payload, and a signature. The signature is created using the server's private key.
-3. The server sends the JWT(access token and refresh token) to the client, typically in the response body or as a cookie. The client verifies the signature using the public key.
+3. The server sends the JWT(access token and refresh token) to the client, typically in the response body or as a cookie. The client verifies the signature by decrypting it with the public key.
 ### Authentification
-1. The client sends the JWT in the HTTP header
-2. The server checks that the token has not expired and verifies the signature using the server's private key(by checking if the recalculated signature matches the signature in the JWT)
-3. The server sends the requested data to the client.
+1. The client forges and sends the JWT in the HTTP header
+2. The server checks that the token has not expired and verifies the message by generating a new signature of the forged message with the private key and comparing it with the original signature.
+3. The server refuses to send the requested data to the client.
 
 ## Refresh token
 A refresh token is needed for the trade-off between security and convenience.<br>
@@ -40,7 +40,6 @@ The fact that session objcets are managed on the server side results in the pros
 #### Cons:
 - **More server-side storage required**
 - **Bad scalability**: Session objects across multiple servers are difficult to manage.
-
 
 ### JWT
 The fact that all the information is stored in the token(stateless) without server-side storage results in the pros and cons.
