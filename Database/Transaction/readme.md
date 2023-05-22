@@ -4,12 +4,13 @@ the changes are applied.<br>
 The purpose of **transaction** is to guarantee **data integrity** in concurrent operations. (synchronization)
 
 # A unit of work example
->A customer is making a payment to a seller
->Operations here consist of : 
->1. $100 are taken away from the customer's account.(UPDATE)
->2. $100 are credited to the seller's account.(UPDATE)
->These two operations are a single unit of transaction.
-
+~~~
+A customer is making a payment to a seller
+Operations here consist of : 
+1. $100 are taken away from the customer's account.(UPDATE)
+2. $100 are credited to the seller's account.(UPDATE)
+These two operations are a single unit of transaction.
+~~~
 All the queries have to be finished so that the transaction can be finished, which is called **Committed**<br>
 If one of the queries fails, all data modifications made from the start of the transaction are erased, which is called **Rollback**<br>
 When a transaction is rolled back, it gets into the **aborted** state.<br>
