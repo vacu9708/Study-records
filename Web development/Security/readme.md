@@ -20,9 +20,16 @@ In real implementation, It is the hash value of the data that is encrypted.
 4. The two messages do not match.
 
 # HTTPs
-Just giving the public to the client for asymmetric key encryption is not enough because of the Man in the middle attack.<br>
+Asymmetric key encryption cannot solely prevent the Man in the middle attack.
 A trusted Certificate Authority requires proof of the server's domain ownership.
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2801946a-5c97-45ca-a9fd-d7d8d3219369)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2801946a-5c97-45ca-a9fd-d7d8d3219369)<br>
+#### 1. Handshake:
+The client (e.g., web browser) initiates a connection to the server and requests a secure connection. The server responds by sending its HTTPs certificate, which contains its public key.
+#### 2. Certificate verification:
+The client verifies the authenticity of the server's certificate. It checks if the certificate is signed by a trusted certificate authority (CA), whether it has expired, and if the domain name matches the server it is connecting to.
+#### 3. Key exchange:
+If the certificate is valid, the client generates a symmetric key, encrypts it using the server's public key from the certificate, and sends it to the server.
+Symmetric key encryption is faster than asymmetric key.
 
 
 # CORS(Cross-Origin Resource sharing)
