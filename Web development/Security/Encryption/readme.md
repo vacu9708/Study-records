@@ -27,10 +27,11 @@ While asymmetric key encryption ensures that intercepted messages cannot be read
 The client (e.g., web browser) initiates a connection to the server and requests a secure connection. The server responds by sending its HTTPs certificate, which contains its public key.
 #### 2. Certificate verification:
 - The client verifies the authenticity of the server's certificate(using digital signature, certificate chain pre-installed in the web browser).
-- And it checks if the certificate is signed by a trusted certificate authority (CA), if the domain name matches the server it is connecting to, and whether it has expired.<br>
+- And it checks if the certificate is signed by a trusted certificate authority (CA), if the domain name matches the server it is connecting to, and whether it has expired.
+
 A trusted Certificate Authority (CA) verifies the ownership of the server's domain before issuing a certificate. This process ensures that the HTTPS connection belongs to the server's domain, making it impossible to impersonate the server's domain."
 #### 3. Symmetric key exchange:
-If the certificate is valid, the client and server generates and shares a symmetric key.(using a specific key exchange algorithm)<br>
+If the certificate is valid, the client and server generate and share a symmetric key.(using a specific key exchange algorithm)<br>
 Symmetric key encryption is faster than asymmetric key.
 #### 4. Secure communication:
 The client and server can now securely exchange HTTP requests and responses, as the data is encrypted using the symmetric key. This encryption makes it difficult for attackers to eavesdrop, tamper with, or steal sensitive information.
