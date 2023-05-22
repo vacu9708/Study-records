@@ -14,10 +14,10 @@ Traditional encryption where only one key is used to both encrypt and decrypt da
 ## Digital signature
 Data encrypted using a private key can be decrypted using the corresponding public key. This is known as "digital signature" or "signing".<br>
 In real implementation, It is the hash value of the data that is encrypted.
-1. The sender uses their private key to create a digital signature for the original message.
-2. The recipient uses the public key to decrypt the digital signature and obtain the original message.
-3. The recipient compares the received message with the decrypted original message.
-
+1. The sender creates a digital signature for the message using the private key and sends the message along with the digital signature.
+2. A cheater forges the message.
+3. The receiver verifies the message by decrypting its signature with the public key and comparing the decrypted signature with the original message.
+4. The two messages do not match.
 # CORS(Cross-Origin Resource sharing)
 **CORS** is a mechanism that allows resources to be requested from different origins.<br>
 Same-Origin Policy was introduced to prevent malicious requests(CSRF) from different origins.<br>
@@ -52,16 +52,5 @@ encoding the dangerous characters (**<** and **>** in <script>) in the data that
 # SQL injection
 An SQL injection is to inject malicious SQL statements into an input to gain unauthorized access to database.
 
-# Symmetric key cryptography, Asymmetric key cryptography
-Symmetric encryption uses a single key while asymmetric encryption uses a pair of public key and a private key to encrypt and decrypt messages.
- 
-## The process where a confidential message is delivered in the public key crptography
-![image](https://user-images.githubusercontent.com/67142421/183536116-574d043c-768c-4339-911c-99e308dcbd58.png)
+# HTTPs
 
-1. Bob generates 2 keys : public key and private key
-2. Bob gives the public key to Alice
-3. Alice encrypts the secret message using the public key she received.
-4. Alice gives the encrypted message to Bob
-5. Bob decrypts the message using his private key
-
-# TLS(Transport Layer Security)
