@@ -1,7 +1,9 @@
-A **database transaction** is a sequence of multiple operations performed as a single unit on database — taking place **wholly or not at all**. In other words, there’s never a case that only part of the operations are performed and the results are saved.
-When a database transaction is in flight, the database state may be temporarily inconsistent, but when the transaction is committed(when a transaction has ended),
-the changes are applied.<br>
-The purpose of **transaction** is to guarantee **data integrity** in concurrent operations. (synchronization)
+# Transaction
+A database transaction is a sequence of multiple operations performed as a single unit on a database, ensuring that the operations either occur entirely or not at all.<br>
+It guarantees that partial results are never saved. When a transaction is committed(meaning it has ended successfully) the changes made during the transaction are permanently applied to the database.<br>
+
+The primary purpose of a transaction is to maintain data integrity in situations where multiple concurrent operations are modifying the database simultaneously.<br>
+By treating a group of operations as a transaction, the database ensures that the data remains consistent and avoids potential issues like data corruption.
 
 # A unit of work example
 ~~~
