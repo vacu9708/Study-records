@@ -1,14 +1,35 @@
 * **Spinlock** is to make a thread trying to acquire a shared resource wait in a loop until it is available.(busy waiting)
-## Deadlock
-Deadlock is a situation where processes are waiting for each other to release the shared resource and none of them ever does.<br>
+# Deadlock
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/950cfd23-dbcc-4fab-8e62-8092ffcb0cae)
+
+Deadlock is a situation where processes are waiting for each other to release their shared resource and none of them ever does.<br>
 Improper synchronization results in deadlock.
 
-## 4 conditions of deadlock
+### 4 conditions of deadlock
 1. mutual exclusion : Only one process can hold a resource at a time
 2. hold and wait : Holding a resource while waiting
 3. no preemption : A held resource cannot be forcefully taken away
 4. circular wait : Waiting for a resource that is held by another process “together”
 
+### Deadlock prevention:
+Deadlock can be avoided by getting rid of one of the 4 conditions of deadlock.<br>
+1. **Mutual Exclusion**: Allow multiple processes to access shared resources simultaneously.
+2. **Hold and wait**: Require processes to acquire all necessary resources before execution, eliminating the possibility of holding a resource while waiting for others.
+3. **No preemption**: Allows resources to be forcibly taken away from processes.
+4. **Circular wait**: Assign a unique numerical identifier to each resource and require processes to request resources in ascending order of these identifiers.
+
+## Banker's algorithm 
+Banker's algorithm ensures that resource requests will not lead to deadlock by checking whether the system will be in a safe state before granting resource allocation.<br>
+It checks if resources can be allocated without causing a resource shortage to prevent the deadlock.
+
+### Example
+![image](https://user-images.githubusercontent.com/67142421/176335355-321373a4-e7db-429f-9728-f2e3bdd1c302.png)<br>
+Max = Need + Allocation<br>
+1. P0 has been allocated A:0, B:1, C:0 and needs A:7, B:4, C:3 to complete its task.
+2. However, there are only A:3, B:3, C:2 available, so P0 cannot be completed at the moment.
+3. P1 can be completed because it needs A:1, B:2, C:2, which can be satisfied using the available resources.
+4. P1 is completed and its allocated resources (A:2, B:0, C:0) are released.
+5. As a result, the released resources A:2, B:0, C:0 (P1's maximum allocation) are added to the available resources, which becomes A:5, B:3, C:2.
 ## Dining philosopher problem
 ![image](https://user-images.githubusercontent.com/67142421/176333583-a1ffafd2-a73b-4a73-bbe4-706c0e076d25.png)
 
@@ -20,14 +41,7 @@ The problem was designed to illustrate the challenges of avoiding deadlock.<br>
 >A hungry philosopher may only eat if there are both chopsticks available. Otherwise a philosopher puts down their chopstick and begins thinking again.<br>
 >The dining philosophers is a classic synchronization problem as it demonstrates a large class of concurrency control problems.<br>
 
-## Deadlock prevention: 
-1. Mutual exclusion banned (almost impossible because mutual exclusion is usually essential)
-2. Obtaining all resources needed before beginning to perform a process.
-3. Resources can be obtained only when they are not taken. (though ineffective)
-4. Release all resources that are being used,
-5. Resources request are allowed only in a fixed order.
-
-## How philosophers behave
+### How philosophers behave
 1. think until the left chopstick is available; when it is, pick it up;
 2. think until the right chopstick is available; when it is, pick it up;
 3. He picks up another chopstick too
@@ -42,13 +56,3 @@ The problem was designed to illustrate the challenges of avoiding deadlock.<br>
 1. Don't allow all philosophers to eat/think at once so that there are always remaining chopsticks
 2. Pick up both chopsticks (in a critical section)
 3. Alternate choice of first chopstick (Either left or right chopstick can be picked up)
-
-## Banker's algorithm 
-A deadlock avoidance algorithm that avoids a deadlock by only allocating available resources that can finish a task.<br>
-
-### Example
-![image](https://user-images.githubusercontent.com/67142421/176335355-321373a4-e7db-429f-9728-f2e3bdd1c302.png)<br>
-P0 has been allocated A:0, B:1, C:0 and needs A:7, B:4, C:3 to finish the task. But the available resources are only A:3, B:3, C:2, so the task cannot be completed
-for the moment.<br>
-P1 can complete its take if it obtains A:1, B:2, C:2 and return Max(A:3, B:2, C:2). The available resources satisfy the completion condition of P1, so the task
-of P1 is completed and the available resources become A:5, B:3, C:2 (because A:2 is given from A:3, B:2, C:2)
