@@ -4,9 +4,9 @@ Deadlock is a situation where processes are waiting for each other to release th
 Improper synchronization results in deadlock.
 
 ## 4 conditions of deadlock
-1. mutual exclusion : Only one process for a resource
+1. mutual exclusion : Only one process can hold a resource
 2. hold and wait : Holding a resource while waiting
-3. no preemption : A picked process cannot be taken
+3. no preemption : A held resource cannot be forcefully taken away
 4. circular wait : Waiting for a resource that is held by another process “together”
 
 ## Dining philosopher problem
