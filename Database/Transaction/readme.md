@@ -7,25 +7,29 @@ By treating a group of operations as a transaction, the database ensures that th
 
 # ACID properties of transactions
 ### Atomicity
-All changes to data are performed as if they are a single operation. That is, either all the changes are applied, or none of them are.(All or nothing)<br>
+All changes within a transaction are treated as a single unit of work. Either all the changes are committed, or none of them are. It follows the principle of "all or nothing."
 
 ### Consistency
-Data is in a consistent state when a transaction starts and when it ends.<br>
-For example, in an application that transfers funds from one account to another, the total money doesn't change.
+For example, in a fund transfer transaction, the total amount of money should remain constant before and after the transaction.
 
 ### Isolation
-When two or more transactions are being executed, none of them can intervene in each other<br>
+Concurrently executing transactions are isolated from each other, ensuring that they do not interfere with or impact each other.
 
 ### Durability
-After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.<br>
-For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made to each account will not be reversed.<br>
+Changes made by a committed transaction should not be undone. They should be permanent and survive any subsequent system failures.
 
-### Isolation levels
-Transaction isolation levels are used to ensure data consistency.<br>
-1. Read Uncommitted (level 0) : data can be accessed without any restriction.
-2. Read Committed (level 1) : a shared lock is issued to data where a SELECT is being executed. (Default of SQL)
-3. Repeatable Read (level 2) : a shared lock is issued to data where a transaction is being executed. (Default of MySQL)
-4. SERIALIZABLE (Level 3) : no SQL operation can be performed on the region where a transaction is being performed. the simplest, strictest and almost never used.
+## Isolation levels
+The higher transaction isolation level, the better data consistency.<br>
+#### Read Uncommitted:
+Uncommitted changes can be read without any restriction.
+#### Read Committed:
+This is the default of many SQL database<br>.
+A transaction can only read data committed by other transactions.<br>
+However, if transaction B modifies data that transaction A read earlier, transaction A might see different results each time it reads the data.
+#### Repeatable Read:
+Even if transaction B modifies data that transaction A read earlier, transaction A always sees the same results each time it reads the data.
+#### SERIALIZABLE:
+No SQL operation can be performed on the region where a query is being executed. The simplest, strictest and almost never used.
 
 # Example
 The **Autocommit** feature of a database performs **Commit** automatically.
@@ -52,4 +56,4 @@ Transactions wait for the resource to become available forever if it is not solv
 
 ![image](https://user-images.githubusercontent.com/67142421/178089624-c7a83d81-ee29-404f-94e4-1a4f2811a0c7.png)
 
-stored procedure : does the same thing as a function of normal programming languages
+Stored procedure : does the same thing as a function of normal programming languages
