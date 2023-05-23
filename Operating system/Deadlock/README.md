@@ -9,7 +9,7 @@ Improper synchronization results in deadlock.
 1. **Mutual Exclusion**: Only one process can hold a resource at a time
 2. **Hold and wait**: Holding a resource while waiting
 3. **No preemption**: A held resource cannot be forcefully taken away
-4. **Circular wait**: Waiting for a resource that is held by another process “together”
+4. **Circular wait**: Processes are waiting for resources held by each other.
 
 ### Deadlock prevention:
 Deadlock can be avoided by getting rid of one of the 4 conditions of deadlock.<br>
