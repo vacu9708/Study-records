@@ -17,6 +17,13 @@ Deadlock can be avoided by getting rid of one of the 4 conditions of deadlock.<b
 2. **Hold and wait**: Require processes to acquire all necessary resources before execution, eliminating the possibility of holding a resource while waiting for others.
 3. **No preemption**: Allows resources to be forcibly taken away from processes.
 4. **Circular wait**: Assign a unique numerical identifier to each resource and require processes to request resources in ascending order of these identifiers.
+#### Example of circular wait solution:
+Let's say resource 2 has a higher priority.
+1. Process 1, holding resource 1, realizes it needs resource 2 to proceed.
+2. Since resource 2 has a higher identifier than resource 1, Process 1 decides to release resource 1.
+3. Process 2, holding resource 2, can now acquire resource 1
+4. Process 2 completes its task and releases both resource 1 and resource 2.
+5. Process 1 can now acquire resource 2 and continue its execution.
 
 ## Banker's algorithm 
 Banker's algorithm ensures that resource requests will not lead to deadlock by checking whether the system will be in a safe state before granting resource allocation.<br>
@@ -53,6 +60,7 @@ The problem was designed to illustrate the challenges of avoiding deadlock.<br>
 **This satisfies all of the 4 conditions of deadlock**
 
 ## Solution of Dining Philosophers Problem
-1. Don't allow all philosophers to eat/think at once so that there are always remaining chopsticks
-2. Pick up both chopsticks (in a critical section)
-3. Alternate choice of first chopstick (Either left or right chopstick can be picked up)
+1. **Mutual Exclusion**: Cannot be allowed because it is a basic condition of the problem.
+2. **Hold and wait**: A philosopher must acquire both chopsticks simultaneously. 
+3. **No preemption**: Cannot be allowed because this is a basic condition of the problem.
+4. **Circular wait**: The "resource hierarchy" approach can be used. Assign a unique identifier to each and require the philosophers to always acquire the chopsticks in a defined order.
