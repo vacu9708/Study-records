@@ -1,5 +1,5 @@
 # Update anomalies
-All the anomalies occur due to duplicate data (redundancy) in the database:
+All the anomalies occur due to redundanc data in the database:
 ### Modification anomalies
 Modifying a piece of data may require updating multiple occurrences of the same data, leading to data integrity problem.<br>
 For example, when updating the school name for one student, it may need to be updated for all other students with the same school name.
@@ -47,7 +47,7 @@ Primary key: [ID], [college]
 
 ## 2nd normal form (Only essential keys)
 - The table must be in 1NF form
-- In X->Y where X is primary keys, EVERY key of X is essential to distinguish Y
+- In X->Y where X is the primary key, X is essential to distinguish Y (partial dependency not allowed. i.e. All non-key attributes are dependent on the primary key.)
 
 On table A, [college] is used only to distinguish [accepted]<br>
 Table A is split into
@@ -69,7 +69,7 @@ Primary key: [ID], [college]
 
 ## 3rd normal form (Set foreign key)
 - The table must be in 2NF form
-- When X->Y, Y->Z, then it is called **transitive dependency**.
+- When X->Y, Y->Z, then it is called **transitive dependency**. In other words, transitive dependency refers to a situation where a non-key attribute depends on another non-key attribute.<br>
 
 In table B, [ID] identifies [highschool] and [highschool] identifies [school_size], which makes a transitive dependency.<br>
 Set a foreign key [highschool] to solve this problem.<br>
