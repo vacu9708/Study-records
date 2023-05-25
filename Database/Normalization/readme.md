@@ -18,9 +18,9 @@ It introduces the need for JOIN operations when retrieving data from multiple ta
 ## Why is normalization needed?
 Modern database systems are optimized to handle JOINs efficiently, and the benefits of data integrity often outweigh the performance impact of JOIN operations.<br>
 ![image](https://user-images.githubusercontent.com/67142421/203905904-0b691b1f-2798-4b12-85f0-45daf6e2d466.png)<br>
-This table above looks great because every piece of information is displayed in one table. But actually, this big table has problems.
-- The same data appears multiple times in the single table which, 
-- When a piece of data is updated, others that have that data also require update(Modification anomaly and data integrity problem)
+This table above looks great because every piece of information is displayed in a single table. However, actually this big table is problematic.
+- The same data appears multiple times in the single table, which increases the complexity of data modification operations
+- If the same data is duplicated across multiple tables, it raises the possibility of overlooking some modifications during updates, leading to data inconsistencies.
 
 ![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
 
