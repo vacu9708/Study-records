@@ -2,7 +2,7 @@
 All the anomalies occur due to redundanc data in the database:
 ### Modification anomalies
 Modifying a piece of data may require updating multiple occurrences of the same data, leading to data inconsistency problem.<br>
-For example, when updating the school name for one student, it may need to be updated for all other students with the same school name.
+For example, when updating the school name for one student, it may need to be updated for all other students with the same school name across multiple tables.
 ### Insertion anomalies
 Inserting information for an entity may become problematic if it depends on the presence of other related entities.<br>
 For example, when trying to insert a new student without a specified college, it may not be possible because the database requires the college information.<br>
