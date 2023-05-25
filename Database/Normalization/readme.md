@@ -15,12 +15,10 @@ A process of organizing(minimizing) tables to get rid of data redundancy and ret
 ### Drawbacks
 It introduces the need for JOIN operations when retrieving data from multiple tables. JOINs have some overhead and potentially affect performance.<br>
 
-## Why is normalization needed?
-Modern database systems are optimized to handle JOINs efficiently, and the benefits of data integrity often outweigh the performance impact of JOIN operations.<br>
+## Is a big table good?
 ![image](https://user-images.githubusercontent.com/67142421/203905904-0b691b1f-2798-4b12-85f0-45daf6e2d466.png)<br>
-This table above looks great because every piece of information is displayed in a single table. However, actually this big table is problematic.
-- The same data appears multiple times in the single table, which increases the complexity of data modification operations
-- If the same data is duplicated across multiple tables, it raises the possibility of overlooking some modifications during updates, leading to data inconsistencies.
+This table above looks great because every piece of information is displayed in a single table. However, actually this big table is problematic.<br>
+The reason is written below in the denormalization section.<br>
 
 ![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
 
@@ -99,8 +97,12 @@ Note that denormalization does not mean ‘reversing normalization’ or ‘no
 
 ### When to denormalize
 **Performance optimization on reads**: In systems where read operations significantly outweigh write operations, denormalization can be employed to enhance query performance.<br>
-By consolidating related data into a single table or duplicating data across multiple tables, the need for complex joins and lookups can be reduced, resulting in faster query execution.<br>
+By consolidating related data into a single table or duplicating data across multiple tables, the need for complex JOINs and lookups can be reduced, resulting in faster query execution.<br>
 ### Caution!
-- Denormalization introduces redundancy, which increases the risk of data inconsistencies and anomalies due to duplicate data across multiple tables.
+Denormalization introduces data redundancy, so it is crucial to assess the impact of denormalization on data integrity and ensure appropriate mechanisms are in place to maintain consistency.<br>
+Also, the benefits of data integrity often outweigh the performance impact of JOIN operations.<br>
+- Duplicated data across multiple tables raises the possibility of overlooking some modifications during updates, leading to data inconsistencies.
 - Speed when updating redundant data is slowed down.
-It is crucial to assess the impact of denormalization on data integrity and ensure appropriate mechanisms are in place to maintain consistency.<br>
+#### Why update speed is slowed down:
+- **Overhead on index and constraint updates**: Indexes and constraints are often defined on tables to improve query performance and enforce data integrity. When duplicated data is modified, these indexes and constraints may need to be updated for each occurrence of the duplicated data.
+- **Synchronization overhead**: Modifying a piece of duplicated data may require updating all other duplicate data to maintain integrity.
