@@ -26,7 +26,7 @@ print(doubleAllElements([1, 2, 3, 4])) # Output: [2, 4, 6, 8]
 ~~~
 
 # Functional programming
-Functional Programming treats computation as the evaluation of mathematical functions , where functions can accept other functions as arguments or return functions as results.<br>
+Functional Programming treats computation as the evaluation of mathematical functions , where functions can accept other functions as arguments.<br>
 ### Example
 This functional approach uses the map function along with a lambda function to double each element of the array.<br>
 ~~~python
