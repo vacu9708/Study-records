@@ -19,8 +19,8 @@ It introduces the need for JOIN operations when retrieving data from multiple ta
 Modern database systems are optimized to handle JOINs efficiently, and the benefits of data integrity often outweigh the performance impact of JOIN operations.<br>
 ![image](https://user-images.githubusercontent.com/67142421/203905904-0b691b1f-2798-4b12-85f0-45daf6e2d466.png)<br>
 This table above looks great because every piece of information is displayed in one table. But actually, this big table has problems.
-- First, the same data appears multiple times(data redundancy problem)
-- Second, when a piece of data is updated, others that have that data also require update(Modification anomaly and data integrity problem)
+- The same data appears multiple times in the single table which, 
+- When a piece of data is updated, others that have that data also require update(Modification anomaly and data integrity problem)
 
 ![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
 
@@ -94,14 +94,13 @@ Primary key: [highschool]
 - For any dependency X → Y, X must be a candidate key or super key
  
 # Denormalization
-Denormalization is a database optimization technique in which we add redundant data to one or more tables. This can help us avoid costly JOINs in a relational database. Note that denormalization does not mean ‘reversing normalization’ or ‘not to normalize’. It is an optimization technique that is applied after normalization.
-
-### Advantage
-- Retrieving data is faster due to fewer JOINs to be done.
-
-### Disadvantave
-- Increased possibility of update anomalies.
+Denormalization is a database optimization technique in which redundant data is added to one or more tables. This can help avoid costly JOINs.<br>
+Note that denormalization does not mean ‘reversing normalization’ or ‘not to normalize’. It is an optimization technique that is applied after normalization.
 
 ### When to denormalize
-**Performance Optimization**: In systems where read operations significantly outweigh write operations, denormalization can be employed to enhance query performance.<br>
+**Performance optimization on reads**: In systems where read operations significantly outweigh write operations, denormalization can be employed to enhance query performance.<br>
 By consolidating related data into a single table or duplicating data across multiple tables, the need for complex joins and lookups can be reduced, resulting in faster query execution.<br>
+### Caution!
+- Denormalization introduces redundancy, which increases the risk of data inconsistencies and anomalies due to duplicate data across multiple tables.
+- Speed when updating redundant data is slowed down.
+It is crucial to assess the impact of denormalization on data integrity and ensure appropriate mechanisms are in place to maintain consistency.<br>
