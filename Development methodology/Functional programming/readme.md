@@ -28,7 +28,7 @@ print(doubleAllElements([1, 2, 3, 4])) # Output: [2, 4, 6, 8]
 ~~~
 
 # Functional programming
-Functional programming solves problems by defining and composing functions that establish relationships between input and output, without mutable state.<br>
+Functional programming solves problems by defining functions that establish relationships between input and output, without mutable state.<br>
 Mutable state refers to variables that can be modified after their initial assignment, which can make programs harder to reason about. In functional programming, instead of modifying variables, new variables with updated values are created.<br>
 Functional programming allows developers to focus on the problem domain and express the logic without getting bogged down in implementation details.<br>
 ### Example
