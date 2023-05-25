@@ -101,3 +101,7 @@ Denormalization is a database optimization technique in which we add redundant d
 
 ### Disadvantave
 - Increased possibility of update anomalies.
+
+### When to denormalize
+**Performance Optimization**: In systems where read operations significantly outweigh write operations, denormalization can be employed to enhance query performance.<br>
+By consolidating related data into a single table or duplicating data across multiple tables, the need for complex joins and lookups can be reduced, resulting in faster query execution.<br>
