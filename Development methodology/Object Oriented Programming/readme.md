@@ -46,13 +46,14 @@ High cohesion
 ## 2. Open, Closed Principle
 Open extensibility, closed modification<br>
 The OCP helps to achieve loose coupling by promoting extensibility without modifying existing code.<br>
+The OCP often go hand in hand with the Dependency Inversion Principle.<br>
 #### Primary advantage:
-Loose coupling(The OCP often hand in hand with the Dependency Inversion Principle)
+Loose coupling
 
 ## 3. Liskov Substitution Principle
 Child classes must be substitutable for their parent classes.<br>
 LSP enables the use of subtype polymorphism, which allows objects of a subclass to be treated as objects of their superclass This enables modularity and extensibility by allowing new subclasses to be added without affecting the existing code that relies on the superclass.<br>
-LSP allows high-level modules to depend on the abstractions provided by the superclass.<br>
+LSP facilitates Dependency inversion by allowing high-level modules to depend on the abstractions provided by the superclass.<br>
 #### Primary advantage:
 Loose coupling(abstract common interface)
 ### Example
