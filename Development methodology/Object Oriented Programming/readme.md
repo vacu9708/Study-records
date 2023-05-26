@@ -51,7 +51,8 @@ Loose coupling(The OCP often hand in hand with the Dependency Inversion Principl
 
 ## 3. Liskov Substitution Principle
 Child classes must be substitutable for their parent classes.<br>
-LSP ensures that subclasses can be used interchangeably with their superclass without causing errors. This allows for flexibility in software design.<br>
+LSP enables the use of subtype polymorphism, which allows objects of a subclass to be treated as objects of their superclass This enables modularity and extensibility by allowing new subclasses to be added without affecting the existing code that relies on the superclass.<br>
+LSP allows high-level modules to depend on the abstractions provided by the superclass.<br>
 #### Primary advantage:
 Loose coupling(abstract common interface)
 ### Example
@@ -133,7 +134,7 @@ By following the Interface Segregation Principle, the code is more modular.<br>
 
 ## 5. Dependency Inversion Principle
 The name refers to the inversion of the traditional dependency direction, where high-level modules depend on low-level modules.<br>
-DIP states that high-level modules should not depend on low-level modules, but their abstraction, so that high level modules can work regardless of changes to their low level modules.<br>
+DIP states that high-level modules should not directly depend on low-level modules, but their abstraction, so that high level modules can work regardless of changes to their low level modules.<br>
 #### Primary advantage:
 Loose coupling(abstract common interface)
 ### Example of not obeying DIP
