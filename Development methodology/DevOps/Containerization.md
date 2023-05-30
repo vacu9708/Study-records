@@ -2,7 +2,7 @@
 By using containers of a consistent shape, goods could be loaded and unloaded quickly and efficiently, which reduced costs and increased productivity.<br>
 
 # Docker
-Docker is a popular containerization platform forr packing an application into a portable container that can be run on any system that supports Docker.<br>
+Docker is a popular containerization platform for packing an application into a portable container that can be run on any system that supports Docker.<br>
 ## Advantages
 - ### Portability
   Docker containers can run on any system that supports Docker.<br>
@@ -12,6 +12,10 @@ Docker is a popular containerization platform forr packing an application into a
   This makes it easier to avoid conflicts between different applications.
 - ### Efficiency
    Docker containers are lightweight and consume fewer resources than traditional virtual machines.
+   
+# Difference between Docker and Virtual machine
+- **VMs** simulate a complete operating system (OS) with their own kernel, which leads to a higher overhead and consumes more memory.<br>
+- **Docker**, on the other hand, runs applications within isolated containers that share the host OS kernel and is lightweight.
    
 # Kubernetes
 Kubernetes is a container orchestrator, which means that it is a platform designed to automate the deployment, scaling, and management of containerized applications.
