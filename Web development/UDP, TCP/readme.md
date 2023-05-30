@@ -27,9 +27,9 @@ A process to establishes a reliable connection between two devices over a networ
 
 >Sequence numbers are randomly generated to prevent sequence number guessing attacks.
 ### Simplified process
-1. client: is server ready? (SYN)
-2. server: yes, is client ready? (SYN-ACK)
-3. client: yes (ACK)
+1. client: is server ready? -> SYN
+2. server: yes(ACK), is client ready?(SYN) -> SYN-ACK
+3. client: yes -> ACK
 4. A reliable connection is established now that both are ready
 ### Process
 >The process is blocked until ACK is received.
