@@ -28,7 +28,7 @@ APIs that obey the REST constraints are described as RESTful API.<br>
 Server side framework can be just about anything thanks to RESTful API that abstracts the implementation.
 ### REST constraints
 - **Self-descriptive**: RESTful APIs has to contain enough information that represents what it does.
-- **Stateless**: Any client state is not maintain.
+- **Stateless**: Any client state is not maintained.
 - **Uniform interface**: RESTful APIs have a uniform interface that provides a standardized way for clients and servers to communicate.<br>
 The uniform interface constraint includes several aspects, such as:<br>
   - **Resource identification**: APIs are identified by unique URIs.
