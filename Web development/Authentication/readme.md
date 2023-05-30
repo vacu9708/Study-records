@@ -28,9 +28,10 @@ If the JWT was tampered with, the signature recalculated using the received head
 3. The server refuses to send the requested data to the client.
 
 ## Refresh token
+Unlike session objects that can be deleted as the server wants, tokens are not owned by the server, so cannot be deleted.<br>
 A refresh token is needed for the trade-off between security and convenience.<br>
-A refresh token is needed as part of the OAuth 2.0 authentication flow to obtain a new access token when the existing access token has expired. Access tokens are short-lived and typically expire after a specific amount of time, typically in minutes or hours.
-When an access token expires, it can no longer be used to access protected resources on behalf of the user. In order to continue accessing those resources, a new access token must be obtained. However, asking the user to re-authenticate every time an access token expires can be inconvenient and disruptive to the user experience.
+Access tokens are short-lived and typically expire after a specific amount of time, typically in minutes or hours.<br>
+Asking the user to re-authenticate every time an access token expires can be inconvenient and disruptive to the user experience.<br>
 
 # Session-cookie VS JWT in authorization
 ### Session-cookie
