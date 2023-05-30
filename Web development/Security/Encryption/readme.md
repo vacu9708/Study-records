@@ -21,7 +21,7 @@ In real implementation, It is the hash value of the data that is encrypted.
 4. The two messages do not match.
 
 # HTTPS
-While asymmetric key encryption ensures that intercepted messages cannot be read, it does not prevent a man-in-the-middle attacker from manipulating the communication channel itself by impersonating the server's domain.<br>
+While asymmetric key encryption ensures that intercepted messages cannot be read, it does not prevent a man-in-the-middle attack from impersonating the server's domain and manipulating the communication channel itself.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2801946a-5c97-45ca-a9fd-d7d8d3219369)<br>
 #### 1. Handshake:
 The client (e.g., web browser) initiates a connection to the server and requests a secure connection. The server responds by sending its HTTPs certificate, which contains its public key.
