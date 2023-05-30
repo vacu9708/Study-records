@@ -27,9 +27,10 @@ If the session ID finds its way into the hands of a hacker, they can masquerade 
 | :---: | :---: | :---: |
 | Storage location | Client | Server |
 | Form | text | object |
-| Expiration | Manually set | Manually set |
 | Limit | 300 cookies per client, 20 cookies per domain, 4KB per cookie | no limit |
+| Expiration | Manually set | Manually set |
 
 ## Web storage
 Web storage is similar to HTTP cookie but with a greatly enhanced capacity(5MB) and no information sent in the HTTP request header.<br>
-The web storage is divided into 2 types : *local storage* and *session storage*. Local storage is persistent while session storage is expired when the tab is closed.
+The web storage is divided into 2 types : **local storage** and **session storage**.<br>
+Local storage is persistent while session storage is expired when the tab is closed.<br>
