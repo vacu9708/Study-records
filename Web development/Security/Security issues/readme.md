@@ -12,26 +12,35 @@ CORS works by allowing a server to specify which domains are allowed to access i
 3. If the headers indicate that the request is permitted, the browser proceeds with the actual request. Otherwise, it is blocked for security reasons.<br>
 ![image](https://user-images.githubusercontent.com/67142421/183492714-17a6d283-1c28-4377-9a5b-0b3de112ec1a.png)
 
-# Cross-site security issues
-Both CSRF and XSS allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform.
-
-## CSRF(Cross-Site Request Forgery)
-CSRF exploits the trust a user has for a particular site. It tricks a victim into submitting malicious requests on the attacker's behalf.
+# CSRF(Cross-Site Request Forgery)
+CSRF exploits the trust a user has for a particular site to masquerade as a victim user to carry out any actions that the user is able to perform.<br>
+And then, It tricks the victim into submitting malicious requests on the attacker's behalf.
 ### CSRF process
 1. Trick a victim into entering the attacker's page that looks legitimate.
-2. The victim's browser sends the authenticated user's credentials (such as session cookies) along with a malicious request. (e.g., changing account settings, making a purchase, etc.)
+2. The victim's browser sends the authenticated user's credentials (such as JWT token) along with a malicious request. (e.g., changing account settings, making a purchase, etc.)
 3. The targeted server, considering the request to be legitimate because it includes the user's credentials, performs the requested action on behalf of the user.
 ### How to prevent CSRF
 - Accept only requests from allowed origins
 - Use a security token on each session of the user : The backend checks if the token in the request parameter is the token of the legitimate session.
 
-## XSS(Cross-Site Scripting)
+# XSS(Cross-Site Scripting)
 XSS is a type of injection attack in which malicious scripts are injected into web pages(such as posts) viwed by other users.<br>
 The malicious code is executed on the same origin not on an external site, so it circumvents(bypasses) the same origin policy.<br>
-Malicious code includes stealing authorization information such as security token or session ID.
+### Example of malicious code
+Malicious code includes stealing authorization information such as token or session ID from the client-side storage location using **document.cookie** in Javascript<br>
+The malicious script can redirect the user the attacker's server to capture the retrieved information.<br>
 
 ### How to prevent XSS
-- Encoding the dangerous characters (**<** and **>** in **<**script**>**) in the data that a web page receives to prevent the data from being interpreted in any malicious way.
+#### Encoding malicious output(characters):
+Malicious code such as **<**script>** should be encoded to prevent the data from being interpreted as code by the web browser.
+#### Input Validation and Sanitization:
+Validate and sanitize all user input before using it.<br>
+**Example**: Remove HTML tags from the user input to prevent potential script injection.<br>
+  
+# Man-in-the-middle (MITM) attack
+An attacker positions themselves between the client and the server to eavesdrop on or manipulate the data being exchanged.<br>
+The attacker can steal important information like the user's token.<br>
+This attack can be mitigated by using HTTPS to protect the communication channel.<br>
 
 # SQL injection
 An SQL injection is to inject malicious SQL statements into an input to gain unauthorized access to database.
