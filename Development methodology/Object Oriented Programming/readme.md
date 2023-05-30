@@ -32,7 +32,7 @@ Coupling measures how closely connected two components are to each other.<br>
 Loose coupling means that changes in one(child) component do not necessitate changes in another(parent) component, leading to improved maintainability.<br>
 
 ### Cohesion
-Cohesion refers to the degree to which the functionality is related and focused within a single component.<br>
+Cohesion refers to the degree to which the functionality is focused within a single component.<br>
 High cohesion indicates that the component is well-defined and performs a specific task effectively.
 
 ## 1. Single Responsibility Principle
