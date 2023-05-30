@@ -25,11 +25,11 @@ A floating-point number is represented approximately with a fixed number of sign
    **Exponent (8 bits)**: The exponent is determined by adding the bias (127) to the power of 2 -> 2 + 127 = 129, which is represented as 10000001 in binary.<br>
    **Significand (23 bits)**: The significand is the fractional part -> 01001.
 
-#### Result: 
-0 | 10000001 | 01001000000000000000000
+**Result: 0 | 10000001 | 01001000000000000000000**
 
 ### 5.125 can be represented precisely without any errors. Why 0.1 is not accurate?
 It is because 0.1 becomes a repeating fraction 0.0001100110011001100110011..., which is approximated<br>
+
 ---
 
 # ✨Central Processing Unit
@@ -63,8 +63,9 @@ A computer in which individual instructions may perform many operations and take
 2. The instruction located on the address is fetched and stored in MBR
 3. The value of PC is increased to fetch the next instruction
 4. The instruction stored in MBR is transferred to IR
+
 ---
----
+
 # ✨Cache memory
 In computing, a **cache** is a hardware or software component that stores data so that future requests for that data can be served faster.<br>
 It is used to decrease the bottleneck between a fast device and a slow device.<br>
@@ -101,6 +102,7 @@ The cache is divided into 'n' rows and each row contains 'm' columns. A memory b
 [It is similar to page replacement algorithms](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system/Memory%20management)
 
 ---
+
 # ✨System bus
 A **system bus** is a pathway that transmits data between the components of hardware that consists of data bus, address bus, control bus
 
