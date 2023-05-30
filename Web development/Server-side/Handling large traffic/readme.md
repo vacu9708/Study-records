@@ -13,10 +13,6 @@ Optimize the time complexity of algorithms
 This involves denormalizing data, indexing frequently accessed fields, query optimization, query caching, using in-memory DB cache(e.g. Redis).<br>
 Query caching refers to caching the results of frequently executed queries to retrieve the data from memory instead of executing the query.<br>
 
-# Content Delivery Network(CDNs)
-Instead of serving static content such as images and videos directly from the origin server,<br>
-utilize CDNs to cache them in multiple regions and serve them from the fastest network.
-
 # Scaling
 Ensure that the server architecture is designed to scale as the number of users grows.
 
@@ -37,3 +33,8 @@ Implement load balancing to evenly distribute incoming requests across horizonta
 
 # Performance monitoring
 Set up monitoring tools to track server performance to know where to apply optimization.
+
+# Content Delivery Network(CDNs)
+Instead of serving static content such as images and videos directly from the origin server,<br>
+
+utilize CDNs to cache them in multiple regions and serve them from the fastest network.
