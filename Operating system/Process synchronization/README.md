@@ -9,22 +9,23 @@
 
 ~~~c++
 class Semaphore{
-	int shared_resource; // starts with 1. (-) shared_resource means the number of waiting processes.
+	int waiting_processes; // starts with 1. (-) value means the number of waiting processes.
 	list process_queue;
-	semaphore(n){
+	semaphore(){
 		this->shared_resource=1;
+	}
 }
 
 void acquire(Semaphore *S){ // When a process wants to take shared resource
     S->shared_resource--; // Try taking shared resource
-    if ( S->shared_resource < 0 ) { // If another process is using the shared resource.
+    if ( S->waiting_processes < 0 ) { // If another process is using the shared resource.
         S->process_queue.enqueue(current_process); // Put the process in queue
         block(process);
     }
 }
 
 void release(Semaphore *S) { // When stopping the process that has taken the resource
-    if ( S->shared_resource < 0 ) { // If there's a waiting process
+    if ( S->waiting_processes < 0 ) { // If there's a waiting process
         process=S->process_queue.dequeue(); // Execute a process in queue
         wakeup(process);
     }
