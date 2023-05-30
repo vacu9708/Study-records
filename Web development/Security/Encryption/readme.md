@@ -26,8 +26,9 @@ While asymmetric key encryption ensures that intercepted messages cannot be read
 #### 1. Handshake:
 The client (e.g., web browser) initiates a connection to the server and requests a secure connection. The server responds by sending its HTTPs certificate, which contains its public key.
 #### 2. Certificate verification:
+This process ensures that the domain is not owned by an attacker's server but the proper server.
 - The client verifies the authenticity of the server's certificate(using digital signature, certificate chain pre-installed in the web browser).
-- And it checks if the certificate is signed by a trusted certificate authority (CA), if the domain name matches the server it is connecting to, and whether it has expired.
+- The client checks if the certificate is signed by a trusted certificate authority (CA), if the domain name matches the server it is connecting to, and whether it has expired.
 
 **Why the certificate should be verified?**: Trusted CA verifies the ownership of the server's domain before issuing a certificate. This process ensures that the HTTPS connection belongs to the server's domain, making it impossible to impersonate the server's domain.
 #### 3. Symmetric key exchange:
