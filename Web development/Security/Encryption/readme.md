@@ -35,4 +35,4 @@ This process ensures that the domain is not owned by an attacker's server but th
 If the certificate is valid, the client and server generate and share a symmetric key.(using a specific key exchange algorithm)<br>
 Symmetric key encryption is faster than asymmetric key.
 #### 4. Secure communication:
-The client and server can now securely exchange HTTP requests and responses, as the data is encrypted using the symmetric key. This encryption makes it difficult for attackers to eavesdrop, tamper with, or steal sensitive information.
+The client and server can now securely exchange HTTP requests and responses, as the data is encrypted using the symmetric key. This encryption makes it difficult for attackers to eavesdrop or tamper with sensitive information.
