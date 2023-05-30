@@ -18,7 +18,7 @@ In real implementation, It is the hash value of the data that is encrypted.
 1. The sender creates a digital signature for the message using the private key and sends the message along with the digital signature.
 2. A cheater forges the message.
 3. The receiver verifies the message by decrypting its signature with the public key and comparing the decrypted signature with the received message.
-4. The two messages do not match.
+4. The decrypted signature and the received messages do not match.
 
 # HTTPS
 While asymmetric key encryption ensures that intercepted messages cannot be read, it does not prevent a man-in-the-middle attack from impersonating the server's domain and manipulating the communication channel itself.<br>
