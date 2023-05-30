@@ -29,7 +29,7 @@ For example, when there are fish, lions, rabbits, they can be wrapped up as "lif
 # SOLID design principles in OOP
 ### Coupling
 Coupling measures how closely connected two components are to each other.<br>
-Loose coupling means that changes in one(child) component do not necessitate changes in aother(parent) component, leading to improved maintainability.<br>
+Loose coupling means that changes in one(child) component do not necessitate changes in another(parent) component, leading to improved maintainability.<br>
 
 ### Cohesion
 Cohesion refers to the degree to which the functionality is related and focused within a single component.<br>
