@@ -24,11 +24,11 @@ void acquire(Semaphore *S){ // When a process wants to take shared resource
 }
 
 void release(Semaphore *S) { // When stopping the process that has taken the resource
-    S->shared_resource++; // Release shared resource
     if ( S->shared_resource < 0 ) { // If there's a waiting process
         process=S->process_queue.dequeue(); // Execute a process in queue
         wakeup(process);
     }
+    S->shared_resource++; // Release shared resource
 }
 ~~~
 
