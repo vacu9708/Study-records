@@ -28,7 +28,7 @@ If the JWT was tampered with, the signature recalculated using the received head
 3. The server refuses to send the requested data to the client.
 
 ## Refresh token
-Unlike session objects that can be deleted as the server wants, tokens are not owned by the server, so cannot be deleted.<br>
+Unlike session objects that can be deleted as the server wants, tokens are not owned by the server, so cannot be deleted freely.<br>
 A refresh token is needed for the trade-off between security and convenience.<br>
 Access tokens are short-lived and typically expire after a specific amount of time, typically in minutes or hours.<br>
 Asking the user to re-authenticate every time an access token expires can be inconvenient and disruptive to the user experience.<br>
