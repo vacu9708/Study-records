@@ -21,7 +21,7 @@ TCP ensures the reliable delibery of packets using handshakes, acknowledgments, 
 3. The connection is terminated by a 4-way handshake.
 
 ## 3-way handshake
-A process to establishe a reliable connection between two devices over a network.
+A process to establishe a reliable connection between two devices over a network by synchronizing sequence numbers between the client and the server.
 
 ![image](https://user-images.githubusercontent.com/67142421/223976212-ecc67af5-a969-4b56-bf09-d728357b96db.png)
 
