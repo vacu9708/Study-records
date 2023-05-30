@@ -24,8 +24,7 @@ To put it simply, inheritance is done for the use of code that is pre-written (f
 - **Abstraction** : wrapping something up as a simple name to hide unnecessary details
 For example, when there are fish, lions, rabbits, they can be wrapped up as "life", as a class is given a name.
 
-- **Encalsulation** : the wrapping up of data and methods under a single unit. / The bundling of data and methods into one unit.
-Another way to think about encapsulation is, it is a protective shield that prevents the data from being accessed by the code outside this shield. (Information hiding)
+- **Encalsulation** : the wrapping up of data and methods under a single unit. (Information hiding)
 
 # SOLID design principles in OOP
 ### Coupling
