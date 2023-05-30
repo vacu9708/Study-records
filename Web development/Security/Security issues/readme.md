@@ -32,7 +32,7 @@ The malicious script can redirect the user the attacker's server to capture the 
 
 ### How to prevent XSS
 #### Encoding malicious output(characters):
-Malicious code such as **<**script>** should be encoded to prevent the data from being interpreted as code by the web browser.
+Malicious code such as **<**script**>** should be encoded to prevent the data from being interpreted as code by the web browser.
 #### Input Validation and Sanitization:
 Validate and sanitize all user input before using it.<br>
 **Example**: Remove HTML tags from the user input to prevent potential script injection.<br>
