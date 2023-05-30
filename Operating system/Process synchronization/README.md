@@ -8,14 +8,14 @@
 - A **mutex(mutual exclusion)** is a type of semaphore. While a normal semaphore allows multiple processes to share a resource, a mutex is a binary semaphore. In other words, it has only two states: locked and unlocked.
 
 ~~~c++
-class semaphore{
+class Semaphore{
 	int shared_resource; // starts with 1. (-) shared_resource means the number of waiting processes.
 	list process_queue;
 	semaphore(n){
-		this->left_resource=n;
+		this->shared_resource=1;
 }
 
-void acquire(semaphore *S){ // When a process wants to take shared resource
+void acquire(Semaphore *S){ // When a process wants to take shared resource
     S->shared_resource--; // Try taking shared resource
     if ( S->shared_resource < 0 ) { // If another process is using the shared resource.
         S->process_queue.enqueue(current_process); // Put the process in queue
@@ -23,9 +23,9 @@ void acquire(semaphore *S){ // When a process wants to take shared resource
     }
 }
 
-void release(semaphore *S) { // When stopping the process that has taken the resource
+void release(Semaphore *S) { // When stopping the process that has taken the resource
     S->shared_resource++; // Release shared resource
-    if ( S->shared_resource <= 0 ) { // If there's a waiting process
+    if ( S->shared_resource < 0 ) { // If there's a waiting process
         process=S->process_queue.dequeue(); // Execute a process in queue
         wakeup(process);
     }
