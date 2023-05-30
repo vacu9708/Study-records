@@ -14,7 +14,7 @@ contains token information and public information to identify the user. It is no
 ~~~
 ## Signature
 The header and payload are taken together and encoded into a signature when the token is issued.<br>
-If the JWT was tampered with, the signature recalculated using the received header and payload data will no longer match the signature in the JWT. (or the same way as the digital signature can also be used where the signature and decrypted)
+If the JWT was tampered with, the signature recalculated using the received header and payload data will no longer match the signature in the JWT.
 
 ## Workflow
 ### Issuing
@@ -50,15 +50,6 @@ The fact that all the information is stored in the token(stateless) without serv
 #### Cons:
 - **Less control**: The token that was already issued cannot be controlled.
 - **Larger traffic**
-
-## Token stealing attacks
-- Cross-site scripting (XSS): An attacker injects malicious code into a website or application, which is then executed in a user's browser. This code can be used to steal the user's access token or refresh token from the client-side storage location.
-
-- Cross-site request forgery (CSRF): An attacker tricks a user into submitting a malicious request to an application that includes the user's access token or refresh token. If the application does not have appropriate CSRF protections in place, it may inadvertently authorize the request and expose the user's token to the attacker.
-
-- Man-in-the-middle (MITM) attack: An attacker intercepts communications between the client application and the server, allowing them to steal the user's access token or refresh token as it is transmitted between the two. This can be mitigated by using HTTPS encryption to protect the communication channel.
-
-- Server-side vulnerabilities: If an attacker gains access to the server or the database where access tokens or refresh tokens are stored, they may be able to steal them directly.
 
 # OAuth 2.0
 OAuth2 (Open Authorization 2.0) is a standardized framework that allows other servers to access user resources without sharing the user's credentials.<br>
