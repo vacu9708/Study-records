@@ -98,6 +98,7 @@ Note that denormalization does not mean ‘reversing normalization’ or ‘no
 ### When to denormalize
 **Performance optimization on reads**: In systems where read operations significantly outweigh write operations, denormalization can be employed to enhance query performance.<br>
 By consolidating related data into a single table or duplicating data across multiple tables, the need for complex JOINs and lookups can be reduced, resulting in faster query execution.<br>
+Writing to denormalized has overhead
 ### Caution!
 Denormalization introduces data redundancy, so it is crucial to assess the impact of denormalization on data inconsistency and ensure appropriate mechanisms are in place to maintain consistency.<br>
 Also, the benefits of data inconsistency often outweigh the performance impact of JOIN operations.<br>
