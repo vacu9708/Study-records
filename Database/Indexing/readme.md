@@ -22,8 +22,9 @@ CREATE INDEX friends_name_asc ON friends(name ASC);
 <img src="https://github.com/vacu9708/Fundamental-knowledge/blob/main/Database/Indexing/Without%20index.gif">
 
 ## Trade off(overheads)
+Trade offs caused by B+ tree data structure
 - **Increased Storage Overhead**: The B+ tree requires additional storage space.
-* **Slow modifications(inserts, updates, and deletes),**: Changes to indexed columns require updating not only the actual table but also the B+ tree associated with the indexed columns.
+- **Slow modifications(inserts, updates, and deletes),**: Changes to indexed columns require updating not only the actual table but also the B+ tree associated with the indexed columns.
 
 ## Efficient indexing
 It's essential to design and manage indexes carefully to ensure optimal performance.<br>
