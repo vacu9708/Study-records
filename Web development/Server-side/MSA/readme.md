@@ -3,15 +3,13 @@ If all the functionalities of a project exist in a single codebase, then that ap
 ### Advantange
 - Simple to develop and deploy
 ### Disadvantages
-- Even a small change makes the whole application have to be redeployed.
-- It is very difficult to understand the logic of a large Monolithic application even if their responsibility is related to a single functionality, which leads to ***difficult to maintain***
-- Load balancing is difficult because the whole code is in one server.
-- The application is ***tightly coupled*** and hard to modify, so it easily becomes deprecated code.
+- **Tightly coupled**: hard to modify. Even a small change makes the whole application have to be redeployed.
+- **Difficult to understand**: It is difficult to understand the logic of a large Monolithic application.
 
 # Microservices
-Microservices are made up of a colletction of autonomous services. Various tech stacks are needed to develop microservices.<br>
-- Advantages and disadvantages: the opposite to those of Monolithic.<br>
-- Messaging middlewares are used to communicate between microservices.<br>
+Microservices are made up of a colletction of autonomous services to solve the disadvantages of Monolithic. Various tech stacks are needed to develop microservices.<br>
+- **Easy horizontal scaling**: The application is decomposed into independent services. Each service can be run on separate servers, allowing for easier horizontal scaling.
+- Messaging middlewares are used to communicate between microservices.
 
 # Circuit breaker pattern
 ![image](https://user-images.githubusercontent.com/67142421/235345619-b29d9116-d1aa-4ef3-bd1c-8ebe126c01f0.png)
