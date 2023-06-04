@@ -16,7 +16,7 @@ A floating-point number is represented approximately with a fixed number of sign
 ### Example: 5.125 in a floating-point representation
 1. Convert 5.125 to binary<br>
    5 (integer part) = 101 (binary)<br>
-   0.125 (fractional part) = 001 (binary) 2^-3 = 1/8 = 0.125<br>
+   0.125 (fractional part) = 2^-3 = 1/8 = 0.125 = 001 (binary)<br>
    5.125 (decimal) = 101.001 (binary)<br>
 2. Normalize the binary representation<br>
    101.001 (binary) = 1.01001 × 2^2<br>
