@@ -8,7 +8,7 @@ If all the functionalities of a project exist in a single codebase, then that ap
 
 # Microservices
 Microservices are made up of a colletction of autonomous services to solve the disadvantages of Monolithic. Various tech stacks are needed to develop microservices.<br>
-- **Easy horizontal scaling**: The application is decomposed into independent services. Each service can be run on separate servers, allowing for easier horizontal scaling.
+- **Easy horizontal scaling**: Each independent service can be run on separate servers, allowing for easier horizontal scaling.
 - Messaging middlewares are used to communicate between microservices.
 
 # Circuit breaker pattern
