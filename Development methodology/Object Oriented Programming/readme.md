@@ -78,8 +78,8 @@ High cohesion, Loose coupling
 
 ## 3. Liskov Substitution Principle
 Child classes must be substitutable for their parent classes.<br>
-LSP enables the use of subtype polymorphism, which allows objects of a subclass to be treated as objects of their superclass This enables modularity and extensibility by allowing new subclasses to be added without affecting the existing code that relies on the superclass.<br>
-LSP facilitates Dependency inversion by allowing high-level modules to depend on the abstractions provided by the superclass.<br>
+LSP enables the use of subtype polymorphism, which allows a subclass to be treated as their superclass. This enables modularity and extensibility by allowing new subclasses to be added without affecting the existing code.<br>
+LSP facilitates Dependency inversion by allowing high-level modules to depend on the abstraction of low level modules.<br>
 #### Primary advantage:
 Loose coupling(abstract common interface)
 ### Example
