@@ -1,8 +1,1 @@
-- [DBMS](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/DBMS)
-- [Keys](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Keys)
-- [JOIN](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/JOIN)
-- [SQL, NoSQL, etc](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/SQL%2C%20NoSQL%2C%20others)
-- [Normalization](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Normalization)
-- [Indexing](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Indexing)
-- [Transaction](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Transaction)
-- [Object Relational Mapping](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Object%20Relational%20Mapping)
+
