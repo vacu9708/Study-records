@@ -43,9 +43,9 @@ Primary key: [ID], [college]
 |2|sheila|B school|600|harvard|Y|
 |3|maria|C school|700|prinston|N|
 
-## 2nd normal form (Only essential keys)
+## 2nd normal form (Only essential keys, partial dependency not allowed)
 - The table must be in 1NF form
-- In X->Y where X is the primary key, All of X are essential to distinguish Y (partial dependency not allowed. i.e. All non-key attributes are dependent on the primary key.)
+- In X->Y where X is the primary key, All of X are essential to distinguish Y. i.e. All non-key attributes are dependent on the primary key.)
 
 On table A, [college] is used only to distinguish [accepted]<br>
 Table A is split into
