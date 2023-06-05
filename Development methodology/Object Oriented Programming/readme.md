@@ -111,7 +111,7 @@ public static void main(String[] args) {
 ## 4. Interface Segregation Principle
 The ISP states that no code should depend on interfaces it does not use.
 #### Primary advantage:
-Loose coupling(only necessary dependencies), High cohesion(one interface only has one functionality)
+High cohesion(one interface only has one functionality), Loose coupling(only necessary dependencies)
 ### Example of not obeying ISP
 ~~~java
 public interface Printer {
