@@ -42,12 +42,12 @@ If a component of code has more than one responsibility, code maintenace becomes
 ### Example of not obeying SRP
 ~~~java
 public class UserHandler {
-    public void sendNotification(User user, String message) {
-        // Notification logic
-    }
-    
     public boolean authenticate(User user, String password) {
         // Authentication logic
+    }
+    
+    public void sendNotification(User user, String message) {
+        // Notification logic
     }
 }
 ~~~
@@ -71,11 +71,10 @@ public class UserNotifier {
 High cohesion
 
 ## 2. Open, Closed Principle
-Open extensibility, closed modification<br>
-The OCP helps to achieve loose coupling by promoting extensibility without modifying existing code.<br>
-The OCP often go hand in hand with the Dependency Inversion Principle.<br>
+The principle states that components should be open for extension but closed for modification. In other words, components should be easily extended without modifying their existing code.<br>
+The OCP go hand in hand with the ***Single Responsibility Principle***, which facilitates high cohesion and ***Dependency Inversion Principle***, which facilitates loose coupling.<br>
 #### Primary advantage:
-Loose coupling
+High cohesion, Loose coupling
 
 ## 3. Liskov Substitution Principle
 Child classes must be substitutable for their parent classes.<br>
