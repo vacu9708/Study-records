@@ -37,8 +37,36 @@ High cohesion indicates that the component is well-defined and performs a specif
 
 ## 1. Single Responsibility Principle
 Every component of code (in general a class, but also a function) should have only one responsibility.<br>
-For example, a single function, generically named(like "main"), doing all the work is bad.<br>
+For example, a single component, generically named(like "main"), doing all the work is bad.<br>
 If a component of code has more than one responsibility, code maintenace becomes hard.<br>
+### Example of not obeying SRP
+~~~java
+public class UserHandler {
+    public void sendNotification(User user, String message) {
+        // Notification logic
+    }
+    
+    public boolean authenticate(User user, String password) {
+        // Authentication logic
+    }
+}
+~~~
+
+### Example of obeying SRP
+~~~java
+public class UserAuthenticator {
+    public boolean authenticate(User user, String password) {
+        // Authentication logic
+    }
+}
+
+public class UserNotifier {
+    public void sendNotification(User user, String message) {
+        // Notification logic
+    }
+}
+
+~~~
 #### Primary advantage:
 High cohesion
 
