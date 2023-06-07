@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/67142421/177896991-3d9ef63a-30d7-4c7a-9695-cc48baa8b120.png)<br>
 - Pre-defined schemas are required to store data, which is hard to modify after.
 - Data integrity is guaranteed as a result of ACID transactions, data constraints, etc.
-- Normalized tables are combined by JOIN clauses, which guarantees data integrity by eliminating the risk of updating duplicate data (e.g. updating data in table1 and forgetting the duplicate data in table2).
+- Normalized tables are combined by JOIN clauses, which guarantees data integrity by eliminating the risk of updating duplicate data (e.g. updating data in table1 and forgetting the duplicate data in table2, e.g. updating duplicate data in a table).
 - Horizontal scaling is challenging because guaranteeing data integrity on queries across multiple servers is difficult.(due to ACID, synchronization, latency, etc)
 ### When to use SQL
 When data integrity is crucial such as in banks
