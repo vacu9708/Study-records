@@ -1,22 +1,14 @@
 # SQL
 ![image](https://user-images.githubusercontent.com/67142421/177896991-3d9ef63a-30d7-4c7a-9695-cc48baa8b120.png)<br>
-- Pre-defined schemas are required to store data, which is hard to modify after.
-- **Data integrity** is guaranteed as a result of ACID transactions, data constraints, normalized tables, etc.
-- **Normalized tables** are combined by JOIN clauses, which improves data integrity by eliminating the risk of updating duplicate data (e.g. updating data in table1 and forgetting the duplicate data in table2, e.g. updating duplicate data in a table).
-- **Horizontal scaling is challenging** because guaranteeing data integrity on queries across multiple servers is difficult.(due to ACID, synchronization, latency, etc)
-### When to use SQL
-When data integrity is crucial such as in banks
+- **Pre-defined schemas** are required to store data, which is hard to modify after.
+- **Normalized tables** are combined by JOIN clauses, which eliminates the risk when updating duplicate data (e.g. updating data in table1 and forgetting the duplicate data in table2, e.g. updating duplicate data in a table).
 
 # NoSQL
 ![image](https://user-images.githubusercontent.com/67142421/177898003-73e84048-afd7-4979-91f3-798c07ab27fa.png)<br>
 NoSQL prioritizes flexibility, scalability, and performance over strict constraints.<br>
 **document** of NoSQL correspondes to **row** of SQL and **collection** of NoSQL correspondes to **table** of SQL.<br>
-- Data is stored in flexible documents that can have a different structure.
-- **Data integrity is not guaranteed**. (Instead of relying solely on database consistency, application-level compensation can be used)
-- **JOIN clauses are not used**, so it is faster than SQL but data integrity is not guaranteed because of the risk when updating duplicate data.
-- **Horizontal scaling** just requires spliting collections.
-### When to use NoSQL
-- When horizontal scaling is in mind
+- Data is stored in **flexible documents** that can have a different structure, which is simpler and improves productivity.
+- **JOIN clauses are not used**, so it is faster than SQL but there is a risk when updating duplicate data.
 
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/f20345ca-ba70-4e49-915d-ef4ae77c978b)
 # Why use Redis database
