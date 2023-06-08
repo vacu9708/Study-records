@@ -50,7 +50,7 @@ The fact that all the information is stored in the token(stateless) without a se
 
 ### Session-cookie
 The fact that session objcets are managed on the server side results in the pros and cons.
-#### Advantagess:
+#### Advantages:
 - **Better control**: Login sessions can be easily revoked in situations such as when the user has been banned.
 - **Smaller traffic**: The client only sends its session ID, which leads to less traffic than JWT.
 
