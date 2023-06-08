@@ -36,9 +36,11 @@ Asking the user to re-authenticate every time an access token expires is inconve
 #### On the clinet side:
 - **No state stored on the server**
 - **Vulnerability**: Storing refresh tokens on the client-side introduces a higher risk of compromise if an attacker gains access to the client-side storage.
+- **Limited Control**: Tokens cannot be revoked selectively in situations such as when the user has been banned.
 #### On the server side(redis):
 - **Client states accessed sometimes**: Refresh tokens are accessed much less frequently than login sessions. Storing refresh tokens in Redis can be a good trade off between the security and the performance.
 - **Enhanced Security**: The server can maintain the tokens in a secure manner, protecting them from client-side attacks.
+- **Easier control**: Tokens can be revoked easily.
 
 # Session-cookie VS JWT in authorization
 ### JWT
