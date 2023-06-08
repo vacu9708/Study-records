@@ -42,15 +42,12 @@ Asking the user to re-authenticate every time an access token expires is inconve
 - **Enhanced Security**: The server can maintain the tokens in a secure manner, protecting them from client-side attacks.
 - **Better control**: Tokens can be revoked easily.
 
-# Session-cookie VS JWT in authorization
+# Login session VS JWT
 ### JWT
-The fact that all the information is stored in the token(stateless) without a server-side state results in the pros and cons.
-#### Advantagess:
+- **No client state managed if** refresh tokens are not stored on the server either
 - **Good scalability**: Horizontal scaling is easier because of the decoupling between the token and the server
 
 ### Session-cookie
-The fact that session objcets are managed on the server side results in the pros and cons.
-#### Advantages:
 - **Better control**: Login sessions can be easily revoked in situations such as when the user has been banned.
 - **Smaller traffic**: The client only sends its session ID, which leads to less traffic than JWT.
 
