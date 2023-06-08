@@ -40,26 +40,19 @@ Asking the user to re-authenticate every time an access token expires is inconve
 #### On the server side(redis):
 - **Client states accessed sometimes**: Refresh tokens are accessed much less frequently than login sessions. Storing refresh tokens in Redis can be a good trade off between the security and the performance.
 - **Enhanced Security**: The server can maintain the tokens in a secure manner, protecting them from client-side attacks.
-- **Easier control**: Tokens can be revoked easily.
+- **Better control**: Tokens can be revoked easily.
 
 # Session-cookie VS JWT in authorization
 ### JWT
 The fact that all the information is stored in the token(stateless) without a server-side state results in the pros and cons.
-#### Pros:
-- **Extra server-side storage not required**
-- **Good scalability**: because of the decoupling between the token and the server
-#### Cons:
-- **Less control**: The token that was already issued cannot be controlled.
-- **Larger traffic**: Tokens are bigger than session cookies
+#### Advantagess:
+- **Good scalability**: Horizontal scaling is easier because of the decoupling between the token and the server
 
 ### Session-cookie
 The fact that session objcets are managed on the server side results in the pros and cons.
-#### Pros:
-- **More control**: More control in managing user's login state.
+#### Advantagess:
+- **Better control**: Login sessions can be easily revoked in situations such as when the user has been banned.
 - **Smaller traffic**: The client only sends its session ID, which leads to less traffic than JWT.
-#### Cons:
-- **More server-side storage required**
-- **Bad scalability**: The high coupling between the server and session objects makes horizontal scaling difficult
 
 # OAuth 2.0
 OAuth2 (Open Authorization 2.0) is a standardized framework that allows other servers to access user resources without sharing the user's credentials.<br>
