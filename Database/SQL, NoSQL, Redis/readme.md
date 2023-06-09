@@ -20,6 +20,9 @@ The primary reason for using Redis is its **exceptional speed**.<br>
 Redis provides much faster speed than normal databases. However, RAM is limited, therefore strategies to save the storage such LRU, storing only necessary data are necessary.
 
 ### How to achieve data persistence in Redis
-Main memory cannot maintain the data, so Redis has backup methods.<br>
-1. By default Redis regularly saves **snapshots**(Redis Backup file, RDB) of the dataset on disk. This has a problem that data between back points disappears.
-2. **AOF**(Append Only File) : a persistence mechanism that allows the Redis server to keep track and log every command executed on the server.
+RAM cannot maintain data after being turned off, so Redis has backup methods.<br>
+
+- **RDB (Redis Database) Snapshotting**: Snapshots of the dataset at a specific point in time are taken and saved to disk in an RDB file at regular intervals or manually.<br>
+This file contains the dataset in a compact manner, resulting in faster disk I/O operations than the AOF method. However, if a system failure happens between two snapshot intervals, there is a possibility of losing the data changes made during that time.
+- **AOF (Append-Only File)**: The AOF persistence mode logs every write operation received by Redis, appending it to the end of an AOF file. By replaying these write operations, Redis can reconstruct the dataset from scratch.
+- **Hybrid Persistence**: By using both RDB and AOF persistence methods simultaneously, Redis periodically creates RDB snapshots for faster recovery and uses the AOF file to replay write operations since the last snapshot in case of failures. Hybrid persistence provides a balance between recovery time and data durability.
