@@ -11,11 +11,12 @@ NoSQL prioritizes flexibility, scalability, and performance over strict constrai
 - **JOIN clauses are not used**, therefore read operations are faster than SQL but there are risks when updating duplicate data.
 
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/f20345ca-ba70-4e49-915d-ef4ae77c978b)
-# Why use Redis database
+# Why use Redis cache
 The primary reason for using Redis is its **exceptional speed**.<br>
-- **In-Memory Data Storage**: Redis stores data in RAM instead of on disk. This allows Redis to deliver exceptionally fast performance.
-- **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances. This enables horizontal scaling to handle growing workloads and ensures high availability.
-- **Key-Value Data Model**: Redis follows a simple key-value data model.
+- **Data storage in RAM**: Redis stores data in RAM instead of secondary memory. This allows Redis to deliver exceptionally fast performance.
+- **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances.
+- **Simple key-Value Data Model**
+Redis provides much faster speed than normal databases. However, RAM is limited, therefore strategies to save the storage such LRU, storing only necessary data are necessary.
 
 ### How to achieve data persistence in Redis
 Main memory cannot maintain the data, so Redis has backup methods.<br>
