@@ -1,6 +1,7 @@
 # Concurrent programming
-Concurrenct programming refers to dividing a task into smaller subtasks and processing them at the same time. Concurrency involves both actual and apparent simultaneous execution of multiple tasks.<br>
-The example below does not improve the speed because the threads only appear to be executed simultaneously.
+Concurrenct programming refers to executing multiple tasks simultaneously, which involves both actual and apparent simultaneous execution of multiple tasks.<br>
+The example below divides a task into smaller subtasks and processes them simultaneously but does not improve the speed because the threads only appear to be executed simultaneously.
+Concurrent programming requires synchronization mechanisms to prevent race conditions.
 ~~~python
 import time
 
@@ -33,11 +34,9 @@ if __name__ == '__main__':
 ~~~
 
 # Parallel programming
-Parallel programming refers to breaking a task into subtasks and processing them **actually** at the same time on separate CPU processors.<br>
-### Parallel programming requires:
-- Dividing the task into subtasks well
-- Synchronization mechanisms to prevent race conditions.
-- Inter-process communication because processes are designed not to commumicate by default.
+Parallel programming refers to executing multiple tasks **actually** at the same time on separate CPU processors.<br>
+The example below breaks a task into subtasks and processes them simultaneously on separate CPU processors.<br>
+Parallel programming requires inter-process communication because processes are designed to not commumicate with each other by default.
 
 In python, **if __name__ == '__main__'** allows the code inside it to be executed only in the top module, which prevents unintended execution of code when a python file is imported as a module.
 ~~~python
