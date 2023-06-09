@@ -17,7 +17,7 @@ The primary reason for using Redis is its **exceptional speed**.<br>
 - **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances.
 - **Simple key-Value Data Model**
 
-Redis provides much faster speed than normal databases. However, RAM has a limited size, therefore strategies to save the storage such LRU, storing only necessary data are necessary.
+Redis provides much faster speed than normal databases. However, RAM has a limited size, therefore strategies to save the storage such LRU and storing only necessary data are necessary.
 
 ### How to achieve data persistence in Redis
 RAM cannot maintain data after being turned off, so Redis has backup methods.<br>
