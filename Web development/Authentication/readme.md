@@ -44,7 +44,8 @@ Asking the user to re-authenticate every time the access token expires is inconv
 
 ### Re-issuing an access token
 When a user sends an expired access token, check if a corresponding refresh token is stored in Redis and if the requesting user's IP and the IP that generated the refresh token are the same. After validation, generate a new access token and return it to the user.<br>
-However, a confirmation if the user has gotten a different IP can be good for UX since the same user might get a different IP
+However, a confirmation if the user has gotten a different IP can be good for UX since the same user might get a different IP.
+
 ---
 
 # Login session
