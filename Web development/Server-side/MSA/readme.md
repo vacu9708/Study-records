@@ -3,7 +3,7 @@ If all the functionalities of a project exist in a single codebase, then that ap
 ### Advantange
 Simple to develop and deploy
 ### Disadvantages
-**Tight coupling**: All the problems of the monolithic comes from the tight coupling.<br>
+**Tight coupling**: All the problems of the monolith comes from the tight coupling.<br>
 
 # Microservices
 Microservices are made up of a colletction of autonomous services to solve the disadvantages of Monolithic.<br>
