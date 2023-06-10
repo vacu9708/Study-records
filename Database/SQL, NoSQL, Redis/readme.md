@@ -12,7 +12,9 @@ NoSQL prioritizes flexibility, scalability, and performance over strict constrai
 
 ---
 
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6b101735-9618-4a29-af7c-f3dbf6f2473a)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6b101735-9618-4a29-af7c-f3dbf6f2473a)<br>
+Redis can be thought of as a persistent hashmap.<br>
+What sets Redis apart from a normal hashmap is that it can persist data to disk, allowing it to be used as a durable datastore.
 # Why use Redis cache
 The primary reason for using Redis is its **exceptional speed**.<br>
 - **Exceptional speed**: Redis stores data in RAM instead of secondary memory. This allows Redis to deliver exceptionally fast performance.
@@ -20,9 +22,8 @@ The primary reason for using Redis is its **exceptional speed**.<br>
 - **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances.
 - **Simple key-value data model**
 
-Redis provides much faster speed than normal databases. However, RAM has a limited size, therefore strategies to save the storage such LRU and storing only necessary data are necessary.
-
 ### Usage example
+Redis provides much faster speed than normal databases. However, RAM has a limited size, therefore strategies to store only data that requires high speed are important.
 - Allowing only one Like per user -> key: comment ID, value: set[users who liked]
 - Unique visitors without duplicate records -> Switch visitors' ID to bit 1 and BITCOUNT() to count the number of visitors
 - shopping cart of a user, refresh tokens
