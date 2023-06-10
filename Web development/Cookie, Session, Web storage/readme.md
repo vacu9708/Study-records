@@ -7,30 +7,15 @@ The 2 major features of HTTP are **"connectionless"** and **"stateless"** as a r
 ## HTTP cookie and session
 - **Cookie** is a small piece of data created by a server and placed on the user's computer.<br>
 It is automatically sent back to the server through the HTTP request header on every request.
-- **Session** consists of session ID. The session ID is stored on the client side as a cookie and the session object is stored in the server.<br>
-The session is more secure because it is managed by server not by client but the problem is that the more users the more resource of the server is taken.
 
-## Authentification by session
-### How a session is made
-1. Validate login information
-2. The server creates a session object and sends its session ID to the client
-3. The session ID is stored in a cookie and associated with the session
-
-### How authorized clinets are distinguished
-1. The client sends an HTTP request with its session ID in the HTTP request header.
-2. The server looks up if it has a matched session ID.
-3. If there is a matched session ID, the server sends the response the client wants.
-
-If the session ID finds its way into the hands of a hacker, they can masquerade as that user. This is known as **session hijacking**.
-
-|| Cookie | Session |
-| :---: | :---: | :---: |
-| Storage location | Client | Server |
-| Form | text | object |
-| Limit | 300 cookies per client, 20 cookies per domain, 4KB per cookie | no limit |
-| Expiration | Manually set | Manually set |
+|| Cookie |
+| :---: | :---: |
+| Storage location | Client |
+| Form | text |
+| Limit | 300 cookies per client, 20 cookies per domain, 4KB per cookie |
+| Expiration | Manually set |
 
 ## Web storage
 Web storage is similar to HTTP cookie but with a greatly enhanced capacity(5MB) and no information sent in the HTTP request header.<br>
-The web storage is divided into 2 types : **local storage** and **session storage**.<br>
+There are 2 types of web storage: **local storage** and **session storage**.<br>
 Local storage is persistent while session storage is expired when the tab is closed.<br>
