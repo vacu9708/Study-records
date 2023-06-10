@@ -44,12 +44,19 @@ Asking the user to re-authenticate every time an access token expires is inconve
 
 # Login session VS JWT
 ### JWT
-- **No client state managed if** refresh tokens are not stored on the server either
-- **Good scalability**: Horizontal scaling is easier because of the decoupling between the token and the server
+- **No client state if** refresh tokens are not stored on the server either
+- **Good scalability**: Horizontal scaling is easier because of the 
 
 ### Session-cookie
 - **Better control**: Login sessions can be easily revoked in situations such as when the user has been banned.
 - **Smaller traffic**: The client only sends its session ID, which leads to less traffic than JWT.
+
+### Session storage
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/9ee27101-d1a0-4dcc-b843-46a4c9c8f9e9)<br>
+The decoupling between the session object and the server can be achieved by storing session objects in a separate session storage like Redis.<br>
+#### Problem of the Session storage:
+1. If the session storage itself experiences a failure, it can result in the loss of all sessions, impacting all servers that rely on the session storage.
+2. Retrieving sessions from an external session server introduces additional network I/O, potentially leading to decreased performance.
 
 # OAuth 2.0
 OAuth2 (Open Authorization 2.0) is a standardized framework that allows other servers to access user resources without sharing the user's credentials.<br>
