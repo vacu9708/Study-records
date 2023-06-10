@@ -13,11 +13,41 @@ NoSQL prioritizes flexibility, scalability, and performance over strict constrai
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/f20345ca-ba70-4e49-915d-ef4ae77c978b)
 # Why use Redis cache
 The primary reason for using Redis is its **exceptional speed**.<br>
-- **Data storage in RAM**: Redis stores data in RAM instead of secondary memory. This allows Redis to deliver exceptionally fast performance.
+- **Exceptional speed**: Redis stores data in RAM instead of secondary memory. This allows Redis to deliver exceptionally fast performance.
+- **Persistent data**
 - **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances.
-- **Simple key-Value Data Model**
+- **Simple key-value data model**
 
 Redis provides much faster speed than normal databases. However, RAM has a limited size, therefore strategies to save the storage such LRU and storing only necessary data are necessary.
+
+### Usage example
+- Allowing only one Like per user -> key: comment ID, value: set[users who liked]
+- Unique visitors without duplicate records -> Switch visitors' ID to bit 1 and BITCOUNT() to count the number of visitors
+- shopping cart of a user, refresh tokens
+- #### Query caching:
+This nested query to retrieve tweets of a user that a follower follows can be slow.
+~~~sql
+SELECT * FROM tweets WHERE user_id IN (SELECT followed_id FROM follows WHERE follower_id = "abc123");
+~~~
+A follower's timeline can be cached in Redis
+~~~python
+def get_tweets_for_follower(follower_id):
+    # Check if cached data exists for the follower ID
+    cache_key = f"tweets:{follower_id}"
+    cached_data = redis.get(cache_key)
+
+    if cached_data:
+        return json.loads(cached_data)
+    else:
+        # Retrieve tweets of a user that a follower follows
+        query = 'SELECT * FROM tweets WHERE user_id IN (SELECT followed_id FROM follows WHERE follower_id = %s)'
+        tweets =  DB.execute(query, follower_id)
+        # Store the tweets in Redis cache
+        redis.set(cache_key, json.dumps(tweet_data))
+        # Return the tweet data
+        return tweet_data
+~~~
+
 
 ### How to achieve data persistence in Redis
 RAM cannot maintain data after being turned off, so Redis has backup methods.<br>
