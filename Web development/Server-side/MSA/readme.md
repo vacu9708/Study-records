@@ -1,15 +1,21 @@
 # Monolithic service
 If all the functionalities of a project exist in a single codebase, then that application is called a **monolithic**.
 ### Advantange
-- Simple to develop and deploy
+Simple to develop and deploy
 ### Disadvantages
-- **Tightly coupled**: hard to modify. Even a small change makes the whole application have to be redeployed.
-- **Difficult to understand**: It is difficult to understand the logic of a large Monolithic application.
+**Tight coupling**: All the problems of the monolithic comes from the tight coupling.<br>
 
 # Microservices
-Microservices are made up of a colletction of autonomous services to solve the disadvantages of Monolithic. Various tech stacks are needed to develop microservices.<br>
-- **Easy horizontal scaling**: Each independent service can be run on separate servers, allowing for easier horizontal scaling.
-- Messaging middlewares are used to communicate between microservices.
+Microservices are made up of a colletction of autonomous services to solve the disadvantages of Monolithic.<br>
+Messaging middlewares like Kafka are used to communicate between microservices.<br>
+### Advantages
+All the advantages come from the decoupling between microservices. The disadvantages of the monolithic are solved.<br>
+- **Decoupling**: Changes to one microservice do not impact other microservices
+- **Easier to understand**: Understanding each microservice is easier than understanding the logic of a large monolithic application
+- **Technology diversity**: The decoupling between microservices allows the use of different technologies for each service
+- **Fault isolation and resilience:**: Thanks to the decoupling, failures in one service do not necessarily affect others
+- **Scalability**: The decoupling enables individual services to be scaled independently based on demand. Services experiencing high traffic can be scaled horizontally without affecting others
+- **Team specialization**: Microservices facilitate team specialization by assigning separate teams to develop and maintain individual services.
 
 # Circuit breaker pattern
 ![image](https://user-images.githubusercontent.com/67142421/235345619-b29d9116-d1aa-4ef3-bd1c-8ebe126c01f0.png)
