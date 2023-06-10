@@ -14,20 +14,21 @@ NoSQL prioritizes flexibility, scalability, and performance over strict constrai
 
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6b101735-9618-4a29-af7c-f3dbf6f2473a)<br>
 Redis can be thought of as a persistent hashmap.<br>
-What sets Redis apart from a normal hashmap is that it can persist data to disk, allowing it to be used as a durable datastore.
+What sets Redis apart from a normal hashmap is that it can persist data to disk, allowing it to be used as a fault-tolerant, durable datastore.
 # Why use Redis cache
-The primary reason for using Redis is its **exceptional speed**.<br>
 - **Exceptional speed**: Redis stores data in RAM instead of secondary memory. This allows Redis to deliver exceptionally fast performance.
 - **Persistent data**
 - **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances.
 - **Simple key-value data model**
 
 ### Usage example
-Redis provides much faster speed than normal databases. However, RAM has a limited size, therefore strategies to store only data that requires high speed are important.
-- Allowing only one Like per user -> key: comment ID, value: set[users who liked]
-- Unique visitors without duplicate records -> Switch visitors' ID to bit 1 and BITCOUNT() to count the number of visitors
-- shopping cart of a user, refresh tokens
-- #### Query caching:
+Redis provides an exceptional speed. However, RAM has a limited size, therefore strategies to save the cache space are important.
+#### When a fast response speed is important:
+The Like feature requires a fast response speed<br>
+Allowing only one Like per user -> key: comment ID, value: set[users who liked]
+#### Temporary data:
+Temporary data that is not going to hold the cache space for long such as shopping cart of a user, refresh tokens
+#### Caching the result of complex queries:
 This nested query to retrieve tweets of a user that a follower follows can be slow.
 ~~~sql
 SELECT * FROM tweets WHERE user_id IN (SELECT followed_id FROM follows WHERE follower_id = "abc123");
@@ -50,10 +51,14 @@ def get_tweets_for_follower(follower_id):
         # Return the tweet data
         return tweet_data
 ~~~
-
+#### Using Redis instead of a hashmap:
+e.g. Counting unique visitors using BITCOUNT() or SET data structure of Redis<br>
+There is a binary where each digit indicates a visitor's ID.<br>
+The number of visitors without duplicate records can be counted by switching visitors' bit to 1 and counting the number of 1.<br>
+-> key: date, value: data structure for storing visitors' ID
 
 ### How to achieve data persistence in Redis
-RAM cannot maintain data after being turned off, so Redis has backup methods.<br>
+Redis has backup methods because RAM cannot maintain data after being turned off.<br>
 
 - **RDB (Redis Database) Snapshotting**: Snapshots of the dataset at a specific point in time are taken and saved to disk in an RDB file at regular intervals or manually.<br>
 This file contains the dataset in a compact manner, resulting in faster disk I/O operations than the AOF method. However, if a system failure happens between two snapshot intervals, there is a possibility of losing the data changes made during that time.
