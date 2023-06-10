@@ -10,7 +10,9 @@ NoSQL prioritizes flexibility, scalability, and performance over strict constrai
 - Data is stored in **flexible documents** that can have a different structure, which is simpler and improves productivity.
 - **JOIN clauses are not used**, therefore read operations are faster than SQL but there are risks when updating duplicate data.
 
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/f20345ca-ba70-4e49-915d-ef4ae77c978b)
+---
+
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6b101735-9618-4a29-af7c-f3dbf6f2473a)
 # Why use Redis cache
 The primary reason for using Redis is its **exceptional speed**.<br>
 - **Exceptional speed**: Redis stores data in RAM instead of secondary memory. This allows Redis to deliver exceptionally fast performance.
