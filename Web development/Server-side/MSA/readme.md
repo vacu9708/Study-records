@@ -20,7 +20,7 @@ A circuit breaker object monitors its microservice and if it detects a faulure, 
 Instead, it returns a pre-configured fallback response or exception.<br>
 
 # Sagas pattern
-Using the Sagas pattern, each local transaction is implemented as a separate step in a saga.<br>
+Using the Sagas pattern, each local transaction at a microservice is performed as a separate step in a saga.<br>
 If a local transaction fails, the saga coordinator triggers a compensation for each already executed local transaction to undo their effects.<br>
 This helps to ensure that the transaction across microservices is completed successfully, even if there are failures.<br>
 
