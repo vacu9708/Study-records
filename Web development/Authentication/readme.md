@@ -1,4 +1,4 @@
-# Authentication by JWT(JSON Web Token)
+# JWT(JSON Web Token)
 ![image](https://user-images.githubusercontent.com/67142421/183502457-7ba21a27-068e-4421-9670-e1f1736208ca.png)
 
 JWT consists of 3 parts.
@@ -30,21 +30,24 @@ If the JWT was tampered with, the signature recalculated using the received head
 ## Refresh token
 Unlike session objects that can be deleted as the server wants, tokens are not owned by the server and cannot be deleted freely.<br>
 That is why access tokens are short-lived and typically expire after a specific amount of time, typically in some hours.<br>
-A refresh token is needed for the trade-off between security and convenience.<br>
-Asking the user to re-authenticate every time an access token expires is inconvenient and disruptive to the user experience.<br>
+The refresh token is needed for the trade-off between security and convenience.<br>
+Asking the user to re-authenticate every time the access token expires is inconvenient and disruptive to UX.<br>
 ### Where to store refresh tokens?
-#### On the clinet side:
+#### On the clinet:
 - **No state stored on the server**
 - **Vulnerability**: Storing refresh tokens on the client-side introduces a higher risk of compromise if an attacker gains access to the client-side storage.
 - **Limited Control**: Tokens cannot be revoked selectively in situations such as when the user has been banned.
-#### On the server side(redis):
-- **Client states accessed sometimes**: Refresh tokens are accessed much less frequently than login sessions. Storing refresh tokens in Redis can be a good trade off between the security and the performance.
-- **Enhanced Security**: The server can maintain the tokens in a secure manner, protecting them from client-side attacks.
+#### On the server(Redis):
+- **Client states accessed sometimes**: Refresh tokens are accessed much less frequently than login sessions. Storing refresh tokens in Redis can be a good trade off between security and performance.
+- **Enhanced Security**: The server can maintain refresh tokens in a secure manner, protecting them from client-side attacks.
 - **Better control**: Tokens can be revoked easily.
 
+### Re-issuing an access token
+When a user sends an expired access token, check if a corresponding refresh token is stored in Redis and if the requesting user's IP and the IP that generated the refresh token are the same. After validation, generate a new access token and return it to the user.<br>
+However, a confirmation if the user has gotten a different IP can be good for UX since the same user might get a different IP
 ---
 
-# Authentification by session
+# Login session
 ### How a session is made
 1. Validate login information
 2. The server creates a session object and sends a session ID that connects to the session object to the client
@@ -68,7 +71,7 @@ If the session ID finds its way into the hands of a hacker, they can masquerade 
 - **Better control**: Login sessions can be easily revoked in situations such as when the user has been banned.
 - **Smaller traffic**: The client only sends its session ID, which leads to less traffic than JWT.
 
-### Session storage
+### External session storage server
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/9ee27101-d1a0-4dcc-b843-46a4c9c8f9e9)<br>
 The decoupling between the session object and the server can be achieved by storing session objects in a separate session storage like Redis.<br>
 #### Problem of the Session storage:
