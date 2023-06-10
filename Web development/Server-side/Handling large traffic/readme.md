@@ -10,8 +10,8 @@ Instead of handling the email sending process synchronously within the request-r
 Optimize the time complexity of algorithms
 
 # DB Optimization
-This involves denormalizing data, indexing frequently accessed fields, query optimization, query caching, using in-memory DB cache(e.g. Redis).<br>
-Query caching refers to caching the results of frequently executed queries to retrieve the data from memory instead of executing the query.<br>
+This involves denormalizing data, indexing frequently accessed fields, query optimization, query caching.<br>
+Query caching refers to caching the result of frequently executed queries to retrieve the data from RAM(e.g. Redis) instead of executing the query.<br>
 
 # Scaling
 Ensure that the server architecture is designed to scale as the number of users grows.
