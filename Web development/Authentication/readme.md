@@ -1,4 +1,4 @@
-# JWT(JSON Web Token)
+# Authentication by JWT(JSON Web Token)
 ![image](https://user-images.githubusercontent.com/67142421/183502457-7ba21a27-068e-4421-9670-e1f1736208ca.png)
 
 JWT consists of 3 parts.
@@ -42,12 +42,27 @@ Asking the user to re-authenticate every time an access token expires is inconve
 - **Enhanced Security**: The server can maintain the tokens in a secure manner, protecting them from client-side attacks.
 - **Better control**: Tokens can be revoked easily.
 
-# Login session VS JWT
-### JWT
-- **No client state if** refresh tokens are not stored on the server either
-- **Good scalability**: Horizontal scaling is easier because of the 
+---
 
-### Session-cookie
+# Authentification by session
+### How a session is made
+1. Validate login information
+2. The server creates a session object and sends a session ID that connects to the session object to the client
+3. The session ID is stored as a cookie
+
+### How authorized clinets are distinguished
+1. The client sends an HTTP request with its session ID in the HTTP request header.
+2. The server looks up if there is a session object matching the session ID.
+3. If there is a match, the server authorizes the client.
+
+If the session ID finds its way into the hands of a hacker, they can masquerade as that user. This is known as **session hijacking**.
+
+# JWT VS Login session
+### JWT
+- **No client state if** refresh tokens are stored on the client
+- **Good scalability**: Horizontal scaling is easier because of the decoupling between the token and the server
+
+### Login session
 - **Better control**: Login sessions can be easily revoked in situations such as when the user has been banned.
 - **Smaller traffic**: The client only sends its session ID, which leads to less traffic than JWT.
 
@@ -55,7 +70,7 @@ Asking the user to re-authenticate every time an access token expires is inconve
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/9ee27101-d1a0-4dcc-b843-46a4c9c8f9e9)<br>
 The decoupling between the session object and the server can be achieved by storing session objects in a separate session storage like Redis.<br>
 #### Problem of the Session storage:
-1. If the session storage itself experiences a failure, it can result in the loss of all sessions, impacting all servers that rely on the session storage.
+1. If the session server itself experiences a failure, it can result in the loss of all sessions, impacting all servers that rely on the session storage.
 2. Retrieving sessions from an external session server introduces additional network I/O, potentially leading to decreased performance.
 
 # OAuth 2.0
