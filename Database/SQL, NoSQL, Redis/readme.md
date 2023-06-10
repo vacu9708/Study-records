@@ -24,16 +24,17 @@ What sets Redis apart from a normal hashmap is that it can persist data to disk,
 ### Usage example
 Redis provides an exceptional speed. However, RAM has a limited size, therefore strategies to save the cache space are important.
 #### When a fast response speed is important:
-The Like feature requires a fast response speed<br>
-Allowing only one Like per user -> key: comment ID, value: set[users who liked]
+e.g. The Like feature requires a fast response speed<br>
+Allowing only one Like per user for a comment -> key: comment ID, value: set[users who liked]
 #### Temporary data:
-Temporary data that is not going to hold the cache space for long such as shopping cart of a user, refresh tokens
+e.g. shopping cart of a user, refresh tokens
+Temporary data that is not going to hold the cache space for long is good to be stored in Redis
 #### Caching the result of complex queries:
 This nested query to retrieve tweets of a user that a follower follows can be slow.
 ~~~sql
 SELECT * FROM tweets WHERE user_id IN (SELECT followed_id FROM follows WHERE follower_id = "abc123");
 ~~~
-A follower's timeline can be cached in Redis
+A follower's timeline can be cached in Redis to enhance the retrieval speed
 ~~~python
 def get_tweets_for_follower(follower_id):
     # Check if cached data exists for the follower ID
