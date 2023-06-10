@@ -57,6 +57,8 @@ Asking the user to re-authenticate every time an access token expires is inconve
 
 If the session ID finds its way into the hands of a hacker, they can masquerade as that user. This is known as **session hijacking**.
 
+---
+
 # JWT VS Login session
 ### JWT
 - **No client state if** refresh tokens are stored on the client
@@ -72,6 +74,8 @@ The decoupling between the session object and the server can be achieved by stor
 #### Problem of the Session storage:
 1. If the session server itself experiences a failure, it can result in the loss of all sessions, impacting all servers that rely on the session storage.
 2. Retrieving sessions from an external session server introduces additional network I/O, potentially leading to decreased performance.
+
+---
 
 # OAuth 2.0
 OAuth2 (Open Authorization 2.0) is a standardized framework that allows other servers to access user resources without sharing the user's credentials.<br>
