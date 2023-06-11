@@ -8,4 +8,27 @@
 1. **Given** this data(preconditions)
 2. **When** this action is performed
 3. **Then** this outcome is expected for the test to pass
- 
+
+~~~java
+public class Calculator{
+  public int plus(int a, int b){
+    return a+b;
+  }
+}
+public class CalculatorTest{
+  Calculator calc = new Calculator();
+
+  @Test
+  void plus(){
+    //given
+    int a = 10;
+    int b = 20;
+
+    //when
+    int result = calc.plus(a,b);
+
+    //then
+    assertEquals(result, 30);
+  }
+}
+~~~
