@@ -5,7 +5,7 @@
 - **Easier understanding of the code**: Tests written as part of TDD act as documentation for the code. They provide clear examples of how what behavior is expected. This helps other developers understand the codebase more easily and facilitates collaboration within the team.
 
 ## Pattern
-1. **Given** this data(preconditions)
+1. **Given** this state(pre-conditions)
 2. **When** this action is performed
 3. **Then** this outcome is expected for the test to pass
 
