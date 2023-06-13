@@ -65,3 +65,12 @@ Redis has backup methods because RAM cannot maintain data after being turned off
 This file contains the dataset in a compact manner, resulting in faster disk I/O operations than the AOF method. However, if a system failure happens between two snapshot intervals, there is a possibility of losing the data changes made during that time.
 - **AOF (Append-Only File)**: The AOF persistence mode logs every write operation received by Redis, appending it to the end of an AOF file. By replaying these write operations, Redis can reconstruct the dataset from scratch.
 - **Hybrid Persistence**: By using both RDB and AOF persistence methods simultaneously, Redis periodically creates RDB snapshots for faster recovery and uses the AOF in case of failures. Hybrid persistence provides a balance between recovery time and data durability.
+
+## Redis datastructures
+|Method|Data structure|
+|---|---|
+|opsForValue()|String|
+|opsForList()|List|
+|opsForSet()|Set|
+|opsForZSet()|Sorted Set|
+|opsForHash()|Hash|
