@@ -32,7 +32,7 @@ Authorization is the process of granting access to an authenticated user.
 ### Re-issuing an access token to maintain a login state
 Unlike session objects that can be deleted as the server wants, tokens are not owned by the server and cannot be deleted freely.<br>
 That is why access tokens are short-lived.<br>
-Asking the user to re-authenticate every time the access token expires is inconvenient and disruptive to UX.<br>
+It is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
 1. When a user sends an expired access token, check if the user wants to maintain its login and if the requesting IP and the IP that generated the access token are the same.
 2. After verification, generate a new access token and return it to the user.<br>
 However, a confirmation page if the user has gotten a different IP can be good for UX since the same user might get a different IP in some time.
