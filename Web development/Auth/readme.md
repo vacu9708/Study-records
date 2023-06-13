@@ -36,7 +36,7 @@ The refresh token is needed for the trade-off between security and convenience.<
 Asking the user to re-authenticate every time the access token expires is inconvenient and disruptive to UX.<br>
 
 ### Re-issuing an access token to maintain a login state
-When a user sends an expired access token, check if the requesting IP and the IP that generated the access token are the same. After validation, generate a new access token and return it to the user.<br>
+When a user sends an expired access token, check if the user wants to maintain its login and if the requesting IP and the IP that generated the access token are the same. After validation, generate a new access token and return it to the user.<br>
 However, a confirmation page if the user has gotten a different IP can be good for UX since the same user might get a different IP in some time.
 
 ---
