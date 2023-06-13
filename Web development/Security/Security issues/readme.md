@@ -10,7 +10,7 @@ CORS works by allowing a server to specify which domains are allowed to access i
 ![image](https://user-images.githubusercontent.com/67142421/183492714-17a6d283-1c28-4377-9a5b-0b3de112ec1a.png)
 1. the browser sends an initial "preflight" request to the target server.
 2. The server then responds to the preflight request with the CORS header
-3. If the header indicateㄴ that the request is permitted, the browser proceeds with the actual request. Otherwise, it is blocked for security reasons.
+3. If the header indicate that the request is permitted, the browser proceeds with the actual request. Otherwise, it is blocked for security reasons.
 
 Once the browser has successfully completed the preflight request and received the necessary CORS headers, it caches and reuses that information for subsequent requests to the same server, without the need for additional preflight requests.
 
