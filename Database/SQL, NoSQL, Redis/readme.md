@@ -24,11 +24,13 @@ What sets Redis apart from a normal hashmap is that it can persist data to disk,
 ## Usage example
 Redis provides an exceptional speed. However, RAM has a limited size, therefore strategies to save the cache space are important.
 ### Temporary data:
-e.g. shopping cart of a user, refresh tokens(will be deleted on logout)
+e.g. shopping cart of a user
+
 ### Data that requires a fast response speed:
 e.g. The Like feature requires a fast response speed<br>
 Allowing only one Like per user for a comment -> key: comment ID, value: set[users who liked]
 Temporary data that is not going to hold the cache space for long is good to be stored in Redis
+
 ### To enhance the retrieval speed of complex queries:
 This nested query to retrieve tweets of a user that a follower follows can be slow.
 ~~~sql
@@ -52,6 +54,7 @@ def get_tweets_for_follower(follower_id):
         # Return the tweet data
         return tweet_data
 ~~~
+
 ### As a persistent hashmap:
 e.g. Counting unique visitors with BITCOUNT() or SET data structure of Redis<br>
 There is a binary where each digit indicates a visitor's ID.<br>
