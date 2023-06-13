@@ -3,7 +3,7 @@
 - [JSON](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/JSON%20parser%20with%20C%2B%2B)
 - [How a browser works](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/How%20browsers%20work)
 - [Client rendering](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Client%20rendering)
-- [Authentication](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Authentication)
+- [Auth](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Auth)
 - [Security](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Security)
 - [Socket (websocket)](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Socket%20(websocket))
 - [Server-side](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side)
