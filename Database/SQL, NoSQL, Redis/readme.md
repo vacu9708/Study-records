@@ -24,7 +24,7 @@ What sets Redis apart from a normal hashmap is that it can persist data to disk,
 ## Usage example
 Redis provides an exceptional speed. However, RAM has a limited size, therefore strategies to save the cache space are important.
 ### Temporary data:
-e.g. shopping cart of a user, refresh tokens
+e.g. shopping cart of a user, refresh tokens(will be deleted on logout)
 ### Data that requires a fast response speed:
 e.g. The Like feature requires a fast response speed<br>
 Allowing only one Like per user for a comment -> key: comment ID, value: set[users who liked]
