@@ -34,19 +34,10 @@ Unlike session objects that can be deleted as the server wants, tokens are not o
 That is why access tokens are short-lived and typically expire after a specific amount of time, typically in some hours.<br>
 The refresh token is needed for the trade-off between security and convenience.<br>
 Asking the user to re-authenticate every time the access token expires is inconvenient and disruptive to UX.<br>
-### Where to store refresh tokens?
-#### On the clinet:
-- **No state stored on the server**
-- **Vulnerability**: Storing refresh tokens on the client-side introduces a higher risk of compromise if an attacker gains access to the client-side storage.
-- **Limited Control**: Tokens cannot be revoked selectively in situations such as when the user has been banned.
-#### On the server(Redis):
-- **Client states accessed sometimes**: Refresh tokens are accessed much less frequently than login sessions. Storing refresh tokens in Redis can be a good trade off between security and performance.
-- **Enhanced Security**: The server can maintain refresh tokens in a secure manner, protecting them from client-side attacks.
-- **Better control**: Tokens can be revoked easily.
 
-### Re-issuing an access token
-When a user sends an expired access token, check if a corresponding refresh token is stored in Redis and if the requesting user's IP and the IP that generated the refresh token are the same. After validation, generate a new access token and return it to the user.<br>
-However, a confirmation if the user has gotten a different IP can be good for UX since the same user might get a different IP.
+### Re-issuing an access token to maintain a login state
+When a user sends an expired access token, check if the requesting IP and the IP that generated the access token are the same. After validation, generate a new access token and return it to the user.<br>
+However, a confirmation page if the user has gotten a different IP can be good for UX since the same user might get a different IP in some time.
 
 ---
 
@@ -67,7 +58,7 @@ If the session ID finds its way into the hands of a hacker, they can masquerade 
 
 # JWT VS Login session
 ### JWT
-- **No client state if** refresh tokens are stored on the client
+- **No client state without tokens stored on the server
 - **Good scalability**: Horizontal scaling is easier because of the decoupling between the token and the server
 
 ### Login session
