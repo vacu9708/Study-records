@@ -29,7 +29,7 @@ Authorization is the process of granting access to an authenticated user.
 2. The server checks that the token has not expired and verifies the message by generating a new signature of the forged message with the private key and comparing it with the received signature.
 3. The server refuses to send the requested data to the client.
 
-### Re-issuing an access token to maintain a login state
+### Re-issuing an access token to maintain the login state
 Unlike session objects that can be deleted as the server wants, tokens are not owned by the server and cannot be deleted freely.<br>
 That is why access tokens are short-lived.<br>
 It is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
