@@ -31,11 +31,55 @@ Malicious code includes stealing authorization information such as token or sess
 The malicious script can redirect the user the attacker's server to capture the retrieved information.<br>
 
 ### How to prevent XSS
-#### Encoding malicious output(characters):
-Malicious code such as **<**script**>** should be encoded to prevent the data from being interpreted as code by the web browser.
-#### Input Validation and Sanitization:
-Validate and sanitize all user input before using it.<br>
-**Example**: Remove HTML tags from the user input to prevent potential script injection.<br>
+#### `Encode malicious characters`:
+Malicious code such as **<**img**>** should be encoded to prevent the data from being interpreted as code by the web browser.
+Example HTML
+~~~html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XSS Prevention Example</title>
+  <script>
+    function sanitizeInput(input) {
+      return input
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+        .replace(/\//g, '&#x2F;');
+    }
+
+    function DisplayPreventedUserInput() {
+      var input = document.getElementById('input').value;
+      var sanitizedInput = sanitizeInput(input);
+      document.getElementById('preventedOutput').innerHTML = sanitizedInput;
+    }
+
+    function DisplayUserInput() {
+      var input = document.getElementById('input').value;
+      document.getElementById('output').innerHTML = input;
+    }
+  </script>
+</head>
+<body>
+  <h1>XSS Prevention Example</h1>
+
+  <form>
+    <label for="input">User Input:</label> <!--<img src="x" onerror="alert('XSS Attack!')">-->
+    <input type="text" id="input" />
+    <button type="button" onclick="DisplayPreventedUserInput()">Display</button>
+    <button type="button" onclick="DisplayUserInput()">Display without prevention</button>
+  </form>
+
+  <h2>Prevented output:</h2>
+  <div id="preventedOutput"></div>
+
+  <h2>Output without prevention:</h2>
+  <div id="output"></div>
+</body>
+</html>
+~~~
   
 # Man-in-the-middle (MITM) attack
 An attacker positions themselves between the client and the server to eavesdrop on or manipulate the data being exchanged.<br>
