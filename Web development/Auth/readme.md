@@ -58,7 +58,7 @@ If the session ID finds its way into the hands of a hacker, they can masquerade 
 
 # JWT VS Login session
 ### JWT
-- **No client state without tokens stored on the server
+- **No client state** without tokens stored on the server
 - **Good scalability**: Horizontal scaling is easier because of the decoupling between the token and the server
 
 ### Login session
