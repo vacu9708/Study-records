@@ -29,13 +29,16 @@ Authorization is the process of granting access to an authenticated user.
 2. The server checks that the token has not expired and verifies the message by generating a new signature of the forged message with the private key and comparing it with the received signature.
 3. The server refuses to send the requested data to the client.
 
-### Reissuing an access token using the refresh token
+## Why use refresh tokens to reissue access tokens
 >Refresh tokens provide a mechanism to obtain a new access token without requiring the user to provide their credentials again.<br>
 
 Unlike session objects that can be revoked as the server wants, access tokens cannot be revoked until it expires because the decoupling is why access tokens are used.<br>
 This is why access tokens are short-lived. However, it is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
 Therefore, use refresh tokens that have a longer expiration time and can be revoked freely to reissue access tokens.<br>
-The refersh token is not stateless but is not sent as frequently.
+
+#### `Refresh token`
+- Refersh tokens are not stateless but not sent much less frequently than access tokens.
+- The payload of refresh tokens only includes an expiration time.
 #### `Pre conditions`
 The server sent an access token and a refresh token to the client and the refresh token is stored in Redis including its revocation info.<br>
 #### `Process`
