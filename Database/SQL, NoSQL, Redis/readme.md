@@ -27,7 +27,7 @@ Redis provides an exceptional speed. However, RAM has a limited size, therefore 
 - Data that requires a faster speed
 
 ### `Login session`
-**Data structure**: VALUE<session ID, json{"session object"}>
+**Data structure**: VALUE<session ID, json{session object}>
 
 ### `Wishlist`
 **Data structure**: VALUE<user ID, product ID>
