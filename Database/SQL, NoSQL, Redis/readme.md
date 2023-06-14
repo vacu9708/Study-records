@@ -33,7 +33,7 @@ Redis provides an exceptional speed. However, RAM has a limited size, therefore 
 **Data structure**: VALUE<user ID, product ID>
 
 ### `Shopping cart`
-It used to be stored as a cookie. However, cookies are only available on web browsers. For broader accessibility, It should be available on any device. 
+It used to be stored as a cookie. However, cookies are only available on web browsers. For broader accessibility, It should be available on any device.<br>
 **Data structure**: HASH<user ID, product ID, quantity>
 |User ID|Product ID|Quantity|
 |---|---|---|
