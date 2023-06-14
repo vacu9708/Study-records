@@ -34,7 +34,7 @@ Authorization is the process of granting access to an authenticated user.
 
 Unlike session objects that can be revoked as the server wants, access tokens cannot be revoked until it expires because the decoupling is why access tokens are used.<br>
 This is why access tokens are short-lived. However, it is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
-Refresh tokens that have a longer expiration time and can be revoked freely can be used to reissue access tokens.<br>
+Therefore, use refresh tokens that have a longer expiration time and can be revoked freely to reissue access tokens.<br>
 The refersh token is not stateless but is not sent as frequently.
 #### `Pre conditions`
 The server sent an access token and a refresh token to the client and the refresh token is stored in Redis including its revocation info.<br>
