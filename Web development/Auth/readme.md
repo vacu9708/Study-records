@@ -35,7 +35,7 @@ This is why access tokens are short-lived. However, it is inconvenient and disru
 Therefore, use refresh tokens so that users can obtain a new access token without needing to login again and maintain the login state.<br>
 
 #### `Refresh token`
-- Refresh tokens have a longer expiration time than access tokens.
+- Refresh tokens have a longer expiration time than access tokens. But the expiration time is not very long to prevent maintaining the login state for too long.
 - Refresh tokens can be stored on the server for easy revocation. However, they are not frequently accessed.
 - The payload of refresh tokens only includes an expiration time.
 #### `Pre conditions`
