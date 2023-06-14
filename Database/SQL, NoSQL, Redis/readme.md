@@ -22,44 +22,55 @@ What sets Redis apart from a normal hashmap is that it can persist data to disk,
 - **Simple key-value data model**
 
 ## Usage example
-Redis provides an exceptional speed. However, RAM has a limited size, therefore strategies to save the cache space are important.
-### Temporary data:
-e.g. shopping cart of a user
+Redis provides an exceptional speed. However, RAM has a limited size, therefore strategies to save the cache space are important.<br>
+- Temporary data that is not going to hold the cache space for long
+- Data that requires a faster speed
 
-### Data that requires a fast response speed:
-e.g. The Like feature requires a fast response speed<br>
-Allowing only one Like per user for a comment -> key: comment ID, value: set[users who liked]
-Temporary data that is not going to hold the cache space for long is good to be stored in Redis
+### `Login session`
+**Data structure**: HASH<sessions, session ID, json{"session object"}>
 
-### To enhance the retrieval speed of complex queries:
-This nested query to retrieve tweets of a user that a follower follows can be slow.
+### `Shopping cart` (Also wishlist)
+It used to be stored as a cookie. However, cookies are only available on web browsers. For broader accessibility, It should be available on any device. 
+**Data structure**: HASH<user ID, product ID, quantity>
+|User ID|Product ID|Quantity|
+|---|---|---|
+|user1|123|2|
+|user1|124|3|
+|user2|321|1|
+
+### `Like`
+The Like feature requires a fast speed<br>
+Only one Like per user is allowed for a comment<br>
+**Data structure**: SET<comment ID, users who liked>
+
+### `Tweeter timeline`
+This complex query to retrieve tweets that a follower follows can be slow.
 ~~~sql
 SELECT * FROM tweets WHERE user_id IN (SELECT followed_id FROM follows WHERE follower_id = "abc123");
 ~~~
-The timeline tweets can be cached in Redis to enhance the retrieval speed
+The result of the query can be cached to enhance the retrieval speed.
 ~~~python
 def get_tweets_for_follower(follower_id):
     # Check if cached data exists for the follower ID
-    cache_key = f"tweets:{follower_id}"
-    cached_data = redis.get(cache_key)
+    cached_data = redis.lrange('tweets', 0, -1)
 
     if cached_data:
-        return json.loads(cached_data)
+        # Retrieve tweets from Redis
+        return cached_data
     else:
         # Retrieve tweets of a user that a follower follows
         query = 'SELECT * FROM tweets WHERE user_id IN (SELECT followed_id FROM follows WHERE follower_id = %s)'
         tweets =  DB.execute(query, follower_id)
-        # Store the tweets in Redis cache
-        redis.set(cache_key, json.dumps(tweet_data))
-        # Return the tweet data
-        return tweet_data
+        # Store tweets in a Redis list
+        for tweet in tweets:
+            redis.lpush('tweets', tweet)
+
+        return tweets
 ~~~
 
-### As a persistent hashmap:
-e.g. Counting unique visitors with BITCOUNT() or SET data structure of Redis<br>
-There is a binary where each digit indicates a visitor's ID.<br>
-The number of visitors without duplicate records can be counted by switching visitors' bit to 1 and counting the number of 1.<br>
--> key: date, value: data structure for storing visitors' ID
+#### `Counting unique visitors`
+The number of visitors without duplicate records can be counted by storing visitors' ID and counting them.<br>
+**Data structure**: LIST<Day, Visitors' ID>
 
 ## How to achieve data persistence in Redis
 Redis has backup methods because RAM cannot maintain data after being turned off.<br>
@@ -69,11 +80,11 @@ This file contains the dataset in a compact manner, resulting in faster disk I/O
 - **AOF (Append-Only File)**: The AOF persistence mode logs every write operation received by Redis, appending it to the end of an AOF file. By replaying these write operations, Redis can reconstruct the dataset from scratch.
 - **Hybrid Persistence**: By using both RDB and AOF persistence methods simultaneously, Redis periodically creates RDB snapshots for faster recovery and uses the AOF in case of failures. Hybrid persistence provides a balance between recovery time and data durability.
 
-## Redis datastructures
-|Method|Data structure|
+## Redis data structures in Spring
+|Function|Data structure|
 |---|---|
-|opsForValue()|String|
-|opsForList()|List|
-|opsForSet()|Set|
-|opsForZSet()|Sorted Set|
-|opsForHash()|Hash|
+|opsForValue(key, value)|String|
+|opsForList(key, a,b,c,,,)|List|
+|opsForSet(key, a,b,c,,,)|Set|
+|opsForZSet(key, a:1, b:2, c:3,,,)|Sorted Set|
+|opsForHash(key, key, value)|Hash|
