@@ -27,9 +27,12 @@ Redis provides an exceptional speed. However, RAM has a limited size, therefore 
 - Data that requires a faster speed
 
 ### `Login session`
-**Data structure**: HASH<sessions, session ID, json{"session object"}>
+**Data structure**: VALUE<session ID, json{"session object"}>
 
-### `Shopping cart` (Also wishlist)
+### `Wishlist`
+**Data structure**: VALUE<user ID, product ID>
+
+### `Shopping cart`
 It used to be stored as a cookie. However, cookies are only available on web browsers. For broader accessibility, It should be available on any device. 
 **Data structure**: HASH<user ID, product ID, quantity>
 |User ID|Product ID|Quantity|
@@ -41,7 +44,7 @@ It used to be stored as a cookie. However, cookies are only available on web bro
 ### `Like`
 The Like feature requires a fast speed<br>
 Only one Like per user is allowed for a comment<br>
-**Data structure**: SET<comment ID, users who liked>
+**Data structure**: SET<comment ID, users that liked>
 
 ### `Tweeter timeline`
 This complex query to retrieve tweets that a follower follows can be slow.
@@ -88,3 +91,6 @@ This file contains the dataset in a compact manner, resulting in faster disk I/O
 |opsForSet(key, a,b,c,,,)|Set|
 |opsForZSet(key, a:1, b:2, c:3,,,)|Sorted Set|
 |opsForHash(key, key, value)|Hash|
+
+## Redis cluster
+Redis cannot have multiple databases in the same way that MySQL does. Use redis instances on multiple ports.
