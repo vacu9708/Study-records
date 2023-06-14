@@ -32,18 +32,18 @@ Authorization is the process of granting access to an authenticated user.
 ## Why use refresh tokens to reissue access tokens
 Unlike session objects that can be revoked as the server wants, access tokens cannot be revoked until it expires because the decoupling is why access tokens are used.<br>
 This is why access tokens are short-lived. However, it is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
-Therefore, use refresh tokens so that users can obtain a new access token without needing to login again and maintain the login state.<br>
+Therefore, use refresh tokens so that users can maintain the login state without needing to login again while users are using the service.<br>
 
 #### `Refresh token`
-- Refresh tokens have a longer expiration time than access tokens. But the expiration time is not very long to prevent maintaining the login state for too long.
+- Refresh tokens have a longer expiration time than access tokens. But it is not very long to prevent maintaining the login state for too long.
 - Refresh tokens can be stored on the server for easy revocation. However, they are not frequently accessed.
-- The payload of refresh tokens only includes an expiration time.
+- The expiration time is enough as the payload of refresh tokens.
 #### `Pre conditions`
 The server sent an access token and a refresh token to the client and the refresh token is stored in Redis including its revocation info.<br>
 #### `Process`
 1. The client decodes the expiration time encoded in base64 and checks that the access token has expired
 2. The client sends the refresh token to the server (GET /reissue_tokens)
-3. If the refresh token has not expired and was not revoked, the server returns a new access token and refresh token
+3. If the refresh token has not expired and was not revoked, the server returns a new access token and refresh token pair
 
 ---
 
