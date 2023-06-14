@@ -29,13 +29,17 @@ Authorization is the process of granting access to an authenticated user.
 2. The server checks that the token has not expired and verifies the message by generating a new signature of the forged message with the private key and comparing it with the received signature.
 3. The server refuses to send the requested data to the client.
 
-### Re-issuing an access token to maintain the login state
-Unlike session objects that can be deleted as the server wants, tokens are not owned by the server and cannot be deleted freely.<br>
-That is why access tokens are short-lived.<br>
-It is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
-1. When a user sends an expired access token, check if the user wants to maintain its login and if the requesting IP and the IP that generated the access token are the same.
-2. After verification, generate a new access token and return it to the user.<br>
-However, a confirmation page if the user has gotten a different IP can be good for UX since the same user might get a different IP in some time.
+### Reissuing an access token to maintain the login state
+Unlike session objects that can be revoked as the server wants, access tokens cannot be revoked until it expires because the decoupling is why the access token is used.<br>
+This is why access tokens are short-lived. However, it is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
+Refresh tokens can be used to reissue access tokens that has a longer expiration time.<br>
+#### `Pre conditions`
+The server sent an access token and a refresh token to the client and stored the refresh token as a primary key including the revocation info in the DB.<br>
+The refersh token is not stateless but is not sent often unlike the access token.
+#### `Process`
+1. The client decodes the expiration time encoded in base64 and checks that the access token has expired
+2. The client sends the refresh token to the server (GET /reissue_tokens)
+3. If the refresh token has not expired and was not revoked in the DB, the server returns a new access token and refresh token
 
 ---
 
@@ -56,7 +60,7 @@ If the session ID finds its way into the hands of a hacker, they can masquerade 
 
 # JWT VS Login session
 ### JWT
-- **No client state** without tokens stored on the server
+- **Decoupling between the access token and the server**
 - **Good scalability**: Horizontal scaling is easier because of the decoupling between the token and the server
 
 ### Login session
