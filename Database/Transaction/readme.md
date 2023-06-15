@@ -23,8 +23,8 @@ The higher transaction isolation level, the better data consistency.<br>
 #### Read Uncommitted:
 Uncommitted changes can be read without any restriction.
 #### Read Committed:
-This is the default of many SQL database<br>.
-A transaction can only read data committed by other transactions.<br>
+This is the default of many SQL database<br>
+A transaction can only read data that was committed by other transactions.<br>
 However, if transaction B modifies data that transaction A read earlier, transaction A might see different results each time it reads the data.
 #### Repeatable Read:
 Even if transaction B modifies data that transaction A read earlier, transaction A always sees the same results each time it reads the data.
