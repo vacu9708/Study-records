@@ -6,7 +6,7 @@ Continuous Integration automates the integration of code from multiple contribut
 
 ### How CI works:
 1. Developers work on their code in separate branches.
-2. A developer completes their code changes and pushes it to github(topic branch), which triggers the CI process.
+2. A developer completes their code changes and pushes it to github, which triggers the CI process.
 3. The CI server pulls the code changes from github.
 4. The CI server then proceeds with building the code and running the tests such as unit tests, e2e tests, and stress tests.
 5. It generates reports based on the test results. If any issues arise during the CI process, developers are notified, and they can quickly fix the problems.
