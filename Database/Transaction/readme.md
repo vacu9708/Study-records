@@ -1,5 +1,5 @@
 # Transaction
-A database transaction is a sequence of multiple operations performed as a single independent unit, ensuring that the operations either occur entirely or not at all.<br>
+A database transaction is a sequence of multiple operations performed as a single unit, ensuring that the operations either occur entirely or not at all.<br>
 It guarantees that partial results are never saved. Changes made during a transaction are permanently applied to the database only when the transaction is **committed**(, meaning it has ended successfully) <br>
 
 The primary purpose of a transaction is to maintain data integrity in situations during multiple concurrent operations.<br>
