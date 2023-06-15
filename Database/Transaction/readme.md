@@ -42,7 +42,7 @@ Commit transaction
 ~~~
 #### If it were not for the transaction:
 - The amount of money is inconsistent if one of the operations fails
-- The operations may access the same user's account and incur a race condition, which leads to inconsistent amount of money.
+- Two operations may access the same user's account and incur a race condition, which leads to inconsistent amount of money.
 
 #### If a transaction fails:
 - If one of the queries fails, all data modifications made from the start of the transaction are erased, which is called **Rollback**.
