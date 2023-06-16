@@ -17,6 +17,12 @@ All the advantages come from the decoupling between microservices. The disadvant
 - **Scalability**: The decoupling enables individual services to be scaled independently based on demand. Services experiencing high traffic can be scaled horizontally without affecting others
 - **Team specialization**: Microservices facilitate team specialization by assigning separate teams to develop and maintain individual services.
 
+# API gateway
+API Gateway is a crucial component in a microservices architecture that provides a layer of abstraction between clients and the underlying microservices.<br>
+While it is technically possible for clients to send direct requests to microservices, using an API Gateway offers several important benefits:
+- `Simplified client interaction`: An API Gateway serves as a single entry point for clients to access multiple microservices. Instead of clients having to interact with individual microservices, they can communicate with the API Gateway. This simplifies the client-side code and reduces the complexity of managing multiple service endpoints.
+- `Monitoring and Analytics`: By routing all client requests through the API Gateway, it becomes a centralized point for collecting metrics, monitoring service health, and gathering analytics data. This allows for better visibility into the system.
+
 # Circuit breaker pattern
 ![image](https://user-images.githubusercontent.com/67142421/235345619-b29d9116-d1aa-4ef3-bd1c-8ebe126c01f0.png)
 ![image](https://user-images.githubusercontent.com/67142421/235345623-c4b76fa3-1ab6-4625-ab6f-1f9c3f7bfbfa.png)
@@ -29,9 +35,3 @@ Instead, it returns a pre-configured fallback response or exception.<br>
 Using the Sagas pattern, each local transaction at a microservice is performed as a separate step in a saga.<br>
 If a local transaction fails, the saga coordinator triggers a compensation for each already executed local transaction to undo their effects.<br>
 This helps to ensure that the transaction across microservices is completed successfully, even if there are failures.<br>
-
-# Distributed tracing
-Distributed tracing is a technique for monitoring and debugging microservices, allowing for tracing a request as it travels through multiple services.
-Distributed tracing is used for two asepcts across microservices:
-- Performance monitoring
-- Troubleshooting
