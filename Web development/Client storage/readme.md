@@ -21,3 +21,4 @@ It is automatically sent back to the server through the HTTP request header on e
 Web storage is similar to HTTP cookie but with a greatly enhanced capacity(5MB) and no information sent in the HTTP request header.<br>
 There are 2 types of web storage: **local storage** and **session storage**.<br>
 Local storage is persistent while session storage is expired when the tab is closed.<br>
+Both storages are specific to each domain and not shared among different domains in a web browser.
