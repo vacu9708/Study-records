@@ -1,10 +1,10 @@
 # CORS(Cross-Origin Resource sharing)
-**CORS** is a mechanism that allows resources to be requested from different origins.<br>
-Same-Origin Policy was introduced to prevent malicious requests(CSRF) from different origins.<br>
-However, web pages often need to make requests to different domains.<br>
+The Same Origin Policy was introduced to prevent accessing resources from different domains **inside \<script>**.<br>
+However, there are situations where webpages need to access resources from different domains.<br>
+The **browser** allows web pages to access resources from different domains with CORS.<br>
+CORS works by allowing the server to specify which domains are allowed to access its resources.<br>
 #### Without CORS:
-Without CORS, a web page would only be able to make requests to resources on the same domain as the web page itself.<br>
-CORS works by allowing a server to specify which domains are allowed to access its resources.<br>
+Without CORS, a web page would only be able to access resources on the same domain as the web page itself.<br>
 
 ### Process
 ![image](https://user-images.githubusercontent.com/67142421/183492714-17a6d283-1c28-4377-9a5b-0b3de112ec1a.png)
@@ -22,8 +22,10 @@ And then, It tricks the victim into submitting malicious requests on the attacke
 2. The victim's browser sends the authenticated user's credentials (such as JWT token) along with a malicious request. (e.g., changing account settings, making a purchase, etc.)
 3. The targeted server, considering the request to be legitimate because it includes the user's credentials, performs the requested action on behalf of the user.
 ### How to prevent CSRF
-- Accept only requests from allowed origins
-- Use a security token on each session of the user : The backend checks if the token in the request parameter is the token of the legitimate session.
+- CORS prevents making a request to different domains but is not sufficient to prevent CSRF because there are many bypasses such as \<img src="http://victim.com/get_secret> **outside \<script>**.<br>
+- The referer header contains the URL of the web page making the request, which is automatically went by a web browser. The server can check the referer header but it can be easily forged.
+#### `Anti-CSRF token`:
+Use a security token on each session of the user : The backend checks if the token in the request parameter is the token of the legitimate session.
 
 # XSS(Cross-Site Scripting)
 XSS is a type of injection attack in which malicious scripts are injected into web pages(such as posts) viwed by other users.<br>
@@ -33,6 +35,7 @@ Malicious code includes stealing authorization information such as token or sess
 The malicious script can redirect the user the attacker's server to capture the retrieved information.<br>
 
 ### How to prevent XSS
+#### `CORS`
 #### `Encode malicious characters`:
 Malicious code such as **<**img**>** should be encoded to prevent the data from being interpreted as code by the web browser.
 Example HTML
