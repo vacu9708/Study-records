@@ -22,7 +22,7 @@ And then, It tricks the victim into submitting malicious requests on the attacke
 2. The victim's browser sends the authenticated user's credentials (such as JWT token) along with a malicious request. (e.g., changing account settings, making a purchase, etc.)
 3. The targeted server, considering the request to be legitimate because it includes the user's credentials, performs the requested action on behalf of the user.
 ### How to prevent CSRF
-- CORS prevents making a request to different domains but is not sufficient to prevent CSRF because there are many bypasses such as \<img src="http://victim.com/get_secret> **outside \<script>**.<br>
+- CORS prevents making a request to different domains but is not sufficient to prevent CSRF because there are many bypasses such as \<img src="victim.com/get_secret> **outside \<script>**.<br>
 - The referer header contains the URL of the web page making the request, which is automatically went by a web browser. The server can check the referer header but it can be easily forged.
 #### `Anti-CSRF token`:
 Use a security token on each session of the user : The backend checks if the token in the request parameter is the token of the legitimate session.
