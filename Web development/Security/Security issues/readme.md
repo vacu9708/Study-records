@@ -17,7 +17,7 @@ Once the browser has successfully completed the preflight request and received t
 # CSRF(Cross-Site Request Forgery)
 CSRF exploits the trust a user has for a particular site to masquerade as a victim user to carry out any actions that the user is able to perform.<br>
 CSRF attacks leverage the browser's automatic inclusion of auth credentials (e.g., cookies) with requests to the target domain.<br>
-However, Cookies are subject to the same-origin policy in web browsers, so www.evil.com cannot send a malicious request using the cookies of www.good.com in a web browser.
+However, Cookies are subject to the same-origin policy in web browsers, so www.evil.com normally cannot send a malicious request using the cookies of www.good.com in a web browser.
 ## CSRF process
 1. Trick a victim into entering the attacker's webpage that looks legitimate.
 2. The victim's browser sends the authenticated user's credentials along with a malicious request. (e.g., changing account settings, making a purchase, etc.)
