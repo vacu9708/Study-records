@@ -97,9 +97,11 @@ This file contains the dataset in a compact manner, resulting in faster disk I/O
 Redis cannot have multiple databases in the same way that MySQL does. Use redis instances on multiple ports.
 
 ## How to install and run Redis
-1. #### Install redis on Docker:
+#### 1. Install redis on Docker:<br>
+~~~
 docker pull redis
-3. #### `Run Redis`:
+~~~
+#### 2. Run Redis:
 ~~~
 docker run -d -p 6379:6379 -v /redis_data:/redis_data --name redis redis redis-server --appendonly yes
 ~~~
