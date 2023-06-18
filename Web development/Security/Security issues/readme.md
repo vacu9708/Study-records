@@ -14,27 +14,6 @@ Without CORS, a web page would only be able to access resources on the same doma
 
 Once the browser has successfully completed the preflight request and received the necessary CORS headers, it caches and reuses that information for subsequent requests to the same server, without the need for additional preflight requests.
 
-# CSRF(Cross-Site Request Forgery)
-CSRF exploits the trust a user has for a particular site to masquerade as a victim user to carry out any actions that the user is able to perform.<br>
-CSRF attacks leverage the browser's automatic inclusion of auth credentials (e.g., cookies) with requests to the target domain.<br>
-However, Cookies are subject to the same-origin policy in web browsers, so www.evil.com normally cannot send a malicious request using the cookies of www.good.com in a web browser.
-## CSRF process
-1. Trick a victim into entering the attacker's webpage that looks legitimate.
-2. The victim's browser sends the authenticated user's credentials along with a malicious request. (e.g., changing account settings, making a purchase, etc.)
-3. The targeted server, considering the request to be legitimate because it includes the user's credentials, performs the requested action on behalf of the user.
-## How to prevent CSRF
-- CORS prevents making a request to different domains but is not sufficient to prevent CSRF because there are many bypasses such as \<img src="victim.com/get_secret> **outside \<script>**.<br>
-- The referer header contains the URL of the web page making the request, which is automatically went by a web browser. The server can check the referer header but it can be easily forged.
-- ### `Anti-CSRF token`:
-Use a CSRF token token for each user.<br>
-For example, when the client received a CSRF token from "www.server.com" on "www.good.com" and then sends a request to the server on "www.evil.com," the CSRF token will block the evil request.<br>
-#### how the CSRF token protection works in this scenario:
-1. The client received the CSRF token from "www.server.com" on "www.good.com." The CSRF token is specific to the "www.good.com".
-2. When the client makes a request to the server on "www.evil.com," the browser automatically attaches any cookies associated with the "www.evil.com".
-3. However, since the CSRF token cookie was received from "www.good.com", it won't be present in the request to "www.server.com" on the "www.evil.com".
-4. When the server receives the request, it compares the CSRF token in the request (which is missing) with the one expected from the user's session.
-5. Since the CSRF token is missing or doesn't match, the server identifies this as a potential CSRF attack and blocks the request. It may return an error response or take other appropriate security measures.
-
 # XSS(Cross-Site Scripting)
 XSS is a type of injection attack in which malicious scripts are injected into web pages(such as posts) viwed by other users.<br>
 The malicious code is executed on the same origin not on an external site, so it circumvents(bypasses) the same origin policy.<br>
@@ -129,3 +108,25 @@ DB.execute(SELECT * FROM users WHERE username = ? AND password = ?, [input_usern
 Hash the password before saving it in the DB
 #### Input validation and sanitization:
 Apply strict validation rules to ensure that only expected and valid data is accepted. Sanitize the input by removing or escaping special characters that could alter the SQL syntax.
+
+# CSRF(Cross-Site Request Forgery)
+CSRF exploits the trust a user has for a particular site to masquerade as a victim user to carry out any actions that the user is able to perform.<br>
+CSRF attacks leverage the browser's automatic inclusion of auth credentials (e.g., cookies) with requests to the target domain.<br>
+However, Cookies are subject to the **same-origin policy** in web browsers, so www.evil.com normally cannot send a malicious request using the cookies of www.good.com in a web browser.
+## CSRF process
+1. Trick a victim into entering the attacker's webpage that looks legitimate.
+2. The victim's browser sends the authenticated user's credentials along with a malicious request. (e.g., changing account settings, making a purchase, etc.)
+3. The targeted server, considering the request to be legitimate because it includes the user's credentials, performs the requested action on behalf of the user.
+## How to prevent CSRF
+- CORS prevents making a request to different domains but is not sufficient to prevent CSRF because there are many bypasses such as \<img src="victim.com/get_secret> **outside \<script>**.<br>
+- The referer header contains the URL of the web page making the request, which is automatically went by a web browser. The server can check the referer header but it can be easily forged.
+- ### `Anti-CSRF token`:
+Use a CSRF token token for each user.<br>
+For example, when the client received a CSRF token from "www.server.com" on "www.good.com" and then sends a request to the server on "www.evil.com," the CSRF token will block the evil request.<br>
+#### how the CSRF token protection works in this scenario:
+1. The client received the CSRF token from "www.server.com" on "www.good.com." The CSRF token is specific to the "www.good.com".
+2. When the client makes a request to the server on "www.evil.com," the browser automatically attaches any cookies associated with the "www.evil.com".
+3. However, since the CSRF token cookie was received from "www.good.com", it won't be present in the request to "www.server.com" on the "www.evil.com".
+4. When the server receives the request, it compares the CSRF token in the request (which is missing) with the one expected from the user's session.
+5. Since the CSRF token is missing or doesn't match, the server identifies this as a potential CSRF attack and blocks the request. It may return an error response or take other appropriate security measures.
+
