@@ -22,7 +22,7 @@ A floating-point number is represented approximately with a fixed number of sign
    101.001 (binary) = 1.01001 × 2^2<br>
 3. 32bit Floating-point representation<br>
    **Sign bit (1 bit)**: 0 (positive number)<br>
-   **Exponent (8 bits)**: The exponent is determined by adding the bias (127) to the power of 2 -> 2 + 127 = 129, which is represented as 10000001 in binary.<br>
+   **Exponent (8 bits)**: The exponent is determined by adding the bias (127) and the power of 2 -> 2 + 127 = 129, which is represented as 10000001 in binary.<br>
    **Significand (23 bits)**: The significand is the fractional part -> 01001.
 
 **Result: 0 | 10000001 | 01001000000000000000000**
