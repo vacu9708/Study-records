@@ -17,6 +17,7 @@ The header and payload are taken together and encoded into a signature when the 
 If the JWT was tampered with, the signature recalculated using the received header and payload data will no longer match the signature in the JWT.
 
 ## Workflow
+Tokens should be stored as a cookie whose attributes are http-only(to prevent XSS) and same site: "strict"(to prevent CSRF)
 ### Authentication
 Authentication is the process of verifying the identity of a user and presenting a token.
 1. Client logs in using their credentials (e.g. username and password).
@@ -31,6 +32,7 @@ Authorization is the process of granting access to an authenticated user.
 
 ## Why use refresh tokens to reissue access tokens
 Unlike session objects that can be revoked as the server wants, access tokens cannot be revoked until it expires because the decoupling is why access tokens are used.<br>
+Having an access token blacklist to search is no more than using the session login and meaningless.<br>
 This is why access tokens are short-lived. However, it is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
 Therefore, use refresh tokens so that users can maintain the login state without needing to login again while users are using the service.<br>
 
@@ -84,6 +86,3 @@ The decoupling between the session object and the server can be achieved by stor
 OAuth2 (Open Authorization 2.0) is a standardized framework that allows other servers to access user resources without sharing the user's credentials.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/20beccb9-7d40-4bf1-a2b7-fd5ec49909c2)
 [OAuth.architecture.pptx](https://github.com/vacu9708/Fundamental-knowledge/files/11513033/OAuth.architecture.pptx)
-
-
-
