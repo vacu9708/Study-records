@@ -22,7 +22,8 @@ Malicious code includes stealing auth information such as token or session ID fr
 The malicious script can redirect the user to the attacker's server to capture the retrieved information.<br>
 
 ### How to prevent XSS
-#### `Encode malicious characters`:
+- http-only cookie
+- #### `Encode malicious characters`:
 Malicious code such as **<**img**>** should be encoded to prevent the data from being interpreted as code by the web browser.
 Example HTML
 ~~~html
@@ -118,7 +119,8 @@ However, Cookies are subject to the **same-origin policy** in web browsers, so w
 2. The victim's browser sends the authenticated user's credentials along with a malicious request. (e.g., changing account settings, making a purchase, etc.)
 3. The targeted server, considering the request to be legitimate because it includes the user's credentials, performs the requested action on behalf of the user.
 ## How to prevent CSRF
-- CORS prevents making a request to different domains but is not sufficient to prevent CSRF because there are many bypasses such as \<img src="victim.com/get_secret> **outside \<script>**.<br>
+- sameSite: "strict" cookie
+- CORS prevents making a request to different domains but is not sufficient to prevent CSRF because there are many bypasses such as \<img src="victim.com/get_secret> **outside \<script>**.
 - The referer header contains the URL of the web page making the request, which is automatically went by a web browser. The server can check the referer header but it can be easily forged.
 - ### `Anti-CSRF token`:
 Use a CSRF token token for each user.<br>
