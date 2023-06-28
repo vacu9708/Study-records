@@ -1,4 +1,4 @@
 - [Microservices architecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/MSA)
 - [Handling large traffic](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Handling%20large%20traffic)
 - [Cloud](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Cloud)
-- [Load balancing](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Load%20balancing)
+- [Service discovery, Load balancing](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Service%20discovery%2C%20Load%20balancing)
