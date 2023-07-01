@@ -11,6 +11,6 @@ Ex) id + email + student_name cannot be a candidate key because excluding "id" a
 * ## Primary key
 One key selected among candidate keys
 * ## Foreign key
-The foreign key is used to reference the primary key of another table to ensure the **Referential Integrity**.
+The foreign key is used to reference the primary key of another table, which ensures the **Referential Integrity**.
 * ## Alternate key
 remaining keys after excluding the primary key
