@@ -19,10 +19,7 @@ It is one of the roles of DBMS to ensure that the data constraints are satisfied
 ## Entity integrity constraints
 The Entity Integrity Constraint ensures that the primary key cannot be null so that it can be used to identify tuples in a table.
 ## Referential Integrity Constraints
-Referential integrity states that all references are valid by requiring that the referenced value exist.
-- Cascading deletion
-- Set null
-- Preventing the deletion
+Referential integrity states that referenced keys must exist.
 ## Domain constraint
 is a limit on the values that a certain variable can take
 ## Key constraint
