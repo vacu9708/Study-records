@@ -23,8 +23,8 @@ The reason is written below in the denormalization section.<br>
 ![image](https://user-images.githubusercontent.com/67142421/205222225-f131a5ca-c18a-4478-b72b-a8372c63afa9.png)
 
 ## Initial table
-Primary key: [ID], [college]
-|[ID]|name|highschool|school_size|[college]|accepted|
+Primary key: [stduent_ID], [college]
+|[stduent_ID]|name|highschool|school_size|[college]|accepted|
 |---|---|---|---|---|---|
 |1|John|A school|500|MIT, stanford|Y|
 |2|sheila|B school|600|harvard|Y|
@@ -35,8 +35,8 @@ Primary key: [ID], [college]
 
 The initial table is converted into
 #### Table A:
-Primary key: [ID], [college]
-|[ID]|name|highschool|school_size|[college]|accepted|
+Primary key: [stduent_ID], [college]
+|[stduent_ID]|name|highschool|school_size|[college]|accepted|
 |---|---|---|---|---|---|
 |1|John|A school|500|MIT|Y|
 |1|John|A school|500|stanford|Y|
@@ -50,15 +50,15 @@ Primary key: [ID], [college]
 On table A, [college] is used only to distinguish [accepted]<br>
 Table A is split into
 #### Table B:
-Primary key: [ID]<br>
-|[ID]|name|highschool|school_size|
+Primary key: [stduent_ID]<br>
+|[stduent_ID]|name|highschool|school_size|
 |---|---|---|---|
 |1|John|A school|500|
 |2|sheila|B school|600|
 |3|maria|C school|700|
 #### table C:
 Primary key: [ID], [college]
-|[ID]|[college]|accepted|
+|[stduent_ID]|[college]|accepted|
 |---|---|---|
 |1|MIT|Y||
 |1|stanford|Y|
@@ -69,12 +69,12 @@ Primary key: [ID], [college]
 - The table must be in 2NF form
 - When X->Y, Y->Z, then it is called **transitive dependency**. In other words, transitive dependency refers to a situation where a non-key attribute depends on another non-key attribute.<br>
 
-In table B, [ID] identifies [highschool] and [highschool] identifies [school_size], which makes a transitive dependency.<br>
+In table B, [stduent_ID] identifies [highschool] and [highschool] identifies [school_size], which makes a transitive dependency.<br>
 Set a foreign key [highschool] to solve this problem.<br>
 Table B is split into
 #### table D:
-Primary key: [ID]
-|[ID]|name|highschool|
+Primary key: [stduent_ID]
+|[stduent_ID]|name|highschool|
 |---|---|---|
 |1|John|A school|
 |2|sheila|B school|
