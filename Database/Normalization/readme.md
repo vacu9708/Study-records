@@ -43,7 +43,7 @@ Primary key: [ID], [college]
 |2|sheila|B school|600|harvard|Y|
 |3|maria|C school|700|prinston|N|
 
-## 2nd normal form (Only essential keys, partial dependency not allowed)
+## 2nd normal form (Partial dependency not allowed)
 - The table must be in 1NF form
 - In X->Y where X is the primary key, All of X are essential to distinguish Y. i.e. All non-key attributes are dependent on the primary key.)
 
@@ -65,7 +65,7 @@ Primary key: [ID], [college]
 |2|harvard|Y|
 |3|princeton|N|
 
-## 3rd normal form (Set foreign key)
+## 3rd normal form (Transitive dependency not allowed. Set foreign key.)
 - The table must be in 2NF form
 - When X->Y, Y->Z, then it is called **transitive dependency**. In other words, transitive dependency refers to a situation where a non-key attribute depends on another non-key attribute.<br>
 
