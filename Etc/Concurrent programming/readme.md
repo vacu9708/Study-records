@@ -83,28 +83,19 @@ In non-blocking I/O, a thread has I/O operations performed on separate threads w
 
 ### Example of Non-blocking I/O with Asynchronous programming
 ~~~javascript
-async function fetchMultipleData() {
-  try {
-    console.log('Fetching data from multiple APIs...');
+const axios = require('axios');
 
-    const urls = [
-      'https://api.example.com/data1',
-      'https://api.example.com/data2',
-      'https://api.example.com/data3'
-    ];
+async function getData() {
+  const responses = await Promise.all([
+    axios.get('http://localhost:8081/test/hi'),
+    axios.get('http://localhost:8081/test/hello')
+  ]);
 
-    const promises = urls.map(url => fetchData(url));
-    const results = [];
-
-    //const results = await Promise.all(promises); // can replace for (const promise of promises)
-    for (const promise of promises) {
-      const data = await promise;
-      results.push(data);
-    }
-
-    console.log('Data fetched:', results);
-  } catch (error) {
-    console.error('Error:', error);
+  console.log("waiting...")
+  for (const response of responses) {
+    console.log(response.data);
   }
 }
+
+getData();
 ~~~
