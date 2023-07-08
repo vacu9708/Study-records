@@ -96,6 +96,7 @@ async function asyncIO() {
 
   const responses = [];
   // Await responses
+  console.log("Awaiting responses...")
   for (const promise of promises) {
     const response = await promise;
     responses.push(response);
@@ -116,6 +117,7 @@ async function asyncIO2() {
   console.log("Doing other jobs...")
 
   // Await responses
+  console.log("Awaiting responses...")
   const responses = await promises;
 
   for (const response of responses) {
