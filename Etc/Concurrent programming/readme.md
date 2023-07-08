@@ -95,6 +95,7 @@ async function asyncIO() {
   console.log("Doing other jobs...")
 
   const responses = [];
+  // Await responses
   for (const promise of promises) {
     const response = await promise;
     responses.push(response);
@@ -105,7 +106,7 @@ async function asyncIO() {
   }
 }
 
-async function asyncIO2() { // same result as above
+async function asyncIO2() {
   const promises = Promise.all([
     axios.get('http://localhost:8081/test/hi'),
     axios.get('http://localhost:8081/test/hello')
@@ -114,6 +115,7 @@ async function asyncIO2() { // same result as above
   // Do other jobs
   console.log("Doing other jobs...")
 
+  // Await responses
   const responses = await promises;
 
   for (const response of responses) {
