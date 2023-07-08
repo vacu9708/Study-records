@@ -85,17 +85,41 @@ In non-blocking I/O, a thread has I/O operations performed on separate threads w
 ~~~javascript
 const axios = require('axios');
 
-async function getData() {
-  const responses = await Promise.all([
+async function asyncIO() {
+  const promises = [
     axios.get('http://localhost:8081/test/hi'),
     axios.get('http://localhost:8081/test/hello')
-  ]);
+  ];
 
-  console.log("waiting...")
+  // Do other jobs
+  console.log("Doing other jobs...")
+
+  const responses = [];
+  for (const promise of promises) {
+    const response = await promise;
+    responses.push(response);
+  }
+
   for (const response of responses) {
     console.log(response.data);
   }
 }
 
-getData();
+async function asyncIO2() { // same result as above
+  const promises = Promise.all([
+    axios.get('http://localhost:8081/test/hi'),
+    axios.get('http://localhost:8081/test/hello')
+  ]);
+
+  // Do other jobs
+  console.log("Doing other jobs...")
+
+  const responses = await promises;
+
+  for (const response of responses) {
+    console.log(response.data);
+  }
+}
+
+asyncIO();
 ~~~
