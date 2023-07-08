@@ -95,8 +95,8 @@ async function fetchMultipleData() {
 
     const promises = urls.map(url => fetchData(url));
     const results = [];
-    //const results = await Promise.all(promises); // can replace for (const promise of promises){
 
+    //const results = await Promise.all(promises); // can replace for (const promise of promises)
     for (const promise of promises) {
       const data = await promise;
       results.push(data);
