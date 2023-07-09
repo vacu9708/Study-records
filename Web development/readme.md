@@ -5,7 +5,7 @@
 - [Client rendering](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Client%20rendering)
 - [Auth](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Auth)
 - [Security](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Security)
-- [Socket](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Socket%2C%20websocket)
+- [Socket](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Socket%20(websocket))
 - [Server-side](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side)
 
 ### Network
