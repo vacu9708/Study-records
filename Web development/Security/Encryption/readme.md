@@ -23,16 +23,19 @@ In real implementation, It is the hash value of the data that is encrypted.
 # HTTPS
 While asymmetric key encryption ensures that intercepted messages cannot be read, it does not prevent a man-in-the-middle attack from impersonating the server's domain and manipulating the communication channel itself.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2801946a-5c97-45ca-a9fd-d7d8d3219369)<br>
-#### 1. Handshake:
-The client (e.g., web browser) initiates a connection to the server and requests a secure connection. The server responds by sending its HTTPs certificate, which contains its public key.
-#### 2. Certificate verification:
+### 1. Handshake:
+The client (e.g., web browser) initiates a connection to the server and requests a secure connection. The server responds with its certificate and public key.
+
+### 2. Certificate verification:
 This process ensures that the domain is not owned by an attacker but the proper server.
 - The client verifies the authenticity of the server's certificate(using digital signature, certificate chain pre-installed in the web browser).
 - The client checks if the certificate is signed by a trusted certificate authority (CA), if the domain name matches the server it is connecting to, and whether it has expired.
 
 **Why the certificate should be verified?**: Trusted CA verifies the ownership of the server's domain before issuing a certificate. This process ensures that the HTTPS connection belongs to the server's domain, making it impossible to impersonate the server's domain.
-#### 3. Symmetric key exchange:
-If the certificate is valid, the client and server generate and share a symmetric key.(using a specific key exchange algorithm)<br>
-Symmetric key encryption is faster than asymmetric key.
-#### 4. Secure communication:
+
+### 3. Symmetric key(session key) exchange:
+The asymmetric key encryption is slower than the symmetric key encryption.
+Therefore, the client generates a symmetric key, encrypts it with the server's public key, and sends it to the server. The server uses its private key (which corresponds to the public key) to decrypt the session key.
+
+### 4. Secure communication:
 The client and server can now securely exchange HTTP requests and responses, as the data is encrypted using the symmetric key. This encryption makes it difficult for attackers to eavesdrop or tamper with sensitive information.
