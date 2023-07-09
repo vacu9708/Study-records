@@ -53,7 +53,7 @@ if __name__ == "__main__":
 ### Output
 ![image](https://user-images.githubusercontent.com/67142421/177394795-d4fc8ac8-d465-4f08-b00b-40202a48e261.png)
 
-## There is a semaphore(mutex) that protects the critical section, so the output is guaranteed.
+There is a semaphore(mutex) that protects the critical section, so the output is guaranteed.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
