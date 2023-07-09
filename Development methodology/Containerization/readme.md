@@ -2,7 +2,8 @@
 By using containers of a consistent shape, goods could be loaded and unloaded quickly and efficiently, which reduced costs and increased productivity.<br>
 
 # Docker
-Docker is a popular containerization platform for packing an application into a portable container that can be run on any system that supports Docker.<br>
+Docker is a popular containerization platform for packing an application and its dependencies into a portable container that can be run on any system that supports Docker.<br>
+Docker is commonly used to address difficulties related to environment setting when running an application in different environments.<br>
 ## Why use Docker
 - ### Portability
   Docker containers can run on any system that supports Docker.<br>
