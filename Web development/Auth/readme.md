@@ -38,11 +38,11 @@ Therefore, use refresh tokens so that users can maintain the login state without
 
 #### `Refresh token`
 - Refresh tokens have a longer expiration time than access tokens. But it is not very long to prevent maintaining the login state for too long.
-- Refresh tokens can be stored on the server for easy revocation. However, they are not frequently accessed.
+- Refresh tokens are stored on the server for revocation. But it does not significantly affect the performance since they are not frequently accessed.
 - The expiration time is enough as the payload of refresh tokens.
-#### `Pre conditions`
-The server sent an access token and a refresh token to the client and the refresh token is stored in Redis including its revocation info.<br>
+
 #### `Process`
+The server sent an access token and a refresh token to the client and the refresh token is stored in Redis including its revocation info.
 1. The client decodes the expiration time encoded in base64 and checks that the access token has expired
 2. The client sends the refresh token to the server (GET /reissue_tokens)
 3. If the refresh token has not expired and was not revoked, the server returns a new access token and refresh token pair
