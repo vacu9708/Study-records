@@ -33,35 +33,61 @@ Cohesion refers to the degree to which the functionality is focused within a sin
 High cohesion indicates that the component is well-defined and performs a specific task effectively.
 
 ## 1. Single Responsibility Principle
+A class should have only one reason to change.<br>
 Every component of code (in general a class, but also a function) should have only one responsibility.<br>
 For example, a single component, generically named(like "main"), doing all the work is bad.<br>
 If a component of code has more than one responsibility, code maintenace becomes hard.<br>
 ### Example of not obeying SRP
 ~~~java
-public class UserHandler {
-    public boolean authenticate(User user, String password) {
-        // Authentication logic
+public class User {
+    private String name;
+    private String email;
+    private String password;
+
+    public User(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
     }
-    
-    public void sendNotification(User user, String message) {
-        // Notification logic
+
+    public void updateEmail(String newEmail) {
+        // Update the user's email in the database
+        this.email = newEmail;
+    }
+
+    public void sendEmail(String recipient, String message) {
+	// Implementation details of sending email
+        // ...
     }
 }
 ~~~
 
 ### Example of obeying SRP
 ~~~java
-public class UserAuthenticator {
-    public boolean authenticate(User user, String password) {
-        // Authentication logic
+public class User {
+    private String name;
+    private String email;
+    private String password;
+
+    public User(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
+    public void updateEmail(String newEmail) {
+        // Update the user's email in the database
+        this.email = newEmail;
     }
 }
 
-public class UserNotifier {
-    public void sendNotification(User user, String message) {
-        // Notification logic
+public class NotificationService {
+    public void sendEmail(String recipient, String message) {
+        // Implementation details of sending email
+        // ...
     }
 }
+
 
 ~~~
 #### Primary advantage:
