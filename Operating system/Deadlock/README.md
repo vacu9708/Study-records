@@ -35,8 +35,7 @@ Max = Need + Allocation<br>
 1. P0 has been allocated A:0, B:1, C:0 and needs A:7, B:4, C:3 to complete its task.
 2. However, there are only A:3, B:3, C:2 available, so P0 cannot be completed at the moment.
 3. P1 can be completed because it needs A:1, B:2, C:2, which can be satisfied using the available resources.
-4. P1 is completed and its allocated resources (A:2, B:0, C:0) are released.
-5. As a result, the released resources A:2, B:0, C:0 (P1's maximum allocation) are added to the available resources, which becomes A:5, B:3, C:2.
+4. P1 is completed and its allocated resources (A:2, B:0, C:0) are released and added to the available resources, which becomes A:5, B:3, C:2.
 ## Dining philosopher problem
 ![image](https://user-images.githubusercontent.com/67142421/176333583-a1ffafd2-a73b-4a73-bbe4-706c0e076d25.png)
 
