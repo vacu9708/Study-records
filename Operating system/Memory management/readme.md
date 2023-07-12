@@ -1,24 +1,26 @@
+# Types of memory fragmentation
 * **Internal fragmentation** : Ex) when a partition of memory whose size is 10bytes has 8bytes of data
 * **External framentation** :  When memory space outside partitions is unavailable.
 
-## Contiguous memory allocation (obsolete)
-In **contiguous memory allocation**, the WHOLE process is allocated to a contiguous partition of memory.
-* **Fixed(or static) partitioning** : This is the oldest and simplest. The size of a partition is fixed in RAM when allocated, which can cause big internal fragmentation.
-* **Variable(or dynamic) partitioning** : The partition size varies according to the need of the process, which can cause big external fragmentation.
+# Contiguous memory allocation
+In **contiguous memory allocation**, the whole process is allocated to a contiguous partition of memory.
+## Fixed(or static) partitioning
+This is the oldest and simplest. The size of a partition is fixed in RAM when allocated, which can cause big internal fragmentation.
 
-## Contiguous memory allocation techniques to handle external framentation
+## Variable(or dynamic) partitioning
+The partition size varies according to the need of the process, which can cause big external fragmentation.
 ### Initial memory state
 ![image](https://user-images.githubusercontent.com/67142421/178162536-1a5042e4-9e23-489b-bd69-88ce7df6dbd3.png)
 
 ### First fit
 ![image](https://user-images.githubusercontent.com/67142421/178162569-8906b416-30f6-4fd2-a24b-36a424388021.png)<br>
-The partition is allocated which is first sufficient from the top of mmemory. The OS doesn’t search for the best partition but just the first partition available with a sufficient size.<br>
+The partition is allocated which is first sufficient from the top of memory. The OS doesn’t search for the best partition but just the first partition available with a sufficient size.<br>
 * It is fast in processing but can waste a lot of memory.
 
 ### Best fit
 ![image](https://user-images.githubusercontent.com/67142421/178162618-28cc7cab-20f1-4731-b0da-625dfd91d433.png)<br>
 The entire list of free partitions is searched and the smallest adequate hole is allocated.
-* It is a process slower than First fit.
+* Slower process than First fit.
 * The minimum possible space in the memory is allocated, making memory management efficient. To save memory from getting wasted, it is the best method.
 
 ### Worst fit
