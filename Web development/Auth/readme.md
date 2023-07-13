@@ -30,22 +30,20 @@ Authorization is the process of granting access to an authenticated user.
 2. The server checks that the token has not expired and verifies the message by generating a new signature of the forged message with the private key and comparing it with the received signature.
 3. The server refuses to send the requested data to the client.
 
-## Why use refresh tokens to reissue access tokens
-Unlike session objects that can be revoked as the server wants, access tokens cannot be revoked until it expires because the decoupling is why access tokens are used.<br>
-Having an access token blacklist to search is no more than using the session login and meaningless.<br>
+## Why use the refresh token to reissue the access token
+Unlike session login objects that can be revoked as the server wants, access tokens cannot be revoked until it expires because the decoupling is why access tokens are used.<br>
+Having a blacklist to revoke access tokens to search is no more than using the session login and meaningless.<br>
 This is why access tokens are short-lived. However, it is inconvenient and disruptive to UX to ask the user to re-authenticate every time the access token expires.<br>
-Therefore, use refresh tokens so that users can maintain the login state without needing to login again while users are using the service.<br>
+Therefore, use the refresh token and blacklist so that users can maintain their login state despite the short expiration time of the access token without needing to login again while users are using the service.<br>
 
-#### `Refresh token`
+### Refresh token
 - Refresh tokens have a longer expiration time than access tokens. But it is not very long to prevent maintaining the login state for too long.
-- Refresh tokens are stored on the server for revocation. But it does not significantly affect the performance since they are not frequently accessed.
-- The expiration time is enough as the payload of refresh tokens.
+- Store the userId of the refresh token in the blacklist and block requests having it for revocation. This does not significantly affect the performance since refresh tokens are not frequently accessed unlike session login objects.
 
-#### `Process`
-The server sent an access token and a refresh token to the client and the refresh token is stored in Redis including its revocation info.
-1. The client decodes the expiration time encoded in base64 and checks that the access token has expired
-2. The client sends the refresh token to the server (GET /reissue_tokens)
-3. If the refresh token has not expired and was not revoked, the server returns a new access token and refresh token pair
+### Process
+1. The client extracts the expiration time encoded in the base64 JWT and checks that the access token has expired.
+2. The client sends its refresh token to the server (GET /reissue_token)
+3. If the refresh token has not expired and was not revoked, the server returns a new access token and refresh token
 
 ---
 
