@@ -41,7 +41,7 @@ Therefore, use the refresh token and blacklist so that users can maintain their 
 - Store the userId of the refresh token in the blacklist and block requests having it for revocation. This does not significantly affect the performance since refresh tokens are not frequently accessed unlike session login objects.
 
 ### Process
-1. The client extracts the expiration time encoded in the base64 JWT and checks that the access token has expired.
+1. The client extracts the expiration time encoded in the base64 JWT and checks that the access token is expiring shortly or already expired.
 2. The client sends its refresh token to the server (GET /reissue_token)
 3. If the refresh token has not expired and was not revoked, the server returns a new access token and refresh token
 
