@@ -1,5 +1,5 @@
 # What testing contibutes to?
-- **Easier bug catching**: Test code induces developers to think about bugs and helps catch bugs early on on test fails
+- **Easier bug catching**: Test cases induce developers to think about bugs and helps catch bugs early on on test fails
 - **Confidence after code changes**: Test code ensures that new code changes do not introduce bugs or break existing functionality.
 - **Encouraged good architecture**: Unit tests induce developers to write "testable code". Writing unit tests often requires breaking down complex systems into smaller, independent units. This encourages modular code with clear responsibilities, as units are easier to test in isolation.
 - **Easier understanding of the code**: Unit tests act as documentation for the units. They provide clear examples of what behavior is expected, which helps understand the code more easily and facilitates collaboration within the team.
