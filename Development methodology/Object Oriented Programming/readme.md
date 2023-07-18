@@ -14,14 +14,18 @@ A programming paradigm in which a program is described as interactions between o
 4. Easier code maintenance
 
 # 4 characteristics of OOP
-- `Polymorphism`: allows a single interface (such as a name and an operator) to be used for multiple purposes that have the same meaning.<br>
+### Polymorphism
+Allowing a single interface (such as a name and an operator) to be used for multiple purposes that have the same meaning.<br>
 Ex) **Method overriding**: overriding the method of the parent class that has the same name as the child's method.<br>
 Ex) **operater overloading**: allows the same operator symbol to be used for multiple operations<br>
-- `Inheritance`: the procedure in which one class inherits the properties of another class.
+### Inheritance`
+The procedure in which one class inherits the properties of a parent class.
+### Abstraction
+Abstraction refers to simplifying internal implementation details of components and providing abstract interfaces so that they can be interacted with without needing to know how they are implemented internally.
+An example of abstraction is APIs. An API is a bridge between two applications that allows them to communicate.
+### Encalsulation
+Bundling data and methods into a class, hiding the internal workings, which is a means to achieve abstraction.
 To put it simply, inheritance is done for the use of code that is pre-written (for reuse of code).
-- `Abstraction`: wrapping something up as a simple name to hide unnecessary details
-For example, when there are fish, lions, rabbits, they can be wrapped up as "life", as a class is given a name.
-- `Encalsulation`: restricts direct access to the internal data of an object and insteads provides methods through which external code can interact with the object's data. (Information hiding)
 
 # SOLID design principles in OOP
 ### Coupling
