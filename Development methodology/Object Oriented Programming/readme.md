@@ -209,8 +209,8 @@ class Pay_service {
     }
 }
 ~~~
-The above example does not obey DIP because Pay_service depends on its low level module Samsung_pay.<br>
-If the low level module Samsung_pay changes, the high level module Pay_service has to be changed too, which is inefficient.(tight coupling)
+The above example does not obey DIP because PayService depends on its low level module SamsungPay.<br>
+If the low level module(dependency) SamsungPay changes or a new dependency is added, PayService is forced to be changed accordingly, which is inefficient.(tight coupling)
 
 ### Example of obeying DIP
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6f7ab505-d273-48a3-a8a2-c6469661c375)
