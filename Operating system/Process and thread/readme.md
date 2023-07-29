@@ -11,10 +11,6 @@ A process has at least a thread(including the main thread).<br>
 * A **process** is a flow of code that has resources allocated for itself.
 * A **thread** is a flow of code that shares resources with other threads.<br>
 
-### Why data and stack segments are separated?
-Each thread needs a stack segment to manage local allocation.<br>
-But the data segment that has global variables should not be separated and needs to be shared to save memory.<br>
-
 ## Multi threading VS Multi processing
 * **Multi processing** : when two or more processors cooperate.
 * **Multi threading** : when a process executes multiple threads. The synchronization of shared resources should be taken good care of in multi threading.
