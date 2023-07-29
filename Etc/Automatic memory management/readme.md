@@ -99,7 +99,8 @@ The garbage collector pauses the execution of the application threads
 ### Mark Phase:
 `(1)`<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/d8fe0bcb-e369-4f9a-8d4e-0f9caee67bf4)<br>
-(The actual object graph does not include the "marked" flag(reachability) but include the object's address to access the "marked" flag.
+>(The actual object graph does not include the "marked" flag(reachability) but include the object's address to access the "marked" flag)<br>
+
 The GC traverses the object graph which includes object addresses to reference to. While traversing, the GC references to the object address of each node that is encountered to mark the object as reachable. This process implicitly identifies objects that are unreachable.<br>
 `(2)`<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2b1a2f6b-7c45-4674-9aa5-f2976bf66521)<br>
