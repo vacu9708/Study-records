@@ -97,18 +97,19 @@ Garbage collection is performed only when the CPU is idle to minimize the latenc
 The garbage collector pauses the execution of the application threads
 
 ### Mark Phase:
-`(1)`<br>
+#### `(1)`
+Initial object graph<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/d8fe0bcb-e369-4f9a-8d4e-0f9caee67bf4)<br>
 >(The actual object graph does not include the "marked" flag(reachability) but include the object's address to access the "marked" flag)<br>
 
+#### `(2)`
 The GC traverses the object graph which includes object addresses to reference to. While traversing, the GC references to the object address of each node that is encountered to mark the object as reachable. This process implicitly identifies objects that are unreachable.<br>
-`(2)`<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2b1a2f6b-7c45-4674-9aa5-f2976bf66521)<br>
 
 ### Sweep Phase:
+#### `(3)`
 The GC scans the entire heap of the process, checking the reachability state of each object.<br>
-Reachable objects are kept, while unreachable objects are deleted. During this phase, the reachability bit is set to the default which is false.<br>
-**(3)**<br>
+Reachable objects are kept, while unreachable objects are deleted. During this phase, the remaining objects' reachability bits are reset to the default which is usually false.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/593b7956-4636-410a-9c28-5c1c0140a934)<br>
 
 # Which is better between C++ smart pointers and Java GC?
