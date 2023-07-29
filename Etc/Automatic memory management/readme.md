@@ -72,35 +72,39 @@ int main() {
 A **Java GC** constantly monitors all allocated memory and reclaims memory which was allocated, but is no longer referenced.<br>
 GCs incur overhead during garbage collection cycles.<br>
 
-### Reachable object
+## Reachable object
 ![image](https://user-images.githubusercontent.com/67142421/177013694-8add3600-ae4d-47ad-899f-2611edaf7317.png)
 
-### Unreachable object
+## Unreachable object
 ![image](https://user-images.githubusercontent.com/67142421/178157740-cd8b3828-ca89-4a37-a89c-20a26c80d12b.png)
 
-### Optimization of garbage collection
-A garbage collection operation is a CPU-demanding task and needs optimization.<br>
-#### Generational collection
+## Optimization of garbage collection
+A garbage collection operation is a CPU-demanding task, so it needs optimization.
+### Generational collection
 Objects are divided into "young objects" and "old objects(or permanent objects)".<br>
 Garbage collection can be optimized based on the fact that the majority of objects created newly become unreachable.<br>
 - The garbage collection monitors and deletes young objects actively. This is called **Minor Gabarge Collection**.
 - Objects created early that survive minor collection are moved to "old objects", Old objects are monitored less frequently than young objects, which is called
- **Major Garbage Collection**.
 
-**Idle-time collection** : Garbage collection is performed only when the CPU is idle to minimize the latency and exploit CPU idle times.
+### Major Garbage Collection
 
-### Garbage collection cycle
-#### STW(Stop The World)
+### Idle-time collection
+Garbage collection is performed only when the CPU is idle to minimize the latency and exploit CPU idle times.
+
+## Garbage collection cycle
+**Object metadata**: When an object is created in the heap, it includes metadata that the garbage collector (GC) uses to manage memory. This metadata is used by the GC to track various information about the object.<br>
+### STW(Stop The World)
 The garbage collector pauses the execution of the application threads
 
-#### Mark Phase:
-**(1)**<br>
+### Mark Phase:
+`(1)`<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/d8fe0bcb-e369-4f9a-8d4e-0f9caee67bf4)<br>
-The GC traverses the object graph which includes object addresses and marks each object that is encountered as reachable. This process implicitly identifies objects that are unreachable.<br>
-**(2)**<br>
+(The actual object graph does not include the "marked" flag(reachability) but include the object's address to access the "marked" flag.
+The GC traverses the object graph which includes object addresses to reference to. While traversing, the GC references to the object address of each node that is encountered to mark the object as reachable. This process implicitly identifies objects that are unreachable.<br>
+`(2)`<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2b1a2f6b-7c45-4674-9aa5-f2976bf66521)<br>
 
-#### Sweep Phase:
+### Sweep Phase:
 The GC scans the entire heap of the process, checking the reachability state of each object.<br>
 Reachable objects are kept, while unreachable objects are deleted. During this phase, the reachability bit is set to the default which is false.<br>
 **(3)**<br>
