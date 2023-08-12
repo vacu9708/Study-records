@@ -188,7 +188,7 @@ public class AdvancedPrinter implements Printer, Scanner {
 By following the Interface Segregation Principle, the code is more modular.<br>
 
 ## 5. Dependency Inversion Principle
-The name refers to the inversion of the traditional dependency direction, where a high-level module depends on its low-level modules.<br>
+The name refers to the inversion of the traditional dependency direction, where a high-level module directly depends on its low-level modules.<br>
 DIP states that a high-level module should not directly depend on its low-level modules, but their abstraction, so that the high level module can work without needing to importing each of its low level module.<br>
 #### Primary advantage:
 Loose coupling(abstract common interface)
