@@ -147,13 +147,13 @@ public interface Printer {
     void scan();
 }
 
-public class Scanner implements Printer {
+class Scanner implements Printer {
     public void print() {
-        // Implementation for printing
+        System.out.println("Printing");
     }
     
     public void scan() {
-        // Implementation for scanning
+        System.out.println("Scanning");
     }
 }
 ~~~
@@ -161,27 +161,26 @@ The above example violates ISP because the child component Scanner depends on th
 
 ### Example of obeying ISP
 ~~~java
-public interface Printer {
+interface Printer {
     void print();
 }
 
-public interface Scanner {
+interface Scanner {
     void scan();
 }
 
-public class BasicScanner implements Scanner {
-    public void scan() {
-        // Implementation for scanning
-    }
+interface AdvancedPrinter extends Printer, Scanner {
+    void print();
+    void scan();   
 }
 
-public class AdvancedPrinter implements Printer, Scanner {
+class AdvancedPrinterImpl implements AdvancedPrinter {
     public void print() {
-        // Implementation for printing
+        System.out.println("Printing");
     }
     
     public void scan() {
-        // Implementation for scanning
+        System.out.println("Scanning");
     }
 }
 ~~~
