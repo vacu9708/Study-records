@@ -40,7 +40,7 @@ INSERT INTO students2(student_name, email, grade) VALUES('Maria', 'xcv@gmail.com
 INSERT INTO students2(student_name, email, grade) VALUES('Ana', 'ert@gmail.com', '80');
 ~~~
 # JOIN
-A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+A JOIN clause is used to combine two or more tables, based on a related column between them. It can be replaced with the FROM WHERE clause
 ## INNER JOIN
 ![image](https://user-images.githubusercontent.com/67142421/191418502-b67d9c97-f6c1-41a0-8866-65ef27344f9d.png)
 
