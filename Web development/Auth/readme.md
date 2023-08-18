@@ -64,11 +64,13 @@ If the session ID finds its way into the hands of a hacker, they can masquerade 
 
 # JWT VS Login session
 ### JWT
-- **Decoupling between the access token and the server**
-- **Good scalability**: Horizontal scaling is easier because of the decoupling between the token and the server
+The stateless nature(Decoupling) contributes to the advantages of JWT between the access token and the server.
+- **Cross domain capability**: JWT can be used across different domains, making it suitable for Single Sign-On (SSO) and microservices.
+- **Good scalability**: Load balancing is easier because of the decoupling between the token and the multiple servers
 
 ### Login session
 - **Better control**: Login sessions can be easily revoked in situations such as when the user has been banned.
+- **Potential Overhead**: Managing sessions and handling session expiration on the server can add overhead and compexity especially across multiple devices.
 - **Smaller traffic**: The client only sends its session ID, which leads to less traffic than JWT.
 
 ### External session storage server
