@@ -23,7 +23,6 @@ Authentication is the process of verifying the identity of a user and presenting
 1. Client logs in using their credentials (e.g. username and password).
 2. If the login information is valid, the server generates a JWT containing a header, a payload, and a signature. The signature is created using the server's private key.
 3. The server sends the JWT(access token and refresh token) to the client, typically in the response body or as a cookie.
-4. (Same as the digital signature process)The client verifies the token by decrypting its signature with the public key and comparing the decrypted signature with the received message.
 ### Authorization
 Authorization is the process of granting access to an authenticated user.
 1. The client forges and sends the JWT in the HTTP header
