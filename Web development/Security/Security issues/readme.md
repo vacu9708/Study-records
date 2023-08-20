@@ -20,9 +20,9 @@ The malicious code is executed on the same origin not on an external site, so it
 ### Example of malicious code
 Malicious code includes stealing auth information such as token or session ID from the client-side storage inside \<script><br>
 The malicious script can redirect the user to the attacker's server to capture the retrieved information.<br>
-
 ### How to prevent XSS
-- http-only cookie
+- #### http-only cookie
+An HTTP-only cookie is a cookie that's only sent in HTTP headers and is not accessible via JavaScript running in the browser. This means that if an XSS attack is executed, the attacker's script will not be able to read the content of HTTP-only cookies. This can help protect sensitive information like session identifiers.
 - #### `Encode malicious characters`:
 Malicious code such as **<**img**>** should be encoded to prevent the data from being interpreted as code by the web browser.
 Example HTML
