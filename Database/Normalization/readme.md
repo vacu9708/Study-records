@@ -102,7 +102,7 @@ Writing to denormalized has overhead
 ### Caution!
 Denormalization introduces data redundancy, so it is crucial to assess the impact of denormalization on data inconsistency and ensure appropriate mechanisms are in place to maintain consistency.<br>
 Also, the benefits of data inconsistency often outweigh the performance impact of JOIN operations.<br>
-- Duplicated data across multiple tables raises the possibility of overlooking some modifications during updates, leading to data inconsistencies.
+- Duplicated data across multiple tables or in a table raises the possibility of overlooking some modifications during updates, leading to data inconsistencies.
 - Speed when updating redundant data is slowed down.
 #### Why update speed is slowed down:
 - **Overhead on index and constraint updates**: Indexes and constraints are often defined on tables to improve query performance and enforce data inconsistency. When duplicated data is modified, these indexes and constraints may need to be updated for each occurrence of the duplicated data.
