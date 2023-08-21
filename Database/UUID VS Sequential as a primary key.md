@@ -1,7 +1,7 @@
 # Random UUID key VS Sequential key
 ## Uniqueness (UUID wins)
 - `UUID`: UUIDs are universally unique, which is useful in distributed systems where concurrency is an issue.
-- `Sequential key`: In distributed systems, where more than one system is inserting the data into the database, it’s likely the different systems would produce the same key value because of the concurrency issue.
+- `Sequential key`: In distributed systems, where more than one system are inserting data into the table, it’s likely the different systems would produce the same key value because of the concurrency issue.
 ## Generating the value (UUID wins)
 - `UUID`: UUIDs are stateless and can be generated in the application to use when inserting into multiple tables.
 - `Sequential key`: The key of the new record can only be obtained after executing a query.
