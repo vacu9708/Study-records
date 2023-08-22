@@ -2,13 +2,13 @@
 ![image](https://user-images.githubusercontent.com/67142421/177896991-3d9ef63a-30d7-4c7a-9695-cc48baa8b120.png)<br>
 More reliable database type than NoSQL
 - **Pre-defined schemas** are required to store data, which is hard to modify after.
-- **Normalization**: Tables are combined by JOIN clauses, which eliminates the data redundancy problem.
+- **Normalized tables** are combined by JOIN clauses, which eliminates the data redundancy problem.
 
 # NoSQL
 ![image](https://user-images.githubusercontent.com/67142421/177898003-73e84048-afd7-4979-91f3-798c07ab27fa.png)<br>
 NoSQL prioritizes flexibility, scalability, and performance over strict constraints.<br>
 **document** of NoSQL correspondes to **row** of SQL and **collection** of NoSQL correspondes to **table** of SQL.<br>
-- **Flexible**: Data is stored in flexible documents that can have a different structure, which is simpler and improves productivity.
+- Data is stored in **flexible** documents that can have a different structure, which is simpler and improves productivity.
 - **Denormalization** is preferred. Therefore there are strengths and weaknesses related to it.
 
 # Why use NoSQL which is less reliable than SQL?
