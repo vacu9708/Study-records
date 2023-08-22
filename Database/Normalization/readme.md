@@ -96,12 +96,11 @@ Denormalization is a database optimization technique in which redundant data is 
 Note that denormalization does not mean ‘reversing normalization’ or ‘not to normalize’. It is an optimization technique that is applied after normalization.
 
 ### When to denormalize
-**Performance optimization on reads**: In systems where read operations significantly outweigh write operations, denormalization can be employed to enhance query performance.<br>
-By consolidating related data into a single table or duplicating data across multiple tables, the need for complex JOINs and lookups can be reduced, resulting in faster query execution.<br>
-Writing to denormalized has overhead
+**Performance optimization on reads**: In distributed systems where JOIN operations are costly, denormalization can be employed to enhance query performance.<br>
+By consolidating related data into a single table, the need for complex JOINs across distributed systems can be reduced, resulting in faster query execution.<br>
 ### Caution!
-Denormalization introduces data redundancy, so it is crucial to assess the impact of denormalization on data inconsistency and ensure appropriate mechanisms are in place to maintain consistency.<br>
-Also, the benefits of data inconsistency often outweigh the performance impact of JOIN operations.<br>
+Denormalization introduces data redundancy, so it is crucial to assess the impact of denormalization on data consistency and ensure appropriate mechanisms are in place to maintain consistency.<br>
+Also, the benefits of data consistency often outweigh the performance impact of JOIN operations.<br>
 - Duplicated data across multiple tables or in a table raises the possibility of overlooking some modifications during updates, leading to data inconsistencies.
 - Speed when updating redundant data is slowed down.
 #### Why update speed is slowed down:
