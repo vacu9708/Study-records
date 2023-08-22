@@ -11,8 +11,8 @@ Removing information for an entity may inadvertently delete data of other relate
 For example, when deleting a student, it may unintentionally delete the college information for other students with the same college.
 
 # Data normalization
-A process of organizing(minimizing) tables to get rid of data redundancy and retain data inconsistency.
-### Drawbacks
+A process of organizing(minimizing) tables to get rid of data redundancy and avoid data inconsistency.
+### Drawbacks in Read operations
 It introduces the need for JOIN operations when retrieving data from multiple tables. JOINs have some overhead and potentially affect performance.<br>
 
 ## Is a big table good?
