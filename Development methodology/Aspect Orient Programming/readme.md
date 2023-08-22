@@ -19,9 +19,11 @@ public class LoggingAspect {
     @Around("execution(* com.example.UserService.*(..))")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
+        // Continue the intercepted method
         Object proceed = joinPoint.proceed();
         long endTime = System.currentTimeMillis();
         logger.info("Execution time of " + joinPoint.getSignature().getName() + " : " + (endTime - startTime) + " ms");
+        // Finish the aspect method
         return proceed;
     }
 }
