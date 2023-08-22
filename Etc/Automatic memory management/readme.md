@@ -1,5 +1,5 @@
 # Automatic memory management
-Manually managing memory turned out to be too difficult. That is why the automatic memory management appeared.<br>
+Manually managing memory is the fastest and efficient but it turned out to be too difficult. That is why the automatic memory management appeared.<br>
 ### How it works?
 Automatic memory management is performed through the concept **"reachability"**. The reachability means that a piece of allocated memory can be reached and used.<br>
 If an object no longer has any reference to it, it means the object is a waste of memory and should be deleted.<br>
