@@ -17,6 +17,18 @@ Docker is commonly used to address difficulties related to environment setting w
 - **Docker**, on the other hand, runs applications within isolated containers that share the host OS kernel. Docker containers consume fewer resources than VMs and are lightweight.
 [Docker commands for personal usage](https://github.com/vacu9708/Tools-etc/blob/main/Containerization/Docker.md)
 
+## Docker network
+Docker containers are isolated. That's why network for docker is needed.
+#### `Bridge`
+The default network driver. It creates a private network inside the host, which allows different containers to communicate with each other and the host.
+#### `Host`
+This driver removes network isolation between the container and the Docker host. Containers using the host network directly use the host's IP address.
+#### `Overlay`
+Used in Docker Swarm to create a network that spans across all the nodes participating in the swarm.
+#### `None`
+This driver disables all networking.
+
+
 # Kubernetes
 Kubernetes is a container orchestrator, which means that it is a platform designed to automate the deployment, scaling, and management of containerized applications.
   
