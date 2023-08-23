@@ -39,14 +39,14 @@ def rate_limit(client_id, replenish_rate, burst_capacity):
     # Cap the number of tokens at the burst capacity
     if tokens > burst_capacity:
         tokens = burst_capacity
-    # Not enough tokens, reject the request
-    if tokens < 1:
-        return False
     # Enough tokens, allow the request
-    else:
+    if tokens >= 1:
         client_info['tokens'] = tokens - 1
         client_info['timestamp'] = current_time
         return True
+    # Not enough tokens, reject the request
+    else:
+        return False
 
 # Example usage
 # defaultdict whose default value is a dictionary with keys 'tokens' and 'timestamp'
@@ -59,5 +59,4 @@ while 1:
         print("Request allowed")
     else:
         print("Request denied")
-
 ~~~
