@@ -8,7 +8,7 @@ Inserting information for an entity may become problematic if it depends on the 
 For example, when trying to insert a new student without a specified college, it may not be possible because the database requires the college information.<br>
 ### Deletion anomalies
 Removing information for an entity may inadvertently delete data of other related entities.<br>
-For example, when deleting a student, it may unintentionally delete the college information for other students with the same college.
+For example, when deleting a product, orderd_products table may still store the product information.
 
 # Data normalization
 A process of organizing(minimizing) tables to get rid of data redundancy and avoid data inconsistency.
