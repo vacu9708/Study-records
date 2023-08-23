@@ -23,20 +23,12 @@ Use Redis Transactions if necessary: To ensure that the rate limiting is atomic 
 ### A code snippet in Python to illustrate the above steps
 ~~~python
 import time
-
-rate_limit_buckets = {}
+from collections import defaultdict
 
 def rate_limit(client_id, replenish_rate, burst_capacity):
     current_time = time.time()
-    # If the client is new, add them to the dictionary
-    if client_id not in rate_limit_buckets:
-        rate_limit_buckets[client_id] = {
-            'tokens': burst_capacity,
-            'timestamp': current_time
-        }
-
     # Retrieve the client's rate limit info from the dictionary
-    client_info = rate_limit_buckets.get(client_id)
+    client_info = rate_limit_buckets[client_id]
 
     tokens = client_info['tokens']
     timestamp = client_info['timestamp']
@@ -57,10 +49,15 @@ def rate_limit(client_id, replenish_rate, burst_capacity):
         return True
 
 # Example usage
+# defaultdict whose default value is a dictionary with keys 'tokens' and 'timestamp'
+replenish_rate = 1
+burst_capacity = 3
+rate_limit_buckets = defaultdict(lambda: {'tokens': burst_capacity, 'timestamp': time.time()})
 while 1:
     input()
-    if rate_limit("user123", 1, 2):
+    if rate_limit("user123", replenish_rate, burst_capacity):
         print("Request allowed")
     else:
         print("Request denied")
+
 ~~~
