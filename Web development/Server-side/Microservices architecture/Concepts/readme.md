@@ -29,8 +29,19 @@ While it is technically possible for clients to send direct requests to microser
 ![image](https://user-images.githubusercontent.com/67142421/235345619-b29d9116-d1aa-4ef3-bd1c-8ebe126c01f0.png)<br>
 ![image](https://user-images.githubusercontent.com/67142421/235345623-c4b76fa3-1ab6-4625-ab6f-1f9c3f7bfbfa.png)<br>
 The circuit breaker is used to prevent a failure(timeout) in one area from causing cascading failures throughout the entire system.<br>
-It prevents critical resources from being unnecessarily wasted in the calling service and the remote service.<br>
-A circuit breaker object monitors its microservices and if it detects a failure, it blocks any further requests to the microservice.
+It prevents resources from being unnecessarily wasted both in the calling service and the remote service, which leads to preventing the propagation of the failures.<br>
+A circuit breaker object monitors its microservices and if it detects a failure, it 
 ### Process
-A circuit breaker keeps track of the responses by wrapping the call to the remote service. During normal operation, when the remote service is responding successfully, we say that the circuit breaker is in a “closed” state. When in the closed state, a circuit breaker passes the request through to the remote service normally.<br>
-When a remote service returns an error or times out, the circuit breaker increments an internal counter. If the count of errors exceeds a configured threshold, the circuit breaker switches to an “open” state. When in the open state, a circuit breaker immediately returns an error to the caller without even attempting the remote call.
+A circuit breaker keeps track of the responses by wrapping the call to the remote service.
+#### `Closed`
+During normal operation, when the remote service is responding successfully, the circuit breaker is in a `closed` state.<br>
+When in the closed state, the circuit breaker passes the request through to the remote service normally.
+#### `Open`
+When a remote service returns an error or times out, the circuit breaker increments an internal counter.<br>
+If the count of errors exceeds a configured threshold, the circuit breaker switches to an `open` state.<br>
+When in the open state, the circuit breaker blocks any further requests to the remote service.
+#### `Half-open`
+After some configured time, the circuit breaker switches from open to a `half-open` state.<br>
+In this state, it lets a few requests pass through to the remote service to check if it’s still unavailable or slow.
+- If the error rate or slow call rate is above the configured threshold, it switches back to the open state.
+- If the error rate or slow call rate is below the configured threshold, however, it switches to the closed state to resume normal operation.
