@@ -12,7 +12,13 @@ Complex components must have test code in case they are modified to be sure that
 3. **Then** this outcome is expected
 
 ## Unit test
+Unit testing focuses on testing individual components or functions of the software in isolation.<br>
 In unit tests, external dependencies are replaced with mock dependencies for the unit to be isolated.
+### Pros
+- External dependencies do not need to be taken into account by using mock objects.
+### Cons
+- May not catch errors in the interaction between different units.
+- Can be time-consuming to write and maintain.
 
 ~~~java
 class CalculatorTest{
@@ -38,6 +44,13 @@ class Calculator{
   }
 }
 ~~~
+
+## Integration test
+Integration testing focuses on testing the interactions between different units of the software. It ensures that different parts of the system work together as intended.
+### Pros
+- Ensures that the different components of the system work together as intended.
+### Cons
+- Ensuring that the data used across different components is consistent and in the right state for testing can be a complex task.
 
 # Test Driven Development
 Test Driven Development (TDD) is a software development practice that focuses on creating unit test cases before developing the actual code.
