@@ -2,14 +2,13 @@
 The Domain Name System (DNS) is the phonebook of the Internet. Web browsers interact through IP addresses. DNS translates domain names to IP addresses to eliminate the need for humans to memorize IP addresses.
 
 # What happens when www.google.com is entered? 
-
-## On network
+### Simplified process
 1. The browser requests a **DNS lookup** for the URL entered into the address bar, which in turn responds with an IP address.
 2. The browser sets up a connection to the server via a **TCP three-way handshake**.
-3. (For a secure connection established over HTTPS), **TLS handshake** is performed additionally.
-4. The browser sends an initial **HTTP GET request** (most often to get an HTML).
+3. **HTTPs handshake** may be performed additionally for a secure connection.
+4. The browser sends an initial **HTTP GET request**
 
-## 5. HTML, CSS, and javascript code received is parsed.
+### 5. HTML, CSS, and javascript code received is parsed.
 - The *preload scanner* requests high priority resources like CSS, JavaScript, and images so that by the time the HTML parser reaches requested assets, their download may have already been started.
 ~~~HTML
 <link rel="stylesheet" src="styles.css"/>
