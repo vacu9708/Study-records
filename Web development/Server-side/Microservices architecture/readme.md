@@ -26,6 +26,8 @@ While it is technically possible for clients to send direct requests to microser
 - `Monitoring and Analytics`: By routing all client requests through the API Gateway, it becomes a centralized point for collecting metrics, monitoring service health, and gathering analytics data. This allows for better visibility into the system.
 
 # Saga pattern
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/02df917c-b27c-40fa-ab1e-ebed780aa1cf)
+
 Using the Saga pattern, each local transaction at a microservice is performed as a separate step in a saga.<br>
 If a local transaction fails, the saga coordinator triggers a compensation for already executed local transactions to undo their effects.<br>
 This helps to ensure that the transactions across microservices are either successfully completed or compensated even if there are failures.<br>
