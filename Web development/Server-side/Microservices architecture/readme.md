@@ -45,5 +45,5 @@ Keep logging of the start and end of each local transaction and automate the com
 ![image](https://user-images.githubusercontent.com/67142421/235345623-c4b76fa3-1ab6-4625-ab6f-1f9c3f7bfbfa.png)
 
 It is used to handle failures in microservices and prevent them from causing cascading failures throughout the system.<br>
-A circuit breaker object monitors its microservice and if it detects a faulure, it blocks any further requests to the microservice.<br>
+A circuit breaker object monitors its microservices and if it detects a failure, it blocks any further requests to the microservice.<br>
 Instead, it returns a pre-configured fallback response or exception.<br>
