@@ -28,7 +28,7 @@ Upgrading a single server's hardware.
 - There are physical limits to adding hardware to a single server.
 - Failure in one part of the system can result in the entire system dying.
 
-# Load Balancing
+# [Load Balancing](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Service%20discovery%2C%20Load%20balancing)
 Implement load balancing to evenly distribute incoming requests across horizontally scaled servers. This helps prevent any single server from becoming overwhelmed.
 
 # Performance monitoring
