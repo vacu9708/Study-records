@@ -30,6 +30,7 @@ While it is technically possible for clients to send direct requests to microser
 ![image](https://user-images.githubusercontent.com/67142421/235345623-c4b76fa3-1ab6-4625-ab6f-1f9c3f7bfbfa.png)<br>
 The circuit breaker is used to prevent a failure(timeout) in one area from causing cascading failures throughout the entire system.<br>
 It prevents resources from being unnecessarily wasted both in the calling service and the remote service, which leads to preventing the propagation of the failures.<br>
+Without the circuit breaker, if one service starts failing, it can put strain on the calling services as they repeatedly attempt to call the failing service for responses that never come. This can lead to resource exhaustion.
 A circuit breaker object monitors its microservices and if it detects a failure, it 
 ### Process
 A circuit breaker keeps track of the responses by wrapping the call to the remote service.
@@ -45,3 +46,6 @@ After some configured time, the circuit breaker switches from open to a `half-op
 In this state, it lets a few requests pass through to the remote service to check if it’s still unavailable or slow.
 - If the error rate or slow call rate is above the configured threshold, it switches back to the open state.
 - If the error rate or slow call rate is below the configured threshold, however, it switches to the closed state to resume normal operation.
+
+### Explanation about the sliding window algorithm
+https://resilience4j.readme.io/docs/circuitbreaker
