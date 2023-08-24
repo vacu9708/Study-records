@@ -50,7 +50,7 @@ Integration testing focuses on testing the interactions between different units 
 ### Pros
 - Ensures that the different components of the system work together as intended.
 ### Cons
-- Ensuring that the data used across different components is consistent and in the right state for testing can be a complex task.
+- Ensuring that the data from the external dependencies used across different components is consistent and in the right state for testing can be a complex task.
 
 # Test Driven Development
 Test Driven Development (TDD) is a software development practice that focuses on creating unit test cases before developing the actual code.
