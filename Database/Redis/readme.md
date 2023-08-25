@@ -10,7 +10,7 @@ What sets Redis apart from a normal hashmap is that it can persist data to disk,
 
 ## Usage example
 Redis provides an exceptional speed. However, RAM has a limited size, therefore strategies to save the cache space are important.<br>
-- Temporary data that is not going to hold the cache space for long
+- Temporary data that is not going to hold the space for long
 - Data that requires a faster speed
 
 ### `Login session`
