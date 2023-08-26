@@ -21,6 +21,7 @@ In real implementation, It is the hash value of the data that is encrypted.
 4. The decrypted signature and the received messages do not match.
 
 # HTTPS
+#### [How to set up an HTTPS server](https://github.com/vacu9708/Tools-etc/tree/main/https)
 While asymmetric key encryption ensures that intercepted messages cannot be read, it does not prevent a man-in-the-middle attack from impersonating the server's domain and manipulating the communication channel itself.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2801946a-5c97-45ca-a9fd-d7d8d3219369)<br>
 ### 1. Handshake:
