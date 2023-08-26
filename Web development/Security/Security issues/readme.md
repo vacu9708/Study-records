@@ -15,7 +15,7 @@ Without CORS, a web page would only be able to access resources on the same doma
 Once the browser has successfully completed the preflight request and received the necessary CORS headers, it caches and reuses that information for subsequent requests to the same server, without the need for additional preflight requests.
 
 # CSRF(Cross-Site Request Forgery)
-Cross-Site Request Forgery (CSRF) is a type of web security vulnerability that allows an attacker to trick a user into performing actions they did not intend to perform. Unlike Cross-Site Scripting (XSS), which exploits the trust a user has for a particular site, CSRF exploits the trust that a server has in the user's browser.<br>
+Cross-Site Request Forgery (CSRF) is a type of web security vulnerability where an attacker tricks a user into performing actions they did not intend to perform. Unlike Cross-Site Scripting (XSS), which exploits the trust a user has for a particular site, CSRF exploits the trust that a server has in the user's browser.<br>
 The CSRF attack exploits the fact that browsers automatically include all relevant **cookies** with every request to a website's domain.
 
 ### How CSRF Works
