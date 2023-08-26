@@ -6,4 +6,3 @@
 - [Development methodology and paradigm](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Development%20methodology%20and%20paradigm)
 - [Web](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development)
 - [Etc](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Etc)
-- [Signal processing](https://github.com/vacu9708/Signal-processing)
