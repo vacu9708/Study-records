@@ -14,11 +14,31 @@ Without CORS, a web page would only be able to access resources on the same doma
 
 Once the browser has successfully completed the preflight request and received the necessary CORS headers, it caches and reuses that information for subsequent requests to the same server, without the need for additional preflight requests.
 
+# CSRF(Cross-Site Request Forgery)
+Cross-Site Request Forgery (CSRF) is a type of web security vulnerability that allows an attacker to trick a user into performing actions they did not intend to perform. Unlike Cross-Site Scripting (XSS), which exploits the trust a user has for a particular site, CSRF exploits the trust that a server has in the user's browser.<br>
+The CSRF attack exploits the fact that browsers automatically include all relevant **cookies** with every request to a website's domain.
+
+### How CSRF Works
+1. `User Login:` The user logs into a web application, like an email service or a bank website. The web application stores a session cookie on the user's browser to keep them authenticated.
+2. `Luring:` The attacker lures the victim to a malicious website, which contains a hidden html(which bypasses CORS) that is designed to send a request to the server where the user is authenticated.
+3. `Forged Request:` The malicious site automatically submits the forged request to the targeted web application using the victim's credentials stored in the **cookies**.
+4. `Unauthorized Action:` The web application, trusting the session cookie and assuming the request is made by the authenticated user, performs the unauthorized action.
+
+### Example
+Imagine a user is logged into his online banking account, and he visits another website that has a CSRF exploit. The exploit could silently submit a form to his bank's website to transfer money to the attacker's account, all without his knowledge.
+
+### Prevention
+- #### `Same-Site cookie attribute`
+Modern(not older) browsers support a cookie attribute called SameSite which can prevent cookies from being sent in cross-site requests.<br>
+Same-site attribute set to "Strict" does not allow any corss-site requests. "Lax" same-site allows navigation GET requests(e.g., following a link)
+- #### `Anti-CSRF tokens`
+One common mitigation technique is to use anti-CSRF tokens, which are random tokens that are associated with the user's session and are required to be sent with every state-changing request.
+
 # XSS(Cross-Site Scripting)
 XSS is a type of injection attack in which malicious scripts are injected into web pages(such as posts) viwed by other users.<br>
 The malicious code is executed on the same origin not on an external site, so it circumvents(bypasses) the same origin policy.<br>
 ### Example of malicious code
-Malicious code includes stealing auth information such as token or session ID from the client-side storage inside \<script><br>
+Malicious code includes stealing auth information such as JWT or session ID from the client-side storage inside \<script><br>
 The malicious script can redirect the user to the attacker's server to capture the retrieved information.<br>
 ### How to prevent XSS
 - #### http-only cookie
