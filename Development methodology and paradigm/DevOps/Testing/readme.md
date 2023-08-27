@@ -19,7 +19,7 @@ In unit tests, external dependencies are replaced with mock dependencies for the
 ### Cons
 - May not catch errors in the interaction between different units.
 - Can be time-consuming to write and maintain.
-
+### Example
 ~~~java
 class CalculatorTest{
   Calculator calc = new Calculator();
@@ -44,9 +44,30 @@ class Calculator{
   }
 }
 ~~~
+~~~java
+@Test
+void login_successful(){
+    // Given
+    UserCredentialsDto userCredentialsDto = new UserCredentialsDto("username", "password");
+    // Mock authRepository.findByUsername() to return a user entity
+    String hashedPassword = new BCryptPasswordEncoder().encode("password");
+    UserEntity userEntity = new UserEntity(UUID.randomUUID(), "username", hashedPassword, "email");
+    when(authRepository.findByUsername(any())).thenReturn(userEntity);
+    // Mock redis template
+    when(redisTemplate.opsForValue()).thenReturn(valueOperations);
+    when(valueOperations.get(any())).thenReturn(null);
+    // When
+    ResponseEntity<?> response = authService.login(userCredentialsDto);
+    // Then
+    assertEquals(200, response.getStatusCode().value());
+}
+~~~
 
 ## Integration test
 Integration testing focuses on testing the interactions between different units of the software. It ensures that different parts of the system work together as intended.
+### Example
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/0df85c6c-2ec2-4144-b8d9-0bc88fed5d56)
+
 ### Pros
 - Ensures that the different components of the system work together as intended.
 ### Cons
