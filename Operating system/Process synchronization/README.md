@@ -13,9 +13,9 @@ class Semaphore{
 	list process_queue;
 }
 
-void acquire(Semaphore *S){ // When a process wants to take shared resource 
+void acquire(Semaphore *S, Process process){ // When a process wants to take shared resource 
     if ( S->waiting_processes > 0 ) { // If another process is using the shared resource.
-        S->process_queue.enqueue(current_process); // Put the process in queue
+        S->process_queue.enqueue(process); // Put the process in queue
         block(process);
     }
     S->waiting_processes++; // Try taking shared resource
