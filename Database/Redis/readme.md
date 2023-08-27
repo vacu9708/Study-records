@@ -29,8 +29,8 @@ It used to be stored as a cookie. However, cookies are only available on web bro
 |user2|321|1|
 
 ### `Like`
-The Like feature requires a fast speed<br>
-Only one Like per user is allowed for a comment<br>
+The Like feature requires a fast speed.<br>
+Redis stores the user as key so that only one Like per user is allowed for a comment.<br>
 **Data structure**: SET<comment ID, users that liked>
 
 ### `Tweeter timeline`
