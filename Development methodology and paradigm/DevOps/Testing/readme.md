@@ -6,12 +6,12 @@
 
 Complex components must have test code in case they are modified to be sure that there are no bugs after modifying them!!
 
-# Test pattern
+### Test pattern
 1. **Given** this state(pre-conditions)
 2. **When** this action is performed
 3. **Then** this outcome is expected
 
-## Unit test
+# Unit test
 Unit testing focuses on testing individual components or functions of the software in isolation.<br>
 In unit tests, external dependencies are replaced with mock dependencies for the unit to be isolated.
 ### Pros
@@ -63,7 +63,7 @@ void login_successful(){
 }
 ~~~
 
-## Integration test
+# Integration test
 Integration testing focuses on testing the interactions between different units of the software. It ensures that different parts of the system work together as intended.
 ### Example
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/0df85c6c-2ec2-4144-b8d9-0bc88fed5d56)
