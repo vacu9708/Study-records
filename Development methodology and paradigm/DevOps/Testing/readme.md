@@ -10,16 +10,6 @@ Complex components must have test code in case they are modified to be sure that
 1. **Given** this state(pre-conditions)
 2. **When** this action is performed
 3. **Then** this outcome is expected
-
-# Unit test
-Unit testing focuses on testing individual components or functions of the software in isolation.<br>
-In unit tests, external dependencies are replaced with mock dependencies for the unit to be isolated.
-### Pros
-- External dependencies do not need to be taken into account by using mock objects.
-### Cons
-- May not catch errors in the interaction between different units.
-- Can be time-consuming to write and maintain.
-### Example
 ~~~java
 class CalculatorTest{
   Calculator calc = new Calculator();
@@ -29,10 +19,8 @@ class CalculatorTest{
     //Given
     int a = 10;
     int b = 20;
-
     //When
     int result = calc.plus(a,b);
-
     //Then
     assertEquals(result, 30);
   }
@@ -44,6 +32,16 @@ class Calculator{
   }
 }
 ~~~
+
+# Unit test
+Unit testing focuses on testing individual components or functions of the software in isolation.<br>
+In pure unit tests, all external dependencies are replaced with mock dependencies for the unit to be isolated.
+### Pros
+- External dependencies do not need to be taken into account by using mock objects.
+### Cons
+- May not catch errors in the interaction between different units.
+- Can be time-consuming to set up mock dependencies
+### Example
 ~~~java
 @Test
 void login_successful(){
@@ -64,14 +62,26 @@ void login_successful(){
 ~~~
 
 # Integration test
-Integration testing focuses on testing the interactions between different units of the software. It ensures that different parts of the system work together as intended.
+Integration testing focuses on testing the interactions between different units of the software without mocking. It ensures that different parts of the system work together as intended.<br>
 ### Example
+Clean up the data tha was used after testing!
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/0df85c6c-2ec2-4144-b8d9-0bc88fed5d56)
 
 ### Pros
 - Ensures that the different components of the system work together as intended.
 ### Cons
-- Ensuring that the data from the external dependencies used across different components is consistent and in the right state for testing can be a complex task.
+- It can be challenging to set up external dependencies.
+- Ensuring that the data from the external dependencies used across different components is consistent can be a complex task.
+
+# Testing strategy
+While pure unit testing ideally mocks every external dependency for isolation, practical considerations may lead to unit tests that do interact with some external dependencies that are easy to set up.
+While pure integration testing ideally involves real components, practical considerations may lead to some level of mocking, especially for components that are difficult to set up and costly.
+### Then? hybrid approach
+It's common to see a mix of mocked and real dependencies in a test suite.<br>
+This hybrid approach can be a good trade-off between unit testing and integration testing.
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/8f665b2e-4f91-4fbd-9ce8-ba241ab90bb1)
+
+---
 
 # Test Driven Development
 Test Driven Development (TDD) is a software development practice that focuses on creating unit test cases before developing the actual code.
