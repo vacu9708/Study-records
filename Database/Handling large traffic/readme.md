@@ -8,7 +8,7 @@ Read replicas are duplicate copies of a primary database, primarily used to offl
 
 # Write operations
 Replicas are challenging due to the concurrency issues!
-### Asynchronous writes
+### Asynchronous writes (using Kafka)
 Send write operations to a kafka topic.<br>
 A separate service or consumer then reads from this topic and performs the actual write operations to the database. This decouples the rate of incoming write requests from the rate at which the database is updated
 
