@@ -9,8 +9,8 @@ What sets Redis apart from a normal hashmap is that it can persist data to disk,
 
 ## Usage example
 Redis provides an exceptional speed. However, RAM has a limited size, therefore strategies to save the cache space are important.<br>
-- Temporary data that is not going to hold the space for long
-- Data that requires a faster speed
+- Temporary data that is not going to hold the space for long (Use redis without DB)
+- Caching data that requires a faster speed (Use redis in conjunction with DB)
 
 ### `Login session`
 **Data structure**: VALUE<session ID, json{session object}>
