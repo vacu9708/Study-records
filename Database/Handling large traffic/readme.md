@@ -4,7 +4,7 @@ Read replicas are duplicate copies of a primary database, primarily used to offl
 ### Denormalization
 (Refer to the normalization explanation in this directory) Good especially for distributed JOINs
 ### Indexing
-(Refer to the index explanation in this directory)
+(Refer to the indexing explanation in this directory)
 
 # Write operations
 Keep in mind the concurrency issues!!
