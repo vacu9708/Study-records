@@ -7,7 +7,7 @@
 Read replicas are duplicate copies of a primary database, primarily used to offload read queries from the primary database. This helps to improve performance by distributing the read load across multiple instances. Read replicas are kept in sync with the primary database, but are not used for write operations due to the race condition to maintain data consistency and integrity.
 
 # Write operations
-Keep in mind the concurrency issues!!
+Replicas are challenging due to the concurrency issues!
 ### Asynchronous writes
 Send write operations to a kafka topic.<br>
 A separate service or consumer then reads from this topic and performs the actual write operations to the database. This decouples the rate of incoming write requests from the rate at which the database is updated
