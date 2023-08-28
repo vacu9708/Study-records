@@ -1,7 +1,7 @@
 # Read operations
 ### Read replicas
 Read replicas are duplicate copies of a primary database, primarily used to offload read queries from the primary database. This helps to improve performance by distributing the read load across multiple instances. Read replicas are kept in sync with the primary database, but are not used for write operations due to the race condition to maintain data consistency and integrity.
-### [Denormalization]
+### Denormalization
 ([Refer to this](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Normalization))Good especially for distributed JOINs
 ### Indexing
 ([Refer to this](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Indexing))
