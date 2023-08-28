@@ -1,8 +1,7 @@
-# Redis
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/6b101735-9618-4a29-af7c-f3dbf6f2473a)<br>
 Redis can be thought of as a persistent hashmap.<br>
 What sets Redis apart from a normal hashmap is that it can persist data to disk, allowing it to be used as a fault-tolerant, durable datastore.
-## Why use Redis cache
+# Why use Redis cache
 - **Exceptional speed**: Redis stores data in RAM instead of secondary memory. This allows Redis to deliver exceptionally fast performance.
 - **Persistent data**
 - **High Scalability**: Redis is designed to be highly scalable and can handle large amounts of data and concurrent connections. It supports replication and clustering, allowing data to be distributed across multiple Redis instances.
@@ -62,7 +61,7 @@ def get_tweets_for_follower(follower_id):
 The number of visitors without duplicate records can be counted by storing visitors' ID and counting them.<br>
 **Data structure**: LIST<Day, Visitors' ID>
 
-## How to achieve data persistence in Redis
+# How to achieve data persistence in Redis
 Redis has backup methods because RAM cannot maintain data after being turned off.<br>
 
 - **RDB (Redis Database) Snapshotting**: Snapshots of the dataset at a specific point in time are taken and saved to disk in an RDB file at regular intervals or manually.<br>
@@ -70,7 +69,7 @@ This file contains the dataset in a compact manner, resulting in faster disk I/O
 - **AOF (Append-Only File)**: The AOF persistence mode logs every write operation received by Redis, appending it to the end of an AOF file. By replaying these write operations, Redis can reconstruct the dataset from scratch.
 - **Hybrid Persistence**: By using both RDB and AOF persistence methods simultaneously, Redis periodically creates RDB snapshots for faster recovery and uses the AOF in case of failures. Hybrid persistence provides a balance between recovery time and data durability.
 
-## Redis data structures in Spring
+# Redis data structures in Spring
 |Function|Data structure|
 |---|---|
 |opsForValue(key, value)|String|
@@ -79,7 +78,7 @@ This file contains the dataset in a compact manner, resulting in faster disk I/O
 |opsForZSet(key, a:1, b:2, c:3,,,)|Sorted Set|
 |opsForHash(key, key, value)|Hash|
 
-## Redis cluster
+# Redis cluster
 Redis cannot have multiple databases in the same way that MySQL does. Use redis instances on multiple ports.
 
 ## How to install and run Redis
