@@ -1,12 +1,15 @@
 # Read operations
-### Redis
 ### Read replicas
 ### Indexing
+### Redis
+### Rate limiting
+### Sharding
+### Query tuning
 
 # Write operations
 Concurrency issues!!
 ### Redis
 ### Rate limiting
 ### Sharding
-### DB tuning
+### Query tuning
 ### Batching 
