@@ -18,8 +18,6 @@ Group multiple write operations into a single batch, reducing the number of tran
 # Common
 ### Redis
 ([Refer to this](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database/Redis))
-Read and write using Redis instead of DB.<br>
-Use Redis without DB for temporary data, use Redis in conjunction with DB for caching
 ### Request rate limiting
 ([Refer to this](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Rate%20limiting))
 ### Query tuning
