@@ -21,7 +21,7 @@ Group multiple write operations into a single batch, reducing the number of tran
 Read and write on Redis instead of the DB.
 ### Request rate limiting
 ([Refer to this](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Web%20development/Server-side/Rate%20limiting))
-### Sharding
-Distribute rows across multiple databases, so each "shard" handles a subset of the write load. This can be complex to manage but is effective in distributing writes.
 ### Query tuning
 Query tuning such as LIMIT command
+### Sharding
+Distribute rows across multiple databases, so each "shard" handles a subset of the write load. This can be complex to manage but is effective in distributing writes.
