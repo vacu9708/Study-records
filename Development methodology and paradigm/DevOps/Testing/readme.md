@@ -65,7 +65,8 @@ void login_successful(){
 Integration testing focuses on testing the interactions between different units of the software without mocking. It ensures that different parts of the system work together as intended.<br>
 ### Example
 Clean up the data tha was used after testing!
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/73c629ef-e4c5-49b1-961e-0d2b657c0972)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/23d40e94-0d39-41ad-b3e8-10048b60bb1b)<br>
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/1946785b-54ca-4413-b297-15b9147dd9ec)
 
 ### Pros
 - Ensures that the different components of the system work together as intended.
