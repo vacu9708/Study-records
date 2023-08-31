@@ -19,6 +19,6 @@ Optimizing for each scenario requires different strategies.<br>
 - `Hardware upgrades:` Upgrading the CPU or adding more RAM can be the most straightforward way to improve performance.
 - `Algorithmic optimization:` Use more efficient algorithms to reduce time complexity, including caching where the results of expensive function calls are stored and the cached result is returned when the same inputs occur again.
 - `Parallel computing:` Divide tasks into smaller sub-tasks and process them concurrently using multiple cores or even multiple machines.
+- `Inline functions:` Inline functions or reduce the number of function calls to minimize overhead.
 - `Offloading to GPUs:` Offload certain tasks to specialized hardware like GPUs.
-- `Reducing function calls:` Inline functions or reduce the number of function calls to minimize overhead.
 - `Compiler optimization:` Use JIT compilers to convert interpreted code into machine code, which can be executed more quickly. Or use compiler optimization flags to generate more efficient machine code.
