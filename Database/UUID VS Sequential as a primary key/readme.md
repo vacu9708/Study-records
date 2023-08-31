@@ -1,7 +1,4 @@
 # UUID key VS Sequential key
-## Distributed insertion (UUID wins)
-- `UUID:` UUIDs are universally unique, which is useful for distributed insertions where concurrency can be an issue.
-- `Sequential key:` If many instances of a service are inserting data into a table, it’s likely the different instances would produce the same key value because of the concurrency issue.
 ## Decentralized key generation (UUID wins)
 - `UUID:` UUIDs are stateless and can be generated in the application to use for other tables.
 - `Sequential key:` The key of a new record can only be obtained after executing a query. And the key may be inconsistent because of the concurrency problem.
