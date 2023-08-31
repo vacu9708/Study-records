@@ -23,4 +23,6 @@ A process has at least a thread(including the main thread).<br>
 * vfork() : The memory is shared with the parent process. Memory is not copied, so it is created faster. But it can cause a race condition because the memory is shared.(like shallow copy)
 
 ## Threading pool
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/cad1ae03-a0d7-4368-9347-a47f9cf5da8e)
+
 A group of threads that can be taken when needed and reused, which is used because creating and destroying threads causes a big overhead.
