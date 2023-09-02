@@ -45,7 +45,15 @@ When in the open state, the circuit breaker blocks any further requests to the r
 After some configured time, the circuit breaker switches from open to a `half-open` state.<br>
 In this state, it lets a few requests pass through to the remote service to check if it’s still unavailable or slow.
 - If the error rate or slow call rate is above the configured threshold, it switches back to the open state.
-- If the error rate or slow call rate is below the configured threshold, however, it switches to the closed state to resume normal operation.
-
-### Explanation about the sliding window algorithm
-https://resilience4j.readme.io/docs/circuitbreaker
+### Sliding window
+#### `Use Two Counters:`
+- `successCount:` Maintains the number of successful requests in the current window.
+- `failureCount:` Maintains the number of failed requests in the current window.
+#### `On Each Request:`
+- If a new result is success, increment the successCount and enqueue the result.
+- If a new result is failure, increment the failureCount and enqueue the result.
+#### 'Snapshot Retrieval in O(1):'
+If the queue's length exceeds N (window size):
+- Dequeue the oldest result.
+- If the dequeued result is success, decrement the successCount.
+- If the dequeued result is failure, decrement the failureCount.
