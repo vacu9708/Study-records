@@ -46,13 +46,13 @@ After some configured time, the circuit breaker switches from open to a `half-op
 In this state, it lets a few requests pass through to the remote service to check if it’s still unavailable or slow.
 - If the error rate or slow call rate is above the configured threshold, it switches back to the open state.
 ### Sliding window
-#### `Use Two Counters:`
+#### `Use two counters:`
 - `successCount:` Maintains the number of successful requests in the current window.
 - `failureCount:` Maintains the number of failed requests in the current window.
-#### `On Each Request:`
+#### `On each request:`
 - If a new result is success, increment the successCount and enqueue the result.
 - If a new result is failure, increment the failureCount and enqueue the result.
-#### 'Snapshot Retrieval in O(1):'
+#### `Snapshot retrieval in O(1):`
 If the queue's length exceeds N (window size):
 - Dequeue the oldest result.
 - If the dequeued result is success, decrement the successCount.
