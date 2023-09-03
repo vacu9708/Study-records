@@ -77,7 +77,7 @@ Clean up the data tha was used after testing!
 # Testing strategy
 While pure unit testing ideally mocks every external dependency for isolation, practical considerations may lead to unit tests that do interact with some external dependencies that are easy to set up.
 While pure integration testing ideally involves real components, practical considerations may lead to some level of mocking, especially for components that are difficult to set up and costly.
-### Then? hybrid approach
+### hybrid approach
 It's common to see a mix of mocked and real dependencies in a test suite.<br>
 This hybrid approach can be a good trade-off between unit testing and integration testing.
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/8f665b2e-4f91-4fbd-9ce8-ba241ab90bb1)
