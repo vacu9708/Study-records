@@ -30,5 +30,5 @@ This driver disables all networking.
 
 
 # Kubernetes
-Kubernetes is a container orchestrator, which means that it is a platform designed to automate the deployment, scaling, and management of containerized applications.
+Kubernetes is a container orchestrator, which means that it is a platform designed to automate the deployment, scaling, and management of containerized applications across multiple computers.
   
