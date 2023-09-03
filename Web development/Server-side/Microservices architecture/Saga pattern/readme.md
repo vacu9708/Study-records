@@ -1,5 +1,6 @@
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/04f37435-1983-44a3-b3df-cb572494b35d)![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/02df917c-b27c-40fa-ab1e-ebed780aa1cf)
 # Saga pattern (Saga orchestrator)
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/02df917c-b27c-40fa-ab1e-ebed780aa1cf)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/0f2642cc-3b67-403e-b84e-2bdb0fab2d78)
 
 Using the Saga pattern, each local transaction at a microservice is performed as a separate step in a saga.<br>
 If a local transaction fails, the saga coordinator triggers a compensation for already executed local transactions to undo their effects.<br>
