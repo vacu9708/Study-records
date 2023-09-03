@@ -8,10 +8,10 @@ Continuous Integration automates the integration of code from multiple contribut
 ### How CI works:
 1. `Complete changes and push:` Developers work on their code in separate branches. And then a developer completes their code changes and pushes it to github
 2. `CI process triggered:` The CI system is triggered and pulls the code changes from github to a dedicated (cluster of) server(s).
-3. `Automated build and test :`The CI system then proceeds with building the app and running the tests such as unit tests, integration tests, and stress tests.
-4. `Reports generated: `Reports are generated based on the test results. If any issues arise during the CI process, developers are notified, and they can quickly fix the problems.
-5. `Manual testing :`Automated tests may not catch everything. Manual testing can be valuable for assessing usability, visual design, and other aspects that might be difficult to capture in automated tests.
-6. `Merge: `If the process was successful, the developer then manually merges the code into the parent branch.
+3. `Automated build and test:` The CI system then proceeds with building the app and running the tests such as unit tests, integration tests, and stress tests.
+4. `Reports generated:` Reports are generated based on the test results. If any issues arise during the CI process, developers are notified, and they can quickly fix the problems.
+5. `Manual testing:` Automated tests may not catch everything. Manual testing can be valuable for assessing usability, visual design, and other aspects that might be difficult to capture in automated tests.
+6. `Merge:` If the process was successful, the developer then manually merges the code into the parent branch.
 
 ## Continuous Deployment (CD):
 Continuous Deployment (CD) automates the process of releasing software to production.
