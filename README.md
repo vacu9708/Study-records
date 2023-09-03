@@ -1,4 +1,5 @@
 # Fundamental knowledge
+- [Algorithm](https://github.com/vacu9708/Algorithm)
 - [Data structures](https://github.com/vacu9708/Data-structure)
 - [Computer architecture](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Computer%20architecture)
 - [Database](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Database)
