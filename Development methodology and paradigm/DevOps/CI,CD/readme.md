@@ -1,5 +1,5 @@
 # CI/CD
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/5a9a3ddd-704c-4e40-94ac-7663a20121e0)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/731151d8-f1ed-4653-a286-5f82a5de39fb)
 
 CI/CD aims to automate the building, testing, and deployment of software.
 
