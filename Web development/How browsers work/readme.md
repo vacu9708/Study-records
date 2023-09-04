@@ -4,7 +4,7 @@ The Domain Name System (DNS) is the phonebook of the Internet. Web browsers inte
 # What happens when www.google.com is entered? 
 ### Simplified process
 1. The browser requests a **DNS lookup** for the URL entered into the address bar, which in turn responds with an IP address.
-2. The browser sets up a connection to the server via a **TCP three-way handshake**.
+2. The browser sets up a connection to the server via the **TCP three-way handshake**.
 3. **HTTPs handshake** may be performed additionally for a secure connection.
 4. The browser sends an initial **HTTP GET request**
 
