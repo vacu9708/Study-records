@@ -27,13 +27,12 @@ the standard markup language that is used to define the structure of a webpage(,
 APIs that obey the REST constraints are described as RESTful API.<br>
 Server side framework can be just about anything thanks to RESTful API that abstracts the implementation.
 ### REST constraints
-- **HTTP features**: REST APIs are built on top of HTTP, therefore they have the features of HTTP such as statelessness 
-- **Self-descriptive**: RESTful APIs has to contain enough information that represents what it does
+- **Self-descriptive**: RESTful APIs are stateless and have to contain all the information needed to understand and process the request.
 - **Uniform interface**: RESTful APIs have a uniform interface that provides a standardized way for clients and servers to communicate.
-The uniform interface constraint includes several aspects, such as:<br>
-  - **Resource identification**: APIs are identified by unique URIs.
-  - **Resource manipulation**: HTTP methods that have a specific meaning (GET, POST, etc.) are used.
-  - **Representation of resources**: Resources are represented in a standardized format (e.g., JSON, XML) that both the client and server understand.
+  #### The uniform interface constraint includes several aspects, such as:<br>
+    - **Resource identification**: APIs are identified by unique URIs.
+    - **Resource manipulation**: HTTP methods that have a specific meaning (GET, POST, etc.) are used.
+    - **Representation of resources**: Resources are represented in a standardized format (e.g., JSON, XML) that both the client and server understand.
 
 ![image](https://user-images.githubusercontent.com/67142421/183272701-c6526ec7-79dd-4a9e-a72e-204dee53a978.png)<br>
 
