@@ -1,7 +1,7 @@
 # UDP (User Datagram Protocol)
 UDP is a simple communication protocol. There is no need to establish a connection prior to data transfer.<br>
-**Features of UDP**: unreliable, unordered, fast
-**Why packets can be unorder?**: it is because packets may take different routes to reach their destination, and some of these routes may be longer than others.
+- `Features of UDP:` unreliable, unordered, fast
+- `Why packets can be unordered?:` Because packets may take different routes to reach their destination, and some of these routes may be longer than others.
 
 ![image](https://user-images.githubusercontent.com/67142421/178133335-70ef1d74-9b94-4d5f-bb30-f166eb2f93a0.png)
 
