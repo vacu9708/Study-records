@@ -105,8 +105,7 @@ The cache is divided into 'n' rows and each row contains 'm' columns. A memory b
 
 # ✨System bus
 A **system bus** is a pathway that transmits data between the components of hardware that consists of data bus, address bus, control bus
-
-![image](https://user-images.githubusercontent.com/67142421/176787286-3282d915-5840-4a2a-8759-2577fa50ff02.png)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/add2cde2-f18e-4e47-8460-070dd3ab0975)
 
 * **data bus** : A pathway that transfers data between the CPU and other components.<br>
 It is a bidirectional bus that either transfers the data and instructions of memory and I/O devices to the CPU or transfers the operation results of the CPU to memory and I/O devices
