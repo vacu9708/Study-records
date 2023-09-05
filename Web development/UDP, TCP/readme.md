@@ -36,7 +36,7 @@ A process to establishe a reliable connection between two devices over a network
 1. **Client** generates its initial sequence number M and sends a SYN(M) packet to **Server**. **Ex(Client's initial sequence number M: 1000)**
 2. If the packet is intact, **Server** generates its initial sequence number N and responds to **Client** with a ACK(M+1)-SYN(N) packet, where M+1 indicates that it was sent right after M. **Ex(Server's initial sequence number N: 2000, acknowledgement number M+1: 1001)**
 3. **Client** sends ACK(N+1) to **Server**. **Ex(Client's acknowledgement number N+1: 2001)**
-4. A reilable connection is established. Both generate subsequent sequence numbers by using each other's sequence number. (e.g. The next sequence number the **server* is going to receive is 1002)
+4. A reilable connection is established. Both generate subsequent sequence numbers by using each other's sequence number. (e.g. The next sequence number the **server** is going to receive is 1002)
 
 ## Data exchange
 - Client and server analyze each incoming sequence number for checking packet errors and flow control and acknowledge each packet as it arrives.
