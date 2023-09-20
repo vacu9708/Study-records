@@ -9,7 +9,7 @@ something you can click on to jump to another place of the web. (It creates a no
 the standard markup language that is used to define the structure of a webpage(, which can include hypermedia such as text, graphics, sound, video, and so on).
 
 # HTTP and HTTPs
-- **HTTP**: a stateless, insecure protocol for a client and a server to communicate, comprised of a request and a response.
+- **HTTP**: a stateless, insecure protocol for a client and a server to communicate, comprised of a request and a response. HTTP uses Uniform Resource Locators (URLs) to identify resources on the web. 
 - **HTTPs**: HTTP that is encrypted using SSL handshake. It is secure but delays the speed of the website.
 
 # HTTP methods
