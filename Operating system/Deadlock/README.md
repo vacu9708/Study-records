@@ -1,4 +1,3 @@
-* **Spinlock** is to make a thread trying to acquire a shared resource wait in a loop until it is available.(busy waiting)
 # Deadlock
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/950cfd23-dbcc-4fab-8e62-8092ffcb0cae)
 
