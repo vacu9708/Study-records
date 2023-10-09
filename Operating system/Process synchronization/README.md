@@ -2,10 +2,10 @@
 - **Process Synchronization** refers to ensuring that shared resources are accessed by only one process at a time to maintain *data consistency*.<br>
 - The **critical section** is a code segment that can be accessed by only one process at a time. Process Synchronization is to manage the critical section.<br>
 
-### Methods to prevent accessing shared memory at the same time
-- **Busy waiting** is a method can be used (repeatedly checking to see if a condition is true) But it is ineffective since it takes computing resource constantly.
-- A **semaphore** is a method used to solve the busy waiting problem by checking whether a shared resource is in use before a process enters the critical section.
-- A **mutex(mutual exclusion)** is a type of semaphore. While a normal semaphore allows multiple processes to share a resource, a mutex is a binary semaphore. In other words, it has only two states: locked and unlocked.
+### Lock mechanisms used to protect shared resources from concurrent access
+- **Spinlock(busy waiting)** : When a thread attempts to acquire a spinlock that is already held by another thread, it will continuously check (or "spin") until the lock becomes available. This approach can be efficient if the expected wait time is short since the thread remains active and does not enter a sleep state. However, it can also waste CPU cycles if the lock is held for a long time.
+- **Semaphore** : used to solve the busy waiting problem by checking whether a shared resource is in use before a process enters the critical section.
+- **Mutex(mutual exclusion)** : a type of semaphore. While a normal semaphore allows multiple processes to share a resource, a mutex is a binary semaphore. In other words, it has only two states: locked and unlocked.
 
 ~~~c++
 class Semaphore{
