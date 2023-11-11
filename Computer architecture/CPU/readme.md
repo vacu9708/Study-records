@@ -1,0 +1,31 @@
+# ✨Central Processing Unit
+A CPU is the brain of a computer that fetches instructions from memory and executes them<br>
+
+**Instruction** : 
+>consists of operation code and operand<br>
+>operation code : an operation to execute / operand : the object of an operation
+
+A CPU consists of
+* **Arithmetuc Logic Unit** that performs arithemetic and logic operations
+* **registers** that are the fastest memory of a computer, which supply operands to the ALU and store the results of ALU operations
+* a **control unit** that orchestrates the fetching of instructions (from memory) and execution of them
+
+## Special Purpose Registers
+* **Instruction Register** : holds the instruction that is currently being executed.
+* **Program Counter** : stores the memory address of the next instruction to be fetched.
+* **Memory Address Register** : stores the memory address to fetch some data that is required by the current instruction being executed (not an instruction).
+* **Memory Buffer Register** : stores a copy of the value in the memory location specified by the memory address register.
+* **Accumulator** : intermediate result of arithmetic logic unit is stored
+### 32bit VS 64bit computer
+A 32-bit computer includes a 32-bit memory address register that can distinguish 2^32 addresses(4GB).
+A 64-bit computer includes a 64-bit memory address register that can distinguish 2^64 addresses(almost infinite size).
+
+
+### CISC (Complex Instruction Set Computer)
+A computer in which individual instructions may perform many operations and take many cycles to execute, in contrast with Reduced Instruction Set Computer (**RISC**).
+
+### Fetching cycle
+1. The memory address of the instruction is transferred to MAR
+2. The instruction located on the address is fetched and stored in MBR
+3. The value of PC is increased to fetch the next instruction
+4. The instruction stored in MBR is transferred to IR
