@@ -12,7 +12,7 @@ A CPU consists of
 
 ## Special Purpose Registers
 * **Instruction Register** : holds the instruction that is currently being executed.
-* **Program Counter** : stores the memory address of the next instruction to be fetched.
+* **Program Counter(Instruction pointer)** : stores the memory address of the next instruction to be fetched.
 * **Memory Address Register** : stores the memory address to fetch some data that is required by the current instruction being executed (not an instruction).
 * **Memory Buffer Register** : stores a copy of the value in the memory location specified by the memory address register.
 * **Accumulator** : intermediate result of arithmetic logic unit is stored
