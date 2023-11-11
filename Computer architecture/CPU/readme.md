@@ -20,9 +20,11 @@ A CPU consists of
 A 32-bit computer includes a 32-bit memory address register that can distinguish 2^32 addresses(4GB).
 A 64-bit computer includes a 64-bit memory address register that can distinguish 2^64 addresses(almost infinite size).
 
-
-### CISC (Complex Instruction Set Computer)
-A computer in which individual instructions may perform many operations and take many cycles to execute, in contrast with Reduced Instruction Set Computer (**RISC**).
+## CISC (Complex Instruction Set Computer)
+In a CISC architecture, instructions can vary in length, with some instructions being quite complex and encoding multiple operations within a single instruction.<br>
+This flexibility allows for more powerful instructions but can make instruction decoding and pipelining more challenging.<br>
+## RISC (Reduced Instruction Set Computer)
+RISC architectures have fixed-length instructions and aim for simplicity and uniformity in their instruction encoding.
 
 ### Fetching cycle
 1. The memory address of the instruction is transferred to MAR
