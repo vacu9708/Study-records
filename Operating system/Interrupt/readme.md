@@ -5,6 +5,8 @@ An **interrupt** is a request for the processor to interrupt the currently execu
 * A **software interrupt** happens when a program is executed for it to be processed by time-sharing.
 
 ## The steps of an interrupt
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/95593a56-af6a-407f-8c8b-0e9e166045a4)
+
 1. An interrupt occurs
 2. Current program status is saved onto a stack
 3. Jump to the interrupt vector
