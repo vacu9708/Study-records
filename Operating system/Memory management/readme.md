@@ -27,17 +27,17 @@ The entire list of free partitions is searched and the smallest adequate hole is
 ![image](https://user-images.githubusercontent.com/67142421/178162994-d644b1ff-6a79-4b3c-a1eb-4b96f1020cf8.png)<br>
 The entire list of free partitions is searched and the biggest hole possible is allocated.
 
-## Non-contiguous memory allocation
+# Non-contiguous memory allocation
 In **Non-contiguous memory allocation**, parts of a process can be allocated to different locations.<br>
 * **Paging** : a process is broken into fixed sized blocks called pages, which can cause internal fragmentation.
 * **Segmentation** : a process is broken in varying sized blocks called sections, which can cause external fragmentation.
 
-## Virtual memory
+# Virtual memory
 Usually used with the non-contiguous memory allocation<br>
-Main memory is expensive and not big, so a process needs to be able to be executed even if the whole process is not on the main memory.<br>
+Main memory is expensive and has limited space, so a process should be able to be executed even if the whole process is not on the main memory.<br>
 Virtual memory allows secondary memory to be able to be addressesd as though it were main memory.<br>
 
-## Page replacement
+# Page replacement
 **Demanding page** : to bring pages in the main memory only when they are required<br>
 Even if only required pages are moved onto main memory, main memory becomes full eventually. So, which page to remove for a new page to come in needs to be decided.
 
@@ -48,7 +48,7 @@ but it is the problem that such a page is hard to predict.
 * **Least-Recently-Used** : exploits the fact that pages that were not used recently have a high probability not to be used constantly.
 It reduces page-faults less than the optimal page replacement but is one of the practically best algorithms.
 
-## Memory Management Unit
+# Memory Management Unit
 A memory management unit is hardware that manages all operations in the memory system such address.<br>
 Some of its role are :
 * Converting a virtual memory address to a physical address.
