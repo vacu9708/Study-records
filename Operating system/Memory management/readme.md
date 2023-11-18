@@ -68,7 +68,7 @@ The MMU, or Memory Management Unit is primarily responsible for handling memory 
 The MMU is crucial in managing the virtual memory system where both RAM and a portion of the secondary memory are used to create the illusion of a very large memory space.<br>
 
 - ### Memory Translation
-The MMU translates virtual memory addresses into physical memory addresses. When a program accesses a memory location, it uses a virtual address, which the MMU maps to the actual physical address in RAM. This abstraction allows multiple programs to run simultaneously without interfering with each other's memory spaces.
+The MMU translates virtual memory addresses into physical memory addresses. When a program accesses a memory location, it uses a virtual address, which the MMU maps to the actual physical address in RAM.
 - ### Memory Protection
 By managing access to memory, the MMU helps ensure that each program operates within its allocated space. This prevents one program from accidentally or maliciously modifying the memory used by another program, enhancing system stability and security.
 - ### Paging and Swapping
