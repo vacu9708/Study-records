@@ -14,7 +14,7 @@ An **interrupt** is a request for the processor to temporarily halt the current 
 5. Jump to the previous program
 
 ## polling VS (vectored) interrupt
-* **polling** : Each interrupt is checked by software one by one in an infinite loop. This busy-waiting causes overheads.
+* **polling** : Each interrupt is checked by one by one in an infinite loop. This busy-waiting causes overheads.
 ### Example
 ~~~python
 while True:
