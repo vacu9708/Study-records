@@ -1,4 +1,4 @@
-An **interrupt** is a request for the processor to interrupt the currently executing task to switch to another task with a higher priority.<br>
+An **interrupt** is a request for the processor to temporarily halt the current task and switch to another task with a higher priority."
  
 * An **external interrupt** happens as a result of outside interference such as from the user or from the peripherals.
 * An **internal interrupt**, also called Trap, happens when wrong instructions or data are used. (exceptions like divided by zero, overflow)
