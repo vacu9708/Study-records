@@ -20,11 +20,11 @@ It also links the program with libraries it depends on.
 Finally, the operating system executes the program, following the instructions in the machine code contained in the executable file.
 
 # Commands
-### Single-Step Compilation and Linking
+### Single-step build
 ~~~
 g++ -o my_program source1.cpp source2.cpp
 ~~~
-### Multi-Step Compilation and Linking
+### Multi-step build
 ~~~
 g++ -c source1.cpp
 g++ -c source2.cpp
