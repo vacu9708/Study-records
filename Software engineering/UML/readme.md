@@ -12,6 +12,9 @@ Each use case represents a distinct functionality or a goal that an actor wants 
 #### Extend:
 - Description: The extend relationship is used to represent optional or conditional behavior that can extend the functionality of a use case, but isn't necessary for the use case to be complete unlike the include.
 - Example: In the same online shopping system, a use case "Browse Items" might be extended by an optional use case "Filter Results," which is used only under certain conditions (e.g., if the user wants to filter the items).
+#### Generalization:
+- Description: In use case diagrams, generalization is used to show an inheritance relationship between actors or between use cases. It indicates that one actor or use case inherits the properties and behaviors of another.
+- Example: If there is a general actor named "User," and there are specific types of users like "Customer" and "Admin," then "Customer" and "Admin" can be shown as generalizations of "User."
 
 # Sequence diagram
 A sequence diagram shows how objects interact in a given scenario of a use case.
