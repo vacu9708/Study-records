@@ -27,13 +27,13 @@ A sequence diagram shows how objects interact in a given scenario of a use case.
 - Creation and Destruction Markers: Symbols that show when an object is created or destroyed during the sequence.
 
 # Class diagram
+A class diagram is a type of static structure diagram that describes the structure of a system by showing the system's classes, their attributes, operations (or methods), and the relationships among the classes.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/d7dc6f52-73ec-4264-adbe-b5faafbe0239)<br>
-A class diagram is a type of static structure diagram that describes the structure of a system by showing the system's classes, their attributes, operations (or methods), and the relationships among the classes.
 
 # Flow diagram
+A Flow diagram is a graphical representation of a process, showing the steps as boxes of various kinds, and their order by connecting them with arrows. This diagrammatic representation illustrates a solution model to a given problem.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/30ba57e8-9eb9-459f-ac02-ce4fdafeb4e7)<br>
-A flowchart is a graphical representation of a process, showing the steps as boxes of various kinds, and their order by connecting them with arrows. This diagrammatic representation illustrates a solution model to a given problem
 
 # Entity-Relationship Diagram
+An ERD visually represents the relationships between entities (or data objects) within a system.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/c6ed731e-3191-42b1-81b6-eca0c9e3264f)<br>
-An ERD visually represents the relationships between entities (or data objects) within a system.
