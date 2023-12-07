@@ -1,1 +1,1 @@
-### An operating system is software that manages things such as processes, storages, device drivers(hardware abstraction), networking and users.
+An operating system (OS) is a piece of software that manages the hardware and software resources of a computer. It acts as an intermediary between users and the computer hardware.
