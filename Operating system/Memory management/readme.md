@@ -1,13 +1,11 @@
 # Types of memory fragmentation
 ### Internal fragmentation
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/a9694841-3cd6-4fff-951f-b6a445b0d724)
-
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/a9694841-3cd6-4fff-951f-b6a445b0d724)<br>
 When a piece of allocated memory leaves some unused space.<br>
-Ex) When a partition of memory whose size is 10bytes has 8bytes of data, leaving 2 bytes unused
+Ex) When a piece memory whose size is 10bytes has 8bytes of data, leaving 2 bytes unused
 ### External framentation
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2bf06256-ac2a-4471-91b4-4f371fa8f396)
-
-Ex) When memory space between pieces of allocated memory is unavailable.
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2bf06256-ac2a-4471-91b4-4f371fa8f396)<br>
+When memory space between pieces of allocated memory is unavailable.
 
 # Contiguous memory allocation
 In **contiguous memory allocation**, the whole process is allocated to a contiguous partition of memory.
