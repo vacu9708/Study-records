@@ -30,8 +30,8 @@ The entire list of free partitions is searched and the biggest hole possible is 
 # Non-contiguous memory allocation
 Non-contiguous memory allocation is a method of storing data in multiple memory locations rather than in a single contiguous block.
 ### Techniques
-- Paging: Divides the memory into fixed-size blocks called pages. Each process is divided into pages of the same size, which can be stored anywhere in the physical memory.
-- Segmentation: Memory is divided into segments of varying sizes, each corresponding to logical divisions like code, stack, and data segments in a process. Segments can be non-contiguously allocated.
+- Paging: Divides a process's memory space into fixed-size blocks called pages. Each process is divided into pages of the same size, which can be stored anywhere in the physical memory.
+- Segmentation: Divides a process's memory space into different segments, where each segment represents a specific type of data or code (e.g., code segment, data segment, stack segment). They can be non-contiguously allocated.
 ### Advantages
 - Helps reduce fragmentation since it minimizes wasted space in memory by effectively utilizing small pockets of available memory.
 ### Challenges
