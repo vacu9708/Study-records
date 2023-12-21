@@ -1,8 +1,8 @@
 # A process consists of
 ![image](https://user-images.githubusercontent.com/67142421/177061507-70e77e7f-1af0-4d3c-92a8-b0b5ba706bc2.png)
 
-- **Code** : stroes the instructions of the program
-- **Data** : stroes static data
+- **Code** : stores the instructions of the program
+- **Data** : stores static data
 - **Heap** : stores dynamically allocated data
 - **Stack** : stores temporary data created by a function
 
