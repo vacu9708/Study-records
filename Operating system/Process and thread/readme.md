@@ -31,6 +31,7 @@ The process life cycle refers to the various stages that a process goes through 
 A group of threads that can be taken when needed and reused, which is used because creating and destroying threads causes a big overhead.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/cad1ae03-a0d7-4368-9347-a47f9cf5da8e)
 
-## fork() VS vfork()
-* fork() : The memory of the parent process is copied. (like deep copy)
-* vfork() : The memory is shared with the parent process. Memory is not copied, so it is created faster. But it can cause a race condition because the memory is shared.(like shallow copy)
+## Child process
+A "child process" in computing refers to a process that is created by another process (known as the parent process) during the course of its execution. This creation is typically done through a system call such as fork() in Unix-like operating systems.
+- fork() : The memory of the parent process is copied. (like deep copy)
+- vfork() : The memory is shared with the parent process. Memory is not copied, so it is created faster. But it can cause a race condition because the memory is shared.(like shallow copy)
