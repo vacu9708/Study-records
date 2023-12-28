@@ -1,14 +1,20 @@
 # ✨Central Processing Unit
 A CPU is the brain of a computer that fetches instructions from memory and executes them<br>
 
-**Instruction** : 
->consists of operation code and operand<br>
->operation code : an operation to execute / operand : the object of an operation
+### Instruction
+consists of operation code and operand<br>
+- `operation code`: an operation to execute
+- `operand`: the object of an operation
 
-A CPU consists of
-- **Arithmetuc Logic Unit** performs arithemetic and logic operations
-- **Registers** are the fastest memory of a computer, which supply operands to the ALU and store the results of ALU operations
-- **Control unit** sends **control signals** that orchestrates the fetching of instructions (from memory) and execution of them
+## A CPU consists of
+- ### Arithmetuc Logic Unit
+performs arithemetic and logic operations
+- ### Registers
+are the fastest memory of a computer, which supply operands to the ALU and store the results of ALU operations
+- ### Control unit
+- `Execution of insturction`: The CU fetches, decodes, and execute instructions.
+- `Directing Operations`: Once the instructions are decoded, the Control Unit sends control signals to the relevant parts of the computer to execute the operations.
+- `Data Flow Management`: It controls the flow of data within the CPU and between the CPU and other components of the computer. This includes managing data transfers to and from the memory, ALU, and input/output devices.
 
 ## Special Purpose Registers
 * **Instruction Register** : holds the instruction that is currently being executed.
