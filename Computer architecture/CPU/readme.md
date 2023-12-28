@@ -13,8 +13,8 @@ performs arithemetic and logic operations
 are the fastest memory of a computer, which supply operands to the ALU and store the results of ALU operations
 - ### Control unit
 - `Execution of insturction`: The CU fetches, decodes, and execute instructions.
-- `Directing Operations`: Once the instructions are decoded, the Control Unit sends control signals to the relevant parts of the computer to execute the operations.
-- `Data Flow Management`: It controls the flow of data within the CPU and between the CPU and other components of the computer. This includes managing data transfers to and from the memory, ALU, and input/output devices.
+- `Directing operations`: Once the instructions are decoded, the Control Unit sends control signals to the relevant parts of the computer to execute the operations.
+- `Data flow management`: It controls the flow of data within the CPU and between the CPU and other components of the computer. This includes managing data transfers to and from the memory, ALU, and input/output devices.
 
 ## Special Purpose Registers
 * **Instruction Register** : holds the instruction that is currently being executed.
