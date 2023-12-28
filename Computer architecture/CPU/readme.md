@@ -6,9 +6,9 @@ A CPU is the brain of a computer that fetches instructions from memory and execu
 >operation code : an operation to execute / operand : the object of an operation
 
 A CPU consists of
-* **Arithmetuc Logic Unit** that performs arithemetic and logic operations
-* **registers** that are the fastest memory of a computer, which supply operands to the ALU and store the results of ALU operations
-* a **control unit** that orchestrates the fetching of instructions (from memory) and execution of them
+- **Arithmetuc Logic Unit** performs arithemetic and logic operations
+- **Registers** are the fastest memory of a computer, which supply operands to the ALU and store the results of ALU operations
+- **Control unit** sends **control signals** that orchestrates the fetching of instructions (from memory) and execution of them
 
 ## Special Purpose Registers
 * **Instruction Register** : holds the instruction that is currently being executed.
