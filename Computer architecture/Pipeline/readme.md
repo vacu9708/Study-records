@@ -9,8 +9,8 @@ This allows multiple instructions to be processed simultaneously, overlapping th
 5. Write Back (WB) if needed: In the final stage, the CPU writes the results of the instruction execution back to the appropriate registers or memory locations.
 
 ### Why the pipeline is necessary
-The CPU can execute different stages simultaneously in the process of handling instructions.
-By dividing the instruction execution process into these stages, multiple instructions can be in different stages of execution simultaneously. This overlap of operations results in increased throughput and improved performance.<br>
+The CPU can execute different stages of multiple instructions simultaneously.<br>
+This overlap of operations results in increased throughput and improved performance.<br>
 For example, while one instruction is being executed, the CPU can fetch the next instruction, and while that instruction is being executed, the CPU can decode the following one, and so on.<br>
 **Without the pipeline**, the CPU can't start the next instruction until the previous one has completed all stages.<br>
 This can lead to significant idle time for the CPU, where it is not doing any useful work while waiting for the current instruction to finish.
