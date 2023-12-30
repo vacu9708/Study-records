@@ -1,3 +1,5 @@
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/bf4ee443-c3ad-4599-8bdd-fe7a80d6303e)
+
 In computer architecture, a pipeline is a technique used to improve the throughput and efficiency of a CPU (Central Processing Unit) by breaking down the instruction execution process into a series of stages, with each stage performing a specific operation on the instruction.<br>
 This allows multiple instructions to be processed simultaneously, overlapping the execution of different instructions to achieve higher performance. The pipeline concept is commonly used in modern CPUs to make better use of available resources.
 
