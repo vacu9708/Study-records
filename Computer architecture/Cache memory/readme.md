@@ -7,8 +7,9 @@ Normally a CPU has 3 pieces of cache memory, which are called L1, L2, L3 each in
 L1 cache is in the CPU and searched first. L2 is between the CPU and RAM. L3 is in main board and the last to be searched.
 
 ## Cache memory works based on these principles
+`Locality of reference`
 * **Temporal locality** : Data that has been referenced is likely to be referenced shortly again.
-* **Space locality** : Data next to data that has been referenced is likely to be referenced shortly.
+* **Space locality** : Data next to data that has been referenced is likely to be referenced shortly again.
 
 ## Cache hit and Cache miss
 * On a cache hit : the CPU can quickly retrieve data from the cache.
