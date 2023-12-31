@@ -8,16 +8,16 @@ L1 cache is in the CPU and searched first. L2 is between the CPU and RAM. L3 is 
 
 ## Cache memory works based on these principles
 `Locality of reference`
-* **Temporal locality** : Data that has been referenced is likely to be referenced shortly again.
-* **Space locality** : Data next to data that has been referenced is likely to be referenced shortly.
+- **Temporal locality** : Memory locations that have been referenced are likely to be referenced shortly again.
+- **Space locality** : Memory locations close to those that have been referenced are likely to be referenced shortly.
 
 ## Cache hit and Cache miss
-* On a cache hit : the CPU can quickly retrieve data from the cache.
-* A cache miss is an event in which an attempt to retrieve data from a cache, where the CPU has to fetch the data from the main memory to the cache.<br>
-* **If cache misses happen too much**, having cache memory is worse than not having it because the time taken to find data in cache memory was wasted.<br>
+- On a cache hit : the CPU can quickly retrieve data from the cache.
+- A cache miss is an event in which an attempt to retrieve data from a cache, where the CPU has to fetch the data from the main memory to the cache.<br>
+- **If cache misses happen too much**, having cache memory is worse than not having it because the time taken to find data in cache memory was wasted.<br>
 
 ## Cache placement policies
-* **Direct Mapped Cache**
+- **Direct Mapped Cache**
 
 ![image](https://user-images.githubusercontent.com/67142421/177051043-23ec7372-938a-4b7c-b317-b7174a99eabd.png)<br>
 In this structure multiple addresses of RAM map to a single address in cache memory.<br>
