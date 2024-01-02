@@ -14,24 +14,24 @@ Lock mechanisms are used to protect shared resources from concurrent access.
 
 ~~~c++
 class Semaphore{
-	int waiting_processes; // number of waiting processes.
+	int shared_resource; // 1
 	Queue process_queue;
 }
 
-void acquire(Semaphore* S, Process* process){ // When a process wants to take a shared resource 
-    if ( S->waiting_processes > 0 ) { // Put the process to sleep if other processes are using the shared resource
+void acquire(Semaphore* S, Process* process){ // When a process wants to take a shared resource
+    S->shared_resource--;
+    if ( S->shared_resource < 0 ) { // Put the process to sleep if other processes are using the shared resource
         S->process_queue.enqueue(process);
         sleep(process);
     }
-    S->waiting_processes++;
 }
 
 void release(Semaphore* S) { // Wakes up a process that wanted to take a shared resource
-    if ( S->waiting_processes > 0 ) { 
+    S->shared_resource++;
+    if ( S->shared_resource <= 0 ) { 
         process=S->process_queue.dequeue();
         wakeup(process);
     }
-    S->waiting_processes--;
 }
 ~~~
 
