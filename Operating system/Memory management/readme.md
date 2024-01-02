@@ -1,12 +1,3 @@
-# Types of memory fragmentation
-### Internal fragmentation
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/a9694841-3cd6-4fff-951f-b6a445b0d724)<br>
-When a piece of allocated memory leaves some unused space.<br>
-Ex) When a piece memory whose size is 10bytes has 8bytes of data, leaving 2 bytes unused
-### External framentation
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2bf06256-ac2a-4471-91b4-4f371fa8f396)<br>
-When memory space between pieces of allocated memory is unavailable.
-
 # Contiguous memory allocation
 In **contiguous memory allocation**, the whole process is allocated to a contiguous partition of memory.
 ## Fixed(or static) partitioning
@@ -31,6 +22,15 @@ The entire list of free partitions is searched and the smallest adequate hole is
 ### Worst fit
 ![image](https://user-images.githubusercontent.com/67142421/178162994-d644b1ff-6a79-4b3c-a1eb-4b96f1020cf8.png)<br>
 The entire list of free partitions is searched and the biggest hole possible is allocated.
+
+# Types of memory fragmentation
+### Internal fragmentation
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/a9694841-3cd6-4fff-951f-b6a445b0d724)<br>
+When a piece of allocated memory leaves some unused space.<br>
+For example, when a piece memory whose size is 10bytes has 8bytes of data, leaving 2 bytes unused
+### External framentation
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2bf06256-ac2a-4471-91b4-4f371fa8f396)<br>
+When memory space between pieces of allocated memory is unavailable.
 
 # Non-contiguous memory allocation
 Non-contiguous memory allocation is a method of storing data in multiple memory locations rather than in a single contiguous block.
