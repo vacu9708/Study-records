@@ -80,26 +80,30 @@ if __name__ == "__main__":
 ### Output
 ![image](https://user-images.githubusercontent.com/67142421/177388487-051bd0f0-e5ea-4242-9278-a97af7899ca5.png)
 
-## Bounded buffer problem
+## Bounded buffer problem(also called producer-consumer problem)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/96cf93d8-74ea-4347-abf5-6fef6e22ab79)
+
 producer : data putter / consumer : data taker<br>
-* Producer determines empty elements using semaphore called empty.
-* Consumer determines full elements using semaphore called full.
-producer and consumer are controleld by mutex.
+The semaphores which will be used here are:
+- mutex, a binary semaphore which is used to acquire and release the lock.
+- empty, a counting semaphore whose initial value is the number of slots in the buffer, since initially all slots are empty.
+- full, a counting semaphore whose initial value is 0.
 
 ~~~c++
-// Producer
-acquire(empty) // Try putting sth in the current empty element, so producer cannot access to the current element
-acquire(mutex) // Consumer cannot access to the buffer
-put_item();
-release(mutex)
-release(full) // Consumer can access to the current element
+while:
+	// Producer
+	acquire(empty) //
+	acquire(mutex) // Consumer has to wait for producer
+	put_item()
+	release(mutex)
+	release(full)
 
-// Consumer (Just opposite of producer)
-acquire(full); // Try taking the current full element ,so consumer cannot access to the current element
-acquire(mutex); // Producer cannot access to the buffer
-take_Item();
-release(mutex);
-release(empty); // Producer can access to the current element
+	// Consumer
+	acquire(full); //
+	acquire(mutex); // Producer has to wait for consumer
+	take_item()
+	release(mutex);
+	release(empty);
 ~~~
 
 ## Readers, writer problem
