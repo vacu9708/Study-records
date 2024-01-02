@@ -91,20 +91,21 @@ The semaphores which will be used here are:
 - full, a counting semaphore whose initial value is 0, since initially no slots are full.
 
 ~~~c++
+total = [0]
 while:
 	// Producer
 	acquire(empty) // A slot is taken
 	acquire(mutex) // Consumer has to wait for producer
-	put_item()
+	put_item(total)
 	release(mutex)
 	release(full)
 
 	// Consumer
-	acquire(full); // A slot gets available
-	acquire(mutex); // Producer has to wait for consumer
-	take_item()
-	release(mutex);
-	release(empty);
+	acquire(full) // A slot gets available
+	acquire(mutex) // Producer has to wait for consumer
+	take_item(total)
+	release(mutex)
+	release(empty)
 ~~~
 
 ## Readers, writer problem
