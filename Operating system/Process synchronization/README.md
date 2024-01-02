@@ -88,19 +88,19 @@ producer : data putter / consumer : data taker<br>
 The semaphores which will be used here are:
 - mutex, a binary semaphore which is used to acquire and release the lock.
 - empty, a counting semaphore whose initial value is the number of slots in the buffer, since initially all slots are empty.
-- full, a counting semaphore whose initial value is 0.
+- full, a counting semaphore whose initial value is 0, since initially no slots are full.
 
 ~~~c++
 while:
 	// Producer
-	acquire(empty) //
+	acquire(empty) // A slot is taken
 	acquire(mutex) // Consumer has to wait for producer
 	put_item()
 	release(mutex)
 	release(full)
 
 	// Consumer
-	acquire(full); //
+	acquire(full); // A slot gets available
 	acquire(mutex); // Producer has to wait for consumer
 	take_item()
 	release(mutex);
