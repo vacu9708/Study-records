@@ -7,6 +7,7 @@
 Lock mechanisms are used to protect shared resources from concurrent access.
 - **Mutex(mutual exclusion)** : Used to ensure that a shared resource is not accessed by multiple threads. It has two states: locked and unlocked.
 - **Semaphore** : While a mutex is a binary semaphore, a semaphore takes into account multiple processes accessing a shared resource.
+- **Monitor**: Unlike mutexes, where a thread must explicitly lock and unlock, monitors manage locks implicitly. When a thread enters a monitor's method, it automatically acquires the lock, and when it exits the method (either normally or by waiting on a condition variable), it automatically releases the lock. Monitors can use a condition variables, which are used to block a thread until a particular condition is met.
 
 ### How to implement the lock
 - **Spinlock(busy waiting)**: When a thread attempts to acquire a spinlock that is already held by another thread, it will continuously check (or "spin") until the lock becomes available. This approach can be efficient if the expected wait time is short since the thread remains active and does not enter a sleep state. However, it can also waste CPU cycles if the lock is held for a long time.
@@ -35,7 +36,7 @@ void release(Semaphore* S) { // Wakes up a process that wanted to take a shared 
 }
 ~~~
 
-## Example with multi-processing
+## Example using a lock for multi-processing
 There is no semaphore that protects the critical section, so the output is unstable.
 ~~~python
 from multiprocessing import Process, Value, Lock
@@ -63,10 +64,10 @@ There is a semaphore(mutex) that protects the critical section, so the output is
 from multiprocessing import Process, Value, Lock
 
 def add_100(number, lock):
-    for i in range(100):
-        lock.acquire() # Acquire semaphore
+    for i in range(100): # with lock: <- This "monitor" can be used instead of specifying lock.acquire() and release() manually.
+        lock.acquire()
         number.value += 1 # Critical section
-        lock.release() # Release semaphore
+        lock.release()
 
 
 if __name__ == "__main__":
