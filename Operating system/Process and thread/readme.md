@@ -1,5 +1,5 @@
 # A process consists of
-![image](https://user-images.githubusercontent.com/67142421/177061507-70e77e7f-1af0-4d3c-92a8-b0b5ba706bc2.png)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/c0f1db93-37ff-489e-bc32-7263dd5791e8)
 
 - **Code** : stores the instructions of the program
 - **Data** : stores static data
