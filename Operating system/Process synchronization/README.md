@@ -3,31 +3,35 @@
 - **Race condition** is a situation where multiple processes are accessing a shared resource(**critical section**) simultaneously, which might affect **data consistency**.
 - **Process Synchronization** refers to aligning the execution timing of processes to ensure that shared resources are accessed by only one process at a time to maintain **data consistency**.
 
-### Lock mechanisms used to protect shared resources from concurrent access
-- **Spinlock(busy waiting)** : When a thread attempts to acquire a spinlock that is already held by another thread, it will continuously check (or "spin") until the lock becomes available. This approach can be efficient if the expected wait time is short since the thread remains active and does not enter a sleep state. However, it can also waste CPU cycles if the lock is held for a long time.
-- **Semaphore** : used to solve the busy waiting problem by checking whether a shared resource is in use before a process enters the critical section.
-- **Mutex(mutual exclusion)** : a type of semaphore. While a normal semaphore allows multiple processes to share a resource, a mutex is a binary semaphore. In other words, it has only two states: locked and unlocked.
+## Lock mechanisms
+Lock mechanisms are used to protect shared resources from concurrent access.
+- **Mutex(mutual exclusion)** : Used to ensure that a shared resource is not accessed by multiple threads. It has two states: locked and unlocked.
+- **Semaphore** : While a mutex is a binary semaphore, a semaphore takes into account multiple processes accessing a shared resource.
+
+### How to implement the lock
+- **Spinlock(busy waiting)**: When a thread attempts to acquire a spinlock that is already held by another thread, it will continuously check (or "spin") until the lock becomes available. This approach can be efficient if the expected wait time is short since the thread remains active and does not enter a sleep state. However, it can also waste CPU cycles if the lock is held for a long time.
+- **Process queue**: The PCB of a waiting process is put in a queue and popped when the shared resource has become available.
 
 ~~~c++
 class Semaphore{
-	int waiting_processes; // means the number of waiting processes.
-	list process_queue;
+	int waiting_processes; // number of waiting processes.
+	Queue process_queue;
 }
 
-void acquire(Semaphore *S, Process process){ // When a process wants to take shared resource 
-    if ( S->waiting_processes > 0 ) { // If another process is using the shared resource.
-        S->process_queue.enqueue(process); // Put the process in queue
-        block(process);
+void acquire(Semaphore* S, Process* process){ // When a process wants to take a shared resource 
+    if ( S->waiting_processes > 0 ) { // Put the process to sleep if other processes are using the shared resource
+        S->process_queue.enqueue(process);
+        sleep(process);
     }
-    S->waiting_processes++; // Try taking shared resource
+    S->waiting_processes++;
 }
 
-void release(Semaphore *S) { // When stopping the process that has taken the resource
-    if ( S->waiting_processes > 0 ) { // If another process is using the shared resource.
-        process=S->process_queue.dequeue(); // Execute a process in queue
+void release(Semaphore* S) { // Wakes up a process that wanted to take a shared resource
+    if ( S->waiting_processes > 0 ) { 
+        process=S->process_queue.dequeue();
         wakeup(process);
     }
-    S->waiting_processes--; // Release shared resource
+    S->waiting_processes--;
 }
 ~~~
 
