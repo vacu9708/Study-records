@@ -56,7 +56,7 @@ When a process accesses data, the virtual memory address is translated to a phys
 - Overhead of page table management.
 - Performance can be affected by the paging process, especially if the system frequently accesses data that is not in the main memory (page faults).
 
-## Page replacement
+## Page replacement (swapping)
 Page replacement refers to a scenario in which a page from the main memory should be replaced by a page from the secondary memory. Page replacement occurs due to page faults.<br>
 A Page Fault occurs when a requested page is currently not loaded into the main physical memory.
 
