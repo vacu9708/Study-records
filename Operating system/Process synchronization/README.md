@@ -1,6 +1,6 @@
 - **Data consistency** refers to whether the same data kept at different places do or do not match. 
 - **Critical section** is a code segment where shared resources are accessed.
-- **Race condition** is a situation where multiple processes are accessing a shared resource simultaneously and it affects **data consistency**.
+- **Race condition** is a situation where multiple processes are accessing a shared resource(**critical section**) simultaneously, which might affect **data consistency**.
 - **Process Synchronization** refers to aligning the execution timing of processes to ensure that shared resources are accessed by only one process at a time to maintain **data consistency**.
 
 ### Lock mechanisms used to protect shared resources from concurrent access
