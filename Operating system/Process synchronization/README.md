@@ -1,6 +1,7 @@
-- A **race condition** is a situation where multiple processes are accessing shared data simultaneously and it affects ***data consistency***.<br>
-- **Process Synchronization** refers to aligning the execution timing of processes to ensure that shared resources are accessed by only one process at a time to maintain data consistency.<br>
-- The **critical section** is a code segment that can be accessed by only one process at a time. Process Synchronization is to manage the critical section.<br>
+- **Data consistency** refers to whether the same data kept at different places do or do not match. 
+- **Critical section** is a code segment where shared resources are accessed.
+- **Race condition** is a situation where multiple processes are accessing a shared resource simultaneously and it affects **data consistency**.
+- **Process Synchronization** refers to aligning the execution timing of processes to ensure that shared resources are accessed by only one process at a time to maintain **data consistency**.
 
 ### Lock mechanisms used to protect shared resources from concurrent access
 - **Spinlock(busy waiting)** : When a thread attempts to acquire a spinlock that is already held by another thread, it will continuously check (or "spin") until the lock becomes available. This approach can be efficient if the expected wait time is short since the thread remains active and does not enter a sleep state. However, it can also waste CPU cycles if the lock is held for a long time.
@@ -107,7 +108,7 @@ while:
 ~~~
 
 ## Readers, writer problem
-Readers do not change data, so data consistency is maintained. Therefore readers can access shared data at the same time.<nt>
+Readers do not change data and maintains data consistency. Therefore readers can access shared data at the same time.<nt>
 However, in the middle of writing, neither readers nor writers can access it. So it is simple because only mutex is needed.<br>
 
 ~~~c++
