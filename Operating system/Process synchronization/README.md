@@ -38,7 +38,7 @@ from multiprocessing import Process, Value, Lock
 
 def add_100(number):
     for i in range(100):
-        number.value += 1
+        number.value += 1 # Critical section
 
 if __name__ == "__main__":
     shared_number = Value('i', 0) # i = integer
@@ -61,7 +61,7 @@ from multiprocessing import Process, Value, Lock
 def add_100(number, lock):
     for i in range(100):
         lock.acquire() # Acquire semaphore
-        number.value += 1
+        number.value += 1 # Critical section
         lock.release() # Release semaphore
 
 
