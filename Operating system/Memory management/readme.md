@@ -42,6 +42,8 @@ Non-contiguous memory allocation is a method of storing data in multiple memory 
 ### Challenges
 - More complex memory management.
 - Overhead of maintaining page tables or segment tables.
+## Paging
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/c8375793-7802-4df8-bdd2-dbeee33c29e5)
 
 # Virtual memory
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/10b1de02-1f68-431f-b03f-f869be8cffb2)<br>
