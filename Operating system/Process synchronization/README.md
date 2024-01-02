@@ -6,7 +6,7 @@
 ## Lock mechanisms
 Lock mechanisms are used to protect shared resources from concurrent access.
 - **Mutex(mutual exclusion)** : Used to ensure that a shared resource is accessed only by one thread at a time. It has two states: locked and unlocked.
-- **Semaphore** : While a mutex is a binary semaphore, a semaphore can allow more than one thread to access a shared resource but limits the number.
+- **Semaphore** : A mutex is a binary semaphore. A semaphore can allow more than one thread to access a shared resource but limits the number.
 - **Monitor**: Unlike mutexes, where a thread must explicitly lock and unlock, monitors manage locks implicitly. When a thread enters a monitor's method, it automatically acquires the lock, and when it exits the method (either normally or by waiting on a condition variable), it automatically releases the lock. Monitors can use a condition variables, which are used to block a thread until a particular condition is met.
 
 ### How to implement the lock
@@ -15,7 +15,7 @@ Lock mechanisms are used to protect shared resources from concurrent access.
 
 ~~~c++
 class Semaphore{
-	int shared_resource; // 1
+	int shared_resource; // 1 or more
 	Queue process_queue;
 }
 
