@@ -1,3 +1,30 @@
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/71f0e5a2-b821-4959-94ba-4b104463b3f8)
+# Negative Representation in Binary
+Negative numbers in binary are represented by calculating the two's complement and using this value as the negative number.<br>
+The dictionary definition of two's complement is 'the value obtained by subtracting a number from a larger power of 2, 2^n'.<br>
+For example, the two's complement of 011 is the result of subtracting 011 from a larger 2^n, which is 100, resulting in 001.<br>
+Simply put, it's 'flipping all 0s and 1s, then adding 1 to this value'.<br>
+
+### Reason for Using Two's Complement
+Computers use full adders in their logic circuits to process all operations (there are no subtraction units).<br>
+Using the two's complement allows for performing subtraction using addition.<br>
+`Example`
+The two's complement and ten's complement work in the same way, so using the ten's complement as an example:
+**54 - 34**
+1. 2's complement of 34 = 100 - 34 = 66
+2. 54 + 66 = 120
+3. Discard carry → 20
+
+**34 - 54**
+1. 10's complement of 54 = 100 - 54 = 46
+2. 34 + 46 = 80
+3. 2's complement of 80 = 100 - 80 = 20 (attach minus)
+
+# Hexadecimal
+Binary numbers are long, so hexadecimal is used to shorten binary numbers.
+One hexadecimal character (0-9, A-F) can represent 2^4 numbers, meaning it can represent 4 bits.
+`Example`: 1101 0101 → D5
+
 # ✨Fixed point and Floating point
 ## Fixed point representation
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/153f813c-9b4d-48da-8758-cd4fea293400)<br>
