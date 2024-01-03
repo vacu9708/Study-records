@@ -33,7 +33,7 @@ This flexibility allows for more powerful instructions but can make instruction 
 - Because there is a wide variety of instructions, tasks can be performed with a fewer number of instructions.
 `Disadvantages`
 - As the instructions are of variable length, the time to process each instruction is not constant, and executing a complex instruction with multiple operations might require multiple clock cycles. (This can be a critical obstacle for pipelining.)
-- 
+
 ## RISC (Reduced Instruction Set Computer)
 RISC architectures have fixed-length instructions and aim for simplicity and uniformity in their instruction encoding.
 `Advantages`
