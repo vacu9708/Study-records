@@ -63,7 +63,7 @@ The OS maintains a page table to track which virtual pages are mapped to which p
 The virtual memory address is translated to a physical address using the page table.<br>
 For fast page access, the page table is stored in a cache called **TLB**.(Translation Lookaside Buffer)<br>
 
-## page-replacement algorithmss
+## Page-replacement algorithms
 * **First-In First-Out** : This is the simplest. the oldest page is moved out.
 * **Optimal page replacement** : a page that will be used the least is moved out. This reduces page-faults the most theoretically
 but it is the problem that such a page is hard to predict.
