@@ -29,16 +29,16 @@ A 64-bit computer includes a 64-bit memory address register that can distinguish
 ## CISC (Complex Instruction Set Computer)
 In a CISC architecture, instructions can vary in length(variable-length instructions).<br>
 This flexibility allows for more powerful instructions but can make instruction decoding and pipelining more challenging.<br>
-`Advantages`
+#### `Advantages`
 - Because there is a wide variety of instructions, tasks can be performed with a fewer number of instructions.
-`Disadvantages`
+#### `Disadvantages`
 - As the instructions are of variable length, the time to process each instruction is not constant, and executing a complex instruction with multiple operations might require multiple clock cycles. (This can be a critical obstacle for pipelining.)
 
 ## RISC (Reduced Instruction Set Computer)
 RISC architectures have fixed-length instructions and aim for simplicity and uniformity in their instruction encoding.
-`Advantages`
+#### `Advantages`
 - The instructions are standardized, and since each instruction is executed in 1 clock cycle, it is optimized for instruction pipelining.
-`Disadvantages`
+#### `Disadvantages`
 - The number of instructions that make up a program is large (the size of the compiled program is big).
 
 ## Fetching cycle
