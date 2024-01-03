@@ -26,3 +26,9 @@ These hazards include:
 
 Modern CPUs employ various strategies to mitigate these hazards and improve pipeline efficiency, such as out-of-order execution, speculative execution, and advanced branch prediction techniques.<br>
 These techniques aim to keep the pipeline filled with instructions and minimize stalls, ultimately enhancing the CPU's overall performance.
+
+## Fetching cycle
+1. The memory address of the instruction is transferred to MAR
+2. The instruction located on the address is fetched and stored in MBR
+3. The value of PC is increased to fetch the next instruction
+4. The instruction stored in MBR is transferred to IR
