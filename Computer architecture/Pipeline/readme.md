@@ -34,7 +34,7 @@ Out-of-order execution minimizes these stalls by finding and executing other ind
  1. add a, 1
  2. add b, a
  3. add c, b
- 4. 5. 6. 7. and so on
+4, 5, 6, 7., and so on
 
 In this case, the third instruction must wait until the first and second are completed.<br>
 Out-of-order execution is used to process subsequent instructions that do not depend on the third instruction while waiting for it. This prevents the pipeline from stalling.
