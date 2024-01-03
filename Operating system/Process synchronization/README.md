@@ -37,7 +37,7 @@ void release(Semaphore* S) { // Wakes up a process that wanted to take a shared 
 ~~~
 
 ## Example using a lock for multi-processing
-There is no semaphore that protects the critical section, so the output is unstable.
+**Without a mutex**: There is no semaphore that protects the critical section, so the output is unstable.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
@@ -59,7 +59,7 @@ if __name__ == "__main__":
 ### Output
 ![image](https://user-images.githubusercontent.com/67142421/177394795-d4fc8ac8-d465-4f08-b00b-40202a48e261.png)
 
-There is a semaphore(mutex) that protects the critical section, so the output is guaranteed.
+**With a mutex**: There is a semaphore(mutex) that protects the critical section, so the output is guaranteed.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
@@ -69,6 +69,10 @@ def add_100(number, lock):
         number.value += 1 # Critical section
         lock.release()
 
+def add_100_monitor(number, lock):
+    for _ in range(100):
+        with lock:  # This will acquire the lock and automatically release it after the block
+            number.value += 1  # Critical section
 
 if __name__ == "__main__":
 
