@@ -33,7 +33,7 @@ Out-of-order execution minimizes these stalls by finding and executing other ind
 ### Example
 1. add a, 1
 2. add b, a
-3. add c, b
+3. add c, b<br>
 4, 5, 6, 7., and so on
 
 In this case, the third instruction must wait until the first and second are completed.<br>
