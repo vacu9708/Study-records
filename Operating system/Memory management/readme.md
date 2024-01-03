@@ -31,7 +31,6 @@ Non-contiguous memory allocation is a method of storing data in multiple memory 
 - Overhead of maintaining page tables or segment tables.
 
 # Virtual memory
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/10b1de02-1f68-431f-b03f-f869be8cffb2)<br>
 Virtual memory is a memory management technique that creates an illusion of a very large memory space by using both physical memory (RAM) and a part of secondary storage (like a hard disk).<br>
 Virtual memory inherently relies on non-contiguous memory allocation.
 ### Benefits
@@ -59,6 +58,7 @@ A page fault occurs when a requested page is currently not loaded into the main 
 - **Page-in**: If the data is not in RAM, a page fault occurs, and the OS loads the required data from the secondary storage to the main memory.
 
 ### Page table
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/10b1de02-1f68-431f-b03f-f869be8cffb2)<br>
 The OS maintains a page table to track which virtual pages are mapped to which physical frames of memory.<br>
 The virtual memory address is translated to a physical address using the page table.<br>
 For fast page access, the page table is stored in a cache called **TLB**.(Translation Lookaside Buffer)<br>
