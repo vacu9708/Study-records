@@ -53,7 +53,7 @@ This issue can be resolved by dividing processes into uniform units called "page
 
 ### Page swapping(Page replacement)
 Page replacement refers to a scenario in which a page from the main memory is replaced by a page from the secondary memory. Page replacement occurs due to page faults.<br>
-A page fault occurs when a requested page is currently not loaded into the main physical memory.<br>
+A page fault occurs when a requested page is currently not loaded into the main physical memory.(This is checked using the "valid bit" in the page table entry)<br>
 - **Page-out**: Moving a page from the main memory to the secondary memory.
 - **Page-in**: If the data is not in RAM, a page fault occurs, and the OS loads the required data from the secondary storage to the main memory.
 
