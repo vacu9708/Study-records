@@ -30,7 +30,7 @@ A 64-bit computer includes a 64-bit memory address register that can distinguish
 In a CISC architecture, instructions can vary in length(variable-length instructions).<br>
 This flexibility allows for more powerful instructions but can make instruction decoding and pipelining more challenging.<br>
 #### `Advantages`
-- Because there is a wide variety of instructions, tasks can be performed with a fewer number of instructions.
+- Since there is a wide variety of instructions, tasks can be performed with a fewer number of instructions.
 #### `Disadvantages`
 - As the instructions are of variable length, the time to process each instruction is not constant, and executing a complex instruction with multiple operations might require multiple clock cycles. (This can be a critical obstacle for pipelining.)
 
