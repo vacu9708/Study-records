@@ -15,7 +15,7 @@ Lock mechanisms are used to protect shared resources from concurrent access.
 
 ~~~c++
 class Semaphore{
-	int shared_resource; // 1 or more
+	int shared_resource; // 1 or more (If this is initialized with the value 1, it can function similarly to a mutex.)
 	Queue process_queue;
 }
 
