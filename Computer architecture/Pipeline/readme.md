@@ -31,9 +31,9 @@ These techniques aim to keep the pipeline filled with instructions and minimize 
 In an in-order execution, instructions are processed sequentially the entire pipeline might stall until the hazard is resolved (e.g., waiting for data to be fetched from memory).<br>
 Out-of-order execution minimizes these stalls by finding and executing other independent instructions in the meantime.
 ### Example
- 1. add a, 1
- 2. add b, a
- 3. add c, b
+1. add a, 1
+2. add b, a
+3. add c, b
 4, 5, 6, 7., and so on
 
 In this case, the third instruction must wait until the first and second are completed.<br>
