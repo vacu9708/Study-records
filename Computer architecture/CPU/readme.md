@@ -27,6 +27,7 @@ A 32-bit computer includes a 32-bit memory address register that can distinguish
 A 64-bit computer includes a 64-bit memory address register that can distinguish 2^64 addresses(almost infinite size).
 
 # Instruction set
+If the instruction set is different, it means the assembly language is different too, which implies that only CPUs with the same instruction set can understand each other's commands.
 ## CISC (Complex Instruction Set Computer)
 In a CISC architecture, instructions can vary in length(variable-length instructions).<br>
 This flexibility allows for more powerful instructions but can make instruction decoding and pipelining more challenging.<br>
