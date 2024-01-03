@@ -1,36 +1,30 @@
 # Contiguous memory allocation
 In **contiguous memory allocation**, the whole process is allocated to a contiguous partition of memory.
-## Fixed(or static) partitioning
-This is the oldest and simplest. The size of a partition is fixed in RAM when allocated, which can cause big internal fragmentation.
 
-## Variable(or dynamic) partitioning
-The partition size varies according to the need of the process, which can cause big external fragmentation.
 ### Initial memory state
 ![image](https://user-images.githubusercontent.com/67142421/178162536-1a5042e4-9e23-489b-bd69-88ce7df6dbd3.png)
 
 ### First fit
 ![image](https://user-images.githubusercontent.com/67142421/178162569-8906b416-30f6-4fd2-a24b-36a424388021.png)<br>
-The partition is allocated which is first sufficient from the top of memory. The OS doesn’t search for the best partition but just the first partition available with a sufficient size.<br>
-* It is fast in processing but can waste a lot of memory.
+The partition is allocated to the first sufficiently large space from the top of memory. The OS searches for the first available partition with a sufficient size.
+- Fast in processing but can waste a lot of memory.
 
 ### Best fit
 ![image](https://user-images.githubusercontent.com/67142421/178162618-28cc7cab-20f1-4731-b0da-625dfd91d433.png)<br>
-The entire list of free partitions is searched and the smallest adequate hole is allocated.
-* Slower process than First fit.
-* The minimum possible space in the memory is allocated, making memory management efficient. To save memory from getting wasted, it is the best method.
+The entire list of free partitions is searched through to find the smallest hole that is adequately large.
+- By allocating the smallest adequate hole, it minimizes wasted space in memory. This makes it an effective method for saving memory and reducing fragmentation, particularly in scenarios where numerous small allocations are made.
+- Slower than First fit.
 
 ### Worst fit
 ![image](https://user-images.githubusercontent.com/67142421/178162994-d644b1ff-6a79-4b3c-a1eb-4b96f1020cf8.png)<br>
 The entire list of free partitions is searched and the biggest hole possible is allocated.
 
-# Types of memory fragmentation
-### Internal fragmentation
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/a9694841-3cd6-4fff-951f-b6a445b0d724)<br>
-When a piece of allocated memory leaves some unused space.<br>
-For example, when a piece memory whose size is 10bytes has 8bytes of data, leaving 2 bytes unused
-### External framentation
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2bf06256-ac2a-4471-91b4-4f371fa8f396)<br>
-When memory space between pieces of allocated memory is unavailable.
+
+# Swapping
+Swapping refers to the process of temporarily moving processes that are not currently being executed out of the memory to a secondary storage device. This technique is used to free up space in the limited memory. By using swapping, the effectively available memory space can be increased.
+- Swap Space: This is the area on a secondary storage device where processes are temporarily stored. Swap space acts as an extension of the system's physical memory, allowing for more processes to be loaded than would otherwise fit into the physical RAM.
+- Swap-Out: This process involves moving a process from the main memory to the swap space. Swap-out is typically performed when the system needs to free up RAM for other processes or when the system determines that a process is idle or less critical.
+- Swap-In: Conversely, swap-in is the process of moving a process back from the swap space into the main memory. This occurs when the process is needed for execution. The system will then allocate space in the physical memory for the process and reload it from the swap space.
 
 # Non-contiguous memory allocation
 Non-contiguous memory allocation is a method of storing data in multiple memory locations rather than in a single contiguous block.
@@ -42,8 +36,14 @@ Non-contiguous memory allocation is a method of storing data in multiple memory 
 ### Challenges
 - More complex memory management.
 - Overhead of maintaining page tables or segment tables.
+- 
 ## Paging
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/c8375793-7802-4df8-bdd2-dbeee33c29e5)
+
+### Internal fragmentation
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/a9694841-3cd6-4fff-951f-b6a445b0d724)<br>
+When a piece of allocated memory leaves some unused space.<br>
+For example, when a piece memory whose size is 10bytes has 8bytes of data, leaving 2 bytes unused
 
 # Virtual memory
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/10b1de02-1f68-431f-b03f-f869be8cffb2)<br>
@@ -58,7 +58,7 @@ When a process accesses data, the virtual memory address is translated to a phys
 - Overhead of page table management.
 - Performance can be affected by the paging process, especially if the system frequently accesses data that is not in the main memory (page faults).
 
-## Page replacement (swapping)
+# Page replacement (swapping in the paging system)
 Page replacement refers to a scenario in which a page from the main memory should be replaced by a page from the secondary memory. Page replacement occurs due to page faults.<br>
 A Page Fault occurs when a requested page is currently not loaded into the main physical memory.
 
