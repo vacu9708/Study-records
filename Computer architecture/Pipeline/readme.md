@@ -37,7 +37,7 @@ Out-of-order execution minimizes these stalls by finding and executing other ind
 4. 5, 6, 7., and so on
 
 In this case, the third instruction must wait until the first and second are completed.<br>
-Out-of-order execution is used to process subsequent instructions that do not depend on the third instruction while waiting for it. This prevents the pipeline from stalling.
+Out-of-order execution is used to process subsequent instructions that do not depend on the third instruction earlier while waiting for it. This prevents the pipeline from stalling.
 
 ## Fetching cycle
 1. The memory address of the instruction is transferred to MAR
