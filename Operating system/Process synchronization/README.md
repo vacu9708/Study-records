@@ -71,7 +71,7 @@ def add_100(number, lock):
 
 def add_100_monitor(number, lock):
     for _ in range(100):
-        with lock:  # This will acquire the lock and automatically release it after the block
+        with lock:  # Monitor used. This will acquire the lock and automatically release it after the block
             number.value += 1  # Critical section
 
 if __name__ == "__main__":
