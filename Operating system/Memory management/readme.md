@@ -19,12 +19,6 @@ The entire list of free partitions is searched through to find the smallest hole
 ![image](https://user-images.githubusercontent.com/67142421/178162994-d644b1ff-6a79-4b3c-a1eb-4b96f1020cf8.png)<br>
 The entire list of free partitions is searched and the biggest hole possible is allocated.
 
-# Swapping
-Swapping refers to the process of temporarily moving processes that are not currently being executed out of the memory to a secondary storage device. This technique is used to free up space in the limited memory. By using swapping, the effectively available memory space can be increased.
-- Swap Space: This is the area on a secondary storage device where processes are temporarily stored. Swap space acts as an extension of the system's physical memory, allowing for more processes to be loaded than would otherwise fit into the physical RAM.
-- Swap-Out: This process involves moving a process from the main memory to the swap space. Swap-out is typically performed when the system needs to free up RAM for other processes or when the system determines that a process is idle or less critical.
-- Swap-In: Conversely, swap-in is the process of moving a process back from the swap space into the main memory. This occurs when the process is needed for execution. The system will then allocate space in the physical memory for the process and reload it from the swap space.
-
 # Non-contiguous memory allocation
 Non-contiguous memory allocation is a method of storing data in multiple memory locations rather than in a single contiguous block.
 ### Techniques
@@ -36,36 +30,47 @@ Non-contiguous memory allocation is a method of storing data in multiple memory 
 - More complex memory management.
 - Overhead of maintaining page tables or segment tables.
 
-## Paging
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/c8375793-7802-4df8-bdd2-dbeee33c29e5)<br>
-External fragmentation occurs when processes of various sizes are allocated memory space contiguously.<br>
-This issue can be resolved by dividing processes into uniform units called "pages" and slicing the memory space into equally sized units known as "frames", which are the same size as pages. Then, pages are allocated to frames.
-
-### Internal fragmentation
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/a9694841-3cd6-4fff-951f-b6a445b0d724)<br>
-When a piece of allocated memory leaves some unused space.<br>
-For example, when a piece memory whose size is 10bytes has 8bytes of data, leaving 2 bytes unused
-
-## Virtual memory
+# Virtual memory
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/10b1de02-1f68-431f-b03f-f869be8cffb2)<br>
 Virtual memory is a memory management technique that creates an illusion of a very large memory space by using both physical memory (RAM) and a part of secondary storage (like a hard disk).<br>
 Virtual memory inherently relies on non-contiguous memory allocation.
-### How It Works
-The operating system maintains a page table to track which virtual pages are mapped to which physical frames of memory.
-When a process accesses data, the virtual memory address is translated to a physical address. If the data is not in RAM, a page fault occurs, and the OS loads the required data from the disk to RAM(page replacement).
 ### Benefits
 - Provides a large address space to processes, irrespective of the actual physical memory available.
 ### Considerations
 - Overhead of page table management.
 - Performance can be affected by the paging process, especially if the system frequently accesses data that is not in the main memory (page faults).
 
-## Page replacement (swapping in the paging system)
-Page replacement refers to a scenario in which a page from the main memory should be replaced by a page from the secondary memory. Page replacement occurs due to page faults.<br>
-A Page Fault occurs when a requested page is currently not loaded into the main physical memory.
+## Swapping in contiguous memory allocation
+Swapping refers to the process of temporarily moving processes that are not currently being executed out of the memory to a secondary storage device. This technique is used to free up space in the limited memory. By using swapping, the effectively available memory space can be increased.
+- Swap Space: This is the area on a secondary storage device where processes are temporarily stored. Swap space acts as an extension of the system's physical memory, allowing for more processes to be loaded than would otherwise fit into the physical RAM.
+- Swap-Out: This process involves moving a process from the main memory to the swap space. Swap-out is typically performed when the system needs to free up RAM for other processes or when the system determines that a process is idle or less critical.
+- Swap-In: Conversely, swap-in is the process of moving a process back from the swap space into the main memory. This occurs when the process is needed for execution. The system will then allocate space in the physical memory for the process and reload it from the swap space.
 
-### page-replacement algorithmss
+## Paging
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/c8375793-7802-4df8-bdd2-dbeee33c29e5)<br>
+- External fragmentation occurs when processes of various sizes are allocated memory space contiguously.<br>
+This issue can be resolved by dividing processes into uniform units called "pages" and slicing the memory space into equally sized units known as "frames", which are the same size as pages. Then, pages are allocated to frames.<br>
+- Paging is typically used in conjunction with virtual memory.
+
+### Page swapping(Page replacement)
+Page replacement refers to a scenario in which a page from the main memory is replaced by a page from the secondary memory. Page replacement occurs due to page faults.<br>
+A page fault occurs when a requested page is currently not loaded into the main physical memory.<br>
+- **Page-out**: Moving a page from the main memory to the secondary memory.
+- **Page-in**: If the data is not in RAM, a page fault occurs, and the OS loads the required data from the secondary storage to the main memory.
+
+### Page table
+The OS maintains a page table to track which virtual pages are mapped to which physical frames of memory.<br>
+The virtual memory address is translated to a physical address using the page table.<br>
+For fast page access, the page table is stored in a cache called **TLB**.(Translation Lookaside Buffer)<br>
+
+## page-replacement algorithmss
 * **First-In First-Out** : This is the simplest. the oldest page is moved out.
 * **Optimal page replacement** : a page that will be used the least is moved out. This reduces page-faults the most theoretically
 but it is the problem that such a page is hard to predict.
 * **Least-Recently-Used** : exploits the fact that pages that were not used recently have a high probability not to be used constantly.
 It reduces page-faults less than the optimal page replacement but is one of the practically best algorithms.
+
+## Internal fragmentation
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/a9694841-3cd6-4fff-951f-b6a445b0d724)<br>
+When a piece of allocated memory leaves some unused space.<br>
+For example, when a piece memory whose size is 10bytes has 8bytes of data, leaving 2 bytes unused
