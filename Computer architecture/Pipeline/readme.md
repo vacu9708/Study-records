@@ -27,6 +27,18 @@ These hazards include:
 Modern CPUs employ various strategies to mitigate these hazards and improve pipeline efficiency, such as out-of-order execution, speculative execution, and advanced branch prediction techniques.<br>
 These techniques aim to keep the pipeline filled with instructions and minimize stalls, ultimately enhancing the CPU's overall performance.
 
+## Out-of-Order Execution (Async)
+In an in-order execution, instructions are processed sequentially the entire pipeline might stall until the hazard is resolved (e.g., waiting for data to be fetched from memory).<br>
+Out-of-order execution minimizes these stalls by finding and executing other independent instructions in the meantime.
+### Example
+ 1. add a, 1
+ 2. add b, a
+ 3. add c, b
+ 4. 5. 6. 7. and so on
+
+In this case, the third instruction must wait until the first and second are completed.<br>
+Out-of-order execution is used to process subsequent instructions that do not depend on the third instruction while waiting for it. This prevents the pipeline from stalling.
+
 ## Fetching cycle
 1. The memory address of the instruction is transferred to MAR
 2. The instruction located on the address is fetched and stored in MBR
