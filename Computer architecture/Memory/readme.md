@@ -1,3 +1,5 @@
+
+
 # ✨Cache memory
 In computing, a **cache** is a hardware or software component that stores data so that future requests for that data can be served faster.<br>
 It is used to decrease the bottleneck between a fast device and a slow device.<br>
@@ -8,8 +10,8 @@ L1 cache is in the CPU and searched first. L2 is between the CPU and RAM. L3 is 
 
 ## Cache memory works based on these principles
 `Locality of reference`
-- **Temporal locality** : Memory locations that have been referenced are likely to be referenced shortly again.
-- **Space locality** : Memory locations close to those that have been referenced are likely to be referenced shortly.
+- **Temporal locality** : Memory locations that have been referenced are likely to be referenced shortly again. For example, in a program that outputs multiples of 2, the number 2 is used continuously.
+- **Space locality** : Memory locations close to those that have been referenced are likely to be referenced shortly. For example, in the memory space of a program that prints the multiplication table, numbers from 1 to 9 are gathered and stored.
 
 ## Cache hit and Cache miss
 - On a cache hit : the CPU can quickly retrieve data from the cache.
@@ -23,10 +25,10 @@ L1 cache is in the CPU and searched first. L2 is between the CPU and RAM. L3 is 
 In this structure multiple addresses of RAM map to a single address in cache memory.<br>
 It works the same way as hash table. Therefore, there is a possibility that a collision occurs. (conflict miss)
 
-* **Fully Associative Cache**
+- **Fully Associative Cache**
 A method by which data is stored in any empty location. It is simple when storing, but searching is the problem because the cache has to be searched until sought data is found.
 
-* **Set Associative Cache**
+- **Set Associative Cache**
 It is a trade-off between direct-mapped cache and fully associative cache. A hybrid cache that combines the associative cache and the direct-mapped cache.<br>
 A set-associative cache can be imagined as a (n by m)matrix.<br>
 The cache is divided into 'n' rows and each row contains 'm' columns. A memory block in RAM is first mapped onto a row and then placed into any column of a row.
