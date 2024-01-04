@@ -1,3 +1,22 @@
+# SSD
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/8fa0185b-57ff-48c8-a05f-7f7343c7aa22)<br>
+Floating gate transistor
+
+# DRAM(Dynamic RAM)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/f96a82f1-771e-43b9-b3df-a1fb2f80aaa8)<br>
+The stored data dynamically changes (disappears). It is volatile because it requires refreshing the data stored in the capacitor.
+
+# SRAM(Static RAM)
+![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/60a9114b-c3c4-486c-924d-2f35167325c3)<br>
+Flip-flop is used, so the data is maintained without refreshing
+
+| Feature | DRAM    | SRAM    |
+|---------|---------|---------|
+| Refresh | O       | X       |
+| Speed   | Bad     | Good    |
+| Price   | Cheap   | Expensive |
+| Density | High    | Low     |
+| Usage   | RAM     | Cache   |
 
 
 # ✨Cache memory
