@@ -8,7 +8,7 @@ The stored data dynamically changes (disappears). It is volatile because it requ
 
 # SRAM(Static RAM)
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/60a9114b-c3c4-486c-924d-2f35167325c3)<br>
-Flip-flop is used, so the data is maintained without refreshing
+SRAMs are made up of flip-flops, so the data is maintained without refreshing
 
 | Feature | DRAM    | SRAM    |
 |---------|---------|---------|
