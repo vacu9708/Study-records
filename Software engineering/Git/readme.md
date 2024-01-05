@@ -17,8 +17,15 @@ git branch -M <child branch>
 git push -u origin <child branch>
 ~~~
 # How to pull from a parent branch
+~~~
 git pull origin <parent branch>
-
+~~~
+# How to push
+~~~
+git add .
+git commit -m "message"
+git push
+~~~
 # How to revert the latest push
 ~~~
 git pull
