@@ -1,3 +1,4 @@
+[Memory in computer architecture](https://github.com/vacu9708/Study-records/tree/main/Computer%20architecture/Memory)
 # Contiguous memory allocation
 In **contiguous memory allocation**, the whole process is allocated to a contiguous partition of memory.
 
