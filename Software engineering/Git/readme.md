@@ -6,7 +6,7 @@ Git is a distributed version control system used for tracking changes in source 
 3. Personal access token -> Tokens
 4. Generate new tokens
 5. Set the access scopes and click Generate token
-6. Use the token for github authentication
+6. Use the token instead of the github password
 
 ### How to create a new branch
 ~~~
