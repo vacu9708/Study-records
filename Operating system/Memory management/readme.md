@@ -55,6 +55,7 @@ Virtual memory inherently relies on non-contiguous memory allocation.
 - External fragmentation occurs when processes of various sizes are allocated memory space contiguously.<br>
 This issue can be resolved by dividing processes into uniform units called "pages" and slicing the memory space into equally sized units known as "frames", which are the same size as pages. Then, pages are allocated to frames.<br>
 - Paging is typically used in conjunction with virtual memory.
+- A virtual memory system can support multiple page sizes at the same time, which is known as a mixed or multiple page size system.
 
 ### Page swapping
 Page swapping refers to a scenario in which a page from the main memory is replaced by a page from the secondary memory. Page replacement occurs due to page faults.<br>
