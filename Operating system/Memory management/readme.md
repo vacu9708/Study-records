@@ -70,7 +70,8 @@ The virtual memory address is translated to a physical address using the page ta
 For fast page access, the page table is stored in a cache called **TLB**.(Translation Lookaside Buffer)<br>
 
 ### Page Table Entry
-Each row in a page table is referred to as a page table entry, which stores data beyond just the page number and frame number. This includes:
+Each row in a page table is referred to as a page table entry, which stores data beyond just the page number and frame number.
+The contents depend on the system but might include:
 - `Valid Bit`: Indicates whether the corresponding page is accessible. Essentially, it informs if a page fault has occurred, necessitating a page swap.
 - `Protection Bit`: Specifies whether the page is read-only or if write operations are also permitted.
 - `Reference Bit`: Shows whether the page has been accessed since it was loaded into RAM.
