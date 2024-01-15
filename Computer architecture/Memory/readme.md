@@ -44,7 +44,10 @@ In this policy, each block of main memory maps to exactly one cache line. This i
 ### Fully Associative Cache
 In a fully associative cache, a block of memory can be placed in any line of the cache. This flexibility allows the cache to store any block without restrictions, reducing the likelihood of cache misses. However, this type of cache requires more complex hardware and search algorithms to determine where data is stored, which can slow down cache access.
 ### Set-Associative Cache
-This policy is a middle ground between direct-mapped and fully associative caches. The cache is divided into sets, and each set contains multiple lines. A block of memory can be placed in any line within a specific set. Set-associative mapping provides a balance between the high speed of direct-mapped cache and the low cache thrashing of fully associative cache. 
+This policy is a middle ground between direct-mapped and fully associative caches. The cache is divided into sets, and each set contains multiple lines. A block of memory can be placed in any line within a specific set. Set-associative mapping provides a balance between the high speed of direct-mapped cache and the low cache thrashing of fully associative cache.
+### Visual representation of how many searches each policy needs
+![image](https://github.com/vacu9708/Study-records/assets/67142421/d25bf3f4-b54a-47dd-b1ce-f0af2bf82cf0)
+
 
 ## Cache replacement algorithms:
 [It is similar to page replacement algorithms](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system/Memory%20management)
