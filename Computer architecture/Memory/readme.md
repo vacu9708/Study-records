@@ -37,19 +37,13 @@ L1 cache is in the CPU and searched first. L2 is between the CPU and RAM. L3 is 
 - **If cache misses happen too much**, having cache memory is worse than not having it because the time taken to find data in cache memory was wasted.<br>
 
 ## Cache placement policies
-- **Direct Mapped Cache**
-
+### Direct-Mapped Cache
 ![image](https://user-images.githubusercontent.com/67142421/177051043-23ec7372-938a-4b7c-b317-b7174a99eabd.png)<br>
-In this structure multiple addresses of RAM map to a single address in cache memory.<br>
-It works the same way as hash table. Therefore, there is a possibility that a collision occurs. (conflict miss)
-
-- **Fully Associative Cache**
-A method by which data is stored in any empty location. It is simple when storing, but searching is the problem because the cache has to be searched until sought data is found.
-
-- **Set Associative Cache**
-It is a trade-off between direct-mapped cache and fully associative cache. A hybrid cache that combines the associative cache and the direct-mapped cache.<br>
-A set-associative cache can be imagined as a (n by m)matrix.<br>
-The cache is divided into 'n' rows and each row contains 'm' columns. A memory block in RAM is first mapped onto a row and then placed into any column of a row.
+In this policy, each block of main memory maps to exactly one cache line. This is achieved by dividing the memory address into sections that determine the cache line where the data will be stored. Direct-mapped caches are simple and fast but can suffer from cache thrashing, where multiple data blocks compete for the same cache line.
+### Fully Associative Cache
+In a fully associative cache, a block of memory can be placed in any line of the cache. This flexibility allows the cache to store any block without restrictions, reducing the likelihood of cache misses. However, this type of cache requires more complex hardware and search algorithms to determine where data is stored, which can slow down cache access.
+### Set-Associative Cache
+This policy is a middle ground between direct-mapped and fully associative caches. The cache is divided into sets, and each set contains multiple lines. A block of memory can be placed in any line within a specific set. Set-associative caches reduce the chances of cache thrashing compared to direct-mapped caches and are simpler than fully associative caches. The number of lines per set can vary, with a higher number offering greater flexibility at the cost of increased complexity.
 
 ## Cache replacement algorithms:
 [It is similar to page replacement algorithms](https://github.com/vacu9708/Fundamental-knowledge/tree/main/Operating%20system/Memory%20management)
