@@ -36,6 +36,10 @@ L1 cache is in the CPU and searched first. L2 is between the CPU and RAM. L3 is 
 - A cache miss is an event in which an attempt to retrieve data from a cache, where the CPU has to fetch the data from the main memory to the cache.<br>
 - **If cache misses happen too much**, having cache memory is worse than not having it because the time taken to find data in cache memory was wasted.<br>
 
+## Write-back vs. Write-through
+- **Write-back**: In a write-back cache, the data is only written back to the main memory from the cache when necessary
+- **Write-through**, All data is written to the main memory as well as the cache simultaneously.
+
 ## Cache placement policies
 Cache placement policies are policies that determine where a particular memory block can be placed when it goes into a CPU cache.
 ### Direct-Mapped Cache
