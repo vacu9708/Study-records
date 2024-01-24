@@ -4,4 +4,5 @@
   2. Add the layer: Open `build/conf/bblayers.conf` and add [root]/meta-[name]
 3. Create an image directory: mkdir -p [root]/meta-ypdd/recipes-core/images
 4. Create ypdd-image.bb in this directory and add the recipe in it
-5. Run the image: bitbake -k ypdd-image
+5. Build the image: bitbake -k ypdd-image
+6. Run the image: runqemu qemux86-64
