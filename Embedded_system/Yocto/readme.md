@@ -3,6 +3,11 @@ Yocto is an open-source project that helps to create custom Linux-based systems 
 
 # Poky
 "Poky" is a reference distribution of the Yocto Project. It serves as a starting point for building custom Linux distributions for embedded systems.
+### How to set the build environment
+~~~
+git clone -b kirkstone git://git.yoctoproject.org/poky.git
+source poky/oe-init-build-env
+~~~
 
 # Bitbake
 BitBake is a build automation tool used to build a Linux distribution.
