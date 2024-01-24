@@ -130,6 +130,6 @@ int main(void)
 }
 ~~~
 ## Result
-![image](https://github.com/vacu9708/Data-structure/assets/67142421/a7fc7237-4103-46a3-b0c3-1115a8188fa4)
+![image](https://github.com/vacu9708/Study-records/assets/67142421/87c09185-9f28-4553-964f-934486955bf7)
 
 ![image](https://github.com/vacu9708/Data-structure/assets/67142421/dba0be37-1782-44a1-b0fe-b351cf3fa039)
