@@ -1,5 +1,7 @@
 1. Set the build environment: source poky/oe-init-build-env ; cd ..
 2. Set the layer for the image to be stored in
+  1. Create a layer: bitbake-layers create-layer meta-[name]
+  2. Add the layer: Open `build/conf/bblayers.conf` and add [root]/meta-[name]
 3. Create an image directory: mkdir -p [root]/meta-ypdd/recipes-core/images
 4. Create ypdd-image.bb in this directory and add the recipe in it
 5. Run the image: bitbake -k ypdd-image
