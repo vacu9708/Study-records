@@ -2,5 +2,7 @@
 
 # Agile
 `Iterative and flexible:` Agile divides the project into small parts called iterations which are repeated to build the best software possible. and easily adapt to changes.
+## Tools
+- Jira/Confluence
 # Waterfall
 `Sequential and rigid:` Waterfall follows a linear and sequential approach where each phase must be completed before the next one begins with a focus on detailed planning and documentation.
