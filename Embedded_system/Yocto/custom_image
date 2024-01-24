@@ -3,6 +3,6 @@
   1. Create a layer: bitbake-layers create-layer meta-[name]
   2. Add the layer: Open `build/conf/bblayers.conf` and add [root]/meta-[name]
 3. Create an image directory in the layer: mkdir -p [root]/meta-[name]/recipes-core/images
-4. Create ypdd-image.bb in this directory and write the recipe in it
-5. Build the image: bitbake -k ypdd-image
-6. Run the image: runqemu qemux86-64
+4. Create [name]-image.bb in this directory and write the recipe in it
+5. Build the image: bitbake -k [name]-image
+6. Run the image: runqemu [name]-image
