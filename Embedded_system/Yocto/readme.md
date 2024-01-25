@@ -2,7 +2,7 @@
 Yocto is an open-source project that helps to create custom Linux-based systems for embedded systems, regardless of the hardware architecture.
 
 # Poky
-"Poky" is a reference distribution of the Yocto Project. It serves as a starting point for building custom Linux distributions for embedded systems.
+"Poky" is a reference distribution of the Yocto Project that utilizes OpenEmbedded at its core. It serves as a starting point for building custom Linux distributions for embedded systems.
 ## How to set the build environment
 ### Download dependenies
 ~~~bash
