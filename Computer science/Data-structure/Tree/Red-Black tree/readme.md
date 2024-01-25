@@ -4,11 +4,11 @@ It stays balanced with operations like insertion, deletion, and search in O(log 
 
 ## Red black tree properties
 The properties that must be preserved are:
-- **Node Color**: Every node is either red or black.
-- **Root Property**: The root of the tree is always black.
-- **Leaf Property**: Every leaf (NIL node) is black. (null in the real code)
-- **Red Node Property**: Red nodes cannot have red children (i.e., no two red nodes can be adjacent).
-- **Black Depth Property**: Every path from a node to its descendant NIL nodes has the same number of black nodes.
+1. **Node Color**: Every node is either red or black.
+2. **Root Property**: The root of the tree is always black.
+3. **Leaf Property**: Every leaf (NIL node) is black. (null in the real code)
+4. **Red Node Property**: Red nodes cannot have red children (i.e., no two red nodes can be adjacent).
+5. **Black Depth Property**: Every path from a node to its descendant NIL nodes has the same number of black nodes.
 
 ## Rotation
 Rotations are used to maintain the tree's balanced structure.<br>
@@ -30,18 +30,9 @@ The cases during insertion are:
 - **Case 5**: The new node's parent is red, but the uncle is black, and the new node is an outer child (right child of a right parent or left child of a left parent).
     - **Fix**: Perform a rotation on the grandparent, swap the colors of the parent and grandparent, and update pointers accordingly.
 ## Cases During Deletion
-Deletion can be more complex due to the need to replace the deleted node and potentially rebalance the tree.<br>
-The cases during deletion are:
-- **Case 1**: The node to fix (initially the replacement node) is the new root.
-    - **Fix**: No action needed. The deletion is complete.
-- **Case 2**: The sibling of the node to fix is red.
-    - **Fix**: Rotate at the parent. Swap the colors of the parent and the sibling. This transforms the tree into one of the other cases.
-- **Case 3**: The sibling and both nephews (children of the sibling) are black.
-    - **Fix**: Repaint the sibling red. Move the fixing node pointer to the parent, effectively moving up the tree to continue fixing.
-- **Case 4**: The sibling is black with a red nephew on the far side (opposite the fixing node).
-    - **Fix**: Rotate at the sibling. Swap the colors of the parent and the sibling. Repaint the far nephew black. This restores balance and completes the deletion.
-- **Case 5**: The sibling is black with a red nephew on the near side (same side as the fixing node).
-    - **Fix**: Rotate at the near nephew (the sibling's child). Swap the colors of the sibling and its child. This transforms the tree into Case 4.
+- **Deleting a red node**: does not violate any of the rules
+- **Deleting a black node**: might violate the rule 4 or 5, which requires a fix
+- **Double black node**: a node that occurs when a black node is removed or replaced during deletion, potentially disturbing the tree balance.
 
 ~~~python
 class Node:
