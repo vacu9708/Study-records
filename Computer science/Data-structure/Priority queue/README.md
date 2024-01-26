@@ -43,16 +43,16 @@ void upward_heapify(vector<int>& heap_tree, int curr){ // For push()
 
 void downward_heapify(vector<int>& heap_tree, int curr) { // For pop()
     int left = curr*2+1, right = curr*2+2; // children
-    int least = curr;
+    int smallest = curr;
     // Find a smaller child
-    if (left < heap_tree.size() && heap_tree[left] < heap_tree[least]) // Change the inequality sign for max-heap
-        least=left;
-    if (right < heap_tree.size() && heap_tree[right] < heap_tree[least])
-        least=right;
+    if (left < heap_tree.size() && heap_tree[left] < heap_tree[smallest]) // Change the inequality sign for max-heap
+        smallest=left;
+    if (right < heap_tree.size() && heap_tree[right] < heap_tree[smallest])
+        smallest=right;
     // Swap curr and its smaller child
-    if (least != curr) {
-        swap(heap_tree[least], heap_tree[curr]);
-        downward_heapify(heap_tree, least);
+    if (smallest != curr) {
+        swap(heap_tree[smallest], heap_tree[curr]);
+        downward_heapify(heap_tree, smallest);
     }
 }
 
