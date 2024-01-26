@@ -49,7 +49,7 @@ void downward_heapify(vector<int>& heap_tree, int curr) { // For pop()
         least=left;
     if (right < heap_tree.size() && heap_tree[right] < heap_tree[least])
         least=right;
-    // Swap the smaller child
+    // Swap curr and its smaller child
     if (least != curr) {
         swap(heap_tree[least], heap_tree[curr]);
         downward_heapify(heap_tree, least);
