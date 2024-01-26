@@ -68,7 +68,7 @@ void heap_push(vector<int>& heap_tree, int data) {
 
 int heap_pop(vector<int>& heap_tree) {
     int highest_priority = heap_tree[0];
-    // Move the the last node to the place to be deleted for a better time complexity in the vector
+    // Move the last node to the deleted node(for a better time complexity in the array)
     heap_tree[0] = heap_tree[heap_tree.size() - 1];
     heap_tree.pop_back();
     downward_heapify(heap_tree, 0);
