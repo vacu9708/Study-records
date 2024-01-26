@@ -32,7 +32,7 @@ void print_array(vector<int>& heap_tree) {
     cout << "\n";
 }
 
-void downward_heapify(vector<int>& heap_tree, int curr) {
+void downward_heapify(vector<int>& heap_tree, int curr) { // For pop()
     int left = curr*2+1, right = curr*2+2; // children
     int least = curr;
     // If a child is smaller than its parent, swap them
@@ -46,12 +46,7 @@ void downward_heapify(vector<int>& heap_tree, int curr) {
     }
 }
 
-// void heapify_all(vector<int>& heap_tree){
-//     for (int i = (heap_tree.size()-2)/2; i >= 0; i--) // from last child's parent
-//         downward_heapify(heap_tree, i);
-// }
-
-void upward_heapify(vector<int>& heap_tree, int curr){
+void upward_heapify(vector<int>& heap_tree, int curr){ // For push()
     int parent=(curr-1)/2;
     // Return if out of range or the parent is smaller than the current node
     if(!(curr>=1 || heap_tree[curr]<heap_tree[parent]))
@@ -59,6 +54,11 @@ void upward_heapify(vector<int>& heap_tree, int curr){
     swap(heap_tree[curr], heap_tree[parent]);
     upward_heapify(heap_tree, parent);
 }
+
+// void heapify_all(vector<int>& heap_tree){
+//     for (int i = (heap_tree.size()-2)/2; i >= 0; i--) // from last child's parent
+//         downward_heapify(heap_tree, i);
+// }
 
 void heap_push(vector<int>& heap_tree, int data) {
     heap_tree.push_back(data);
