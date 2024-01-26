@@ -38,7 +38,7 @@ void upward_heapify(vector<int>& heap_tree, int curr){ // For push()
     if(!(curr>=1 || heap_tree[curr]<heap_tree[parent]))
         return;
     swap(heap_tree[curr], heap_tree[parent]);
-    upward_heapify(heap_tree, parent); Continue on the parent
+    upward_heapify(heap_tree, parent); // Continue on the parent
 }
 
 void downward_heapify(vector<int>& heap_tree, int curr) { // For pop()
