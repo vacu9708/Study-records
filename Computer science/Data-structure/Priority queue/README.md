@@ -45,9 +45,9 @@ void downward_heapify(vector<int>& heap_tree, int curr) { // For pop()
     int left = curr*2+1, right = curr*2+2; // children
     int smallest = curr;
     // Find a smaller child
-    if (left < heap_tree.size() && heap_tree[left] < heap_tree[smallest]) // Change the inequality sign for max-heap
+    if (left < heap_tree.size() && heap_tree[left] < heap_tree[curr]) // Change the inequality sign for max-heap
         smallest=left;
-    if (right < heap_tree.size() && heap_tree[right] < heap_tree[smallest])
+    if (right < heap_tree.size() && heap_tree[right] < heap_tree[curr])
         smallest=right;
     // Swap curr and its smaller child
     if (smallest != curr) {
