@@ -19,7 +19,7 @@
 ## Caution
 Before heapifying, the array must first be transformed into a heap tree by lifting up elements with higher priority, which takes O(NlogN)<br>
 
-## Priority queue using heap
+## Priority queue using heap (This code is min-heap)
 ~~~C++
 #include <iostream>
 #include <vector>
@@ -32,27 +32,28 @@ void print_array(vector<int>& heap_tree) {
     cout << "\n";
 }
 
-void downward_heapify(vector<int>& heap_tree, int curr) { // For pop()
-    int left = curr*2+1, right = curr*2+2; // children
-    int least = curr;
-    // If a child is smaller than its parent, swap them
-    if (left < heap_tree.size() && heap_tree[left] < heap_tree[least]) // becomes max_heapify by changing the inequality 
-        least=left;
-    if (right < heap_tree.size() && heap_tree[right] < heap_tree[least])
-        least=right;
-    if (least != curr) {
-        swap(heap_tree[least], heap_tree[curr]);
-        downward_heapify(heap_tree, least);
-    }
-}
-
 void upward_heapify(vector<int>& heap_tree, int curr){ // For push()
     int parent=(curr-1)/2;
     // Return if out of range or the parent is smaller than the current node
     if(!(curr>=1 || heap_tree[curr]<heap_tree[parent]))
         return;
     swap(heap_tree[curr], heap_tree[parent]);
-    upward_heapify(heap_tree, parent);
+    upward_heapify(heap_tree, parent); Continue on the parent
+}
+
+void downward_heapify(vector<int>& heap_tree, int curr) { // For pop()
+    int left = curr*2+1, right = curr*2+2; // children
+    int least = curr;
+    // Find a smaller child
+    if (left < heap_tree.size() && heap_tree[left] < heap_tree[least]) // Change the inequality sign for max-heap
+        least=left;
+    if (right < heap_tree.size() && heap_tree[right] < heap_tree[least])
+        least=right;
+    // Swap the smaller child
+    if (least != curr) {
+        swap(heap_tree[least], heap_tree[curr]);
+        downward_heapify(heap_tree, least);
+    }
 }
 
 // void heapify_all(vector<int>& heap_tree){
