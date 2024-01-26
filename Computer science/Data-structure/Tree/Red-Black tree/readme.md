@@ -32,7 +32,9 @@ The cases during insertion are:
 ## Cases During Deletion
 - **Deleting a red node**: does not violate any of the rules
 - **Deleting a black node**: might violate the rule 4 or 5, which requires a fix
-- **Double black node**: an extra black node that occurs when a black node is removed or replaced during deletion, potentially disturbing the tree balance.
+- **Double black node**:
+   - An extra black node occurs when a black node is removed or replaced during deletion, potentially disturbing the tree balance.
+   - The double black node can be the actual node removed or a child that replaced it.
 
 ~~~python
 class Node:
