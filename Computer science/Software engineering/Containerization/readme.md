@@ -15,7 +15,6 @@ Docker is commonly used to address difficulties related to environment setting w
 # Why use Docker instead of Virtual machine
 - **VMs** simulate a complete operating system (OS) with their own kernel, which leads to a higher overhead and consumes more memory.
 - **Docker**, on the other hand, runs applications within isolated containers that share the host OS kernel. Docker containers consume fewer resources than VMs and are lightweight.
-[Docker commands for personal usage](https://github.com/vacu9708/Tools-etc/blob/main/Containerization/Docker.md)
 
 ## Docker network
 Docker containers are isolated. That's why network for docker is needed.
