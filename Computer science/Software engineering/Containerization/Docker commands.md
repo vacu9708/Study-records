@@ -14,11 +14,17 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo apt install docker-compose
 ~~~
 
-# How to create and execute a docker image
+### Add user to docker group
+~~~
+sudo usermod -aG docker $USER
+~~~
+This is commonly done to allow the user to run Docker commands without needing to prefix them with sudo. Being in the docker group grants the user permissions to interact with the Docker daemon
+
+## How to create and execute a docker image
 1. Write Dockerfile
 2. Write and run docker-compose
 
-# docker-compose
+## docker-compose
 Docker Compose is used to define and run a multi-container application. It allows defining a set of containers and their configuration using a YML file, and then starting and stopping them together with a single command.
 ~~~
 docker build -t gateway:gateway -f ./gateway/Dockerfile ./gateway
