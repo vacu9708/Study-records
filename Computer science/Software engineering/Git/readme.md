@@ -1,4 +1,9 @@
-Git is a distributed version control system used for tracking changes in source code during software development. 
+Git is a distributed version control system used for tracking changes in source code during software development.
+
+### Terminology
+- **Rebase**: Reapplies the commits of one branch onto the tip of another, creating a linear history.
+- **Merge**: Combines the changes from different branches into a single branch, creating a new commit that represents the converged history of the merged branches.
+- **Pull**: Fetches changes from a remote repository and merges them into the local working branch, updating the local repository with the latest changes.
 
 ### Github authentication
 1. Click the profile and then settings
