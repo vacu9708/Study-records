@@ -1,3 +1,8 @@
+UML provides a standard notation to visualize the design of a system, which can be roughly divided into 3 main groups
+- Behavior diagrams
+- Interaction diagrams
+- Structure diagrams
+
 # Use case diagram
 A use case diagram is a visual representation of the interactions between users (or "actors") and a system.<br>
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/0e097971-8af2-414d-b201-36c01a7da343)
