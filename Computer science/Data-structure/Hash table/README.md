@@ -34,3 +34,13 @@ There are several strategies for dealing with collisions:
   - **quadratic probing** (where the interval between probes increases quadratically)
   - **double hashing** (where a second hash function determines the probe sequence).
 - When a collision occurs, the hash table looks for the next available slot according to the probing sequence and stores the key-value pair there.
+
+## Rehashing
+### Why Rehashing is Necessary
+- **Performance Maintenance**: As more elements are added to a hash table, collisions become more likely, and the efficiency of hash table operations can degrade. Rehashing reduces the load factor and collision frequency, maintaining operation efficiency.
+- **Dynamic Scaling**: Rehashing allows hash tables to adjust their size dynamically based on the number of elements stored, accommodating both growth and, in some implementations, shrinking to save memory when many elements are removed.
+### Process of Rehashing
+- **Create a New Hash Table**: A new, larger hash table is created, often doubling the size of the old table to ensure that the load factor is significantly reduced after rehashing. The size is usually chosen to be a prime number or a power of two, depending on the hash function being used, to help reduce the likelihood of collisions.
+- **Recompute Hashes**: Each key in the original hash table is rehashed according to the new table's size. Because the hash function often depends on the size of the table, changing the table size means that the index at which a key-value pair is stored will likely change.
+- **Reinsert Elements**: Each key-value pair from the original table is inserted into the new table based on its newly computed hash. This step effectively redistributes the elements across the new table, potentially in a more evenly spaced manner, which helps in reducing collision-related issues.
+- **Dispose of the Old Table**: Once all elements have been moved to the new table, the old table is disposed of.
