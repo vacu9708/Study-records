@@ -1,5 +1,5 @@
 # Hash table
-![image](https://github.com/vacu9708/Study-records/assets/67142421/18d449db-794e-41d5-b3a4-89d2e7d3ba4a)
+![image](https://github.com/vacu9708/Study-records/assets/67142421/18d449db-794e-41d5-b3a4-89d2e7d3ba4a)<br>
 A hashmap, also known as a hash table or a dictionary, is an associative array that can map keys to values. A hashmap uses a hash function to compute an index, also known as a hash code, into an array of buckets or slots, from which the desired value can be found.
 
 ## Key components
