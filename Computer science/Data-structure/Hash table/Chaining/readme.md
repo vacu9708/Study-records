@@ -16,7 +16,7 @@ Chaining is a technique used to resolve hash collisions in a hash table. When tw
 - **Flexibility**: It can handle an arbitrary number of collisions gracefully, as the linked list can grow as needed.
 ## Disadvantages
 - **Memory Overhead**: Each entry in the list requires additional memory for the pointer to the next element, which can be significant, especially if the keys and values are small.
-- **Variable Performance: The worst-case time complexity can degrade to O(n) (where n is the number of elements) if too many keys hash to the same index, making all operations slower as they require linear search through the list.
+- **Variable Performance**: The worst-case time complexity can degrade to O(n) (where n is the number of elements) if too many keys hash to the same index, making all operations slower as they require linear search through the list.
 
 ## Optimizing Chaining
 To optimize the performance of a hash table using chaining:
