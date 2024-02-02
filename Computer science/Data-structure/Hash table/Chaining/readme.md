@@ -1,8 +1,29 @@
 # Solution of hash collision
-## Chaining
->The idea is to make each cell of hash table have a linked list to solve the hash collision.
-![image](https://user-images.githubusercontent.com/67142421/150531067-fe59c4e7-2f4c-4d55-9705-1fb2d1c509ce.png)
+# Chaining
+![image](https://user-images.githubusercontent.com/67142421/150531067-fe59c4e7-2f4c-4d55-9705-1fb2d1c509ce.png)<br>
+Chaining is a technique used to resolve hash collisions in a hash table. When two keys hash to the same index in the table and a collision occurs, chaining allows both key-value pairs to be stored at that index by linking them together in a list.
 
+## Implementation
+- **Bucket with a linked list**: Each slot (or bucket) in the hash table array points to a linked list (or chain) of entries that have been hashed to the same index.
+- **Insertion**: When inserting a new key-value pair, the hash function calculates the index for the key.
+  - If the bucket at that index is empty, the key-value pair is added and becomes the first element of the list.
+  - If the bucket is not empty (indicating a collision), the new key-value pair is added to the head or tail of the linked list at that index, depending on the implementation.
+- **Lookup (Retrieval)**: To retrieve the value associated with a specific key, the hash function is used to find the appropriate bucket. Then, a search is performed through the linked list at that index to find the key. If the key is found, the corresponding value is returned. Otherwise, a signal that the key does not exist in the table is returned.
+- **Deletion**: To remove a key-value pair, the process is similar to lookup. The list is searched for the key. If found, the key-value pair is removed from the list.
+
+## Advantages
+- **Simplicity**: Chaining is straightforward to implement and understand.
+- **Flexibility**: It can handle an arbitrary number of collisions gracefully, as the linked list can grow as needed.
+## Disadvantages
+- **Memory Overhead**: Each entry in the list requires additional memory for the pointer to the next element, which can be significant, especially if the keys and values are small.
+- **Variable Performance: The worst-case time complexity can degrade to O(n) (where n is the number of elements) if too many keys hash to the same index, making all operations slower as they require linear search through the list.
+
+## Optimizing Chaining
+To optimize the performance of a hash table using chaining:
+- A **low load factor** (the ratio of the number of stored entries to the number of buckets) can be maintained by increasing the size of the hash table as it fills up, thus spreading out the entries more evenly.
+- A **good hash function** that minimizes collisions and distributes keys uniformly across the buckets is crucial.
+
+## Example C++ code
 ~~~C++
 #include <iostream>
 #include <list>
