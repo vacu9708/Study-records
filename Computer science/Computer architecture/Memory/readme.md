@@ -37,8 +37,9 @@ L1 cache is in the CPU and searched first. L2 is between the CPU and RAM. L3 is 
 - **If cache misses happen too much**, having cache memory is worse than not having it because the time taken to find data in cache memory was wasted.<br>
 
 ## Write-back vs. Write-through
-- **Write-back**: In a write-back cache, the data is only written back to the main memory from the cache when necessary
-- **Write-through**, All data is written to the main memory as well as the cache simultaneously.
+- **Write-back**: In a write-back cache, the data is only written back to the main memory from the cache when necessary.<br>
+This might cause data inconsistency issues. For example, LEDs controlled by memory-mapped I/O may not operate correctly because some parts of the data could be written only to the cache and not immediately to the storage.
+- **Write-through**, Data is written to the memory and cache simultaneously simultaneously to ensure data consistency.
 
 ## Cache placement policies
 Cache placement policies are policies that determine where a particular memory block can be placed when it goes into a CPU cache.
