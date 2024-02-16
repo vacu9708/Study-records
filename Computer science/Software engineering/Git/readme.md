@@ -42,7 +42,7 @@ git push
 ### How to revert the latest commit
 ~~~
 git pull
-git reset head^
+git reset --soft HEAD~1
 git push -f
 ~~~
 ### How to merge two branches on github
