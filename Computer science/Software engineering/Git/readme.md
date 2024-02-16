@@ -20,7 +20,7 @@ git remote add origin https://github.com/vacu9708/Shopping-mall.git
 git branch -M <branch>
 git add .
 git commit -m "first commit"
-git push -u origin [branch] (-u means that "origin [branch name]" can be omitted from now on)
+git push -u origin [branch] (-u means that "origin [branch]" can be omitted from now on)
 ~~~
 
 ### How to create a child branch
