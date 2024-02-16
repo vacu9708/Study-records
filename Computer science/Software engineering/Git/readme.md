@@ -19,7 +19,7 @@ git init
 git remote add origin https://github.com/vacu9708/Shopping-mall.git
 git branch -M <branch>
 git add .
-git commit -m "first commit"
+git commit
 git push -u origin [branch] (-u means that "origin [branch]" can be omitted from now on)
 ~~~
 
@@ -36,7 +36,7 @@ git pull origin <parent branch>
 ### How to push
 ~~~
 git add .
-git commit -m "message"
+git commit
 git push
 ~~~
 ### How to revert the latest commit
