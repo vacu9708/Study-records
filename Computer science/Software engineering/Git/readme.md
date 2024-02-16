@@ -39,7 +39,7 @@ git add .
 git commit -m "message"
 git push
 ~~~
-### How to revert the latest push
+### How to revert the latest commit
 ~~~
 git pull
 git reset head^
