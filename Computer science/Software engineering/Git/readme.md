@@ -42,7 +42,7 @@ git push
 ### How to revert the latest commit
 ~~~
 git pull
-git reset --soft HEAD~1
+git reset --soft HEAD^
 git push -f
 ~~~
 ### How to check the differences from the latest commit
