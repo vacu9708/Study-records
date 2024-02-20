@@ -53,7 +53,7 @@ git push -f
 - git branch : Current branch
 - git push origin --delete [name] : Delete a remote branch
 - git branch -D : Delete a local branch
-- git commit --amend: Modify the current commit
+- git commit --amend: Modify the latest commit
 
 ## Merge
 ### How to merge two branches on github
