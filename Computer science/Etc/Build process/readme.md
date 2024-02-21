@@ -22,11 +22,11 @@ Finally, the operating system executes the program, following the instructions i
 # Commands
 ### Single-step build
 ~~~
-g++ -o my_program source1.cpp source2.cpp
+gcc -o my_program source1.cpp source2.c
 ~~~
 ### Multi-step build
 ~~~
-g++ -c source1.cpp
-g++ -c source2.cpp
-g++ -o my_program source1.o source2.o
+gcc -c source1.cpp source2.c
+nasm -f elf64 source3.asm
+gcc -o my_program source1.o source2.o source3.o
 ~~~
