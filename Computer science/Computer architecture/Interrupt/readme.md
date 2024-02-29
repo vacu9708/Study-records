@@ -1,9 +1,7 @@
-An **interrupt** is a request for the processor to temporarily halt the current task and switch to another task with a higher priority."
- 
-- **external interrupt(hardware interrupt)** happens as a result of outside interference such as from the user or from the peripherals. It functions as a notifier. (Considered a type of exception)
-- **internal interrupt**, also called Trap, happens when wrong instructions or data are used. (exceptions like divided by zero, overflow)
+An **interrupt** is a request for the processor to temporarily halt the current task and switch to another task with a higher priority.
+- **external interrupt(hardware interrupt)** happens as a result of outside interference such as from the user or from the peripherals. It functions as a notifier.
+- **internal interrupt(Trap)**, happens when wrong instructions or data are used. (exceptions like divided by zero, overflow)
 - **software interrupt(system call)**: is a type of interrupt that is triggered by a specific instruction in a program, rather than by an external event or hardware malfunction.
-It's a mechanism for a program to interrupt the current process flow and request a service from the operating system.<br>
 A program running in user mode needs to send a system call to the operating system to access system resources and perform tasks in kernel mode.
 
 ## The steps of an interrupt
