@@ -1,4 +1,4 @@
-[Lock explanation](https://github.com/vacu9708/Study-records/blob/main/Embedded_system/Linux%20kernel/5.%20Lock.pdf)
+[Explanation of Lock](https://github.com/vacu9708/Study-records/blob/main/Embedded_system/Linux%20kernel/5.%20Lock.pdf)
 
 ~~~c++
 class Semaphore{
