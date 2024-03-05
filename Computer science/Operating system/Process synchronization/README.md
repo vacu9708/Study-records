@@ -10,7 +10,7 @@ Lock mechanisms are used to protect shared resources from concurrent access.
 - **Semaphore** : A mutex is a binary semaphore. A semaphore can allow more than one thread to access a shared resource but limits the number.
 - **Monitor**: Unlike mutexes, where a thread must explicitly lock and unlock, monitors manage locks implicitly. When a thread enters a monitor's method, it automatically acquires the lock, and when it exits the method (either normally or by waiting on a condition variable), it automatically releases the lock. Monitors can use a condition variables, which are used to block a thread until a particular condition is met.
 
-### How to implement the lock
+### How to implement a lock
 - **Spinlock(busy waiting)**: When a thread attempts to acquire a spinlock that is already held by another thread, it will continuously check (or "spin") until the lock becomes available. This approach can be efficient if the expected wait time is short since the thread remains active and does not enter a sleep state. However, it can also waste CPU cycles if the lock is held for a long time.
 - **Process queue**: The PCB of a process is put in a queue and sent to sleep. It is popped when the shared resource becomes available.
 
