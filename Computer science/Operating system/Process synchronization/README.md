@@ -1,3 +1,4 @@
+## Terminology
 - **Data consistency** refers to whether the same data kept at different places do or do not match. 
 - **Critical section** is a code segment where shared resources are accessed.
 - **Race condition** is a situation where multiple processes are accessing a shared resource(**critical section**) simultaneously, which might affect **data consistency**.
@@ -11,7 +12,7 @@ Lock mechanisms are used to protect shared resources from concurrent access.
 
 ### How to implement the lock
 - **Spinlock(busy waiting)**: When a thread attempts to acquire a spinlock that is already held by another thread, it will continuously check (or "spin") until the lock becomes available. This approach can be efficient if the expected wait time is short since the thread remains active and does not enter a sleep state. However, it can also waste CPU cycles if the lock is held for a long time.
-- **Process queue**: The PCB of a process is put in a queue and popped when the shared resource has become available.
+- **Process queue**: The PCB of a process is put in a queue and sent to sleep. It is popped when the shared resource becomes available.
 
 ~~~c++
 class Semaphore{
