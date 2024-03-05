@@ -1,5 +1,6 @@
 [Explanation of Lock](https://github.com/vacu9708/Study-records/blob/main/Embedded_system/Linux%20kernel/5.%20Lock.pdf)
 
+## Semaphore implementation
 ~~~c++
 class Semaphore{
 	int shared_resource; // 1 or more (If this is initialized with the value 1, it can function similarly to a mutex.)
