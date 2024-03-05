@@ -37,8 +37,9 @@ void release(Semaphore* S) { // Wakes up a process that wanted to take a shared 
 }
 ~~~
 
-## Example using a lock for multi-processing
-**Without a mutex**: There is no semaphore that protects the critical section, so the output is unstable.
+## Example of using a lock for synchronization in multi-processing
+### Without a mutex
+There is no semaphore that protects the critical section, so the output is unstable.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
@@ -57,10 +58,11 @@ if __name__ == "__main__":
     p2.join()
     print("End with ", shared_number.value)
 ~~~
-### Output
+#### Output
 ![image](https://user-images.githubusercontent.com/67142421/177394795-d4fc8ac8-d465-4f08-b00b-40202a48e261.png)
 
-**With a mutex**: There is a semaphore(mutex) that protects the critical section, so the output is guaranteed.
+### With a mutex
+There is a semaphore(mutex) that protects the critical section, so the output is guaranteed.
 ~~~python
 from multiprocessing import Process, Value, Lock
 
@@ -88,7 +90,7 @@ if __name__ == "__main__":
     p2.join()
     print("End with ", shared_number.value)
 ~~~
-### Output
+#### Output
 ![image](https://user-images.githubusercontent.com/67142421/177388487-051bd0f0-e5ea-4242-9278-a97af7899ca5.png)
 
 ## Bounded buffer problem(also called producer-consumer problem)
