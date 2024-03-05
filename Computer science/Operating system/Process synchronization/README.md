@@ -1,18 +1,4 @@
-## Terminology
-- **Data consistency** refers to whether the same data kept at different places do or do not match. 
-- **Critical section** is a code segment where shared resources are accessed.
-- **Race condition** is a situation where multiple processes are accessing a shared resource(**critical section**) simultaneously, which might affect **data consistency**.
-- **Process Synchronization** refers to aligning the execution timing of processes to ensure that shared resources are accessed by only one process at a time to maintain **data consistency**.
-
-## Lock mechanisms
-Lock mechanisms are used to protect shared resources from concurrent access.
-- **Mutex(mutual exclusion)** : Used to ensure that a shared resource is accessed only by one thread at a time. It has two states: locked and unlocked.
-- **Semaphore** : A mutex is a binary semaphore. A semaphore can allow more than one thread to access a shared resource but limits the number.
-- **Monitor**: Unlike mutexes, where a thread must explicitly lock and unlock, monitors manage locks implicitly. When a thread enters a monitor's method, it automatically acquires the lock, and when it exits the method (either normally or by waiting on a condition variable), it automatically releases the lock. Monitors can use a condition variables, which are used to block a thread until a particular condition is met.
-
-### How to implement a lock
-- **Spinlock(busy waiting)**: When a thread attempts to acquire a spinlock that is already held by another thread, it will continuously check (or "spin") until the lock becomes available. This approach can be efficient if the expected wait time is short since the thread remains active and does not enter a sleep state. However, it can also waste CPU cycles if the lock is held for a long time.
-- **Process queue**: The PCB of a process is put in a queue and sent to sleep. It is popped when the shared resource becomes available.
+[Lock explanation](https://github.com/vacu9708/Study-records/blob/main/Embedded_system/Linux%20kernel/5.%20Lock.pdf)
 
 ~~~c++
 class Semaphore{
@@ -67,23 +53,23 @@ There is a semaphore(mutex) that protects the critical section, so the output is
 from multiprocessing import Process, Value, Lock
 
 def add_100(number, lock):
-    for i in range(100): # with lock: <- This "monitor" can be used instead of specifying lock.acquire() and release() manually.
+    for i in range(100):
         lock.acquire()
         number.value += 1 # Critical section
         lock.release()
-
+```
+# with lock: <- This "monitor" can be used instead of specifying lock.acquire() and release() manually.
 def add_100_monitor(number, lock):
     for _ in range(100):
         with lock:  # Monitor used. This will acquire the lock and automatically release it after the block
             number.value += 1  # Critical section
-
+```
 if __name__ == "__main__":
-
-    semaphore = Lock() # Semaphore
+    lock = Lock() # Lock
     shared_number = Value('i', 0) # i = integer
     print("Start from", shared_number.value)
-    p1 = Process(target=add_100, args=(shared_number, semaphore))
-    p2 = Process(target=add_100, args=(shared_number, semaphore))
+    p1 = Process(target=add_100, args=(shared_number, lock))
+    p2 = Process(target=add_100, args=(shared_number, lock))
     p1.start()
     p2.start()
     p1.join()
