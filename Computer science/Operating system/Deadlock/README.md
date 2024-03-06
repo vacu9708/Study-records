@@ -1,7 +1,7 @@
 # Deadlock
 ![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/950cfd23-dbcc-4fab-8e62-8092ffcb0cae)
 
-Deadlock is a situation where processes are waiting for each other to release their shared resource and none of them ever does.<br>
+Deadlock is a situation where two or more threads are holdong resources and are indefinitely waiting for each other to release other resource simultaneously when none of them ever does.<br>
 Improper synchronization results in deadlock.
 
 ### 4 conditions of deadlock
