@@ -1,6 +1,8 @@
 # Invention of the container revolutionized the shipping industry
 By using containers of a consistent shape, goods could be loaded and unloaded quickly and efficiently, which reduced costs and increased productivity.<br>
 
+![image](https://github.com/vacu9708/Study-records/assets/67142421/cdc4ab70-ec13-42f8-b1a1-6541f1a39afe)
+
 # Docker
 Docker is a popular containerization platform for packing an application and its dependencies into a container that can be run on any system that supports Docker.<br>
 Docker is commonly used to address difficulties related to environment setting when running an application in different environments.<br>
