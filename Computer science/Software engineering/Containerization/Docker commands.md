@@ -22,7 +22,9 @@ This is commonly done to allow the user to run Docker commands without needing t
 
 ## How to create and execute a docker image
 1. Write Dockerfile
-2. Write and run docker-compose
+2. Build the Dockerfile
+3. Run the built image
+- 2,3 can be replaced with (Write and run docker-compose)
 
 ## docker-compose
 Docker Compose is used to define and run a multi-container application. It allows defining a set of containers and their configuration using a YML file, and then starting and stopping them together with a single command.
