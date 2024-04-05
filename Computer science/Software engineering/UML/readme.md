@@ -23,8 +23,8 @@ Each use case represents a distinct functionality or a goal that an actor wants 
 
 # Sequence diagram
 A sequence diagram shows how objects interact in a given scenario of a use case.
-### Example of a use case "Make an order"
-![image](https://github.com/vacu9708/Fundamental-knowledge/assets/67142421/2c540e32-df57-49bc-a8b1-c1f162e005c1)
+### Example
+![image](https://github.com/vacu9708/Study-records/assets/67142421/6c24aabb-b482-467f-9e6e-5079d8265397)
 ### Components
 - Actors and Objects: These are typically represented at the top of the diagram. Actors are external entities that interact with the system (like users), while objects are instances of classes within the system.
 - Lifelines: Vertical dashed lines that represent the lifespan of an object during the interaction being modeled. They show the presence and activity of an object over time.
