@@ -22,7 +22,7 @@ Each use case represents a distinct functionality or a goal that an actor wants 
 - Example: If there is a general actor named "User," and there are specific types of users like "Customer" and "Admin," then "Customer" and "Admin" can be shown as generalizations of "User."
 
 # Sequence diagram
-A sequence diagram shows how objects interact in a given scenario of a use case.
+Sequence diagrams visualize the sequence of messages exchanged between objects
 ### Example
 ![image](https://github.com/vacu9708/Study-records/assets/67142421/6c24aabb-b482-467f-9e6e-5079d8265397)
 ### Components
