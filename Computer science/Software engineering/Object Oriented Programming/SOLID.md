@@ -1,13 +1,13 @@
 # Cohesion and coupling
 ### Cohesion
-Cohesion refers to the degree to which the functionality is focused within a single component.<br>
-High cohesion indicates that the component is well-defined and performs a specific task effectively.
+- Cohesion refers to the degree to which the functionality is focused within a single component.
+- High cohesion indicates that the component is well-defined and performs a specific task effectively.
 ### Coupling
-Coupling measures how closely connected two components are to each other.<br>
-Loose coupling means that changes in one(child) component do not necessitate changes in another(parent) component thanks to the existence of the interface, leading to improved maintainability.<br>
+- Coupling measures how closely connected two components are to each other.
+- Loose coupling means that changes in one(child) component do not necessitate changes in another(parent) component thanks to the existence of the interface, leading to improved maintainability.
 ### How to make loose coupling
-For a lowly coupled system, modules should interact through interfaces or abstractions to minimize their dependencies on each other.<br>
-An interface makes it possible for multiple child modules to be used with that one interface.
+- For a lowly coupled system, modules should interact through interfaces or abstractions to minimize their dependencies on each other.<br>
+- An interface makes it possible for multiple child modules to be used with that one interface.
 
 # SOLID design principles in OOP
 SOLID principles were introduced in an effort to keep cohesion high and coupling low.
