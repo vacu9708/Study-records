@@ -6,6 +6,9 @@
 #include <fstream>
 #include <string>
 
+int width;
+int height;
+
 void SaveBitmapToFile(HBITMAP hBitmap, const std::wstring& filename, BITMAPINFO& bmi) {
     BITMAP bmp;
     GetObject(hBitmap, sizeof(BITMAP), &bmp);
@@ -36,26 +39,29 @@ void SaveBitmapToFile(HBITMAP hBitmap, const std::wstring& filename, BITMAPINFO&
 
 void CaptureScreenshot(HDC hdcScreen, HDC hdcMem, HBITMAP hbmScreen, BITMAPINFO& bmi, std::vector<BYTE>& buffer) {
     SelectObject(hdcMem, hbmScreen);
-    BitBlt(hdcMem, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), hdcScreen, 0, 0, SRCCOPY);
-    GetDIBits(hdcMem, hbmScreen, 0, GetSystemMetrics(SM_CYSCREEN), buffer.data(), &bmi, DIB_RGB_COLORS);
+    BitBlt(hdcMem, 0, 0, width, height, hdcScreen, 0, 0, SRCCOPY);
+    GetDIBits(hdcMem, hbmScreen, 0, height, buffer.data(), &bmi, DIB_RGB_COLORS);
 }
 
 int main() {
     HDC hdcScreen = GetDC(NULL);
     HDC hdcMem = CreateCompatibleDC(hdcScreen);
-    HBITMAP hbmScreen = CreateCompatibleBitmap(hdcScreen, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN));
+    // Get the actual screen resolution
+    DEVMODE devMode;
+    EnumDisplaySettings(NULL, ENUM_CURRENT_SETTINGS, &devMode);
+    width = devMode.dmPelsWidth;
+    height = devMode.dmPelsHeight;
+    HBITMAP hbmScreen = CreateCompatibleBitmap(hdcScreen, width, height);
 
     BITMAPINFO bmi;
     ZeroMemory(&bmi, sizeof(bmi));
     bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-    bmi.bmiHeader.biWidth = GetSystemMetrics(SM_CXSCREEN);
-    bmi.bmiHeader.biHeight = -GetSystemMetrics(SM_CYSCREEN); // Negative to specify top-down DIB
+    bmi.bmiHeader.biWidth = width;
+    bmi.bmiHeader.biHeight = height; // Negative to specify top-down DIB
     bmi.bmiHeader.biPlanes = 1;
     bmi.bmiHeader.biBitCount = 24;
     bmi.bmiHeader.biCompression = BI_RGB;
 
-    int width = bmi.bmiHeader.biWidth;
-    int height = abs(bmi.bmiHeader.biHeight);
     int bufferSize = width * height * 3; // 24-bit BMP: 3 bytes per pixel
 
     std::vector<BYTE> buffer(bufferSize);
@@ -65,8 +71,8 @@ int main() {
 
     for (int i = 0; i < numScreenshots; ++i) {
         CaptureScreenshot(hdcScreen, hdcMem, hbmScreen, bmi, buffer);
-        std::wstring filename = L"screenshot_" + std::to_wstring(i) + L".bmp";
-        SaveBitmapToFile(hbmScreen, filename, bmi);
+        //std::wstring filename = L"screenshot.bmp";
+        //SaveBitmapToFile(hbmScreen, filename, bmi);
     }
 
     auto end = std::chrono::high_resolution_clock::now();
